@@ -1,0 +1,46 @@
+.form-validation {
+    input {
+        width: calc(100% - 40px);
+        border: 0;
+        padding: 17px 20px;
+        font-size: 1.1em;
+        background: #E0EDF4;
+        color: #3E5252;
+        margin-bottom: 2px;
+
+        &:first-of-type {
+            border-radius: 3px 3px 0 0;
+            -webkit-border-radius: 3px 3px 0 0;
+            -moz-border-radius: 3px 3px 0 0;
+            -ms-border-radius: 3px 3px 0 0;
+            -o-border-radius: 3px 3px 0 0;
+        }
+
+        &:last-of-type {
+            border-radius: 0 0 3px 3px;
+            -webkit-border-radius: 0 0 3px 3px;
+            -moz-border-radius: 0 0 3px 3px;
+            -ms-border-radius: 0 0 3px 3px;
+            -o-border-radius: 0 0 3px 3px;
+        }
+    }
+
+    .form-submit {
+        border-radius: 0 0 3px 3px;
+        font-size: 0.9em;
+        background-color: #1be46b;
+        color: #fff;
+        border: none;
+        transition: 1s;
+        text-transform: uppercase;
+        padding: 14px 18px;
+        margin: 5px 0;
+    }
+
+    span.warn {
+        display: block;
+        color: red;
+        font-size: 0.85em;
+
+    }
+}
