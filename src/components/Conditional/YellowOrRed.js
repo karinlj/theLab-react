@@ -50,11 +50,12 @@ class YellowOrRed extends Component { //class based
 
                         </header>
 
-                        <ConditionalBtn class="button generate-btn" title="Generate color" click={this.generateColor} />
+                        <div className="btn-and-message">
+                            <ConditionalBtn class="button generate-btn" title="Generate color" click={this.generateColor} />
+                            <div className="error-message">{this.state.errorMessage}</div>
+                        </div>
 
                         <h3 className="rand-color">{this.state.color}</h3>
-
-                        <div className="error-message">{this.state.errorMessage}</div>
 
                         <ConditionalBtn class="button yellow-btn" title="Yellow" click={() => this.compare('yellow')} />
 
