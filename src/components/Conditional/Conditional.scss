@@ -1,5 +1,22 @@
 @import '../../variables.scss';
 
+
+/* @keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+} */
+
 .rightBtn-section {
     position: relative;
     // height: 500px;
@@ -15,11 +32,6 @@
         font-weight: 700;
     }
 
-    .generate-btn {
-        background: $themecolorGreen;
-        color: #fff;
-    }
-
     .yellow-btn {
         background: $themecolorYellow;
         margin-right: 1rem;
@@ -29,24 +41,55 @@
         background: $themecolorRed;
     }
 
-    .error-message {
-        z-index: 100;
-        width: 50%;
-        margin: auto;
-        position: absolute;
-        top: 50px;
-        left: 50px;
+    .pet-img-wrapper {
+        padding: 1.5rem 0;
 
-        width: 100%;
-        text-align: center;
-
-        color: $themecolorPink;
-        font-size: 4em;
-        font-weight: 600;
+        img {
+            max-width: 100%;
+        }
     }
 
-    img {
-        display: block;
-        padding: 1.5rem 0;
+    .btn-and-message {
+        height: 60px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .generate-btn {
+            background: $themecolorGreen;
+            color: #fff;
+        }
+
+        .error-message {
+            /*z-index: 100;
+            margin: auto;
+            position: absolute;
+            top: 110px;
+            right: 0;
+            */
+            color: $themecolorPink;
+            font-size: 2.5em;
+            font-weight: 600;
+
+            // animation: bounceIn 2s;
+
+            @media all and (max-width: 380px) {
+                font-size: 1.7em;
+            }
+
+            @media all and (min-width: $sm-min) {
+                font-size: 3em;
+            }
+
+            @media all and (min-width: $md-min) {
+                font-size: 2.5em;
+            }
+
+            @media all and (min-width: $xl-min) {
+                font-size: 3.5em;
+            }
+
+        }
     }
 }

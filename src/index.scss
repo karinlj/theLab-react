@@ -89,9 +89,22 @@ h5 {
 }
 
 .nav {
-  padding: 2rem calc(3.75rem - 15px);
   width: 100%;
   display: flex;
+
+  padding: 2rem calc(1.5rem - 15px);
+
+  @media all and (min-width: $sm-min) {
+    padding: 2rem calc(2.25rem - 15px);
+  }
+
+  @media all and (min-width:$md-min) {
+    padding: 2rem calc(3rem - 15px);
+  }
+
+  @media all and (min-width:$xl-min) {
+    padding: 2rem calc(3.75rem - 15px);
+  }
 
   .col {
     display: flex;
@@ -235,8 +248,21 @@ h5 {
 
 .content-section {
   width: 100%;
-  padding: 1rem calc(3.75rem - 15px) 3rem calc(3.75rem - 15px);
   min-height: 800px;
+
+  padding: 1rem calc(1.5rem - 15px) 3rem calc(1.5rem - 15px);
+
+  @media all and (min-width: $sm-min) {
+    padding: 1rem calc(2.25rem - 15px) 3rem calc(2.25rem - 15px);
+  }
+
+  @media all and (min-width:$md-min) {
+    padding: 1rem calc(3rem - 15px) 3rem calc(3rem - 15px);
+  }
+
+  @media all and (min-width:$xl-min) {
+    padding: 1rem calc(3.75rem - 15px) 3rem calc(3.75rem - 15px);
+  }
 
   @media all and (min-width: $lg-min) {
     width: 80%;
@@ -344,9 +370,21 @@ h5 {
 
   .footer-section {
     width: 100%;
-    padding: 3rem calc(3.75rem - 15px) 1rem calc(3.75rem - 15px);
+    padding: 2rem calc(1.5rem - 15px) 1rem calc(1.5rem - 15px);
 
-    @media all and (min-width: $md-min) {
+    @media all and (min-width: $sm-min) {
+      padding: 2rem calc(2.25rem - 15px) 1rem calc(2.25rem - 15px);
+    }
+
+    @media all and (min-width:$md-min) {
+      padding: 2rem calc(3rem - 15px) 1rem calc(3rem - 15px);
+    }
+
+    @media all and (min-width:$xl-min) {
+      padding: 3rem calc(3.75rem - 15px) 1rem calc(3.75rem - 15px);
+    }
+
+    @media all and (min-width: $lg-min) {
       width: 80%;
       margin-left: 20%;
     }

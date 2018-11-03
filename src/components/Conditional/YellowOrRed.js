@@ -46,12 +46,9 @@ class YellowOrRed extends Component { //class based
                     <div className="rightBtn-section">
                         <header>
                             <h1 className="">Yellow or Red</h1>
-                            <p>On page reload randomly show “Click Green button” or “Click Red button”.</p>
-                            <p>Display two buttons, one with the text “Red” and color red, and the other with the color green and text “Green”.</p>
-                            <p>If the wrong button is pressed, display “Fail”. If the correct button is pressed, display “Success”.</p>
-                        </header>
+                            <p>Click the Generate color button to display a word and then click the button with the correspondent color.</p>
 
-                        <h5 className="rand-color-text">Click the button with the generated color:</h5>
+                        </header>
 
                         <ConditionalBtn class="button generate-btn" title="Generate color" click={this.generateColor} />
 

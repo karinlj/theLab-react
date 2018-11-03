@@ -40,7 +40,7 @@ class CatOrDog extends Component { //class based
         var animal;
         if (this.state.pet === 'cat') {
             animal = <img src={Cat} alt="a cat" />
-        } else {
+        } else if (this.state.pet === 'dog') {
             animal = <img src={Dog} alt="a dog" />
         }
 
@@ -50,22 +50,24 @@ class CatOrDog extends Component { //class based
                     <div className="rightBtn-section">
                         <header>
                             <h1 className="">Cat or Dog</h1>
-                            <p>On page reload randomly show “Click Green button” or “Click Red button”.</p>
-                            <p>Display two buttons, one with the text “Red” and color red, and the other with the color green and text “Green”.</p>
-                            <p>If the wrong button is pressed, display “Fail”. If the correct button is pressed, display “Success”.</p>
+                            <p>Click the Generate pet button to display an image and then click the button with the correspondent pet.</p>
                         </header>
 
-                        <h5 className="rand-color-text">Click the button with the generated color:</h5>
+                        {/* <h5 className="rand-color-text">Click the button with the generated pet:</h5> */}
 
-                        <ConditionalBtn class="button generate-btn" title="Generate pet" click={this.generatePet} />
+                        <div className="btn-and-message">
+                            <ConditionalBtn class="button generate-btn" title="Generate pet" click={this.generatePet} />
+                            <div className="error-message">{this.state.errorMessage}</div>
+                        </div>
 
-                        {animal}
+                        <div className="pet-img-wrapper">
+                            {animal}
+                        </div>
 
                         <ConditionalBtn class="button yellow-btn" title="Cat" click={() => this.compare('cat')} />
 
                         <ConditionalBtn class="button red-btn" title="Dog" click={() => this.compare('dog')} />
 
-                        <div className="error-message">{this.state.errorMessage}</div>
 
                     </div>
                 </div>
