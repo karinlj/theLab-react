@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
-import GenerateBtn from './GenerateBtn';
-import RedBtn from './RedBtn';
-import YellowBtn from './YellowBtn';
+import ConditionalBtn from './ConditionalBtn';
 
-class ClickCorrectBtn extends Component { //class based
+class YellowOrRed extends Component { //class based
     state = {
         color: '',
         errorMessage: ''
@@ -60,7 +58,7 @@ class ClickCorrectBtn extends Component { //class based
                 <div className="col-12 col-md-6">
                     <div className="rightBtn-section">
                         <header>
-                            <h1 className="">Click the correct button</h1>
+                            <h1 className="">Yellow or Red</h1>
                             <p>On page reload randomly show “Click Green button” or “Click Red button”.</p>
                             <p>Display two buttons, one with the text “Red” and color red, and the other with the color green and text “Green”.</p>
                             <p>If the wrong button is pressed, display “Fail”. If the correct button is pressed, display “Success”.</p>
@@ -68,12 +66,13 @@ class ClickCorrectBtn extends Component { //class based
 
                         <h5 className="rand-color-text">Click the button with the generated color:</h5>
 
-                        <GenerateBtn title="Bananer" didrik="button generate-btn" click={this.generateColor} />
+                        <ConditionalBtn class="button generate-btn" title="Generate color" click={this.generateColor} />
 
                         <h3 className="rand-color">{this.state.color}</h3>
 
-                        <YellowBtn click={this.compareYellow} />
-                        <RedBtn click={this.compareRed} />
+                        <ConditionalBtn class="button yellow-btn" title="Yellow" click={this.compareYellow} />
+
+                        <ConditionalBtn class="button red-btn" title="Red" click={this.compareRed} />
 
                         <div className="error-message">{this.state.errorMessage}</div>
 
@@ -81,11 +80,11 @@ class ClickCorrectBtn extends Component { //class based
                 </div>
 
                 <div className="col-12 col-md-4">
-                    <Sidebar heading="Hello CorrectBtn" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
+                    <Sidebar heading="Hello YellowOrRed" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
 
                 </div>
             </div>
         )
     }
 }
-export default ClickCorrectBtn
+export default YellowOrRed

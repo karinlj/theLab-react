@@ -5,11 +5,6 @@
     // height: 500px;
 }
 
-.generate-btn {
-    background: $themecolorGreen;
-    color: #fff;
-}
-
 .rand-color-text {
     padding: 0 0 1rem 0;
     color: #fff;
@@ -19,6 +14,11 @@
     padding: 1.5rem;
     color: #fff;
     font-weight: 700;
+}
+
+.generate-btn {
+    background: $themecolorGreen;
+    color: #fff;
 }
 
 .yellow-btn {

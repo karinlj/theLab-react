@@ -11,8 +11,8 @@ import Blog from './components/Blog'
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import Form from './components/Form/Form';
-import ClickCorrectBtn from './components/Conditional/ClickCorrectBtn';
-
+import YellowOrRed from './components/Conditional/YellowOrRed';
+import CatOrDog from './components/Conditional/CatOrDog';
 
 class App extends Component {
   state = {
@@ -59,7 +59,8 @@ class App extends Component {
                 <Route path='/TodoList' component={TodoList} />
                 <Route path="/Blog" component={Blog} />
                 <Route path="/Form" component={Form} />
-                <Route path="/ClickCorrectBtn" component={ClickCorrectBtn} />
+                <Route path="/YellowOrRed" component={YellowOrRed} />
+                <Route path="/CatOrDog" component={CatOrDog} />
                 <Route path='/about' component={About} />
                 <Route path="/:post_id" component={Post} />
               </Switch>

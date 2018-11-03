@@ -38,7 +38,8 @@ const Navbar = props => (
 
                         <li>Conditional logic
                         <ul className="sub-list">
-                                <li><NavLink to="/clickCorrectBtn">Correct button</NavLink></li>
+                                <li><NavLink to="/yellowOrRed">Yellow or Red</NavLink></li>
+                                <li><NavLink to="/catOrDog">Cat or Dog</NavLink></li>
                             </ul>
                         </li>
 
