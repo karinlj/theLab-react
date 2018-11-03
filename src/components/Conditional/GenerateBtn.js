@@ -5,7 +5,7 @@ import './Conditional.scss';
 const GenerateBtn = props => (
     // passed prop from CorrectBtn.js
 
-    <button className="button generate-btn" onClick={props.click}>
+    <button className={props.didrik} onClick={props.click}>
         {props.title}
     </button>
 )
