@@ -6,7 +6,7 @@ const GenerateBtn = props => (
     // passed prop from CorrectBtn.js
 
     <button className="button generate-btn" onClick={props.click}>
-        Generate color
+        {props.title}
     </button>
 )
 export default GenerateBtn

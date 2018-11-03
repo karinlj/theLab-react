@@ -68,7 +68,7 @@ class ClickCorrectBtn extends Component { //class based
 
                         <h5 className="rand-color-text">Click the button with the generated color:</h5>
 
-                        <GenerateBtn click={this.generateColor} />
+                        <GenerateBtn title="Bananer" click={this.generateColor} />
 
                         <h3 className="rand-color">{this.state.color}</h3>
 
