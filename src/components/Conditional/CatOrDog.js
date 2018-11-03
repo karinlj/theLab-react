@@ -10,11 +10,6 @@ class CatOrDog extends Component { //class based
         errorMessage: ''
     };
 
-    //Arrow func to manually bind 'this' to the func in reaction to DOM events,
-    //so that we can use 'this'.
-    //Arrow func bind the value of 'this' to whatever 'this' is outside the func.
-    //In the render method (in the template), React does it for us
-
     generatePet = () => {
         let pets = ['cat', 'dog'];
 
@@ -30,7 +25,7 @@ class CatOrDog extends Component { //class based
     compare = (compareValue) => {
 
         let errMessage = '';
-        if (compareValue === this.state.color) {
+        if (compareValue === this.state.pet) {
             errMessage = 'Success!';
         }
         else
@@ -42,6 +37,13 @@ class CatOrDog extends Component { //class based
     }
 
     render() {
+        var animal;
+        if (this.state.pet === 'cat') {
+            animal = <img src={Cat} alt="a cat" />
+        } else {
+            animal = <img src={Dog} alt="a dog" />
+        }
+
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
@@ -56,18 +58,13 @@ class CatOrDog extends Component { //class based
                         <h5 className="rand-color-text">Click the button with the generated color:</h5>
 
                         <ConditionalBtn class="button generate-btn" title="Generate pet" click={this.generatePet} />
-
                         <h3 className="rand-color">{this.state.pet}</h3>
 
-
-                        <img src={Cat} alt="a cat" />
-
-                        <img src={Dog} alt="a dog" />
-
+                        {animal}
 
                         <ConditionalBtn class="button yellow-btn" title="Cat" click={() => this.compare('cat')} />
 
-                        <ConditionalBtn class="button yellow-btn" title="Dog" click={() => this.compare('dog')} />
+                        <ConditionalBtn class="button red-btn" title="Dog" click={() => this.compare('dog')} />
 
                         <div className="error-message">{this.state.errorMessage}</div>
 
