@@ -26,23 +26,11 @@ class CatOrDog extends Component { //class based
             errorMessage: ''
         })
     }
-    compareCat = () => {
-        const petCat = 'cat';
-        let errMessage = '';
-        if (petCat === this.state.pet) {
-            errMessage = 'Success!';
-        }
-        else
-            errMessage = 'Fail!';
 
-        this.setState({
-            errorMessage: errMessage
-        })
-    }
-    compareDog = () => {
-        const petDog = 'dog';
+    compare = (compareValue) => {
+
         let errMessage = '';
-        if (petDog === this.state.pet) {
+        if (compareValue === this.state.color) {
             errMessage = 'Success!';
         }
         else
@@ -77,9 +65,9 @@ class CatOrDog extends Component { //class based
                         <img src={Dog} alt="a dog" />
 
 
-                        <ConditionalBtn class="button yellow-btn" title="Cat" click={this.compareCat} />
+                        <ConditionalBtn class="button yellow-btn" title="Cat" click={() => this.compare('cat')} />
 
-                        <ConditionalBtn class="button red-btn" title="Dog" click={this.compareDog} />
+                        <ConditionalBtn class="button yellow-btn" title="Dog" click={() => this.compare('dog')} />
 
                         <div className="error-message">{this.state.errorMessage}</div>
 

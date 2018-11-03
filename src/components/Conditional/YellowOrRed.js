@@ -25,23 +25,10 @@ class YellowOrRed extends Component { //class based
         })
     }
 
-    compareYellow = () => {
-        const colorYellow = 'yellow';
-        let errMessage = '';
-        if (colorYellow === this.state.color) {
-            errMessage = 'Success!';
-        }
-        else
-            errMessage = 'Fail!';
+    compare = (compareValue) => {
 
-        this.setState({
-            errorMessage: errMessage
-        })
-    }
-    compareRed = () => {
-        const colorRed = 'red';
         let errMessage = '';
-        if (colorRed === this.state.color) {
+        if (compareValue === this.state.color) {
             errMessage = 'Success!';
         }
         else
@@ -70,11 +57,11 @@ class YellowOrRed extends Component { //class based
 
                         <h3 className="rand-color">{this.state.color}</h3>
 
-                        <ConditionalBtn class="button yellow-btn" title="Yellow" click={this.compareYellow} />
-
-                        <ConditionalBtn class="button red-btn" title="Red" click={this.compareRed} />
-
                         <div className="error-message">{this.state.errorMessage}</div>
+
+                        <ConditionalBtn class="button yellow-btn" title="Yellow" click={() => this.compare('yellow')} />
+
+                        <ConditionalBtn class="button red-btn" title="Red" click={() => this.compare('red')} />
 
                     </div>
                 </div>
