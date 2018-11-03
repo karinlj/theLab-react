@@ -58,7 +58,6 @@ class CatOrDog extends Component { //class based
                         <h5 className="rand-color-text">Click the button with the generated color:</h5>
 
                         <ConditionalBtn class="button generate-btn" title="Generate pet" click={this.generatePet} />
-                        <h3 className="rand-color">{this.state.pet}</h3>
 
                         {animal}
 
