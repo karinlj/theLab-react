@@ -11,6 +11,7 @@ import Blog from './components/Blog'
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import Form from './components/Form/Form';
+import ClickCorrectBtn from './components/Conditional/ClickCorrectBtn';
 
 
 class App extends Component {
@@ -58,6 +59,7 @@ class App extends Component {
                 <Route path='/TodoList' component={TodoList} />
                 <Route path="/Blog" component={Blog} />
                 <Route path="/Form" component={Form} />
+                <Route path="/ClickCorrectBtn" component={ClickCorrectBtn} />
                 <Route path='/about' component={About} />
                 <Route path="/:post_id" component={Post} />
               </Switch>

@@ -16,10 +16,13 @@ class AddTodo extends Component {
         e.preventDefault();
         // console.log(this.state);
         //submitting the new todo
-        this.props.addTodoprops(this.state);
-        this.setState({ //setting state.content= ''
-            content: ''
-        })
+        if (this.state.content) { //if has content
+            // alert(this.state.content);
+            this.props.addTodo(this.state);
+            this.setState({ //setting state.content= ''
+                content: ''
+            })
+        }
     }
     render() {
         return (

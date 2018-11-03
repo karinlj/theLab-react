@@ -1,23 +1,27 @@
 import React from 'react'
 
-const Todos = ({ todosprops, deleteTodo }) => { //UI component, accepting the props
+//only listing single todos here
+const Todos = props => {  //Stateless UI component
+    //passing states from TodoList.js = passing todos-array via props
 
     //iternary op - true if we have todo's
-    const todoList = todosprops.length ? (
-        //if todo's
-        todosprops.map(todo => {
+    const todoList = props.todos.length ? (
+        //if we have todo's - map through todos
+        props.todos.map(todo => {
             //fire a function on todo
-            return (
+            return (   //draw single todo
                 <div className="collection-item" key={todo.id}>
                     {/* preventing auto invoking because parentesis */}
                     <span>{todo.content}</span>
-                    <button className="deleteBtn" onClick={() => { deleteTodo(todo.id) }}>Delete</button>
+
+                    {/* calling deleteTodo-func (located in App.js), draw the button */}
+                    <button className="deleteBtn" onClick={() => { props.deleteTodo(todo.id) }}>Delete</button>
                 </div>
             )
         })
     ) : (
             //if no todo's
-            <p className="center">You have no todos left, Yay!!</p >
+            <p className="center">You have no todos left, Yay!!</p>
         )
     return (
         <div className="todos collection">

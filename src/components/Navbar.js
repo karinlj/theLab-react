@@ -36,6 +36,12 @@ const Navbar = props => (
                             </ul>
                         </li>
 
+                        <li>Conditional logic
+                        <ul className="sub-list">
+                                <li><NavLink to="/clickCorrectBtn">Correct button</NavLink></li>
+                            </ul>
+                        </li>
+
                         <li><NavLink to="/about">About</NavLink></li>
                     </ul>
                 </div>

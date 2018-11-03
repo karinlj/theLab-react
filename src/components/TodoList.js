@@ -10,11 +10,12 @@ class TodoList extends Component { //class based component
             { id: 2, content: 'Cuddle with cats' }
         ]
     }
-    deleteTodo = (id) => {
+    deleteTodo = (id) => { //has to be here to interact with the state
         //console.log(id);
         //new copy of array:todos stored in variable
         //filter method with passed back function with todo as parameter
-        const todos = this.state.todos.filter(todo => {
+
+        const todos = this.state.todos.filter(todo => {  //ta bort
             //return true (if not equal)if keeping the item, false if removing
             return todo.id !== id
         });
@@ -22,11 +23,11 @@ class TodoList extends Component { //class based component
             todos: todos
         })
     }
-    addTodo = (todo) => {
+    addTodo = (todo) => { //has to be here to interact with the state
         //generate random id
         todo.id = Math.random();
         //new array with spread op
-        let todos = [...this.state.todos, todo];
+        let todos = [...this.state.todos, todo]; //lägga till
         this.setState({
             todos: todos //key and value
         })
@@ -42,13 +43,14 @@ class TodoList extends Component { //class based component
                             <p>Praesent id velit volutpat, finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus.</p>
                         </header>
                         {/* nesting component, passing todos-array and delete-func */}
-                        <Todos todosprops={this.state.todos} deleteTodo={this.deleteTodo} />
-                        <AddTodo addTodoprops={this.addTodo} />
+                        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+                        <AddTodo addTodo={this.addTodo} />
                     </div>
                 </div>
 
                 <div className="col-12 col-md-4">
-                    <Sidebar />
+                    <Sidebar heading="Hello Todo list" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
+
                 </div>
 
             </div>

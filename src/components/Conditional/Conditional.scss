@@ -1,0 +1,50 @@
+@import '../../variables.scss';
+
+.rightBtn-section {
+    position: relative;
+    // height: 500px;
+}
+
+.generate-btn {
+    background: $themecolorGreen;
+    color: #fff;
+}
+
+.rand-color-text {
+    padding: 0 0 1rem 0;
+    color: #fff;
+}
+
+.rand-color {
+    padding: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.yellow-btn {
+    background: $themecolorYellow;
+    margin-right: 1rem;
+}
+
+.red-btn {
+    background: $themecolorRed;
+}
+
+.error-message {
+    z-index: 100;
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+
+    color: $themecolorPink;
+    font-size: 4em;
+    font-weight: 600;
+
+}

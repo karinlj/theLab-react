@@ -1,27 +1,4 @@
-//screen width
-$xs-max: 480px;
-$sm-min: 576px;
-
-$sm-max: 767.9px;
-$md-min:768px;
-
-$md-max:991.9px;
-$lg-min:992px;
-
-$lg-max:1199.9px;
-$xl-min: 1200px;
-
-$xl-max: 1309px;
-
-//colors
-$themecolorBlue: #2e9ce6;
-$themecolorDarkBlue: #1576b7;
-$themecolorDarkGrey: #21242c;
-//$linkColor: #a4d4f4;
-
-$themecolor: #333;
-
-$themeBorderRadius: 3px;
+@import './variables.scss';
 
 html {
   height: 100%;
@@ -69,6 +46,28 @@ h4,
 h5 {
   font-weight: 300;
 }
+
+//button
+.button {
+  box-shadow: $themeBoxShadow;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9em;
+  border: none;
+  transition: 1s;
+  text-transform: uppercase;
+  padding: 12px 18px;
+  border-radius: $themeBorderRadius;
+  -webkit-border-radius: $themeBorderRadius;
+  -moz-border-radius: $themeBorderRadius;
+  -ms-border-radius: $themeBorderRadius;
+  -o-border-radius: $themeBorderRadius;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 
 .header-section {
   display: none;
@@ -201,7 +200,7 @@ h5 {
   margin-top: 5rem;
   min-height: 300px;
   // border: 1px solid #333;
-  background: #fff;
+  background: $themecolorLightgrey;
   color: $themecolor;
   padding: 1rem 1.5rem;
   border-radius: $themeBorderRadius;
@@ -212,6 +211,13 @@ h5 {
 
   @media all and (min-width: $md-min) {
     margin-top: 0;
+  }
+
+  h4 {}
+
+  p {
+    font-size: 1em;
+    line-height: 1.7;
   }
 }
 
@@ -229,7 +235,7 @@ h5 {
 
 .content-section {
   width: 100%;
-  padding: 2rem calc(3.75rem - 15px);
+  padding: 1rem calc(3.75rem - 15px) 3rem calc(3.75rem - 15px);
   min-height: 800px;
 
   @media all and (min-width: $lg-min) {
@@ -306,19 +312,20 @@ h5 {
     border: none;
     border-bottom: 1px solid #e0e0e0;
   }
-
 }
 
 .deleteBtn {
-  border-radius: 3px;
-  background: rgba(255, 0, 0, 0.623);
+  text-transform: uppercase;
+  font-size: 80%;
+  border-radius: $themeBorderRadius;
+  background: $themecolorRed;
   color: #fff;
   border: none;
-  padding: 0.3rem;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  padding: 0.3rem 0.4rem;
+  -webkit-border-radius: $themeBorderRadius;
+  -moz-border-radius: $themeBorderRadius;
+  -ms-border-radius: $themeBorderRadius;
+  -o-border-radius: $themeBorderRadius;
 }
 
 .card {

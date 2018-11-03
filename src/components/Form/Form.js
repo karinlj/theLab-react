@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Form.scss';
 import Sidebar from '../Sidebar';
 
-
 class Form extends Component { //class based component
     state = {
         firstname: '',
@@ -65,8 +64,8 @@ class Form extends Component { //class based component
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
-        const err = this.validate();
+        //console.log(this.state);
+        const err = this.validate(); //calling validate-func
         if (!err) {
             this.setState({ //clear form
                 firstname: '',
@@ -130,7 +129,7 @@ class Form extends Component { //class based component
                                 onChange={e => this.handleChange(e)} />
                             <span className="warn">{this.state.passwordError}</span>
 
-                            <button className="form-submit"
+                            <button className="button form-submit"
                                 onClick={e => this.handleSubmit(e)}>Submit</button>
 
                         </form>
@@ -138,7 +137,7 @@ class Form extends Component { //class based component
                 </div>
 
                 <div className="col-12 col-md-4">
-                    <Sidebar />
+                    <Sidebar heading="Hello Form validation" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
                 </div>
 
             </div>
