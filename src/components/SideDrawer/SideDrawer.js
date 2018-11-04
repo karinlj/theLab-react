@@ -20,20 +20,33 @@ const SideDrawer = props => {
                         <ul className="links">
                             <li><NavLink to="/">Home</NavLink></li>
                             <li>Forms manipulation and testing
-                                <ul className="sub-list">
+                            <ul className="sub-list">
                                     <li><NavLink to="/form">Form validation</NavLink></li>
                                 </ul>
                             </li>
 
                             <li>Lists
-                                <ul className="sub-list">
+                            <ul className="sub-list">
                                     <li><NavLink to="/todoList">TodoList</NavLink></li>
                                 </ul>
                             </li>
 
                             <li>Blog
-                                <ul className="sub-list">
+                        <ul className="sub-list">
                                     <li><NavLink to="/blog">Blog</NavLink></li>
+                                </ul>
+                            </li>
+
+                            <li>Conditional logic
+                        <ul className="sub-list">
+                                    <li><NavLink to="/yellowOrRed">Yellow or Red</NavLink></li>
+                                    <li><NavLink to="/catOrDog">Cat or Dog</NavLink></li>
+                                </ul>
+                            </li>
+
+                            <li>Strings
+                        <ul className="sub-list">
+                                    <li><NavLink to="/ConcatStrings">Concat strings</NavLink></li>
                                 </ul>
                             </li>
 
