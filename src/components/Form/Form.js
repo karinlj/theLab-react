@@ -102,7 +102,6 @@ class Form extends Component { //class based component
                                 onChange={e => this.handleChange(e)} />
                             <span className="warn">{this.state.firstnameError}</span>
 
-
                             <input name='lastname' type="text"
                                 placeholder='Last name'
                                 value={this.state.lastname}
@@ -115,13 +114,11 @@ class Form extends Component { //class based component
                                 onChange={e => this.handleChange(e)} />
                             <span className="warn">{this.state.usernameError}</span>
 
-
                             <input name='email' type="email"
                                 placeholder='Email'
                                 value={this.state.email}
                                 onChange={e => this.handleChange(e)} />
                             <span className="warn">{this.state.emailError}</span>
-
 
                             <input name='password' type="password"
                                 placeholder='Password'

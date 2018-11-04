@@ -5,14 +5,15 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import About from './components/About'
-import TodoList from './components/TodoList'
-import Post from './components/Post'
-import Blog from './components/Blog'
+import TodoList from './components/Lists/TodoList'
+import Post from './components/Blog/Post'
+import Blog from './components/Blog/Blog'
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import Form from './components/Form/Form';
 import YellowOrRed from './components/Conditional/YellowOrRed';
 import CatOrDog from './components/Conditional/CatOrDog';
+import ConcatStrings from './components/Strings/ConcatStrings';
 
 class App extends Component {
   state = {
@@ -30,7 +31,6 @@ class App extends Component {
   handleBackdropClick = () => {
     this.setState({ sideDrawerOpen: false });
   };
-
 
   render() {
     let backdrop;
@@ -61,6 +61,7 @@ class App extends Component {
                 <Route path="/Form" component={Form} />
                 <Route path="/YellowOrRed" component={YellowOrRed} />
                 <Route path="/CatOrDog" component={CatOrDog} />
+                <Route path="/ConcatStrings" component={ConcatStrings} />
                 <Route path='/about' component={About} />
                 <Route path="/:post_id" component={Post} />
               </Switch>

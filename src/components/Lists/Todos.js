@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Lists.scss';
 
 //only listing single todos here
 const Todos = props => {  //Stateless UI component

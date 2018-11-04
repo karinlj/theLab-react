@@ -43,6 +43,12 @@ const Navbar = props => (
                             </ul>
                         </li>
 
+                        <li>Strings
+                        <ul className="sub-list">
+                                <li><NavLink to="/ConcatStrings">Concat strings</NavLink></li>
+                            </ul>
+                        </li>
+
                         <li><NavLink to="/about">About</NavLink></li>
                     </ul>
                 </div>

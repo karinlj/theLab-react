@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Lists.scss';
 
 //we need local state in the component to store what the user types in,
 //so class based component
@@ -18,7 +19,7 @@ class AddTodo extends Component {
         //submitting the new todo
         if (this.state.content) { //if has content
             // alert(this.state.content);
-            this.props.addTodo(this.state);
+            this.props.addTodo(this.state); //getting the prop:addTodo that refers to the func:AddTodo (in TodoList) ,call the func and pass in this.state from THIS component
             this.setState({ //setting state.content= ''
                 content: ''
             })

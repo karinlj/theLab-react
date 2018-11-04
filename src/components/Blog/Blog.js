@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'  //library
 import { Link } from 'react-router-dom'
-import Pokeball from '../img/pokeball.png'
-import Sidebar from './Sidebar';
+import Pokeball from '../../img/pokeball.png'
+import Sidebar from '../Sidebar';
 
 class Blog extends Component { //class based
     state = {

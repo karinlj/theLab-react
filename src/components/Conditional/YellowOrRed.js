@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
-import ConditionalBtn from './ConditionalBtn';
+import MaineBtn from '../MaineBtn';
 
 class YellowOrRed extends Component { //class based
     state = {
@@ -19,9 +19,8 @@ class YellowOrRed extends Component { //class based
         //floor avrundar neråt, rand()=> 0-1, *längden av array 
         let randColor = colors[Math.floor(Math.random() * colors.length)];
 
-        this.setState({
-            color: randColor,
-            errorMessage: ''
+        this.setState({ //only change the state inside the setState method
+            color: randColor
         })
     }
 
@@ -43,23 +42,24 @@ class YellowOrRed extends Component { //class based
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
-                    <div className="rightBtn-section">
+                    <div className="colors-section">
                         <header>
                             <h1 className="">Yellow or Red</h1>
                             <p>Click the Generate color button to display a word and then click the button with the correspondent color.</p>
-
                         </header>
 
                         <div className="btn-and-message">
-                            <ConditionalBtn class="button generate-btn" title="Generate color" click={this.generateColor} />
+                            {/* properties are DEFINED and different VALUES are set */}
+
+                            <MaineBtn classProp="button generate-btn" titleProp="Generate color" clickProp={this.generateColor} />
                             <div className="error-message">{this.state.errorMessage}</div>
                         </div>
 
                         <h3 className="rand-color">{this.state.color}</h3>
 
-                        <ConditionalBtn class="button yellow-btn" title="Yellow" click={() => this.compare('yellow')} />
+                        <MaineBtn classProp="button yellow-btn" titleProp="Yellow" clickProp={() => this.compare('yellow')} />
 
-                        <ConditionalBtn class="button red-btn" title="Red" click={() => this.compare('red')} />
+                        <MaineBtn classProp="button red-btn" titleProp="Red" clickProp={() => this.compare('red')} />
 
                     </div>
                 </div>

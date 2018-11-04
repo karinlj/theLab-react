@@ -8,7 +8,7 @@ const Footer = () => { //UI component
                 <div className="container">
                     <div className="row align-items-end">
                         <ul>
-                            <li><h2 className="thelab">theLab</h2> powered by  <a href="https://boozang.com">
+                            <li><h2 className="thelab">theLab</h2> powered by &nbsp; <a href="https://boozang.com">
                                 <img src={Boozang} alt="boozang logo" />
                             </a>
                             </li>

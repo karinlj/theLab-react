@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Todos from './Todos'
 import AddTodo from './AddTodo'
-import Sidebar from './Sidebar';
+import Sidebar from '../Sidebar';
+import './Lists.scss';
 
 class TodoList extends Component { //class based component
     state = {
@@ -23,7 +24,7 @@ class TodoList extends Component { //class based component
             todos: todos
         })
     }
-    addTodo = (todo) => { //has to be here to interact with the state
+    addTodo = (todo) => { //func has to be here to interact with the state
         //generate random id
         todo.id = Math.random();
         //new array with spread op
@@ -44,7 +45,7 @@ class TodoList extends Component { //class based component
                         </header>
                         {/* nesting component, passing todos-array and delete-func */}
                         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
-                        <AddTodo addTodo={this.addTodo} />
+                        <AddTodo addTodo={this.addTodo} />{/* defining prop: addTodo that refers to the func:addTodo */}
                     </div>
                 </div>
 
