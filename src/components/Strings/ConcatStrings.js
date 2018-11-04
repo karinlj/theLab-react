@@ -101,7 +101,7 @@ class ConcatStrings extends Component { //class based
                 </div>
 
                 <div className="col-12 col-md-4">
-                    <Sidebar heading="Hello YellowOrRed" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
+                    <Sidebar heading="Hello ConcatStrings" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
 
                 </div>
             </div >
