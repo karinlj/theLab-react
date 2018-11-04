@@ -1,7 +1,15 @@
 @import '../../variables.scss';
 
 .concatStrings-section {
+
     .generate-btn {
         background: $themecolorGreen;
     }
+
+    .strings {
+        color: #fff;
+        margin-top: 0.5rem;
+        padding-left: 2rem;
+    }
+
 }

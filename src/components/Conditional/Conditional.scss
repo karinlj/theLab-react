@@ -48,48 +48,4 @@
             max-width: 100%;
         }
     }
-
-    .btn-and-message {
-        height: 60px;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .generate-btn {
-            background: $themecolorGreen;
-            color: #fff;
-        }
-
-        .error-message {
-            /*z-index: 100;
-            margin: auto;
-            position: absolute;
-            top: 110px;
-            right: 0;
-            */
-            color: $themecolorPink;
-            font-size: 2.5em;
-            font-weight: 600;
-
-            // animation: bounceIn 2s;
-
-            @media all and (max-width: 380px) {
-                font-size: 1.7em;
-            }
-
-            @media all and (min-width: $sm-min) {
-                font-size: 3em;
-            }
-
-            @media all and (min-width: $md-min) {
-                font-size: 2.5em;
-            }
-
-            @media all and (min-width: $xl-min) {
-                font-size: 3.5em;
-            }
-
-        }
-    }
 }

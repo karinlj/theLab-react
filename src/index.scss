@@ -292,6 +292,45 @@ h5 {
   font-weight: 300;
 }
 
+.btn-and-message {
+  height: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .generate-btn {
+    background: $themecolorGreen;
+    color: #fff;
+  }
+
+  //conditional and strings
+  .error-message {
+    color: $themecolorPink;
+    font-size: 2.5em;
+    font-weight: 600;
+
+    // animation: bounceIn 2s;
+
+    @media all and (max-width: 380px) {
+      font-size: 1.7em;
+    }
+
+    @media all and (min-width: $sm-min) {
+      font-size: 3em;
+    }
+
+    @media all and (min-width: $md-min) {
+      font-size: 2.5em;
+    }
+
+    @media all and (min-width: $xl-min) {
+      font-size: 3.5em;
+    }
+
+  }
+}
+
 .footer {
 
   .footer-section {

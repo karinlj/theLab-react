@@ -6,7 +6,10 @@ import './Strings.scss';
 
 class ConcatStrings extends Component { //class based
     state = {
+        string1: '',
+        string2: '',
         concatStr: '',
+        inputStr: '',
         errorMessage: ''
     };
 
@@ -16,20 +19,41 @@ class ConcatStrings extends Component { //class based
         let randStr1 = strings[Math.floor(Math.random() * strings.length)];
         let randStr2 = strings[Math.floor(Math.random() * strings.length)];
 
-        let randStr = randStr1 + randStr2;
+        let dobleRandStr = randStr1 + randStr2;
 
         this.setState({
-            concatStr: randStr
+            string1: randStr1,
+            string2: randStr2,
+            concatStr: dobleRandStr
         })
 
-        alert(randStr);
+        console.log(this.state.concatStr);
     }
 
-    handleChange = () => {
-
+    handleChange = (e) => {
+        this.setState({ inputStr: e.target.value });
     }
 
-    compare = (compareValue) => {
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state.inputStr);
+
+        let errMessage = '';
+        if (this.state.inputStr === this.state.concatStr) {
+            errMessage = 'Success!';
+        }
+        else
+            errMessage = 'Fail!';
+
+        this.setState({
+            errorMessage: errMessage
+        })
+    }
+
+    /* compare = (compareValue) => {
+
+         e.preventDefault();
+        console.log(this.state.inputStr);
 
         let errMessage = '';
         if (compareValue === this.state.concatStr) {
@@ -41,7 +65,7 @@ class ConcatStrings extends Component { //class based
         this.setState({
             errorMessage: errMessage
         })
-    }
+    } */
 
     render() {
 
@@ -61,8 +85,11 @@ class ConcatStrings extends Component { //class based
                             <div className="error-message">{this.state.errorMessage}</div>
                         </div>
 
+                        <h5 className="strings">{this.state.string1} <br />
+                            {this.state.string2}</h5>
 
-                        <form className="todo-form" onSubmit={() => this.compare()}>
+
+                        <form className="todo-form" onSubmit={this.handleSubmit}>
 
                             <label htmlFor="">Type the two strings together:</label><br></br>
 
