@@ -14,10 +14,9 @@ const Navbar = props => (
                         {/* passed prop from App.js */}
                         <ToggleBtn click={props.handleDrawerClick} />
                     </div>
-                    <h2><a className="logo">theLab</a></h2>
+                    <h2 className="logo"><NavLink to="/">theLab</NavLink></h2>
 
                     <ul className="links">
-                        <li><NavLink to="/">Home</NavLink></li>
                         <li>Forms manipulation and testing
                             <ul className="sub-list">
                                 <li><NavLink to="/form">Form validation</NavLink></li>

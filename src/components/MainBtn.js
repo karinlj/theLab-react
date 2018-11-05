@@ -1,5 +1,4 @@
 import React from 'react';
-import './Conditional/Conditional.scss';
 
 //functional/stateless component accepting prop
 const MainBtn = props => {

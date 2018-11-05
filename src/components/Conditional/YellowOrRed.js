@@ -51,7 +51,7 @@ class YellowOrRed extends Component { //class based
                         <div className="btn-and-message">
                             {/* properties are DEFINED and different VALUES are set */}
 
-                            <MainBtn classProp="button generate-btn" titleProp="Generate color" clickProp={this.generateColor} />
+                            <MainBtn classProp="button orange-btn" titleProp="Generate color" clickProp={this.generateColor} />
                             <div className="error-message">{this.state.errorMessage}</div>
                         </div>
 

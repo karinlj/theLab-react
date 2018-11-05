@@ -8,6 +8,14 @@ class Wait extends Component { //class based
 
     };
 
+    handleStart = () => {
+        console.log('start');
+    }
+
+    handleStop = () => {
+        console.log('stop');
+    }
+
     render() {
 
         return (
@@ -16,10 +24,14 @@ class Wait extends Component { //class based
                     <div className="timing-section">
                         <header>
                             <h1 className="">Wait</h1>
-                            <p>Praesent id velit volutpat, finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus.</p>
+                            <p>“Wait and click as fast as you can”: Show a button that starts the game “Start Game”. </p>
+                            <p> Wait random rt (0s &lt;  rt &lt;  60s) with displaying another button “End Game”.</p>
+                            <p> When End Game is clicked show “Success” and separate score of (t-rt), which i how long it took to hit button</p>
                         </header>
 
+                        <MainBtn classProp="button green-btn" titleProp="Start" clickProp={this.handleStart} />
 
+                        <MainBtn classProp="button red-btn" titleProp="Stop" clickProp={this.handleStop} />
 
                     </div>
                 </div>

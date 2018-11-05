@@ -6,7 +6,7 @@ const SubmitBtn = props => {
 
     //props are OUTPUT here 
     return (
-        <button className="button submit-btn" onClick={props.clickProp}>
+        <button className="button btn-submit" onClick={props.clickProp}>
             {props.titleProp}
 
         </button>

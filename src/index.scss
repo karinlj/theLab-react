@@ -75,18 +75,36 @@ h5 {
 .btn-submit {
   background-color: $themecolorGreen;
   color: #fff;
-  margin: 5px 0;
+  margin-top: 1rem;
 }
 
-.generate-btn {
+.orange-btn {
   background: $themecolorOrange;
   color: #fff;
 }
 
-.submit-btn {
+.green-btn {
   background: $themecolorGreen;
-  color: #fff;
-  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.yellow-btn {
+  background: $themecolorYellow;
+  margin-right: 1rem;
+}
+
+.red-btn {
+  background: $themecolorRed;
+}
+
+.turquoise-btn {
+  background: $themecolorTurquoise;
+  margin-right: 1rem;
+}
+
+.pink-btn {
+  background: $themecolorPink;
+  margin-right: 1rem;
 }
 
 //header
@@ -380,10 +398,20 @@ h5 {
   }
 
   ul {
-    min-height: 200px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    li {
+      ul {
+        justify-content: flex-start;
+
+        li.udemy {
+          padding-top: 1rem;
+        }
+      }
+    }
 
     .thelab {
       font-weight: 300;

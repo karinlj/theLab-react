@@ -55,7 +55,7 @@ class CatOrDog extends Component { //class based
                         {/* <h5 className="rand-color-text">Click the button with the generated pet:</h5> */}
 
                         <div className="btn-and-message">
-                            <MainBtn classProp="button generate-btn" titleProp="Generate pet" clickProp={this.generatePet} />
+                            <MainBtn classProp="button orange-btn" titleProp="Generate pet" clickProp={this.generatePet} />
                             <div className="error-message">{this.state.errorMessage}</div>
                         </div>
 

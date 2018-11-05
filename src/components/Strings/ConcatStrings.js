@@ -87,7 +87,7 @@ class ConcatStrings extends Component { //class based
                         <div className="btn-and-message">
                             {/* properties are DEFINED and different VALUES are set */}
 
-                            <MainBtn classProp="button generate-btn" titleProp="Generate strings" clickProp={this.generateStrings} />
+                            <MainBtn classProp="button orange-btn" titleProp="Generate strings" clickProp={this.generateStrings} />
                             <div className="error-message">{this.state.errorMessage}</div>
                         </div>
 
