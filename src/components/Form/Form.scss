@@ -4,33 +4,28 @@
     input {
         width: calc(100% - 40px);
         border: 0;
-        padding: 17px 20px;
+        line-height: 1.5rem;
+        padding: 16px 20px;
         font-size: 1.1em;
-        background: #E0EDF4;
-        color: #3E5252;
+        background: #fff; //#E0EDF4;
+        color: $themecolor;
         margin-bottom: 2px;
 
         &:first-of-type {
-            border-radius: 3px 3px 0 0;
-            -webkit-border-radius: 3px 3px 0 0;
-            -moz-border-radius: 3px 3px 0 0;
-            -ms-border-radius: 3px 3px 0 0;
-            -o-border-radius: 3px 3px 0 0;
+            border-radius: $themeBorderRadius $themeBorderRadius 0 0;
+            -webkit-border-radius: $themeBorderRadius $themeBorderRadius 0 0;
+            -moz-border-radius: $themeBorderRadius $themeBorderRadius 0 0;
+            -ms-border-radius: $themeBorderRadius $themeBorderRadius 0 0;
+            -o-border-radius: $themeBorderRadius $themeBorderRadius 0 0;
         }
 
         &:last-of-type {
-            border-radius: 0 0 3px 3px;
-            -webkit-border-radius: 0 0 3px 3px;
-            -moz-border-radius: 0 0 3px 3px;
-            -ms-border-radius: 0 0 3px 3px;
-            -o-border-radius: 0 0 3px 3px;
+            border-radius: 0 0 $themeBorderRadius $themeBorderRadius;
+            -webkit-border-radius: 0 0 $themeBorderRadius $themeBorderRadius;
+            -moz-border-radius: 0 0 $themeBorderRadius $themeBorderRadius;
+            -ms-border-radius: 0 0 $themeBorderRadius $themeBorderRadius;
+            -o-border-radius: 0 0 $themeBorderRadius $themeBorderRadius;
         }
-    }
-
-    .form-submit {
-        background-color: $themecolorGreen;
-        color: #fff;
-        margin: 5px 0;
     }
 
     span.warn {

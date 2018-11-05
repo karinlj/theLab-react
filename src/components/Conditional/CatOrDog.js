@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
-import MaineBtn from '../MaineBtn';
+import MainBtn from '../MainBtn';
 import Cat from '../../img/cat.jpg';
 import Dog from '../../img/dog.jpg';
 
 class CatOrDog extends Component { //class based
     state = {
-        pet: '',
+        pet: 'cat',
         errorMessage: ''
     };
 
@@ -55,7 +55,7 @@ class CatOrDog extends Component { //class based
                         {/* <h5 className="rand-color-text">Click the button with the generated pet:</h5> */}
 
                         <div className="btn-and-message">
-                            <MaineBtn classProp="button generate-btn" titleProp="Generate pet" clickProp={this.generatePet} />
+                            <MainBtn classProp="button generate-btn" titleProp="Generate pet" clickProp={this.generatePet} />
                             <div className="error-message">{this.state.errorMessage}</div>
                         </div>
 
@@ -63,9 +63,9 @@ class CatOrDog extends Component { //class based
                             {displayPet}
                         </div>
 
-                        <MaineBtn classProp="button yellow-btn" titleProp="Cat" clickProp={() => this.compare('cat')} />
+                        <MainBtn classProp="button turquoise-btn" titleProp="Cat" clickProp={() => this.compare('cat')} />
 
-                        <MaineBtn classProp="button red-btn" titleProp="Dog" clickProp={() => this.compare('dog')} />
+                        <MainBtn classProp="button pink-btn" titleProp="Dog" clickProp={() => this.compare('dog')} />
 
                     </div>
                 </div>

@@ -49,6 +49,13 @@ const Navbar = props => (
                             </ul>
                         </li>
 
+                        <li>Timing
+                        <ul className="sub-list">
+                                <li><NavLink to="/Speed">Speed</NavLink></li>
+                                <li><NavLink to="/Wait">Wait</NavLink></li>
+                            </ul>
+                        </li>
+
                         <li><NavLink to="/about">About</NavLink></li>
                     </ul>
                 </div>

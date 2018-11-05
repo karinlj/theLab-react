@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
-import MaineBtn from '../MaineBtn';
+import MainBtn from '../MainBtn';
 
 class YellowOrRed extends Component { //class based
     state = {
@@ -51,15 +51,15 @@ class YellowOrRed extends Component { //class based
                         <div className="btn-and-message">
                             {/* properties are DEFINED and different VALUES are set */}
 
-                            <MaineBtn classProp="button generate-btn" titleProp="Generate color" clickProp={this.generateColor} />
+                            <MainBtn classProp="button generate-btn" titleProp="Generate color" clickProp={this.generateColor} />
                             <div className="error-message">{this.state.errorMessage}</div>
                         </div>
 
                         <h3 className="rand-color">{this.state.color}</h3>
 
-                        <MaineBtn classProp="button yellow-btn" titleProp="Yellow" clickProp={() => this.compare('yellow')} />
+                        <MainBtn classProp="button yellow-btn" titleProp="Yellow" clickProp={() => this.compare('yellow')} />
 
-                        <MaineBtn classProp="button red-btn" titleProp="Red" clickProp={() => this.compare('red')} />
+                        <MainBtn classProp="button red-btn" titleProp="Red" clickProp={() => this.compare('red')} />
 
                     </div>
                 </div>

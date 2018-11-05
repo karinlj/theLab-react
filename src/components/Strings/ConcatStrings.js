@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
-import MaineBtn from '../MaineBtn';
+import MainBtn from '../MainBtn';
+import SubmitBtn from '../SubmitBtn';
 import './Strings.scss';
 
 
@@ -19,24 +20,25 @@ class ConcatStrings extends Component { //class based
         let randStr1 = strings[Math.floor(Math.random() * strings.length)];
         let randStr2 = strings[Math.floor(Math.random() * strings.length)];
 
-        let dobleRandStr = randStr1 + randStr2;
+        let doubleRandStr = randStr1 + randStr2;
 
         this.setState({
             string1: randStr1,
             string2: randStr2,
-            concatStr: dobleRandStr
+            concatStr: doubleRandStr
         })
-
-        console.log(this.state.concatStr);
+        //console.log(this.state.concatStr);
     }
 
     handleChange = (e) => {
-        this.setState({ inputStr: e.target.value });
+        this.setState({
+            inputStr: e.target.value
+        });
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.inputStr);
+        // console.log(this.state.inputStr);
 
         let errMessage = '';
         if (this.state.inputStr === this.state.concatStr) {
@@ -48,6 +50,10 @@ class ConcatStrings extends Component { //class based
         this.setState({
             errorMessage: errMessage
         })
+
+        this.setState({ //reset inputStr, set value={this.state.inputStr} to empty input
+            inputStr: ''
+        });
     }
 
     /* compare = (compareValue) => {
@@ -81,21 +87,22 @@ class ConcatStrings extends Component { //class based
                         <div className="btn-and-message">
                             {/* properties are DEFINED and different VALUES are set */}
 
-                            <MaineBtn classProp="button generate-btn" titleProp="Generate strings" clickProp={this.generateStrings} />
+                            <MainBtn classProp="button generate-btn" titleProp="Generate strings" clickProp={this.generateStrings} />
                             <div className="error-message">{this.state.errorMessage}</div>
                         </div>
 
                         <h5 className="strings">{this.state.string1} <br />
-                            {this.state.string2}</h5>
+                            {this.state.string2}</h5> {/* output the two strings */}
 
 
                         <form className="todo-form" onSubmit={this.handleSubmit}>
 
                             <label htmlFor="">Type the two strings together:</label><br></br>
 
-                            <input type="text" onChange={this.handleChange} />
+                            <input type="text" onChange={this.handleChange} value={this.state.inputStr} />
                         </form>
 
+                        <SubmitBtn titleProp="Submit" clickProp={this.handleSubmit} />
 
                     </div>
                 </div>
@@ -104,7 +111,7 @@ class ConcatStrings extends Component { //class based
                     <Sidebar heading="Hello ConcatStrings" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
 
                 </div>
-            </div >
+            </div>
         )
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Form.scss';
 import Sidebar from '../Sidebar';
+import SubmitBtn from '../SubmitBtn';
 
 class Form extends Component { //class based component
     state = {
@@ -126,10 +127,12 @@ class Form extends Component { //class based component
                                 onChange={e => this.handleChange(e)} />
                             <span className="warn">{this.state.passwordError}</span>
 
-                            <button className="button form-submit"
-                                onClick={e => this.handleSubmit(e)}>Submit</button>
+                            <SubmitBtn titleProp="Submit"
+                                clickProp={this.handleSubmit} />
 
                         </form>
+
+                        {/* onClick={e => this.handleSubmit(e)}>Submit</button> */}
                     </div>
                 </div>
 

@@ -3,10 +3,10 @@ import Boozang from '../img/boozang.png';
 
 const Footer = () => { //UI component
     return (
-        <div className="footer">
-            <div className="footer-section">
-                <div className="container">
-                    <div className="row align-items-end">
+        <div className="footer-section">
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
                         <ul>
                             <li><h2 className="thelab">theLab</h2> powered by &nbsp; <a href="https://boozang.com">
                                 <img src={Boozang} alt="boozang logo" />

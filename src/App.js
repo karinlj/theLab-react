@@ -14,6 +14,8 @@ import Form from './components/Form/Form';
 import YellowOrRed from './components/Conditional/YellowOrRed';
 import CatOrDog from './components/Conditional/CatOrDog';
 import ConcatStrings from './components/Strings/ConcatStrings';
+import Speed from './components/Timing/Speed';
+import Wait from './components/Timing/Wait';
 
 class App extends Component {
   state = {
@@ -62,6 +64,8 @@ class App extends Component {
                 <Route path="/YellowOrRed" component={YellowOrRed} />
                 <Route path="/CatOrDog" component={CatOrDog} />
                 <Route path="/ConcatStrings" component={ConcatStrings} />
+                <Route path="/Speed" component={Speed} />
+                <Route path="/Wait" component={Wait} />
                 <Route path='/about' component={About} />
                 <Route path="/:post_id" component={Post} />
               </Switch>
