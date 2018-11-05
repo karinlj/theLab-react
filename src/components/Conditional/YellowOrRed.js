@@ -66,7 +66,7 @@ class YellowOrRed extends Component { //class based
                 </div>
 
                 <div className="col-12 col-md-4">
-                    <Sidebar heading="Why Learn: Yellow or Red?" text="In this case we look at basic condition handling, if something exists do this, otherwise do that. This is the fundament on doing tests on top of a system where the intial state isn't known, or a future state cannot be predicted. By using logic like this, we can allow our tests to adapt to how the application behaves." />
+                    <Sidebar heading="Why Learn: Yellow or Red?" text="In this case we look at basic condition handling. If something exists do this, otherwise do that. This is the fundament on doing tests on top of a system where the intial state isn't known, or a future state cannot be predicted. By using logic like this, we can allow our tests to adapt to how the application behaves." />
 
                 </div>
             </div>
