@@ -20,12 +20,16 @@ class Wait extends Component { //class based
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
-                    <div className="timing-section">
+                     <div className="timing-section">
                         <header>
                             <h1 className="">Wait</h1>
-                            <p>“Wait and click as fast as you can”: Show a button that starts the game “Start Game”. </p>
-                            <p> Wait random rt (0s &lt;  rt &lt;  60s) with displaying another button “End Game”.</p>
-                            <p> When End Game is clicked show “Success” and separate score of (t-rt), which i how long it took to hit button</p>
+                            <p>“Don’t be too fast, don’t be too slow”: Show a button that can be clicked “Start Game”. When clicked display another button that can be clicked “End Game”.</p>
+                            <p> When clicked the response varies the following way, where T is time. </p>
+                            <ul>
+                                <li>a. T &lt;  5s: “Fail. Too soon”</li>
+                                <li>b. 5s &lt; T &gt; 10 s: “Success”</li>
+                                <li> c. T &gt; 10s: “Fail. Too late”</li>
+                            </ul>
                         </header>
 
                         <MainBtn classProp="button green-btn" titleProp="Start" clickProp={this.handleStart} />
@@ -33,6 +37,7 @@ class Wait extends Component { //class based
                         <MainBtn classProp="button red-btn" titleProp="Stop" clickProp={this.handleStop} />
 
                     </div>
+
                 </div>
 
                 <div className="col-12 col-md-4">
