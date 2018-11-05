@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
-import SubmitBtn from '../SubmitBtn';
 import './Timing.scss';
 
 class Speed extends Component { //class based

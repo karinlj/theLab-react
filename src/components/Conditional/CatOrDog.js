@@ -3,6 +3,7 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import Cat from '../../img/cat.jpg';
 import Dog from '../../img/dog.jpg';
+import './Conditional.scss';
 
 class CatOrDog extends Component { //class based
     state = {

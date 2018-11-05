@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
+import './Conditional.scss';
 
 class YellowOrRed extends Component { //class based
     state = {
