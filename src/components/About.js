@@ -9,7 +9,9 @@ const About = () => {
 
                     <div className="card">
                         <div className="card-body">
-                            <p>Boozang Test Lab is ideal to practice how to do test automation, and it also to acts as a testing ground for your automation tools.</p>
+                            <p>Boozang Test Lab is ideal to practice how to do test
+                                 automation, and it also to acts as a testing ground
+                                  for your automation tools.</p>
 
                         </div>
                     </div>

@@ -261,20 +261,27 @@ h5 {
 
 //sidebar
 .sidebar-section {
+  font-size: 0.95em;
   margin-top: 5rem;
   min-height: 300px;
   // border: 1px solid #333;
   background: $themecolorLightgrey;
   color: $themecolor;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 2rem;
   border-radius: $themeBorderRadius;
   -webkit-border-radius: $themeBorderRadius;
   -moz-border-radius: $themeBorderRadius;
   -ms-border-radius: $themeBorderRadius;
   -o-border-radius: $themeBorderRadius;
 
+  //box-shadow: $themeBoxShadow;
+
   @media all and (min-width: $md-min) {
     margin-top: 0;
+  }
+
+  h4 {
+    margin-bottom: 0.8rem;
   }
 
   p {
@@ -301,18 +308,18 @@ h5 {
   width: 100%;
   min-height: 800px;
 
-  padding: 1rem calc(1.5rem - 15px) 3rem calc(1.5rem - 15px);
+  padding: 1rem calc(1.5rem - 15px) 5rem calc(1.5rem - 15px);
 
   @media all and (min-width: $sm-min) {
-    padding: 1rem calc(2.25rem - 15px) 3rem calc(2.25rem - 15px);
+    padding: 1rem calc(2.25rem - 15px) 5rem calc(2.25rem - 15px);
   }
 
   @media all and (min-width:$md-min) {
-    padding: 1rem calc(3rem - 15px) 3rem calc(3rem - 15px);
+    padding: 1rem calc(3rem - 15px) 5rem calc(3rem - 15px);
   }
 
   @media all and (min-width:$xl-min) {
-    padding: 1rem calc(3.75rem - 15px) 3rem calc(3.75rem - 15px);
+    padding: 1rem calc(3.75rem - 15px) 5rem calc(3.75rem - 15px);
   }
 
   @media all and (min-width: $lg-min) {

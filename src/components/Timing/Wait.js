@@ -20,7 +20,7 @@ class Wait extends Component { //class based
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
-                     <div className="timing-section">
+                    <div className="timing-section">
                         <header>
                             <h1 className="">Wait</h1>
                             <p>“Don’t be too fast, don’t be too slow”: Show a button that can be clicked “Start Game”. When clicked display another button that can be clicked “End Game”.</p>
@@ -40,7 +40,7 @@ class Wait extends Component { //class based
 
                 </div>
 
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-md-5">
                     <Sidebar heading="Hello Wait" text="Why learn: Wait? Sometimes there is a necessity to wait a certain time to make sure the application catches up. In test automation, being reactive is not always the best medcine, and sometimes it pays off to be patient." />
 
                 </div>

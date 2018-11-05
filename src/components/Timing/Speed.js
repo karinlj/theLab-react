@@ -39,7 +39,7 @@ class Speed extends Component { //class based
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
-               
+
                     <div className="timing-section">
                         <header>
                             <h1 className="">Speed</h1>
@@ -55,7 +55,7 @@ class Speed extends Component { //class based
                     </div>
                 </div>
 
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-md-5">
                     <Sidebar heading="Why learn: Speed?" text="A classic problem in test automation is render waits. If certain elements are taking long to render, the test might fail. On the otherhand, if we create lomg delays the overall test takes too long to run. Best if is we can wait until an eleemnt appears, but then click it as fast as we can.  " />
 
                 </div>

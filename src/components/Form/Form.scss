@@ -1,13 +1,14 @@
 @import '../../variables.scss';
 
 .form-validation {
+
     input {
         width: calc(100% - 40px);
         border: 0;
         line-height: 1.5rem;
         padding: 16px 20px;
         font-size: 1.1em;
-        background: #fff; //#E0EDF4;
+        background: #E0EDF4;
         color: $themecolor;
         margin-bottom: 2px;
 

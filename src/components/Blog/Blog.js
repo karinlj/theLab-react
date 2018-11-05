@@ -52,7 +52,7 @@ class Blog extends Component { //class based
                     </div>
                 </div>
 
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-md-5">
                     <Sidebar heading="Hello Blog" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
 
                 </div>
