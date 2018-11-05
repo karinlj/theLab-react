@@ -59,7 +59,7 @@ class Speed extends Component { //class based
                 </div>
 
                 <div className="col-12 col-md-4">
-                    <Sidebar heading="Hello Speed" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
+                    <Sidebar heading="Why learn: Speed?" text="A classic problem in test automation is render waits. If certain elements are taking long to render, the test might fail. On the otherhand, if we create lomg delays the overall test takes too long to run. Best if is we can wait until an eleemnt appears, but then click it as fast as we can.  " />
 
                 </div>
 

@@ -36,7 +36,7 @@ class Wait extends Component { //class based
                 </div>
 
                 <div className="col-12 col-md-4">
-                    <Sidebar heading="Hello Wait" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
+                    <Sidebar heading="Hello Wait" text="Why learn: Wait? Sometimes there is a necessity to wait a certain time to make sure the application catches up. Being reactive is not always the best medecine in all cases." />
 
                 </div>
 

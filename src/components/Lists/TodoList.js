@@ -50,7 +50,7 @@ class TodoList extends Component { //class based component
                 </div>
 
                 <div className="col-12 col-md-4">
-                    <Sidebar heading="Hello Todo list" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
+                    <Sidebar heading="Why Learn: Todo List?" text="In many SaaS applications, data lists of different kinds is often used. One probelms in classic tests automation using selectors, is to be able to add and remove elements to a list without risking to remove the wrong elements." />
 
                 </div>
 
