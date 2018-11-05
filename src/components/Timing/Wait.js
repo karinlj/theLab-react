@@ -23,13 +23,10 @@ class Wait extends Component { //class based
                     <div className="timing-section">
                         <header>
                             <h1 className="">Wait</h1>
-                            <p>“Don’t be too fast, don’t be too slow”: Show a button that can be clicked “Start Game”. When clicked display another button that can be clicked “End Game”.</p>
-                            <p> When clicked the response varies the following way, where T is time. </p>
-                            <ul>
-                                <li>a. T &lt;  5s: “Fail. Too soon”</li>
-                                <li>b. 5s &lt; T &gt; 10 s: “Success”</li>
-                                <li> c. T &gt; 10s: “Fail. Too late”</li>
-                            </ul>
+                            <p> As opposed to speed game, this game tests the users time perception skill. This is also useful to showcase delay functionality in testing. </p>
+                             <p>The game is started by clicking “Start Game”. When clicked, an "End Game" button is displayed and a computer counter start counting seconds.  
+                             The goal is to hit the "End Game" button after exactly 5 seconds. </p>
+                             <p> The goal is to have as few milliseconds as possible above 5 seconds.</p>
                         </header>
 
                         <MainBtn classProp="button green-btn" titleProp="Start" clickProp={this.handleStart} />
