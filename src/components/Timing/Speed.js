@@ -44,8 +44,9 @@ class Speed extends Component { //class based
                         <header>
                             <h1 className="">Speed</h1>
                             <p>This game tests the user reaction time. This is also useful to show-case test automation render waits. </p>
-                            <p> The game start with the user hitting "Start Game" button. Another button "End Game" will appear after x seconds,</p>
-                            <p> where x is random time between 1 and 10 seconds. The smaller the number of milliseconds, the better. </p>
+                            <p> The game start with the user hitting "Start Game" button. Another button "End Game" will appear after x seconds,
+                            where x is random time between 1 and 10 seconds. </p>
+                            <p> The smaller the number of milliseconds, the better.</p>
                         </header>
 
                         <MainBtn classProp="button green-btn" titleProp="Start" clickProp={this.handleStart} />

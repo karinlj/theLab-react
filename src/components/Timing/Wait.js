@@ -23,9 +23,10 @@ class Wait extends Component { //class based
                      <div className="timing-section">
                         <header>
                             <h1 className="">Wait</h1>
-                            <p> As opposed to speed game, this game tests the users time perception skill. This is also useful to showcase delay functionality in testing. 
-                             The game is started by clicking “Start Game”. When clicked, an "End Game" button is displayed and a computer counter start counting seconds.  
-                             The goal is to hit the "End Game" button after exactly 5 seconds. The goal is to have as few milliseconds as possible above 5 seconds. .</p>
+                            <p> As opposed to speed game, this game tests the users time perception skill. This is also useful to showcase delay functionality in testing. </p>
+                             <p>The game is started by clicking “Start Game”. When clicked, an "End Game" button is displayed and a computer counter start counting seconds.  
+                             The goal is to hit the "End Game" button after exactly 5 seconds. </p>
+                             <p> The goal is to have as few milliseconds as possible above 5 seconds.</p>
                         </header>
 
                         <MainBtn classProp="button green-btn" titleProp="Start" clickProp={this.handleStart} />

@@ -41,7 +41,11 @@ class TodoList extends Component { //class based component
 
                         <header>
                             <h1 className="">Todo's</h1>
-                            <p>Praesent id velit volutpat, finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus.</p>
+                            <p>In this simple appliation we can add and delete todos from a list. </p>
+                            <p>There are several small tests we can do on top of this application, and they illustrate element selection and data handling. </p>
+                            <p>In order to cover most cases, we should add a list of items to the todo-list,
+                            randomize the list order and then remove the list of items again. </p>
+
                         </header>
                         {/* nesting component, passing todos-array and delete-func */}
                         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
