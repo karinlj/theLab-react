@@ -43,7 +43,10 @@ class Wait extends Component { //class based
             this.delta();
 
             let errMessage = '';
-            if (this.timePassed >= 5000) {
+            let limit = 1000;  //vill inte vänta 5s
+            if (this.timePassed >= limit) {
+                console.log('seconds', limit);
+
                 errMessage = 'Success!';
             }
             else
@@ -65,7 +68,7 @@ class Wait extends Component { //class based
                 <div className="col-12 col-md-6">
                     <div className="timing-section">
                         <header>
-                            <h1 className="">Wait</h1>
+                            <h1 className="">Wait game</h1>
                             <p> As opposed to speed game, this game tests the users time perception skill. This is also useful to showcase delay functionality in testing. </p>
                             <p>The game is started by clicking “Start Game”. When clicked, an "End Game" button is displayed and a computer counter start counting seconds.
                              The goal is to hit the "End Game" button after exactly 5 seconds. </p>
@@ -74,9 +77,9 @@ class Wait extends Component { //class based
 
                         <div className="btn-and-message">
                             <div>
-                                <MainBtn classProp="button green-btn" titleProp="Start" clickProp={this.handleStart} />
+                                <MainBtn classProp="button green-btn" titleProp="Start game" clickProp={this.handleStart} />
 
-                                <MainBtn classProp={this.state.stopClass} titleProp="Stop" clickProp={this.handleStop} />
+                                <MainBtn classProp={this.state.stopClass} titleProp="End game" clickProp={this.handleStop} />
                             </div>
 
                             <div className="error-message">{this.state.errorMessage}</div>

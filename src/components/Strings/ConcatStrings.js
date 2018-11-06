@@ -47,12 +47,9 @@ class ConcatStrings extends Component { //class based
         else
             errMessage = 'Fail!';
 
-        this.setState({
-            errorMessage: errMessage
-        })
-
         this.setState({ //reset inputStr, set value={this.state.inputStr} to empty input
-            inputStr: ''
+            inputStr: '',
+            errorMessage: errMessage
         });
     }
 
