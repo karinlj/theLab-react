@@ -4,79 +4,59 @@ import MainBtn from '../MainBtn';
 
 class Wait extends Component { //class based
 
-    /*    constructor(props) { //need this to use poll() from react
-           super(props)
-   
-           this.state = {  //debits - credits
-               // timerEvents: []
-               //nonce: 0,   //value always incrementing
-           };
-       } */
-
     state = {
         isRunning: false,
-        time: 0,         // current time in ms
-        // interval: null,  // on start will run update()
-        startTime: 0,       // set to Date.now() --> time passed
+        offsetTime: 0,
+        stopClass: 'button red-btn invisible',
+        errorMessage: ''
     }
 
     handleStart = () => {
         if (!this.state.isRunning) {
             this.setState({
-                //  interval: setInterval(this.update, 10),
-                startTime: Date.now(),
+                offsetTime: Date.now(),
+                stopClass: 'button red-btn visible',
+                errorMessage: '',
                 isRunning: true
             })
         }
-
-        console.log(this.state.startTime);
+        console.log("offsetTime is ", this.state.offsetTime);
     }
 
-
-    handleStop = () => {
-        if (this.state.isRunning) {
-            // clearInterval(this.state.interval)
-            this.setState({
-                // interval: null,
-                isRunning: false
-            })
-        }
-    }
-
-    reset = () => {
-        this.setState({
-            time: 0
-        })
-    }
 
     delta = () => {
         let now = Date.now();
-        let timePassed = now - this.state.startTime
+
+        let timePassed = now - this.state.offsetTime
+
         this.setState({
-            startTime: now
+            offsetTime: now
         })
 
-        console.log(now);
-        console.log(timePassed);
-
-
+        console.log("timePassed is ", timePassed);
         return timePassed
-
-
     }
 
+    handleStop = () => {
+        if (this.state.isRunning) {
 
-    /*   addTimerEvent = () => {
-          console.log('start');
-          this.setState({
-              timerEvents: [ //in new var: old array spread out and adding new timerEvent
-                  ...this.state.timerEvents,
-                  new Date()
-              ]
-          })
-          console.log(this.state.timerEvents);
-  
-      } */
+            this.delta();
+
+            let errMessage = '';
+            if (this.timePassed >= 5000) {
+                errMessage = 'Success!';
+            }
+            else
+                errMessage = 'Fail!';
+
+            this.setState({
+                stopClass: 'button red-btn invisible',
+                errorMessage: errMessage,
+                isRunning: false
+            })
+        }
+        console.log("offsetTime is ", this.state.offsetTime);
+    }
 
     render() {
 
@@ -92,11 +72,17 @@ class Wait extends Component { //class based
                             <p> The goal is to have as few milliseconds as possible above 5 seconds.</p>
                         </header>
 
-                        <MainBtn classProp="button green-btn" titleProp="Start" clickProp={this.handleStart} />
+                        <div className="btn-and-message">
+                            <div>
+                                <MainBtn classProp="button green-btn" titleProp="Start" clickProp={this.handleStart} />
+
+                                <MainBtn classProp={this.state.stopClass} titleProp="Stop" clickProp={this.handleStop} />
+                            </div>
+
+                            <div className="error-message">{this.state.errorMessage}</div>
+                        </div>
 
 
-
-                        <MainBtn classProp="button red-btn" titleProp="Stop" clickProp={this.handleStop} />
 
                     </div>
 

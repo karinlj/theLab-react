@@ -11,3 +11,18 @@
         font-size: 3rem;
     }
 }
+
+.invisible {
+    //display: none;
+    opacity: 0;
+    transition: opacity 0.1 ease;
+    -moz-transition: opacity 0.1 ease;
+    -ms-transition: opacity 0.1 ease;
+    -o-transition: opacity 0.1 ease;
+    -webkit-transition: opacity 0.1 ease;
+}
+
+.visible {
+    opacity: 1;
+    //display: inline-block;
+}
