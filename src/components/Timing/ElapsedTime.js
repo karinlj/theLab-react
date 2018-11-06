@@ -37,6 +37,5 @@ const ElapsedTime = props => {
 
         </div>
     )
-
 }
 export default ElapsedTime
