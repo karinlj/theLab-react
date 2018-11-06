@@ -1,1 +1,13 @@
 @import '../../variables.scss';
+
+
+.timer-wrapper {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .digits {
+        font-size: 3rem;
+    }
+}

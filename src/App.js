@@ -17,6 +17,9 @@ import ConcatStrings from './components/Strings/ConcatStrings';
 import Speed from './components/Timing/Speed';
 import Wait from './components/Timing/Wait';
 
+import Timer from './components/Timing/Timer';
+
+
 class App extends Component {
   state = {
     //SideDrawer closed
@@ -67,6 +70,7 @@ class App extends Component {
                 <Route path="/Speed" component={Speed} />
                 <Route path="/Wait" component={Wait} />
                 <Route path='/about' component={About} />
+                <Route path='/timer' component={Timer} />
                 <Route path="/:post_id" component={Post} />
               </Switch>
 

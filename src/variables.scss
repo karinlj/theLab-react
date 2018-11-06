@@ -30,7 +30,10 @@ $themecolor: #333;
 
 $themeBorderRadius: 3px;
 
-$themeBoxShadow: none;
+$themeBoxShadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2),
+0 4px 20px 0 rgba(0, 0, 0, 0.19);
 
 //0 7px 34px 0 rgba(0, 0, 0, 0.07),
-//0 11px 34px 0 rgba(0, 0, 0, 0.04) //$linkColor: #a4d4f4;
+//0 11px 34px 0 rgba(0, 0, 0, 0.04) 
+
+//$linkColor: #a4d4f4;

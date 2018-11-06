@@ -274,7 +274,7 @@ h5 {
   -ms-border-radius: $themeBorderRadius;
   -o-border-radius: $themeBorderRadius;
 
-  //box-shadow: $themeBoxShadow;
+  box-shadow: $themeBoxShadow;
 
   @media all and (min-width: $md-min) {
     margin-top: 0;
