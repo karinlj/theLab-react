@@ -6,14 +6,12 @@ import './Conditional.scss';
 class YellowOrRed extends Component { //class based
     state = {
         color: '',
-        errorMessage: ''
+        message: '',
+        messageClass: 'message',
     };
 
     //Arrow func to manually bind 'this' to the func in reaction to DOM events,
     //so that we can use 'this'.
-    //Arrow func bind the value of 'this' to whatever 'this' is outside the func.
-    //In the render method (in the template), React does it for us
-
     generateColor = () => {
         let colors = ['yellow', 'red'];
 
@@ -21,21 +19,23 @@ class YellowOrRed extends Component { //class based
         let randColor = colors[Math.floor(Math.random() * colors.length)];
 
         this.setState({ //only change the state inside the setState method
-            color: randColor
+            color: randColor,
+            messageClass: 'message'
         })
     }
 
     compare = (compareValue) => {
 
-        let errMessage = '';
+        let messageNew = '';
         if (compareValue === this.state.color) {
-            errMessage = 'Success!';
+            messageNew = 'Success!';
         }
         else
-            errMessage = 'Fail!';
+            messageNew = 'Fail!';
 
         this.setState({
-            errorMessage: errMessage
+            message: messageNew,
+            messageClass: 'message show',
         })
     }
 
@@ -53,7 +53,9 @@ class YellowOrRed extends Component { //class based
                             {/* properties are DEFINED and different VALUES are set */}
 
                             <MainBtn classProp="button orange-btn" titleProp="Generate color" clickProp={this.generateColor} />
-                            <div className="error-message">{this.state.errorMessage}</div>
+                            <div className={this.state.messageClass}>
+                                <h4>{this.state.message}</h4>
+                            </div>
                         </div>
 
                         <h3 className="rand-color">{this.state.color}</h3>

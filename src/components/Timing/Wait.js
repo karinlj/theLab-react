@@ -8,50 +8,54 @@ class Wait extends Component { //class based
         isRunning: false,
         offsetTime: 0,
         stopClass: 'button red-btn invisible',
-
-        errorMessage: ''
+        message: '',
+        messageClass: 'message',
+        messageOverflow: ''
     }
 
     handleStart = () => {
         if (!this.state.isRunning) {
             this.setState({
                 offsetTime: Date.now(),
-                stopClass: 'button red-btn visible',
-                errorMessage: '',
+                stopClass: 'button red-btn visible timer',
+                message: '',
+                messageClass: 'message',
+                messageOverflow: '',
                 isRunning: true
             })
         }
         console.log("offsetTime is ", this.state.offsetTime);
     }
 
-
     delta = () => {
         let now = Date.now();
-        let timePassed = now - this.state.offsetTime
+        let elapsedTime = now - this.state.offsetTime
 
-        this.setState({ //new start point
-            offsetTime: now
+        this.setState({
+            offsetTime: now,  //new start point?
         })
-
-        console.log("timePassed is ", timePassed);
-        return timePassed  //passing value from timePassed
+        return elapsedTime  //passing value from timePassed
     }
 
     compare = () => {
-        let delta = this.delta(); //calling delta func with passed value from timePassed
+        let delta = this.delta(); //calling delta func with passed value 
         console.log("timePassed is ", delta);
 
-        let errMessage = '';
+        let messageNew = '';
         let limit = 5000;
+        let overflow;
 
         if (delta >= limit) {
-            errMessage = 'Success!' + (delta - limit);
+            messageNew = 'Success!' //need better output
+            overflow = delta - limit + ' ms above 5 seconds.'
         }
         else
-            errMessage = 'Fail!';
+            messageNew = 'Fail!';
 
         this.setState({
-            errorMessage: errMessage
+            message: messageNew,
+            messageClass: 'message show',
+            messageOverflow: overflow
         })
     }
 
@@ -60,7 +64,7 @@ class Wait extends Component { //class based
             this.compare();   //calling compare func
 
             this.setState({
-                stopClass: 'button red-btn invisible',
+                stopClass: 'button red-btn invisible timer',
                 isRunning: false
             })
         }
@@ -83,12 +87,16 @@ class Wait extends Component { //class based
 
                         <div className="btn-and-message higher">
                             <div>
-                                <MainBtn classProp="button green-btn" titleProp="Start game" clickProp={this.handleStart} />
+                                <MainBtn classProp="button green-btn timer" titleProp="Start game" clickProp={this.handleStart} />
 
                                 <MainBtn classProp={this.state.stopClass} titleProp="End game" clickProp={this.handleStop} />
                             </div>
 
-                            <div className="error-message">{this.state.errorMessage}</div>
+                            <div className={this.state.messageClass}>
+                                <h4>{this.state.message}</h4>
+                                <p>{this.state.messageOverflow}</p>
+                            </div>
+
                         </div>
 
                     </div>

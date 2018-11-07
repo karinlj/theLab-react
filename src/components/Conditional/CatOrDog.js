@@ -8,7 +8,8 @@ import './Conditional.scss';
 class CatOrDog extends Component { //class based
     state = {
         pet: 'cat',
-        errorMessage: ''
+        message: '',
+        messageClass: 'message',
     };
 
     generatePet = () => {
@@ -18,21 +19,23 @@ class CatOrDog extends Component { //class based
         let randPet = pets[Math.floor(Math.random() * pets.length)];
 
         this.setState({
-            pet: randPet
+            pet: randPet,
+            messageClass: 'message'
         })
     }
 
     compare = (compareValue) => {
 
-        let errMessage = '';
+        let messageNew = '';
         if (compareValue === this.state.pet) {
-            errMessage = 'Success!';
+            messageNew = 'Success!';
         }
         else
-            errMessage = 'Fail!';
+            messageNew = 'Fail!';
 
         this.setState({
-            errorMessage: errMessage
+            message: messageNew,
+            messageClass: 'message show',
         })
     }
 
@@ -57,7 +60,9 @@ class CatOrDog extends Component { //class based
 
                         <div className="btn-and-message">
                             <MainBtn classProp="button orange-btn" titleProp="Generate pet" clickProp={this.generatePet} />
-                            <div className="error-message">{this.state.errorMessage}</div>
+                            <div className={this.state.messageClass}>
+                                <h4>{this.state.message}</h4>
+                            </div>
                         </div>
 
                         <div className="pet-img-wrapper">
