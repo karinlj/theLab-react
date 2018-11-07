@@ -7,7 +7,7 @@ class Wait extends Component { //class based
     state = {
         isRunning: false,
         offsetTime: 0,
-        stopClass: 'button red-btn invisible',
+        stopClass: 'button stop-btn',
         message: '',
         messageClass: 'message',
         messageOverflow: ''
@@ -17,7 +17,7 @@ class Wait extends Component { //class based
         if (!this.state.isRunning) {
             this.setState({
                 offsetTime: Date.now(),
-                stopClass: 'button red-btn visible timer',
+                stopClass: 'button stop-btn show',
                 message: '',
                 messageClass: 'message',
                 messageOverflow: '',
@@ -64,7 +64,7 @@ class Wait extends Component { //class based
             this.compare();   //calling compare func
 
             this.setState({
-                stopClass: 'button red-btn invisible timer',
+                stopClass: 'button stop-btn',
                 isRunning: false
             })
         }
@@ -87,7 +87,7 @@ class Wait extends Component { //class based
 
                         <div className="btn-and-message higher">
                             <div>
-                                <MainBtn classProp="button green-btn timer" titleProp="Start game" clickProp={this.handleStart} />
+                                <MainBtn classProp="button start-btn" titleProp="Start game" clickProp={this.handleStart} />
 
                                 <MainBtn classProp={this.state.stopClass} titleProp="End game" clickProp={this.handleStop} />
                             </div>

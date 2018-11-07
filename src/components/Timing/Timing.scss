@@ -12,17 +12,25 @@
     }
 }
 
-.timer {
+.start-btn {
+    background: $themecolorGreen;
+    margin-right: 1rem;
     display: block;
     width: 126px;
     margin-top: 1rem;
 }
 
-.invisible {
+.stop-btn {
+    background: $themecolorRed;
+    margin-right: 1rem;
+    display: block;
+    width: 126px;
+    margin-top: 1rem;
     opacity: 0;
+    //transition: 1s;
 }
 
-.visible {
+.stop-btn.show {
     opacity: 1;
 }
 
