@@ -14,9 +14,6 @@ class Timer extends Component { //class based
         };
 
         this.poll = setInterval(this.tick, 1000)
-
-        //samma som arrow func: this.addTimerEvent = this.addTimerEvent.bind(this) 
-        //så att'this' refererar till componenten och inte till funktionen
     }
 
     tick = () => {
@@ -28,6 +25,9 @@ class Timer extends Component { //class based
         })
         )
     }
+
+    //samma som arrow func: this.addTimerEvent = this.addTimerEvent.bind(this) 
+    //så att'this' refererar till componenten och inte till funktionen
 
     addTimerEvent = () => {
         this.setState({

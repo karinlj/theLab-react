@@ -15,6 +15,9 @@ class Speed extends Component { //class based
 
     handleStart = () => {
         if (!this.state.isRunning) {
+            //Math.random()* 10000;
+
+
             this.setState({
                 offsetTime: Date.now(),
                 stopClass: 'button stop-btn show',
@@ -46,7 +49,7 @@ class Speed extends Component { //class based
 
         if (delta >= limit) {
             messageNew = 'Success!' //need better output
-            // overflow = delta - limit + ' ms above 5 seconds.'
+            // overflow ='You reacted in'+  (delta - limit)  + '5 seconds.'
         }
         else
             messageNew = 'Fail!';
@@ -102,7 +105,7 @@ class Speed extends Component { //class based
                 </div>
 
                 <div className="col-12 col-md-5">
-                    <Sidebar heading="Hello Speed" text="Why learn: Wait? Sometimes there is a necessity to wait a certain time to make sure the application catches up. In test automation, being reactive is not always the best medcine, and sometimes it pays off to be patient." />
+                    <Sidebar heading="Why learn: Speed?" text="A classic problem in test automation is render waits. If certain elements are taking long to render, the test might fail. On the other hand, if we create long delays the overall test takes too long to run. Best if is we can wait until an element appears, but then click it as fast as we can.  " />
 
                 </div>
 
