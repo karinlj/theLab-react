@@ -282,6 +282,7 @@ h5 {
 
   h4 {
     margin-bottom: 0.8rem;
+    color: $themecolorBlue;
   }
 
   p {
@@ -353,7 +354,7 @@ h5 {
 
 //conditional and strings
 .btn-and-message {
-  height: 60px;
+  height: 70px;
 
   display: flex;
   justify-content: space-between;
@@ -384,6 +385,12 @@ h5 {
 
   }
 }
+
+.btn-and-message.higher {
+  height: 140px;
+  padding: 1rem 0;
+}
+
 
 //footer
 .footer-section {

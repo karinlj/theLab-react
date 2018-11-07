@@ -6,17 +6,18 @@ const Todos = props => {  //Stateless UI component
     //passing states from TodoList.js = passing todos-array via props
 
     //iternary op - true if we have todo's
-    const todoList = props.todos.length ? (
+    const todoList = props.todosProp.length ? (
         //if we have todo's - map through todos
-        props.todos.map(todo => {
+        props.todosProp.map(todo => {
             //fire a function on todo
             return (   //draw single todo
-                <div className="collection-item" key={todo.id}>
+                <div className="collection-item" key={todo.id}> {/* adding id */}
                     {/* preventing auto invoking because parentesis */}
                     <span>{todo.content}</span>
 
-                    {/* calling deleteTodo-func (located in App.js), draw the button */}
-                    <button className="deleteBtn" onClick={() => { props.deleteTodo(todo.id) }}>Delete</button>
+                    {/* Getting prop from TodoList.js that takes ID as argument (from here)
+                    Click on btn calls func in TodoList.js */}
+                    <button className="deleteBtn" onClick={() => { props.deleteTodoProp(todo.id) }}>Delete</button>
                 </div>
             )
         })

@@ -8,6 +8,7 @@ class Wait extends Component { //class based
         isRunning: false,
         offsetTime: 0,
         stopClass: 'button red-btn invisible',
+
         errorMessage: ''
     }
 
@@ -26,35 +27,40 @@ class Wait extends Component { //class based
 
     delta = () => {
         let now = Date.now();
-
         let timePassed = now - this.state.offsetTime
 
-        this.setState({
+        this.setState({ //new start point
             offsetTime: now
         })
 
         console.log("timePassed is ", timePassed);
-        return timePassed
+        return timePassed  //passing value from timePassed
+    }
+
+    compare = () => {
+        let delta = this.delta(); //calling delta func with passed value from timePassed
+        console.log("timePassed is ", delta);
+
+        let errMessage = '';
+        let limit = 5000;
+
+        if (delta >= limit) {
+            errMessage = 'Success!' + (delta - limit);
+        }
+        else
+            errMessage = 'Fail!';
+
+        this.setState({
+            errorMessage: errMessage
+        })
     }
 
     handleStop = () => {
         if (this.state.isRunning) {
-
-            this.delta();
-
-            let errMessage = '';
-            let limit = 1000;  //vill inte vänta 5s
-            if (this.timePassed >= limit) {
-                console.log('seconds', limit);
-
-                errMessage = 'Success!';
-            }
-            else
-                errMessage = 'Fail!';
+            this.compare();   //calling compare func
 
             this.setState({
                 stopClass: 'button red-btn invisible',
-                errorMessage: errMessage,
                 isRunning: false
             })
         }
@@ -75,7 +81,7 @@ class Wait extends Component { //class based
                             <p> The goal is to have as few milliseconds as possible above 5 seconds.</p>
                         </header>
 
-                        <div className="btn-and-message">
+                        <div className="btn-and-message higher">
                             <div>
                                 <MainBtn classProp="button green-btn" titleProp="Start game" clickProp={this.handleStart} />
 
@@ -84,8 +90,6 @@ class Wait extends Component { //class based
 
                             <div className="error-message">{this.state.errorMessage}</div>
                         </div>
-
-
 
                     </div>
 

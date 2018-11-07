@@ -8,7 +8,8 @@ class Blog extends Component { //class based
     state = {
         posts: []  //first empty array
     }
-    componentDidMount() {
+    //fires when the component first mounts the DOM
+    componentDidMount() { //good place to get external data from ex. database
         //go get data asynchronous
         axios.get('https://jsonplaceholder.typicode.com/posts') //end point from jasonplaceholder
             .then(res => {

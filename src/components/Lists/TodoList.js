@@ -12,20 +12,22 @@ class TodoList extends Component { //class based component
         ]
     }
     deleteTodo = (id) => { //has to be here to interact with the state
+        //getting ID from todos.js, putting it in as argument
         //console.log(id);
-        //new copy of array:todos stored in variable
-        //filter method with passed back function with todo as parameter
 
-        const todos = this.state.todos.filter(todo => {  //ta bort
-            //return true (if not equal)if keeping the item, false if removing
+        //new array in variable and that filters out todo for not changing array destructively
+        //only filter out
+        const todos = this.state.todos.filter(todo => {
             return todo.id !== id
+            //satisfying the return statement = returning true
+            //that is if the id:s are not the same - keeping the item
         });
         this.setState({
             todos: todos
         })
     }
     addTodo = (todo) => { //func has to be here to interact with the state
-        //generate random id
+        //generate random id for todo
         todo.id = Math.random();
         //new array with spread op
         let todos = [...this.state.todos, todo]; //lägga till
@@ -47,9 +49,10 @@ class TodoList extends Component { //class based component
                             randomize the list order and then remove the list of items again. </p>
 
                         </header>
-                        {/* nesting component, passing todos-array and delete-func */}
-                        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
-                        <AddTodo addTodo={this.addTodo} />{/* defining prop: addTodo that refers to the func:addTodo */}
+                        {/* nesting component, passing todos-array, add-func and delete-func */}
+                        {/* props defined here */}
+                        <Todos todosProp={this.state.todos} deleteTodoProp={this.deleteTodo} />
+                        <AddTodo addTodoProp={this.addTodo} />{/* defining prop: addTodo that refers to the func:addTodo */}
                     </div>
                 </div>
 
