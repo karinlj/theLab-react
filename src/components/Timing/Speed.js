@@ -9,99 +9,76 @@ class Speed extends Component { //class based
         isRunning: false,
         stopClass: 'button stop-btn',
         message: '',
+        messageSmall: '',
         messageClass: 'message',  //invisible
 
         count: 0,
-        // startCount: 0,
-        // interval: null
+        startCount: 0,
+        interval: null
     }
 
     handleStart = () => {
         if (!this.state.isRunning) {
 
-            let startCount = Math.floor(Math.random() * 10) + 1; //random nr 1-10
-            console.log('random' + startCount);
+            let startCount = Math.floor(Math.random() * 10000) + 1000; //random nr 1-10s
+            // console.log('random' + startCount);
 
             this.setState({
                 count: startCount,  //start counting down at randomnr
-
+                stopClass: 'button stop-btn',
                 message: '',  //reset
+                messageSmall: '',
                 messageClass: 'message',  //invisible
                 isRunning: true
             })
-
-            // console.log('count after random ' + this.state.count);
-
-
             this.intervalUpdate();
         }
     }
 
     intervalUpdate = () => {
-        this.myInterval = setInterval(() => {   //this.myInterval
+        let myInterval = setInterval(() => {   //this.myInterval
 
+            // console.log("My count" + this.state.count);
             this.setState({
-                count: this.state.count - 1,   // count down every second
-                // interval: myInterval
+                count: this.state.count - 100,   // count down every second
+                interval: myInterval
             })
-        }, 1000)
+            if (this.state.count < 0) {
+                this.setState({
+                    stopClass: 'button stop-btn show',
+                })
+            }
+        }, 100)
     }
 
 
     handleStop = () => {
         if (this.state.isRunning) {
-            // this.compare();   //calling compare func
+            // console.log('count ' + -this.state.count);
 
-            // clearInterval(this.state.interval);
+            clearInterval(this.state.interval);
 
-            if (this.state.count === 0) {
-                this.setState({
-                    stopClass: 'button stop-btn show',
-                    isRunning: false
-                })
-            }
+            this.setState({
+                isRunning: false
+            })
         }
+        this.message();
     }
 
-
-
-
-
-
-    delta = () => {
-        // let now = Date.now();
-        // let elapsedTime = now - this.state.offsetTime
-
-        this.setState({
-        })
-        // return elapsedTime  //passing value from timePassed
-    }
-
-    compare = () => {
-        let delta = this.delta(); //calling delta func with passed value 
-        // console.log("timePassed is ", delta);
-
-        let messageNew = '';
-        let limit = 5000;
-        //let overflow;
-
-        if (delta >= limit) {
-            messageNew = 'Success!' //need better output
-            // overflow ='You reacted in'+  (delta - limit)  + '5 seconds.'
-        }
-        else
-            messageNew = 'Fail!';
+    message = () => {
+        let countOutput = -this.state.count;
+        let messageNew = 'Wow! but...';
+        let messageSmallNew = 'You clicked ' + countOutput + ' ms too late...';      //need better output
 
         this.setState({
             message: messageNew,
+            messageSmall: messageSmallNew,
             messageClass: 'message show',
         })
     }
 
 
     render() {
-
-        const { count } = this.state
 
         return (
             <div className="row justify-content-between">
@@ -122,11 +99,9 @@ class Speed extends Component { //class based
                                 <MainBtn classProp={this.state.stopClass} titleProp="End game" clickProp={this.handleStop} />
                             </div>
 
-                            <h2>{count}</h2>
-
                             <div className={this.state.messageClass}>
                                 <h4>{this.state.message}</h4>
-                                <p>{this.state.messageOverflow}</p>
+                                <p>{this.state.messageSmall}</p>
                             </div>
 
                         </div>

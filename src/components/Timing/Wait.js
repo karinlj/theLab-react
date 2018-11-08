@@ -10,7 +10,7 @@ class Wait extends Component { //class based
         stopClass: 'button stop-btn',
         message: '',
         messageClass: 'message',   //invisible
-        messageOverflow: ''
+        messageSmall: ''
     }
 
     handleStart = () => {
@@ -20,7 +20,7 @@ class Wait extends Component { //class based
                 stopClass: 'button stop-btn show',
                 message: '',
                 messageClass: 'message',   //invisible
-                messageOverflow: '',
+                messageSmall: '',
                 isRunning: true
             })
         }
@@ -55,7 +55,7 @@ class Wait extends Component { //class based
         this.setState({
             message: messageNew,
             messageClass: 'message show',
-            messageOverflow: overflow
+            messageSmall: overflow
         })
     }
 
@@ -94,7 +94,7 @@ class Wait extends Component { //class based
 
                             <div className={this.state.messageClass}>
                                 <h4>{this.state.message}</h4>
-                                <p>{this.state.messageOverflow}</p>
+                                <p>{this.state.messageSmall}</p>
                             </div>
 
                         </div>
