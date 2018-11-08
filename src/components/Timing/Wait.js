@@ -9,7 +9,7 @@ class Wait extends Component { //class based
         offsetTime: 0,
         stopClass: 'button stop-btn',
         message: '',
-        messageClass: 'message',
+        messageClass: 'message',   //invisible
         messageOverflow: ''
     }
 
@@ -19,12 +19,12 @@ class Wait extends Component { //class based
                 offsetTime: Date.now(),
                 stopClass: 'button stop-btn show',
                 message: '',
-                messageClass: 'message',
+                messageClass: 'message',   //invisible
                 messageOverflow: '',
                 isRunning: true
             })
         }
-        console.log("offsetTime is ", this.state.offsetTime);
+        // console.log("offsetTime is ", this.state.offsetTime);
     }
 
     delta = () => {
@@ -39,7 +39,7 @@ class Wait extends Component { //class based
 
     compare = () => {
         let delta = this.delta(); //calling delta func with passed value 
-        console.log("timePassed is ", delta);
+        // console.log("timePassed is ", delta);
 
         let messageNew = '';
         let limit = 5000;
@@ -68,7 +68,7 @@ class Wait extends Component { //class based
                 isRunning: false
             })
         }
-        console.log("offsetTime is ", this.state.offsetTime);
+        // console.log("offsetTime is ", this.state.offsetTime);
     }
 
     render() {
