@@ -29,12 +29,6 @@ const Navbar = props => (
                             </ul>
                         </li>
 
-                        <li>Blog
-                        <ul className="sub-list">
-                                <li><NavLink to="/blog">Blog</NavLink></li>
-                            </ul>
-                        </li>
-
                         <li>Conditional logic
                         <ul className="sub-list">
                                 <li><NavLink to="/yellowOrRed">Yellow or Red</NavLink></li>
@@ -56,8 +50,6 @@ const Navbar = props => (
                         </li>
 
                         <li><NavLink to="/about">About</NavLink></li>
-
-                        <li><NavLink to="/timer">Timer</NavLink></li>
 
                     </ul>
                 </div>

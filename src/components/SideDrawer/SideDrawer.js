@@ -18,7 +18,6 @@ const SideDrawer = props => {
 
                     <nav className={drawerClasses}>
                         <ul className="links">
-                            <li><NavLink to="/">Home</NavLink></li>
                             <li>Forms manipulation and testing
                             <ul className="sub-list">
                                     <li><NavLink to="/form">Form validation</NavLink></li>
@@ -28,12 +27,6 @@ const SideDrawer = props => {
                             <li>Lists
                             <ul className="sub-list">
                                     <li><NavLink to="/todoList">TodoList</NavLink></li>
-                                </ul>
-                            </li>
-
-                            <li>Blog
-                        <ul className="sub-list">
-                                    <li><NavLink to="/blog">Blog</NavLink></li>
                                 </ul>
                             </li>
 
