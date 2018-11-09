@@ -1,5 +1,4 @@
 @import './variables.scss';
-@import "~video-react/styles/scss/video-react";
 
 html {
   height: 100%;
@@ -33,6 +32,11 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+iframe {
+  border: none;
+  box-shadow: $themeBoxShadow;
 }
 
 //typgrafi

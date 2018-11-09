@@ -1,5 +1,4 @@
 import React from 'react';
-import { Player } from 'video-react';
 import VideoSidebar from './Video/VideoSidebar';
 
 const Home = () => {
@@ -26,13 +25,8 @@ const Home = () => {
 
             <div className="col-12 col-md-5">
 
-                <VideoSidebar src="https://youtu.be/CWMQWIJyttI" height="230" width="100%" title="getting-started" />
+                <VideoSidebar src="https://www.youtube.com/embed/YcCw6cS7Uy0" height="230" width="100%" title="getting-started" />
 
-
-                <Player>
-
-                    <source src="https://youtu.be/CWMQWIJyttI" />
-                </Player>
             </div>
         </div>
     )
