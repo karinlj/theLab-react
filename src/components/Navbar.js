@@ -57,6 +57,8 @@ const Navbar = props => (
 
                         <li><NavLink to="/about">About</NavLink></li>
 
+                        <li><NavLink to="/pageContent">PageContent</NavLink></li>
+
                     </ul>
                 </div>
             </div>

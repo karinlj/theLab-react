@@ -1,0 +1,31 @@
+{
+    "form": {
+        "heading": "Form validation",
+        "text": "Praesent id velit volutpat, finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus."
+    },
+    "todoList": {
+        "heading": "Todo's",
+        "text": "In this simple appliation we can add and delete todos from a list. There are several small tests we can do on top of this application, and they illustrate element selection and data handling. In order to cover most cases, we should add a list of items to the todo-list, randomize the list order and then remove the list of items again."
+    },
+    "yellowOrRed": {
+        "heading": "Red or yellow",
+        "text": "Click the Generate color button to display a color with a word and then click the button with the correspondent color."
+    },
+    "catOrDog": {
+        "heading": "Cat or dog",
+        "text": "Click the Generate pet button to display an image and then click the button with the correspondent pet."
+    },
+    "concatStr": {
+        "heading": "Concatenate strings",
+        "text": "Click the Generate string button to display two strings and then type in the strings together."
+    },
+    "speed": {
+        "heading": "Speed game",
+        "text": ""
+
+    },
+    "wait": {
+        "heading": "Wait game",
+        "text": ""
+    }
+}

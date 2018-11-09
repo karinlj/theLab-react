@@ -17,6 +17,7 @@ import Speed from './components/Timing/Speed';
 import Wait from './components/Timing/Wait';
 import Scramble from './components/Scramble/Scramble';
 
+import PageContent from './components/PageContent';
 import Timer from './components/Timing/Timer';
 import Blog from './components/Blog/Blog'
 
@@ -73,6 +74,7 @@ class App extends Component {
                 <Route path='/about' component={About} />
                 <Route path="/Scramble" component={Scramble} />
 
+                <Route path="/PageContent" component={PageContent} />
                 <Route path="/Blog" component={Blog} />
                 <Route path='/timer' component={Timer} />
                 <Route path="/:post_id" component={Post} />

@@ -3,7 +3,7 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import SubmitBtn from '../SubmitBtn';
 import './Strings.scss';
-
+import ContentData from '../../data/pageContent.json';  //the name ContentData is made up
 
 class ConcatStrings extends Component { //class based
     state = {
@@ -56,14 +56,16 @@ class ConcatStrings extends Component { //class based
     }
 
     render() {
+        const pageHeading = ContentData.concatStr.heading;
+        const pageText = ContentData.concatStr.text;
 
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
                     <div className="concatStrings-section">
                         <header>
-                            <h1 className="">Concatenate strings</h1>
-                            <p>Click the Generate string button to display two strings and then type in the strings together.</p>
+                            <h1>{pageHeading}</h1>
+                            <p>{pageText}</p>
                         </header>
 
                         <div className="btn-and-message">

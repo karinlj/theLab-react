@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import './Conditional.scss';
+import ContentData from '../../data/pageContent.json';  //the name ContentData is made up
+
 
 class YellowOrRed extends Component { //class based
     state = {
@@ -40,13 +42,16 @@ class YellowOrRed extends Component { //class based
     }
 
     render() {
+        const pageHeading = ContentData.yellowOrRed.heading;
+        const pageText = ContentData.yellowOrRed.text;
+
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
                     <div className="colors-section">
                         <header>
-                            <h1 className="">Yellow or Red</h1>
-                            <p>Click the Generate color button to display a color with a word and then click the button with the correspondent color.</p>
+                            <h1>{pageHeading}</h1>
+                            <p>{pageText}</p>
                         </header>
 
                         <div className="btn-and-message">

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Form.scss';
 import Sidebar from '../Sidebar';
 import SubmitBtn from '../SubmitBtn';
+import ContentData from '../../data/pageContent.json';  //the name ContentData is made up
+
 
 class Form extends Component { //class based component
     state = {
@@ -84,13 +86,16 @@ class Form extends Component { //class based component
     }
 
     render() {
+        const pageHeading = ContentData.form.heading;
+        const pageText = ContentData.form.text;
+
         return (
-            <div className="row justify-content-between">
+            <div className="row justify-content-between" >
                 <div className="col-12 col-md-6">
                     <div className="form-section">
                         <header>
-                            <h1 className="">Form validation</h1>
-                            <p>Praesent id velit volutpat, finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus.</p>
+                            <h1>{pageHeading}</h1>
+                            <p>{pageText}</p>
                         </header>
                         <form className="form-validation" action="">
                             {/*  <input type="text" placeholder='First name'

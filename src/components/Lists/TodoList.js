@@ -3,6 +3,8 @@ import Todos from './Todos'
 import AddTodo from './AddTodo'
 import Sidebar from '../Sidebar';
 import './Lists.scss';
+import ContentData from '../../data/pageContent.json';  //the name ContentData is made up
+
 
 class TodoList extends Component { //class based component
     state = {
@@ -36,17 +38,17 @@ class TodoList extends Component { //class based component
         })
     }
     render() {
+        const pageHeading = ContentData.todoList.heading;
+        const pageText = ContentData.todoList.text;
+
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
                     <div className="todo-section">
 
                         <header>
-                            <h1 className="">Todo's</h1>
-                            <p>In this simple appliation we can add and delete todos from a list. </p>
-                            <p>There are several small tests we can do on top of this application, and they illustrate element selection and data handling. </p>
-                            <p>In order to cover most cases, we should add a list of items to the todo-list,
-                            randomize the list order and then remove the list of items again. </p>
+                            <h1>{pageHeading}</h1>
+                            <p>{pageText}</p>
 
                         </header>
                         {/* nesting component, passing todos-array, add-func and delete-func */}
