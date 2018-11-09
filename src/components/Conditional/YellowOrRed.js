@@ -46,7 +46,7 @@ class YellowOrRed extends Component { //class based
                     <div className="colors-section">
                         <header>
                             <h1 className="">Yellow or Red</h1>
-                            <p>Click the Generate color button to display a word and then click the button with the correspondent color.</p>
+                            <p>Click the Generate color button to display a color with a word and then click the button with the correspondent color.</p>
                         </header>
 
                         <div className="btn-and-message">

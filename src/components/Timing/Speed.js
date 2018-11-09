@@ -87,9 +87,9 @@ class Speed extends Component { //class based
                         <header>
                             <h1 className="">Speed game</h1>
                             <p>This game tests the user reaction time. This is also useful to show-case test automation render waits. </p>
-                            <p> The game starts with the user hitting "Start Game" button. Another button "End Game" will appear after x seconds,
+                            <p> The game starts by hitting "Start Game" button. Another button "End Game" will appear after x seconds,
                             where x is random time between 1 and 10 seconds. </p>
-                            <p>The user hits the button as fast as he can. The smaller the number of milliseconds above, the better.</p>
+                            <p>The hit the button as fast as you can. The smaller the number of milliseconds above, the better.</p>
                         </header>
 
                         <div className="btn-and-message higher">

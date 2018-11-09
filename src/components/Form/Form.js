@@ -137,7 +137,7 @@ class Form extends Component { //class based component
                 </div>
 
                 <div className="col-12 col-md-5">
-                    <Sidebar heading="Hello Form validation" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
+                    <Sidebar heading="Why learn: Form validation?" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
                 </div>
 
             </div>

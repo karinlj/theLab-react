@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Player } from 'video-react';
+import VideoSidebar from './Video/VideoSidebar';
 
 const Home = () => {
     return (
         <div className="row justify-content-between">
-            <div className="col-12 col-md-8">
+            <div className="col-12 col-md-6">
                 <div className="home-section">
 
                     <h1 className="center">Welcome to theLab!</h1>
@@ -20,6 +22,17 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="col-12 col-md-5">
+
+                <VideoSidebar src="https://youtu.be/hC5NWIXR5Qs" height="230" width="100%" />
+
+
+                <Player>
+
+                    <source src="https://www.udemy.com/code-less-test-automation-with-boozang/" />
+                </Player>
             </div>
         </div>
     )

@@ -77,7 +77,8 @@ class CatOrDog extends Component { //class based
                 </div>
 
                 <div className="col-12 col-md-5">
-                    <Sidebar heading="Why Learn: Cat or Dog?" text="Often it's preferred to make all assertions on existance of elements or simple Boolean expressions. There are times in test automation where we need to base our logic on an image. This can be especially useful when asserting the state of a graphical toggle-button, where the element and text content is the same, regardless of state." />
+                    <Sidebar heading="Why Learn: Cat or Dog?"
+                        text="Often it's preferred to make all assertions on existance of elements or simple Boolean expressions. There are times in test automation where we need to base our logic on an image. This can be especially useful when asserting the state of a graphical toggle-button, where the element and text content is the same, regardless of state." />
 
                 </div>
             </div>

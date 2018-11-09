@@ -11,7 +11,8 @@ class ConcatStrings extends Component { //class based
         string2: '',
         concatStr: '',
         inputStr: '',
-        errorMessage: ''
+        message: '',
+        messageClass: 'message',
     };
 
     generateStrings = () => {
@@ -40,35 +41,19 @@ class ConcatStrings extends Component { //class based
         e.preventDefault();
         // console.log(this.state.inputStr);
 
-        let errMessage = '';
+        let messageNew = '';
         if (this.state.inputStr === this.state.concatStr) {
-            errMessage = 'Success!';
+            messageNew = 'Success!';
         }
         else
-            errMessage = 'Fail!';
+            messageNew = 'Fail!';
 
         this.setState({ //reset inputStr, set value={this.state.inputStr} to empty input
             inputStr: '',
-            errorMessage: errMessage
+            message: messageNew,
+            messageClass: 'message show',
         });
     }
-
-    /* compare = (compareValue) => {
-
-         e.preventDefault();
-        console.log(this.state.inputStr);
-
-        let errMessage = '';
-        if (compareValue === this.state.concatStr) {
-            errMessage = 'Success!';
-        }
-        else
-            errMessage = 'Fail!';
-
-        this.setState({
-            errorMessage: errMessage
-        })
-    } */
 
     render() {
 
@@ -85,7 +70,9 @@ class ConcatStrings extends Component { //class based
                             {/* properties are DEFINED and different VALUES are set */}
 
                             <MainBtn classProp="button orange-btn" titleProp="Generate strings" clickProp={this.generateStrings} />
-                            <div className="error-message">{this.state.errorMessage}</div>
+                            <div className={this.state.messageClass}>
+                                <h4>{this.state.message}</h4>
+                            </div>
                         </div>
 
                         <h5 className="strings">{this.state.string1} <br />
