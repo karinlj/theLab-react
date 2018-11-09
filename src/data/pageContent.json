@@ -27,5 +27,9 @@
     "wait": {
         "heading": "Wait game",
         "text": ""
+    },
+    "scramble": {
+        "heading": "Scramble",
+        "text": ""
     }
 }
