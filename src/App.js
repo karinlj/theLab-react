@@ -7,7 +7,6 @@ import Home from './components/Home'
 import About from './components/About'
 import TodoList from './components/Lists/TodoList'
 import Post from './components/Blog/Post'
-import Blog from './components/Blog/Blog'
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import Form from './components/Form/Form';
@@ -16,8 +15,11 @@ import CatOrDog from './components/Conditional/CatOrDog';
 import ConcatStrings from './components/Strings/ConcatStrings';
 import Speed from './components/Timing/Speed';
 import Wait from './components/Timing/Wait';
+import Scramble from './components/Scramble/Scramble';
 
 import Timer from './components/Timing/Timer';
+import Blog from './components/Blog/Blog'
+
 
 
 class App extends Component {
@@ -62,7 +64,6 @@ class App extends Component {
               <Switch> {/* only want to match one at a time */}
                 <Route exact path='/' component={Home} />
                 <Route path='/TodoList' component={TodoList} />
-                <Route path="/Blog" component={Blog} />
                 <Route path="/Form" component={Form} />
                 <Route path="/YellowOrRed" component={YellowOrRed} />
                 <Route path="/CatOrDog" component={CatOrDog} />
@@ -70,6 +71,9 @@ class App extends Component {
                 <Route path="/Speed" component={Speed} />
                 <Route path="/Wait" component={Wait} />
                 <Route path='/about' component={About} />
+                <Route path="/Scramble" component={Scramble} />
+
+                <Route path="/Blog" component={Blog} />
                 <Route path='/timer' component={Timer} />
                 <Route path="/:post_id" component={Post} />
               </Switch>

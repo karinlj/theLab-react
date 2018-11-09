@@ -38,14 +38,20 @@ const Navbar = props => (
 
                         <li>Strings
                         <ul className="sub-list">
-                                <li><NavLink to="/ConcatStrings">Concat strings</NavLink></li>
+                                <li><NavLink to="/concatStrings">Concat strings</NavLink></li>
                             </ul>
                         </li>
 
                         <li>Timing
                         <ul className="sub-list">
-                                <li><NavLink to="/Speed">Speed</NavLink></li>
-                                <li><NavLink to="/Wait">Wait</NavLink></li>
+                                <li><NavLink to="/speed">Speed</NavLink></li>
+                                <li><NavLink to="/wait">Wait</NavLink></li>
+                            </ul>
+                        </li>
+
+                        <li>Scramble
+                        <ul className="sub-list">
+                                <li><NavLink to="/scramble">Scramble</NavLink></li>
                             </ul>
                         </li>
 
