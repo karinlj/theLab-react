@@ -18,18 +18,5 @@
     "concatStr": {
         "heading": "Concatenate strings",
         "text": "Click the Generate string button to display two strings and then type in the strings together."
-    },
-    "speed": {
-        "heading": "Speed game",
-        "text": ""
-
-    },
-    "wait": {
-        "heading": "Wait game",
-        "text": ""
-    },
-    "scramble": {
-        "heading": "Scramble",
-        "text": ""
     }
 }
