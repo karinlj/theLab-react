@@ -26,12 +26,12 @@ const Home = () => {
 
             <div className="col-12 col-md-5">
 
-                <VideoSidebar src="https://youtu.be/hC5NWIXR5Qs" height="230" width="100%" />
+                <VideoSidebar src="https://youtu.be/CWMQWIJyttI" height="230" width="100%" title="getting-started" />
 
 
                 <Player>
 
-                    <source src="https://www.udemy.com/code-less-test-automation-with-boozang/" />
+                    <source src="https://youtu.be/CWMQWIJyttI" />
                 </Player>
             </div>
         </div>
