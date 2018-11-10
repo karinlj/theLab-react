@@ -47,9 +47,9 @@ class CatOrDog extends Component { //class based
 
         var displayPet;
         if (this.state.pet === 'cat') {
-            displayPet = <img src={Cat} alt="a cat" />
+            displayPet = <img src={Cat}/>
         } else if (this.state.pet === 'dog') {
-            displayPet = <img src={Dog} alt="a dog" />
+            displayPet = <img src={Dog}/>
         }
 
         return (
