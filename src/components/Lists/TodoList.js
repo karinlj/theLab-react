@@ -48,7 +48,9 @@ class TodoList extends Component { //class based component
 
                         <header>
                             <h1>{pageHeading}</h1>
-                            <p>{pageText}</p>
+                            <p>{pageText.split('\n').map((item, key) => {
+  return <span key={key}>{item}<br/></span>
+})}</p>
 
                         </header>
                         {/* nesting component, passing todos-array, add-func and delete-func */}
