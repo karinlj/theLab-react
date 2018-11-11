@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Form.scss';
 import Sidebar from '../Sidebar';
 import SubmitBtn from '../SubmitBtn';
-import ContentData from '../../data/pageContent.json';  //the name ContentData is made up
+import HeaderData from '../../data/headerData.json';
 
 
 class Form extends Component { //class based component
@@ -86,8 +86,8 @@ class Form extends Component { //class based component
     }
 
     render() {
-        const pageHeading = ContentData.form.heading;
-        const pageText = ContentData.form.text;
+        const pageHeading = HeaderData.form.heading;
+        const pageText = HeaderData.form.text;
 
         return (
             <div className="row justify-content-between" >

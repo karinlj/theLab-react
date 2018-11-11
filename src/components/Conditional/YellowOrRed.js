@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import './Conditional.scss';
-import ContentData from '../../data/pageContent.json';  //the name ContentData is made up
+import HeaderData from '../../data/headerData.json';
 
 
 class YellowOrRed extends Component { //class based
@@ -42,8 +42,8 @@ class YellowOrRed extends Component { //class based
     }
 
     render() {
-        const pageHeading = ContentData.yellowOrRed.heading;
-        const pageText = ContentData.yellowOrRed.text;
+        const pageHeading = HeaderData.yellowOrRed.heading;
+        const pageText = HeaderData.yellowOrRed.text;
 
         return (
             <div className="row justify-content-between">

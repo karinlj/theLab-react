@@ -4,7 +4,7 @@ import MainBtn from '../MainBtn';
 import Cat from '../../img/cat.jpg';
 import Dog from '../../img/dog.jpg';
 import './Conditional.scss';
-import PageContent from '../PageContent';
+import PageHeader from '../PageHeader';
 
 class CatOrDog extends Component { //class based
     state = {
@@ -44,9 +44,9 @@ class CatOrDog extends Component { //class based
 
         var displayPet;
         if (this.state.pet === 'cat') {
-            displayPet = <img src={Cat} alt="a cat" />
+            displayPet = <img src={Cat} alt="" />
         } else if (this.state.pet === 'dog') {
-            displayPet = <img src={Dog} alt="a dog" />
+            displayPet = <img src={Dog} alt="" />
         }
 
         return (
@@ -55,7 +55,7 @@ class CatOrDog extends Component { //class based
                     <div className="colors-section">
                         <header>
 
-                            <PageContent />
+                            {/*    <PageHeader /> */}
 
                             {/*    <h1>{pageHeading}</h1>
                             <p>{pageText}</p> */}

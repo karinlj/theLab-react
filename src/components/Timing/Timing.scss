@@ -27,11 +27,13 @@
     width: 126px;
     margin-top: 1rem;
     opacity: 0;
+    display: none;
     //transition: 1s;
 }
 
 .stop-btn.show {
     opacity: 1;
+    display: block;
 }
 
 .message-overflow {

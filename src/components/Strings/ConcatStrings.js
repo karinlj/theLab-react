@@ -3,7 +3,7 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import SubmitBtn from '../SubmitBtn';
 import './Strings.scss';
-import ContentData from '../../data/pageContent.json';  //the name ContentData is made up
+import HeaderData from '../../data/headerData.json';
 
 class ConcatStrings extends Component { //class based
     state = {
@@ -56,8 +56,8 @@ class ConcatStrings extends Component { //class based
     }
 
     render() {
-        const pageHeading = ContentData.concatStr.heading;
-        const pageText = ContentData.concatStr.text;
+        const pageHeading = HeaderData.concatStr.heading;
+        const pageText = HeaderData.concatStr.text;
 
         return (
             <div className="row justify-content-between">

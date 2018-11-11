@@ -3,7 +3,8 @@ import Todos from './Todos'
 import AddTodo from './AddTodo'
 import Sidebar from '../Sidebar';
 import './Lists.scss';
-import ContentData from '../../data/pageContent.json';  //the name ContentData is made up
+//import HeaderData from '../../data/headerData.json';
+import PageHeader from '../PageHeader';
 
 
 class TodoList extends Component { //class based component
@@ -38,8 +39,8 @@ class TodoList extends Component { //class based component
         })
     }
     render() {
-        const pageHeading = ContentData.todoList.heading;
-        const pageText = ContentData.todoList.text;
+        // const pageHeading = HeaderData.todoList.heading;
+        //  const pageText = HeaderData.todoList.text;
 
         return (
             <div className="row justify-content-between">
@@ -47,8 +48,12 @@ class TodoList extends Component { //class based component
                     <div className="todo-section">
 
                         <header>
-                            <h1>{pageHeading}</h1>
-                            <p>{pageText}</p>
+
+                            <PageHeader />
+                            {/*     <h1>{pageHeading}</h1>
+                            <p>{pageText.split('\n').map((item, key) => {
+                                return <span key={key}>{item}<br /></span>
+                            })}</p> */}
 
                         </header>
                         {/* nesting component, passing todos-array, add-func and delete-func */}
