@@ -4,7 +4,7 @@ import MainBtn from '../MainBtn';
 import Cat from '../../img/cat.jpg';
 import Dog from '../../img/dog.jpg';
 import './Conditional.scss';
-import PageHeader from '../PageHeader';
+//import PageHeader from '../PageHeader';
 
 class CatOrDog extends Component { //class based
     state = {
