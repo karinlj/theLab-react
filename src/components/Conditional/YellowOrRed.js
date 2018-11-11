@@ -3,6 +3,7 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import './Conditional.scss';
 import HeaderData from '../../data/headerData.json';
+import HeaderText from '../HeaderText';
 
 
 class YellowOrRed extends Component { //class based
@@ -42,16 +43,14 @@ class YellowOrRed extends Component { //class based
     }
 
     render() {
-        const pageHeading = HeaderData.yellowOrRed.heading;
-        const pageText = HeaderData.yellowOrRed.text;
 
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
                     <div className="colors-section">
                         <header>
-                            <h1>{pageHeading}</h1>
-                            <p>{pageText}</p>
+                            <HeaderText itemProp={HeaderData.YellowOrRed} />
+
                         </header>
 
                         <div className="btn-and-message">

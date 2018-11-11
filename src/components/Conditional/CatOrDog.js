@@ -4,7 +4,8 @@ import MainBtn from '../MainBtn';
 import Cat from '../../img/cat.jpg';
 import Dog from '../../img/dog.jpg';
 import './Conditional.scss';
-//import PageHeader from '../PageHeader';
+import HeaderData from '../../data/headerData.json';
+import HeaderText from '../HeaderText';
 
 class CatOrDog extends Component { //class based
     state = {
@@ -54,14 +55,9 @@ class CatOrDog extends Component { //class based
                 <div className="col-12 col-md-6">
                     <div className="colors-section">
                         <header>
+                            <HeaderText itemProp={HeaderData.YellowOrRed} />
 
-                            {/*    <PageHeader /> */}
-
-                            {/*    <h1>{pageHeading}</h1>
-                            <p>{pageText}</p> */}
                         </header>
-
-                        {/* <h5 className="rand-color-text">Click the button with the generated pet:</h5> */}
 
                         <div className="btn-and-message">
                             <MainBtn classProp="button orange-btn" titleProp="Generate pet" clickProp={this.generatePet} />

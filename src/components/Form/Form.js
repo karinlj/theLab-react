@@ -3,6 +3,7 @@ import './Form.scss';
 import Sidebar from '../Sidebar';
 import SubmitBtn from '../SubmitBtn';
 import HeaderData from '../../data/headerData.json';
+import HeaderText from '../HeaderText';
 
 
 class Form extends Component { //class based component
@@ -86,16 +87,16 @@ class Form extends Component { //class based component
     }
 
     render() {
-        const pageHeading = HeaderData.form.heading;
-        const pageText = HeaderData.form.text;
 
         return (
             <div className="row justify-content-between" >
                 <div className="col-12 col-md-6">
                     <div className="form-section">
                         <header>
-                            <h1>{pageHeading}</h1>
-                            <p>{pageText}</p>
+                            <header>
+                                <HeaderText itemProp={HeaderData.form} />
+
+                            </header>
                         </header>
                         <form className="form-validation" action="">
                             {/*  <input type="text" placeholder='First name'
