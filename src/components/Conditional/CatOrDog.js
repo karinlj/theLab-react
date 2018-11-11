@@ -4,7 +4,6 @@ import MainBtn from '../MainBtn';
 import Cat from '../../img/cat.jpg';
 import Dog from '../../img/dog.jpg';
 import './Conditional.scss';
-import HeaderData from '../../data/headerData.json';
 import HeaderText from '../HeaderText';
 
 class CatOrDog extends Component { //class based
@@ -55,7 +54,8 @@ class CatOrDog extends Component { //class based
                 <div className="col-12 col-md-6">
                     <div className="colors-section">
                         <header>
-                            <HeaderText itemProp={HeaderData.YellowOrRed} />
+                            <HeaderText componentName="catOrDog" />
+
 
                         </header>
 

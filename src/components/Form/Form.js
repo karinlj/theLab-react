@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import './Form.scss';
 import Sidebar from '../Sidebar';
 import SubmitBtn from '../SubmitBtn';
-import HeaderData from '../../data/headerData.json';
+//import HeaderData from '../../data/headerData.json';
 import HeaderText from '../HeaderText';
-
 
 class Form extends Component { //class based component
     state = {
@@ -94,7 +93,7 @@ class Form extends Component { //class based component
                     <div className="form-section">
                         <header>
                             <header>
-                                <HeaderText itemProp={HeaderData.form} />
+                                <HeaderText componentName="form" />
 
                             </header>
                         </header>

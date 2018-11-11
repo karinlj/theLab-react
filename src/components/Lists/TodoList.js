@@ -3,7 +3,6 @@ import Todos from './Todos'
 import AddTodo from './AddTodo'
 import Sidebar from '../Sidebar';
 import './Lists.scss';
-import HeaderData from '../../data/headerData.json';
 import HeaderText from '../HeaderText';
 
 
@@ -46,7 +45,7 @@ class TodoList extends Component { //class based component
                     <div className="todo-section">
 
                         <header>
-                            <HeaderText itemProp={HeaderData.todoList} />
+                            <HeaderText componentName="todoList" />
 
                         </header>
                         {/* nesting component, passing todos-array, add-func and delete-func */}

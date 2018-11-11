@@ -17,7 +17,7 @@ const Navbar = props => (
                     <h2 className="logo"><NavLink to="/">theLab</NavLink></h2>
 
                     <ul className="links">
-                        <li>Forms manipulation and testing
+                        <li>Forms
                             <ul className="sub-list">
                                 <li><NavLink to="/form">Form validation</NavLink></li>
                             </ul>

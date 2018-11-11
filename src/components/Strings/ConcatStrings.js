@@ -3,7 +3,8 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import SubmitBtn from '../SubmitBtn';
 import './Strings.scss';
-import HeaderData from '../../data/headerData.json';
+import HeaderText from '../HeaderText';
+
 
 class ConcatStrings extends Component { //class based
     state = {
@@ -56,16 +57,14 @@ class ConcatStrings extends Component { //class based
     }
 
     render() {
-        const pageHeading = HeaderData.concatStr.heading;
-        const pageText = HeaderData.concatStr.text;
 
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
                     <div className="concatStrings-section">
                         <header>
-                            <h1>{pageHeading}</h1>
-                            <p>{pageText}</p>
+                            <HeaderText componentName="concatStr" />
+
                         </header>
 
                         <div className="btn-and-message">
