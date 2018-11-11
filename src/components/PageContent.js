@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Sidebar from './Sidebar';
 import ContentData from '../data/pageContent.json';  //the name ContentData is made up
 
 class PageContent extends Component { //class based
@@ -10,15 +9,14 @@ class PageContent extends Component { //class based
         const text = ContentData.catOrDog.text;
 
         return (
-            <div className="row justify-content-between">
-                <div className="col-12 col-md-6">
-                    <div className="page-content-section">
-                        <header>
-                            <h1>{heading}</h1>
-                            <p>{text}</p>
+            <div>
+                <h1>{heading}</h1>
+                <p>{text}</p>
 
 
-                            {/*     {ContentData.map((contentDetail, index) => {   //the name contentDetail is made up
+
+
+                {/*     {ContentData.map((contentDetail, index) => {   //the name contentDetail is made up
                                 return (
                                     <div>
                                         <h1>{contentDetail.heading}</h1>
@@ -28,17 +26,6 @@ class PageContent extends Component { //class based
                                 )
 
                             })} */}
-
-
-
-                        </header>
-                    </div>
-                </div>
-
-                <div className="col-12 col-md-5">
-                    <Sidebar heading="Hello PageContent" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
-
-                </div>
 
             </div>
         )

@@ -4,8 +4,7 @@ import MainBtn from '../MainBtn';
 import Cat from '../../img/cat.jpg';
 import Dog from '../../img/dog.jpg';
 import './Conditional.scss';
-import ContentData from '../../data/pageContent.json';  //the name ContentData is made up
-
+import PageContent from '../PageContent';
 
 class CatOrDog extends Component { //class based
     state = {
@@ -42,8 +41,6 @@ class CatOrDog extends Component { //class based
     }
 
     render() {
-        const pageHeading = ContentData.catOrDog.heading;
-        const pageText = ContentData.catOrDog.text;
 
         var displayPet;
         if (this.state.pet === 'cat') {
@@ -57,8 +54,11 @@ class CatOrDog extends Component { //class based
                 <div className="col-12 col-md-6">
                     <div className="colors-section">
                         <header>
-                            <h1>{pageHeading}</h1>
-                            <p>{pageText}</p>
+
+                            <PageContent />
+
+                            {/*    <h1>{pageHeading}</h1>
+                            <p>{pageText}</p> */}
                         </header>
 
                         {/* <h5 className="rand-color-text">Click the button with the generated pet:</h5> */}

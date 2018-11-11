@@ -7,7 +7,7 @@ const Todos = props => {  //Stateless UI component
 
     //iternary op - true if we have todo's
     const todoList = props.todosProp.length ? (
-        //if we have todo's - map through todos
+        //if we have todo's (from todoList) - map through todos
         props.todosProp.map(todo => {
             //fire a function on todo
             return (   //draw single todo
