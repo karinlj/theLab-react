@@ -1,1 +1,16 @@
 @import '../../variables.scss';
+
+.scramble-btns {
+    margin-top: 1rem;
+
+    .button {
+        display: block;
+        margin-bottom: 1rem;
+
+    }
+}
+
+.messageText {
+    margin-top: 3rem;
+    color: #fff;
+}

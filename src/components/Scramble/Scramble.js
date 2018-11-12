@@ -46,23 +46,36 @@ class Scramble extends Component { //class based
                             <HeaderText componentName="scramble" />
                         </header>
 
-                        <div className="btn-and-message">
-                            <MainBtn classProp="button orange-btn" titleProp="Scramble Id" clickProp={this.generateColor} />
-                            <MainBtn classProp="button orange-btn" titleProp="Scramble Class" clickProp={this.generateColor} />
-                            <MainBtn classProp="button orange-btn" titleProp="Scramble Content" clickProp={this.generateColor} />
 
-                            <div className={this.state.messageClass}>
-                                <h4>{this.state.message}</h4>
+
+                        <div className="row justify-content-between">
+                            <div className="col-6">
+                                <MainBtn classProp="button pink-btn" titleProp="elephant" clickProp={() => this.compare()} />
+
+                                <div className="messageText">
+                                    {/*  <div className={this.state.messageClass}> */}
+
+                                    <p>Current button <strong>id </strong>is:</p>
+
+                                    <p>Current button <strong>class </strong> is:</p>
+
+                                    <h4>{this.state.message}</h4>
+                                </div>
+
+                                <div className="scramble-btns">
+
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Id" clickProp={this.generateColor} />
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Class" clickProp={this.generateColor} />
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Content" clickProp={this.generateColor} />
+                                </div>
+                            </div>
+
+                            <div className="col-6">
+                                <MainBtn classProp="button turquoise-btn" titleProp="elephant" clickProp={() => this.compare()} />
+
                             </div>
                         </div>
 
-                        The current button class is:
-
-                        The current button id is:
-
-                        <MainBtn classProp="button yellow-btn" titleProp="xxx" clickProp={() => this.compare()} />
-
-                        <MainBtn classProp="button red-btn" titleProp="xxx" clickProp={() => this.compare()} />
 
                     </div>
                 </div>
@@ -70,7 +83,7 @@ class Scramble extends Component { //class based
                 <div className="col-12 col-md-5">
                     <Sidebar componentName="scramble" />
                 </div>
-            </div>
+            </div >
         )
     }
 }

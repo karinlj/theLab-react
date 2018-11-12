@@ -49,11 +49,11 @@ const Navbar = props => (
                             </ul>
                         </li>
 
-                        {/*   <li>Scramble
+                        <li>Scramble
                         <ul className="sub-list">
                                 <li><NavLink to="/scramble">Scramble</NavLink></li>
                             </ul>
-                        </li> */}
+                        </li>
 
                         <li><NavLink to="/about">About</NavLink></li>
 
