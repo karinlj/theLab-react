@@ -10,7 +10,7 @@ const MainBtn = props => {
     //only need to output them like {click}
 
     return (
-        <button className={props.classProp} onClick={props.clickProp} >
+        <button className={props.classProp} id={props.idProp} onClick={props.clickProp} >
             {props.titleProp}
 
             {/* props are OUTPUT here */}

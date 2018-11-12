@@ -6,21 +6,56 @@ import HeaderText from '../HeaderText';
 
 class Scramble extends Component { //class based
     state = {
+        class: 'btn turquoise',
+        id: 'big',
+        content: 'elephant',
         message: '',
         messageClass: 'message',
     };
 
-    generateColor = () => {
-        let colors = ['yellow', 'red'];
+
+    scrambleId = () => {
+        // alert('id');
+        let ids = ['big', 'small', 'bigger'];
 
         //floor avrundar neråt, rand()=> 0-1, *längden av array 
-        let randColor = colors[Math.floor(Math.random() * colors.length)];
+        let randId = ids[Math.floor(Math.random() * ids.length)];
+
+        console.log(randId);
 
         this.setState({
-            color: randColor,
+            id: randId,
             messageClass: 'message'
         })
     }
+
+    scrambleClass = () => {
+        let classes = ['btn pink', 'btn turquoise', 'btn yellow'];
+
+        let randClass = classes[Math.floor(Math.random() * classes.length)];
+
+        this.setState({
+            class: randClass,
+            messageClass: 'message'
+        })
+
+    }
+
+    scrambleContent = () => {
+        // alert('content');
+
+        let contents = ['elephant', 'lion', 'zebra'];
+
+        let randContent = contents[Math.floor(Math.random() * contents.length)];
+
+        this.setState({
+            content: randContent,
+            messageClass: 'message'
+        })
+
+    }
+
+
 
     compare = (compareValue) => {
 
@@ -50,28 +85,30 @@ class Scramble extends Component { //class based
 
                         <div className="row justify-content-between">
                             <div className="col-8">
-                                <MainBtn classProp="button pink-btn" titleProp="elephant" clickProp={() => this.compare()} />
+                                <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare()} />
 
-                                <div className="messageText">
+                                <div className="scrambleText">
                                     {/*  <div className={this.state.messageClass}> */}
 
-                                    <p>Current button <strong>id </strong>is:</p>
+                                    <p>Current button <strong>id</strong> is: <strong>{this.state.id}</strong></p>
 
-                                    <p>Current button <strong>class </strong> is:</p>
+                                    <p>Current button <strong>class</strong> is: <br /> <strong>{this.state.class}</strong></p>
 
-                                    <h4>{this.state.message}</h4>
                                 </div>
 
                                 <div className="scramble-btns">
 
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Id" clickProp={this.generateColor} />
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Class" clickProp={this.generateColor} />
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Content" clickProp={this.generateColor} />
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Id" clickProp={this.scrambleId} />
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Class" clickProp={this.scrambleClass} />
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Content" clickProp={this.scrambleContent} />
                                 </div>
                             </div>
 
                             <div className="col-4">
-                                <MainBtn classProp="button turquoise-btn" titleProp="elephant" clickProp={() => this.compare()} />
+                                <MainBtn idProp="big" classProp="btn turquoise" titleProp="elephant" clickProp={() => this.compare()} />
+
+                                {/* <h4>{this.state.message}</h4> */}
+                                <h4 className="message">Success!</h4>
 
                             </div>
                         </div>

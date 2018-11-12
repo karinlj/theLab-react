@@ -10,7 +10,93 @@
     }
 }
 
-.messageText {
-    margin-top: 3rem;
+.scrambleText {
+    margin-top: 2rem;
     color: #fff;
+}
+
+h4.message {
+    font-size: 2.2em;
+    font-weight: 300;
+    color: #e7329e;
+    margin-top: 2rem;
+}
+
+.btn {
+    box-shadow: $themeBoxShadow;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border: none;
+    transition: 1s;
+    text-transform: uppercase;
+    border-radius: $themeBorderRadius;
+    -webkit-border-radius: $themeBorderRadius;
+    -moz-border-radius: $themeBorderRadius;
+    -ms-border-radius: $themeBorderRadius;
+    -o-border-radius: $themeBorderRadius;
+    color: #fff;
+
+    .pink {
+        background: $themecolorPink;
+
+    }
+
+    .green {
+        background: $themecolorGreen;
+    }
+
+    .turqoise {
+        background: $themecolorTurquoise;
+    }
+}
+
+.btn.pink {
+    background: $themecolorPink;
+}
+
+.btn.turquoise {
+    background: $themecolorTurquoise;
+}
+
+.btn.yellow {
+    background: $themecolorYellow;
+}
+
+
+#small {
+
+    padding: 8px 14px;
+}
+
+#big {
+    box-shadow: $themeBoxShadow;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border: none;
+    transition: 1s;
+    text-transform: uppercase;
+    border-radius: $themeBorderRadius;
+    -webkit-border-radius: $themeBorderRadius;
+    -moz-border-radius: $themeBorderRadius;
+    -ms-border-radius: $themeBorderRadius;
+    -o-border-radius: $themeBorderRadius;
+    padding: 12px 18px;
+}
+
+#bigger {
+    box-shadow: $themeBoxShadow;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border: none;
+    transition: 1s;
+    text-transform: uppercase;
+    border-radius: $themeBorderRadius;
+    -webkit-border-radius: $themeBorderRadius;
+    -moz-border-radius: $themeBorderRadius;
+    -ms-border-radius: $themeBorderRadius;
+    -o-border-radius: $themeBorderRadius;
+    padding: 16px 22px;
 }
