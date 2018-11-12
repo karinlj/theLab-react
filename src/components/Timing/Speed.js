@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
+import HeaderText from '../HeaderText';
+
 
 class Speed extends Component { //class based
 
@@ -85,11 +87,7 @@ class Speed extends Component { //class based
                 <div className="col-12 col-md-6">
                     <div className="timing-section">
                         <header>
-                            <h1 className="">Speed game</h1>
-                            <p>This game tests the user reaction time. This is also useful to show-case test automation render waits. </p>
-                            <p> The game starts by hitting "Start Game" button. Another button "End Game" will appear after x seconds,
-                            where x is random time between 1 and 10 seconds. </p>
-                            <p>The hit the button as fast as you can. The smaller the number of milliseconds above, the better.</p>
+                            <HeaderText componentName="speed" />
                         </header>
 
                         <div className="btn-and-message higher">
@@ -111,7 +109,7 @@ class Speed extends Component { //class based
                 </div>
 
                 <div className="col-12 col-md-5">
-                    <Sidebar heading="Why learn: Speed?" text="A classic problem in test automation is render waits. If certain elements are taking long to render, the test might fail. On the other hand, if we create long delays the overall test takes too long to run. Best if is we can wait until an element appears, but then click it as fast as we can.  " />
+                    <Sidebar componentName="speed" />
 
                 </div>
 

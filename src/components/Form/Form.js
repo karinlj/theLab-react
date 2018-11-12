@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Form.scss';
 import Sidebar from '../Sidebar';
 import SubmitBtn from '../SubmitBtn';
-//import HeaderData from '../../data/headerData.json';
 import HeaderText from '../HeaderText';
 
 class Form extends Component { //class based component
@@ -142,7 +141,7 @@ class Form extends Component { //class based component
                 </div>
 
                 <div className="col-12 col-md-5">
-                    <Sidebar heading="Why learn: Form validation?" text="Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi. Mauris vitae mauris tortor. Nam vehicula rhoncus erat eget bibendum." />
+                    <Sidebar componentName="form" />
                 </div>
 
             </div>

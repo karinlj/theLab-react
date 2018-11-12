@@ -56,8 +56,7 @@ class TodoList extends Component { //class based component
                 </div>
 
                 <div className="col-12 col-md-5">
-                    <Sidebar heading="Why Learn: Todo List?" text="In many SaaS applications, data lists of different kinds are often used. One problem in automation using CSS selectors, is to be able to add and remove an item to a list without risking to remove the wrong item." />
-
+                    <Sidebar componentName="todoList" />
                 </div>
 
             </div>

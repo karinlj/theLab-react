@@ -1,22 +1,52 @@
 {
     "form": {
         "heading": "Form validation",
-        "text": "Praesent id velit volutpat, finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus."
+        "text": "Praesent id velit volutpat, finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus.",
+        "sidebarHeading": "Why learn: Form validation?",
+        "sidebarText": "Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi."
     },
+
     "todoList": {
         "heading": "Todo's",
-        "text": "In this simple \n application \n we can add and delete todos from a list. There are several small tests we can do on top of this application, and they illustrate element selection and data handling. In order to cover most cases, we should add a list of items to the todo-list, randomize the list order and then remove the list of items again."
+        "text": "In this simple application we can add and delete todos from a list. There are several small tests we can do on top of this application, and they illustrate element selection and data handling. \n\n    In order to cover most cases, we should add a list of items to the todo-list, randomize the list order and then remove the list of items again.",
+        "sidebarHeading": "Why learn: Todo's?",
+        "sidebarText": "In many SaaS applications, data lists of different kinds are often used. \nOne problem in automation using CSS selectors, is to be able to add and remove an item to a list without risking to remove the wrong item."
+
     },
     "yellowOrRed": {
         "heading": "Red or yellow",
-        "text": "Click the Generate color button to display a color with a word and then click the button with the correspondent color."
+        "text": "Click the Generate color button to display a color with a word and then click the button with the correspondent color.",
+        "sidebarHeading": "Why Learn: Yellow or Red?",
+        "sidebarText": "In this case we look at basic condition handling. If something exists do this, otherwise do that. \n This is the fundament on doing tests on top of a system where the intial state isn't known, or a future state cannot be predicted. By using logic like this, we can allow our tests to adapt to how the application behaves."
     },
     "catOrDog": {
         "heading": "Cat or dog",
-        "text": "Click the Generate pet button to display an image and then click the button with the correspondent pet."
+        "text": "Click the Generate pet button to display an image and then click the button with the correspondent pet.",
+        "sidebarHeading": "Why learn: Cat or Dog?",
+        "sidebarText": "Often it's preferred to make all assertions on existance of elements or simple Boolean expressions. There are times in test automation where we need to base our logic on an image.\n\n This can be especially useful when asserting the state of a graphical toggle-button, where the element and text content is the same, regardless of state."
     },
     "concatStr": {
         "heading": "Concatenate strings",
-        "text": "Click the Generate string button to display two strings and then type in the strings together."
+        "text": "Click the Generate string button to display two strings and then type in the strings together.",
+        "sidebarHeading": "Why learn: Concat strings?",
+        "sidebarText": "Very often in test automation we need to be able to use the data that the application outputs in a later test step. \n A good example of this is when doing assetions based on computer-generatd id:s or time or date strings."
+    },
+    "speed": {
+        "heading": "Speed Game",
+        "text": "This game tests the user reaction time. This is also useful to show-case test automation render waits. where x is random time between 1 and 10 seconds.  \n\n The hit the button as fast as you can. The smaller the number of milliseconds above, the better.",
+        "sidebarHeading": "Why learn: Speed Game?",
+        "sidebarText": "A classic problem in test automation is render waits. If certain elements are taking long to render, the test might fail. \n On the other hand, if we create long delays the overall test takes too long to run. Best if is we can wait until an element appears, but then click it as fast as we can."
+    },
+    "wait": {
+        "heading": "Wait Game",
+        "text": "As opposed to speed game, this game tests the users time perception skill. This is also useful to showcase delay functionality in testing. \n\n  Try to to hit the \"End Game\" button after exactly 5 seconds, and the goal is to have as few milliseconds as possible above 5 seconds.",
+        "sidebarHeading": "Why learn: Wait Game?",
+        "sidebarText": "Sometimes there is a necessity to wait a certain time to make sure the application catches up. \n In test automation, being reactive is not always the best medcine, and sometimes it pays off to be patient."
+    },
+    "scramble": {
+        "heading": "Scramble",
+        "text": "Click the buttons to randomize id, class and content attributes. \n  We would like automated tests that as closely as possible manages to click the button regardless of modifications, and allow you to quickly fix any broken tests.",
+        "sidebarHeading": "Why learn: Scramble?",
+        "sidebarText": "XPath and CSS selectors are notoriously brittle, and often changes to id and class attributes will break test cases. \n Here you can simulate changes to both id, class and content to see how your test tool handles the challenge."
     }
 }

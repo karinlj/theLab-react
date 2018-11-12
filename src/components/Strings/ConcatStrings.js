@@ -93,7 +93,7 @@ class ConcatStrings extends Component { //class based
                 </div>
 
                 <div className="col-12 col-md-5">
-                    <Sidebar heading="Why Learn: Concat strings?" text="Very often in test automation we need to be able to use the data that the application outputs in a later test step. A good example of this is when doing assetions based on computer-generatd id:s or time or date strings. " />
+                    <Sidebar componentName="concatStr" />
 
                 </div>
             </div>
