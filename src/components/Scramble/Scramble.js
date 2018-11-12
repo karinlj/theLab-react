@@ -15,7 +15,6 @@ class Scramble extends Component { //class based
         messageClass: 'message',
     };
 
-
     scrambleId = () => {
 
         let ids = ['small', 'big', 'bigger'];
