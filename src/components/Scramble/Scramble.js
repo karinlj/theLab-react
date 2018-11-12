@@ -49,7 +49,7 @@ class Scramble extends Component { //class based
 
 
                         <div className="row justify-content-between">
-                            <div className="col-6">
+                            <div className="col-8">
                                 <MainBtn classProp="button pink-btn" titleProp="elephant" clickProp={() => this.compare()} />
 
                                 <div className="messageText">
@@ -70,7 +70,7 @@ class Scramble extends Component { //class based
                                 </div>
                             </div>
 
-                            <div className="col-6">
+                            <div className="col-4">
                                 <MainBtn classProp="button turquoise-btn" titleProp="elephant" clickProp={() => this.compare()} />
 
                             </div>
