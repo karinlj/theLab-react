@@ -15,11 +15,14 @@
     color: #fff;
 }
 
-h4.message {
-    font-size: 2.2em;
-    font-weight: 300;
-    color: #e7329e;
+.message {
     margin-top: 2rem;
+}
+
+.row.btn {
+    &:nth-last-of-type(1) {
+        float: right;
+    }
 }
 
 .btn {

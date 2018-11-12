@@ -365,40 +365,45 @@ h5 {
   justify-content: space-between;
   //align-items: center;
 
-  .message {
-    float: right;
-    opacity: 0;
-    transition: 1s;
 
-    h4 {
-      font-size: 2.2em;
-      font-weight: 300;
-      color: $themecolorPink;
 
-      @media all and(max-width: 380px) {
-        font-size: 1.7em;
-      }
+}
 
-      @media all and (min-width: $sm-min) {
-        font-size: 2.2em;
-      }
+.message {
+  float: right;
+  opacity: 0;
+  transition: 1s;
 
-      @media all and (min-width: $xl-min) {
-        font-size: 3em;
-      }
+  h4 {
+    font-size: 2.2em;
+    font-weight: 300;
+    color: $themecolorPink;
+
+    @media all and(max-width: 380px) {
+      font-size: 1.7em;
     }
 
-    p {
-      color: #fff;
-      font-weight: 300;
-      //font-size: 1.3em;
+    @media all and (min-width: $sm-min) {
+      font-size: 2.2em;
+    }
+
+    @media all and (min-width: $xl-min) {
+      font-size: 3em;
     }
   }
 
-  .message.show {
-    opacity: 1;
+  p {
+    color: #fff;
+    font-weight: 300;
+    //font-size: 1.3em;
   }
 }
+
+.message.show {
+  opacity: 1;
+}
+
+
 
 .btn-and-message.higher {
   height: 140px;
