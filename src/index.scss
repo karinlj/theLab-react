@@ -305,7 +305,12 @@ h5 {
 
   .card {
     min-height: 300px;
-    padding: 1.5rem 2rem;
+    padding: 0.5rem 0.75rem;
+
+    @media all and (min-width: $xl-min) {
+      padding: 1.5rem 2rem;
+    }
+
   }
 }
 
