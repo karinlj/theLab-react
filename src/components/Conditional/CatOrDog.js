@@ -55,8 +55,6 @@ class CatOrDog extends Component { //class based
                     <div className="colors-section">
                         <header>
                             <HeaderText componentName="catOrDog" />
-
-
                         </header>
 
                         <div className="btn-and-message">

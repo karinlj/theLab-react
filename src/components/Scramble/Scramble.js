@@ -11,9 +11,8 @@ class Scramble extends Component { //class based
         indexId: 0, //for counting up 
         indexClass: 0,
         indexContent: 0,
-        indexOrder: 0,
         content: 'lion',
-        orderClass: 'col order-first',
+        changingBtnLeft: true,
         message: '',
         messageClass: 'message',
     };
@@ -114,24 +113,42 @@ class Scramble extends Component { //class based
 
     scrambleOrder = () => {
 
-        let orderClasses = ['col order-first', 'col order-last'];
-        let i = this.state.indexOrder;
-
-        if (i === 0) {
-            i = 1;
-        }
-        else { i = 0; }
-
-        let scrambleOrderClass = orderClasses[i];
-
-        //console.log(scrambleOrderClass);
-
         this.setState({
-            indexOrder: i,
-            orderClass: scrambleOrderClass,
-            messageClass: 'message'
+
         })
+
     }
+
+    renderBtns = () => {
+
+        let animalBtns;
+
+        if (this.state.changingBtnLeft) {
+
+            animalBtns =
+                <div className="row justify-content-between">
+                    <div className="col">
+                        <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                    </div>
+                    <div className="col">
+                        <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+                    </div>
+                </div>;
+        }
+        else {
+            animalBtns =
+                <div className="row justify-content-between">
+                    <div className="col">
+                        <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+                    </div>
+                    <div className="col">
+                        <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                    </div>
+                </div>;
+        }
+        return animalBtns;
+    }
+
 
     compare = (isSuccess) => {
 
@@ -151,6 +168,34 @@ class Scramble extends Component { //class based
     }
 
     render() {
+
+        /*   let animalBtns;
+          if (this.state.btnOrder) {
+  
+              animalBtns =
+                  <div className="row justify-content-between">
+                      <div className="col">
+                          <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                      </div>
+                      <div className="col">
+                          <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+                      </div>
+                  </div>;
+          }
+          else {
+              animalBtns =
+                  <div className="row justify-content-between">
+                      <div className="col">
+                          <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+                      </div>
+                      <div className="col">
+                          <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                      </div>
+                  </div>;
+          } */
+
+
+
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
@@ -160,18 +205,26 @@ class Scramble extends Component { //class based
                         </header>
 
                         <div className="animalBtns">
-                            <div className="row justify-content-between">
 
-                                <div className={this.state.orderClass}>
+                            {this.renderBtns()}
+
+                            {/* {animalBtns} */}
+
+
+                            {/*  <div className="row justify-content-between">
+
+                                <div className="col">
 
                                     <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
                                 </div>
 
-                                <div className="col order-2">
+                                <div className="col">
                                     <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
+
+
 
 
                         <div className="row justify-content-between">
