@@ -12,7 +12,8 @@ class Scramble extends Component { //class based
         indexClass: 0,
         indexContent: 0,
         content: 'lion',
-        changingBtnLeft: true,
+        changingBtnLeft: false,
+        orderBtn: 'cat',
         message: '',
         messageClass: 'message',
     };
@@ -34,7 +35,6 @@ class Scramble extends Component { //class based
 
         //console.log(scrambleId);
 
-
         /*  The modulus way:
             i++;
            let scrambleId = ids[i % ids.length];    //heltalsresten av 0 = 0,   3 % 3 = 0
@@ -47,21 +47,6 @@ class Scramble extends Component { //class based
             indexId: i,
             messageClass: 'message'
         })
-
-        /*  Different loops:
-          var i;
-          for (i = 0; i < ids.length; ++i) {
-  
-              console.log(ids[i]);
-          } 
-
-           ids.forEach(function(value) {
-                   console.log(value);
-           });
-
-           ids.map(function (value, index) {
-               return console.log(value);
-           }); */
     }
 
     scrambleClass = () => {
@@ -111,44 +96,63 @@ class Scramble extends Component { //class based
         })
     }
 
+
+    /*  renderBtns = () => {
+         let animalBtns;
+ 
+         if (this.state.changingBtnLeft) {
+ 
+             animalBtns =
+                 <div className="row justify-content-between">
+                     <div className="col">
+                         <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                     </div>
+                     <div className="col">
+                         <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+                     </div>
+                 </div>;
+         }
+         else {
+             animalBtns =
+                 <div className="row justify-content-between">
+                     <div className="col">
+                         <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+                     </div>
+                     <div className="col">
+                         <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                     </div>
+                 </div>;
+         }
+         return animalBtns;
+     } */
+
+    renderBtns = (isLeft) => {  //isLeft: true eller false i två rader på en lapp. om stateLeft i kolumner som tabell. fyller i i tabellen var ska knappen vara. Hälften ska var till höger och tvärtom.
+
+        //false + false = false
+        //false + true = true
+        //true + false = true
+        //true + true = false
+
+        //if (isLeft) {
+        if ((isLeft && !this.state.changingBtnLeft) || (!isLeft && this.state.changingBtnLeft)) {
+            return (
+                <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+            );
+        }
+        else {
+            return (
+                <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+            );
+        }
+    }
+
     scrambleOrder = () => {
 
         this.setState({
-
+            changingBtnLeft: !this.state.changingBtnLeft
         })
 
     }
-
-    renderBtns = () => {
-
-        let animalBtns;
-
-        if (this.state.changingBtnLeft) {
-
-            animalBtns =
-                <div className="row justify-content-between">
-                    <div className="col">
-                        <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
-                    </div>
-                    <div className="col">
-                        <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
-                    </div>
-                </div>;
-        }
-        else {
-            animalBtns =
-                <div className="row justify-content-between">
-                    <div className="col">
-                        <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
-                    </div>
-                    <div className="col">
-                        <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
-                    </div>
-                </div>;
-        }
-        return animalBtns;
-    }
-
 
     compare = (isSuccess) => {
 
@@ -169,33 +173,6 @@ class Scramble extends Component { //class based
 
     render() {
 
-        /*   let animalBtns;
-          if (this.state.btnOrder) {
-  
-              animalBtns =
-                  <div className="row justify-content-between">
-                      <div className="col">
-                          <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
-                      </div>
-                      <div className="col">
-                          <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
-                      </div>
-                  </div>;
-          }
-          else {
-              animalBtns =
-                  <div className="row justify-content-between">
-                      <div className="col">
-                          <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
-                      </div>
-                      <div className="col">
-                          <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
-                      </div>
-                  </div>;
-          } */
-
-
-
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
@@ -205,26 +182,19 @@ class Scramble extends Component { //class based
                         </header>
 
                         <div className="animalBtns">
-
-                            {this.renderBtns()}
-
-                            {/* {animalBtns} */}
-
-
-                            {/*  <div className="row justify-content-between">
+                            <div className="row justify-content-between">
 
                                 <div className="col">
 
-                                    <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                                    {this.renderBtns(true)}
                                 </div>
 
                                 <div className="col">
-                                    <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+
+                                    {this.renderBtns(false)}
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
-
-
 
 
                         <div className="row justify-content-between">
@@ -260,7 +230,6 @@ class Scramble extends Component { //class based
 
                         <div className="row justify-content-between">
 
-
                             <div className="col-sm-6 col-md-12 col-xl-6">
                                 <div className="scrambleBtns">
                                     <MainBtn classProp="button orange-btn" titleProp="Scramble Class" clickProp={this.scrambleClass} />
@@ -272,8 +241,6 @@ class Scramble extends Component { //class based
                                 </div>
 
                             </div>
-
-
                         </div>
 
                     </div>
