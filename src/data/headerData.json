@@ -45,7 +45,7 @@
     },
     "scramble": {
         "heading": "Scramble",
-        "text": "This is a super-simple game where simply pressing the right button will result in success. We make the game harder by having buttons that scrambles the button id, class and content attributes, respectively. \n\n This game, which is simple for a human to play, can be surprisingly hard for a machine to play, as they often rely on attributes hidden in the html, such as class and id.",
+        "text": "This is a super-simple game where simply pressing the right button will result in success. We make the game harder by having buttons that scrambles the button id, class, content and order attributes, respectively. \n\n This game, which is simple for a human to play, can be surprisingly hard for a machine to play, as they often rely on attributes hidden in the html, such as class and id.",
         "sidebarHeading": "Why learn: Scramble?",
         "sidebarText": "XPath and CSS selectors are notoriously brittle, and often changes to id and class attributes will break test cases. \n Here you can simulate changes to both id, class and content to see how your test tool handles the challenge."
     }
