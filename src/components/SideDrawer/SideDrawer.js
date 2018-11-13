@@ -18,7 +18,7 @@ const SideDrawer = props => {
 
                     <nav className={drawerClasses}>
                         <ul className="links">
-                            <li>Forms manipulation and testing
+                            <li>Forms
                             <ul className="sub-list">
                                     <li><NavLink to="/form">Form validation</NavLink></li>
                                 </ul>
@@ -49,6 +49,13 @@ const SideDrawer = props => {
                                     <li><NavLink to="/Wait">Wait</NavLink></li>
                                 </ul>
                             </li>
+
+                            <li>Scramble
+                        <ul className="sub-list">
+                                    <li><NavLink to="/scramble">Scramble</NavLink></li>
+                                </ul>
+                            </li>
+
 
                             <li><NavLink to="/about">About</NavLink></li>
                         </ul>

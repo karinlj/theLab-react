@@ -1,27 +1,31 @@
 @import '../../variables.scss';
 
-.scramble-btns {
-    margin-top: 1rem;
-
-    .button {
-        display: block;
-        margin-bottom: 1rem;
-
+.scramble-section {
+    .message {
+        float: none;
     }
 }
 
 .scrambleText {
-    margin-top: 2rem;
     color: #fff;
+    height: 150px;
+
+    @media all and (min-width: $sm-min) {
+        height: 130px;
+    }
+
+    @media all and (min-width: $xl-min) {
+        height: 120px;
+    }
 }
 
-.message {
-    margin-top: 2rem;
+.animalBtns {
+    height: 80px;
 }
 
-.row.btn {
-    &:nth-last-of-type(1) {
-        float: right;
+.scrambleBtns {
+    .button {
+        margin-bottom: 1rem;
     }
 }
 
@@ -39,39 +43,26 @@
     -ms-border-radius: $themeBorderRadius;
     -o-border-radius: $themeBorderRadius;
     color: #fff;
-
-    .pink {
-        background: $themecolorPink;
-
-    }
-
-    .green {
-        background: $themecolorGreen;
-    }
-
-    .turqoise {
-        background: $themecolorTurquoise;
-    }
 }
 
+//btn classes
 .btn.pink {
     background: $themecolorPink;
 }
 
-.btn.turquoise {
-    background: $themecolorTurquoise;
+.btn.dark-blue {
+    background: $themecolorBlueDarkest;
 }
 
 .btn.yellow {
     background: $themecolorYellow;
 }
 
-
 #small {
-
     padding: 8px 14px;
 }
 
+//btn id:s
 #big {
     box-shadow: $themeBoxShadow;
     color: #fff;

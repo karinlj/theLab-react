@@ -6,9 +6,12 @@ import HeaderText from '../HeaderText';
 
 class Scramble extends Component { //class based
     state = {
-        class: 'btn turquoise',
+        class: 'btn pink',
         id: 'big',
-        index: 0, //for counting up id, class, content
+        indexId: 0, //for counting up 
+        indexClass: 0,
+        indexContent: 0,
+        indexOrder: 0,
         content: 'lion',
         orderClass: 'col order-first',
         message: '',
@@ -17,8 +20,8 @@ class Scramble extends Component { //class based
 
     scrambleId = () => {
 
-        let ids = ['small', 'big', 'bigger'];
-        let i = this.state.index;
+        let ids = ['big', 'bigger', 'small'];
+        let i = this.state.indexId;
 
         if (i === 0) {
             i = 1;
@@ -27,9 +30,11 @@ class Scramble extends Component { //class based
             i = 2;
         }
         else { i = 0; }
-        console.log(i);
 
         let scrambleId = ids[i];
+
+        //console.log(scrambleId);
+
 
         /*  The modulus way:
             i++;
@@ -40,7 +45,7 @@ class Scramble extends Component { //class based
 
         this.setState({
             id: scrambleId,
-            index: i,
+            indexId: i,
             messageClass: 'message'
         })
 
@@ -58,14 +63,11 @@ class Scramble extends Component { //class based
            ids.map(function (value, index) {
                return console.log(value);
            }); */
-
-
     }
 
     scrambleClass = () => {
-        let classes = ['btn pink', 'btn turquoise', 'btn yellow'];
-
-        let i = this.state.index;
+        let classes = ['btn pink', 'btn dark-blue', 'btn yellow'];
+        let i = this.state.indexClass;
 
         if (i === 0) {
             i = 1;
@@ -75,13 +77,13 @@ class Scramble extends Component { //class based
         }
         else { i = 0; }
 
-        console.log(i);
-
         let scrambleClass = classes[i];
+
+        //console.log(scrambleClass);
 
         this.setState({
             class: scrambleClass,
-            index: i,
+            indexClass: i,
             messageClass: 'message'
         })
     }
@@ -89,8 +91,7 @@ class Scramble extends Component { //class based
     scrambleContent = () => {
 
         let contents = ['lion', 'puma', 'tiger'];
-
-        let i = this.state.index;
+        let i = this.state.indexContent;
 
         if (i === 0) {
             i = 1;
@@ -100,12 +101,12 @@ class Scramble extends Component { //class based
         }
         else { i = 0; }
 
-        console.log(i);
-
         let scrambleContent = contents[i];
 
+        //console.log(scrambleContent);
+
         this.setState({
-            index: i,
+            indexContent: i,
             content: scrambleContent,
             messageClass: 'message'
         })
@@ -114,23 +115,20 @@ class Scramble extends Component { //class based
     scrambleOrder = () => {
 
         let orderClasses = ['col order-first', 'col order-last'];
-
-        let i = this.state.index;
+        let i = this.state.indexOrder;
 
         if (i === 0) {
             i = 1;
         }
         else { i = 0; }
 
-        console.log(i);
-
         let scrambleOrderClass = orderClasses[i];
 
-        console.log(scrambleOrderClass);
+        //console.log(scrambleOrderClass);
 
         this.setState({
-            index: i,
-            order: scrambleOrderClass,
+            indexOrder: i,
+            orderClass: scrambleOrderClass,
             messageClass: 'message'
         })
     }
@@ -140,11 +138,10 @@ class Scramble extends Component { //class based
         let messageNew = '';
         if (isSuccess) {  //if isSuccess is true
             messageNew = 'Success!';
-            console.log(messageNew);
+            // console.log(messageNew);
         }
         else {
             messageNew = 'Fail!';
-            console.log(messageNew);
         }
 
         this.setState({
@@ -162,50 +159,69 @@ class Scramble extends Component { //class based
                             <HeaderText componentName="scramble" />
                         </header>
 
-                        <div className="row justify-content-between">
-                            <div className={this.state.order}>
+                        <div className="animalBtns">
+                            <div className="row justify-content-between">
 
-                                <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                                <div className={this.state.orderClass}>
 
-                            </div>
-                            <div className="col order-5">
+                                    <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                                </div>
 
-                                <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
-
+                                <div className="col order-2">
+                                    <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+                                </div>
                             </div>
                         </div>
 
+
                         <div className="row justify-content-between">
-                            <div className="col-8">
 
+                            <div className="col">
                                 <div className="scrambleText">
-                                    {/*  <div className={this.state.messageClass}> */}
+                                    <p>Current button <strong>id</strong> is: <strong>{this.state.id}</strong></p>
 
-                                    <p>Current button <strong>id</strong> is: <br /> <strong>{this.state.id}</strong></p>
-
-                                    <p>Current button <strong>class</strong> is: <br /> <strong>{this.state.class}</strong></p>
-
-                                </div>
-
-                                <div className="scramble-btns">
-
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Id" clickProp={this.scrambleId} />
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Class" clickProp={this.scrambleClass} />
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Content" clickProp={this.scrambleContent} />
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Order" clickProp={this.scrambleOrder} />
-
+                                    <p>Current button <strong>class</strong> is: <strong>{this.state.class}</strong></p>
                                 </div>
                             </div>
-
-                            <div className="col-4">
-
+                            <div className="col">
                                 <div className={this.state.messageClass}>
                                     <h4>{this.state.message}</h4>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className="row justify-content-between">
+
+                            <div className="col-sm-6 col-md-12 col-xl-6">
+                                <div className="scrambleBtns">
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Id" clickProp={this.scrambleId} />
+                                </div>
+                            </div>
+                            <div className="col-sm-6 col-md-12 col-xl-6">
+                                <div className="scrambleBtns">
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Content" clickProp={this.scrambleContent} />
+                                </div>
 
                             </div>
                         </div>
 
+                        <div className="row justify-content-between">
+
+
+                            <div className="col-sm-6 col-md-12 col-xl-6">
+                                <div className="scrambleBtns">
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Class" clickProp={this.scrambleClass} />
+                                </div>
+                            </div>
+                            <div className="col-sm-6 col-md-12 col-xl-6">
+                                <div className="scrambleBtns">
+                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Order" clickProp={this.scrambleOrder} />
+                                </div>
+
+                            </div>
+
+
+                        </div>
 
                     </div>
                 </div>
@@ -213,7 +229,7 @@ class Scramble extends Component { //class based
                 <div className="col-12 col-md-5">
                     <Sidebar componentName="scramble" />
                 </div>
-            </div >
+            </div>
         )
     }
 }
