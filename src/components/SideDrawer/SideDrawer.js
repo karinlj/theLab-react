@@ -53,6 +53,8 @@ const SideDrawer = props => {
                             <li>Scramble
                         <ul className="sub-list">
                                     <li><NavLink to="/scramble">Scramble</NavLink></li>
+                                    <li><NavLink to="/changingControls">ChangingControls</NavLink></li>
+
                                 </ul>
                             </li>
 
