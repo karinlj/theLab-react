@@ -12,8 +12,7 @@ class Scramble extends Component { //class based
         indexClass: 0,
         indexContent: 0,
         content: 'lion',
-        changingBtnLeft: false,
-        orderBtn: 'cat',
+        isReversed: false,
         message: '',
         messageClass: 'message',
     };
@@ -96,45 +95,15 @@ class Scramble extends Component { //class based
         })
     }
 
-
-    /*  renderBtns = () => {
-         let animalBtns;
- 
-         if (this.state.changingBtnLeft) {
- 
-             animalBtns =
-                 <div className="row justify-content-between">
-                     <div className="col">
-                         <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
-                     </div>
-                     <div className="col">
-                         <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
-                     </div>
-                 </div>;
-         }
-         else {
-             animalBtns =
-                 <div className="row justify-content-between">
-                     <div className="col">
-                         <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
-                     </div>
-                     <div className="col">
-                         <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
-                     </div>
-                 </div>;
-         }
-         return animalBtns;
-     } */
-
-    renderBtns = (isLeft) => {  //isLeft: true eller false i två rader på en lapp. om stateLeft i kolumner som tabell. fyller i i tabellen var ska knappen vara. Hälften ska var till höger och tvärtom.
+    renderBtns = (isLeftPosition) => {  //isLeftPosition: true eller false i två rader på en lapp. om isReversed i kolumner som tabell. fyller i i tabellen var ska knappen vara. Hälften ska vara till höger och tvärtom.
 
         //false + false = false
         //false + true = true
         //true + false = true
         //true + true = false
 
-        //if (isLeft) {
-        if ((isLeft && !this.state.changingBtnLeft) || (!isLeft && this.state.changingBtnLeft)) {
+        //if (isLeft) {  //only to output the buttons
+        if ((isLeftPosition && !this.state.isReversed) || (!isLeftPosition && this.state.isReversed)) {  //to move the buttons
             return (
                 <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
             );
@@ -149,9 +118,8 @@ class Scramble extends Component { //class based
     scrambleOrder = () => {
 
         this.setState({
-            changingBtnLeft: !this.state.changingBtnLeft
+            isReversed: !this.state.isReversed
         })
-
     }
 
     compare = (isSuccess) => {
@@ -171,7 +139,11 @@ class Scramble extends Component { //class based
         })
     }
 
+
     render() {
+
+        const orangeBtnTitles = ['Scramble Id', 'Scramble Content', 'Scramble Class', 'Scramble Order'];
+        const orangeBtnClass = 'button orange-btn';
 
         return (
             <div className="row justify-content-between">
@@ -213,33 +185,27 @@ class Scramble extends Component { //class based
                             </div>
                         </div>
 
-                        <div className="row justify-content-between">
+                        <div className="scrambleBtns">
+                            <div className="row justify-content-between">
 
-                            <div className="col-sm-6 col-md-12 col-xl-6">
-                                <div className="scrambleBtns">
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Id" clickProp={this.scrambleId} />
+                                <div className="col-sm-6 col-md-12 col-xl-6">
+                                    <MainBtn classProp={orangeBtnClass} titleProp={orangeBtnTitles[0]} clickProp={this.scrambleId} />
+                                </div>
+                                <div className="col-sm-6 col-md-12 col-xl-6">
+                                    <MainBtn classProp={orangeBtnClass} titleProp={orangeBtnTitles[1]} clickProp={this.scrambleContent} />
+
                                 </div>
                             </div>
-                            <div className="col-sm-6 col-md-12 col-xl-6">
-                                <div className="scrambleBtns">
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Content" clickProp={this.scrambleContent} />
+
+                            <div className="row justify-content-between">
+
+                                <div className="col-sm-6 col-md-12 col-xl-6">
+                                    <MainBtn classProp={orangeBtnClass} titleProp={orangeBtnTitles[2]} clickProp={this.scrambleClass} />
                                 </div>
+                                <div className="col-sm-6 col-md-12 col-xl-6">
+                                    <MainBtn classProp={orangeBtnClass} titleProp={orangeBtnTitles[3]} clickProp={this.scrambleOrder} />
 
-                            </div>
-                        </div>
-
-                        <div className="row justify-content-between">
-
-                            <div className="col-sm-6 col-md-12 col-xl-6">
-                                <div className="scrambleBtns">
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Class" clickProp={this.scrambleClass} />
                                 </div>
-                            </div>
-                            <div className="col-sm-6 col-md-12 col-xl-6">
-                                <div className="scrambleBtns">
-                                    <MainBtn classProp="button orange-btn" titleProp="Scramble Order" clickProp={this.scrambleOrder} />
-                                </div>
-
                             </div>
                         </div>
 

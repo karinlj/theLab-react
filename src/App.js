@@ -16,6 +16,7 @@ import ConcatStrings from './components/Strings/ConcatStrings';
 import Speed from './components/Timing/Speed';
 import Wait from './components/Timing/Wait';
 import Scramble from './components/Scramble/Scramble';
+import ChangingControls from './components/Scramble/ChangingControls';
 
 import Timer from './components/Timing/Timer';
 import Blog from './components/Blog/Blog'
@@ -72,6 +73,7 @@ class App extends Component {
                 <Route path="/Wait" component={Wait} />
                 <Route path='/about' component={About} />
                 <Route path="/Scramble" component={Scramble} />
+                <Route path="/ChangingControls" component={ChangingControls} />
 
                 <Route path="/Blog" component={Blog} />
                 <Route path='/timer' component={Timer} />

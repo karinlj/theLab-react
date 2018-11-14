@@ -15,6 +15,8 @@ const HeaderText = props => {
         <div>
             <h1>{HeaderData[componentName].heading}</h1>  {/* bracket notation for refering to a variable */}
 
+            {/*  <p>{HeaderData[componentName].text}</p> */}
+
             <p>{HeaderData[componentName].text.split('\n').map((item, key) => {  //line breaks
                 return (
                     <span key={key}>{item}<br /></span>
