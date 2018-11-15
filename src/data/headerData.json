@@ -51,8 +51,8 @@
     },
     "changingControls": {
         "heading": "Changing Controls",
-        "text": "Praesent id velit volutpat, finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus.",
+        "text": "This is a simple game where you can change the action labels that manipulates something in your data model (represented by Donkey, Zebra, or Horse). In a typical SaaS application, this could for example be Project, User or Bank Account. \n\n The trick is to let your test automation tool to still find the buttons even if the wording is changing, but only affecting the appropriate buttons.",
         "sidebarHeading": "Why learn: Changing Controls?",
-        "sidebarText": "Praesent id velit volutpat, finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus."
+        "sidebarText": "Often when doing code updates for an application the wording changes for common actions. New gets replaced by Create, Delete get replaced by Remove. This example illustrates how to handle these updates, with minimum maintenance work on your automated tests."
     }
 }

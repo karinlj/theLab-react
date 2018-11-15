@@ -50,7 +50,13 @@ class ChangingControls extends Component {
                         </header>
 
                         <form className="todo-form" onSubmit={this.handleSubmit}>
-                            <label htmlFor="">Write something:</label><br></br>
+                            <label htmlFor="">Change wording for Add:</label><br></br>
+
+                            <input type="text" onChange={this.handleChange} value={this.state.content} />
+                        </form>
+
+                        <form className="todo-form" onSubmit={this.handleSubmit}>
+                            <label htmlFor="">Change wording for Delete:</label><br></br>
 
                             <input type="text" onChange={this.handleChange} value={this.state.content} />
                         </form>
@@ -62,11 +68,22 @@ class ChangingControls extends Component {
                                     <MainBtn classProp="button pink-btn" titleProp="Add Donkey" clickProp={this.changeContent} />
                                 </div>
                                 <div className="col-sm-4 col-md-12 col-xl-4">
+                                    <MainBtn classProp="button pink-btn" titleProp="Delete Donkey" clickProp={this.changeContent} />
+                                </div>
+                                <div className="col-sm-4 col-md-12 col-xl-4">
                                     <MainBtn classProp="button turquoise-btn" titleProp="Add Zebra" clickProp={this.changeContent} />
+
+                                </div>
+                                 <div className="col-sm-4 col-md-12 col-xl-4">
+                                    <MainBtn classProp="button turquoise-btn" titleProp="Delete Zebra" clickProp={this.changeContent} />
 
                                 </div>
                                 <div className="col-sm-4 col-md-12 col-xl-4">
                                     <MainBtn classProp="button yellow-btn" titleProp="Add Horse" clickProp={this.changeContent} />
+
+                                </div> 
+                                <div className="col-sm-4 col-md-12 col-xl-4">
+                                    <MainBtn classProp="button yellow-btn" titleProp="Delete Horse" clickProp={this.changeContent} />
 
                                 </div>
                             </div>
@@ -77,14 +94,18 @@ class ChangingControls extends Component {
                             <div className="row justify-content-between">
 
                                 <div className="col-12">
-                                    <a href="https://getbootstrap.com/">Some link</a>
+                                    <a href="changingControls?add=New">Change Add to New</a>
                                 </div>
                                 <div className="col-12">
-                                    <a href="https://getbootstrap.com/">Some other link</a>
+                                    <a href="changingControls?delete=Remove">Change Delete to Remove</a>
 
                                 </div>
                                 <div className="col-12">
-                                    <a href="https://getbootstrap.com/">Some third link</a>
+                                    <a href="changingControls?add=Create">Change Add to Create</a>
+
+                                </div>
+                                <div className="col-12">
+                                    <a href="changingControls?delete=Del">Change Delete to Del</a>
 
                                 </div>
                             </div>
@@ -94,7 +115,7 @@ class ChangingControls extends Component {
 
                             <div className="col">
                                 <div className="scrambleText">
-                                    <p>Some text??</p>
+                                    <p>Click the links to test common wording changes</p>
 
                                 </div>
                             </div>
