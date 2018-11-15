@@ -131,9 +131,7 @@ class Form extends Component { //class based component
                                 onChange={e => this.handleChange(e)} />
                             <span className="warn">{this.state.passwordError}</span>
 
-                            <SubmitBtn titleProp="Submit"
-                                clickProp={this.handleSubmit} />
-
+                            <SubmitBtn clickProp={this.handleSubmit}>Submit</SubmitBtn>
                         </form>
 
                         {/* onClick={e => this.handleSubmit(e)}>Submit</button> */}

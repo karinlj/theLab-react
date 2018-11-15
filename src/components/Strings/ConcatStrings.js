@@ -70,7 +70,7 @@ class ConcatStrings extends Component { //class based
                         <div className="btn-and-message">
                             {/* properties are DEFINED and different VALUES are set */}
 
-                            <MainBtn classProp="button orange-btn" titleProp="Generate strings" clickProp={this.generateStrings} />
+                            <MainBtn classProp="button orange-btn" clickProp={this.generateStrings}>Generate strings</MainBtn>
                             <div className={this.state.messageClass}>
                                 <h4>{this.state.message}</h4>
                             </div>
@@ -87,7 +87,7 @@ class ConcatStrings extends Component { //class based
                             <input type="text" onChange={this.handleChange} value={this.state.inputStr} />
                         </form>
 
-                        <SubmitBtn titleProp="Submit" clickProp={this.handleSubmit} />
+                        <SubmitBtn clickProp={this.handleSubmit}>Submit</SubmitBtn>
 
                     </div>
                 </div>

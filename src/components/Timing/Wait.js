@@ -85,9 +85,10 @@ class Wait extends Component { //class based
 
                         <div className="btn-and-message higher">
                             <div>
-                                <MainBtn classProp="button start-btn" titleProp="Start game" clickProp={this.handleStart} />
+                                <MainBtn classProp="button start-btn" clickProp={this.handleStart}>Start game</MainBtn>
 
-                                <MainBtn classProp={this.state.stopClass} titleProp="End game" clickProp={this.handleStop} />
+                                <MainBtn classProp={this.state.stopClass} clickProp={this.handleStop}>End game</MainBtn>
+
                             </div>
 
                             <div className={this.state.messageClass}>

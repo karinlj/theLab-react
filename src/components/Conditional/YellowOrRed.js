@@ -55,7 +55,7 @@ class YellowOrRed extends Component { //class based
                         <div className="btn-and-message">
                             {/* properties are DEFINED and different VALUES are set */}
 
-                            <MainBtn classProp="button orange-btn" titleProp="Generate color" clickProp={this.generateColor} />
+                            <MainBtn classProp="button orange-btn" clickProp={this.generateColor}>Generate color</MainBtn>
                             <div className={this.state.messageClass}>
                                 <h4>{this.state.message}</h4>
                             </div>
@@ -63,9 +63,9 @@ class YellowOrRed extends Component { //class based
 
                         <h3 className="rand-color">{this.state.color}</h3>
 
-                        <MainBtn classProp="button yellow-btn" titleProp="Yellow" clickProp={() => this.compare('yellow')} />
+                        <MainBtn classProp="button yellow-btn" clickProp={() => this.compare('yellow')}>Yellow</MainBtn>
 
-                        <MainBtn classProp="button red-btn" titleProp="Red" clickProp={() => this.compare('red')} />
+                        <MainBtn classProp="button red-btn" clickProp={() => this.compare('red')}>Red</MainBtn>
 
                     </div>
                 </div>

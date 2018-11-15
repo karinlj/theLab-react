@@ -58,7 +58,7 @@ class CatOrDog extends Component { //class based
                         </header>
 
                         <div className="btn-and-message">
-                            <MainBtn classProp="button orange-btn" titleProp="Generate pet" clickProp={this.generatePet} />
+                            <MainBtn classProp="button orange-btn" clickProp={this.generatePet}>Generate pet</MainBtn>
                             <div className={this.state.messageClass}>
                                 <h4>{this.state.message}</h4>
                             </div>
@@ -68,9 +68,9 @@ class CatOrDog extends Component { //class based
                             {displayPet}
                         </div>
 
-                        <MainBtn classProp="button turquoise-btn" titleProp="Cat" clickProp={() => this.compare('cat')} />
+                        <MainBtn classProp="button turquoise-btn" clickProp={() => this.compare('cat')} >Cat</MainBtn>
 
-                        <MainBtn classProp="button pink-btn" titleProp="Dog" clickProp={() => this.compare('dog')} />
+                        <MainBtn classProp="button pink-btn" clickProp={() => this.compare('dog')} >Dog</MainBtn>
 
                     </div>
                 </div>

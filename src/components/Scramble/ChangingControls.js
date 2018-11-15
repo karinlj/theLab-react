@@ -82,20 +82,20 @@ class ChangingControls extends Component {
                             <div className="row justify-content-between">
 
                                 <div className="col-6">
-                                    <a href="changingControls?add=New"><MainBtn classProp="button orange-btn" clickProp={this.changeContent}>{this.state.contentAdd} Giraffe</MainBtn></a>
+                                    <a href="changingControls?add=New"><MainBtn classProp="button orange-btn" clickProp={this.changeContent}>{this.state.contentAdd} Kangaroo</MainBtn></a>
 
-                                    <a href="changingControls?add=New"><MainBtn classProp="button green-btn" clickProp={this.changeContent}>Antelope</MainBtn></a>
+                                    <a href="changingControls?add=New"><MainBtn classProp="button green-btn" clickProp={this.changeContent}>Koala</MainBtn></a>
 
-                                    <a href="changingControls?add=New"><MainBtn classProp="button red-btn" clickProp={this.changeContent}>Cheetah</MainBtn></a>
+                                    <a href="changingControls?add=New"><MainBtn classProp="button red-btn" clickProp={this.changeContent}>Dolphin</MainBtn></a>
 
                                 </div>
 
                                 <div className="col-6">
-                                    <a href="changingControls?add=New"><MainBtn classProp="button orange-btn" clickProp={this.changeContent} >Delete Giraffe</MainBtn></a>
+                                    <a href="changingControls?add=New"><MainBtn classProp="button orange-btn" clickProp={this.changeContent}>Delete Kangaroo</MainBtn></a>
 
-                                    <a href="changingControls?add=New"><MainBtn classProp="button green-btn" clickProp={this.changeContent}>Delete Antelope</MainBtn></a>
+                                    <a href="changingControls?add=New"><MainBtn classProp="button green-btn" clickProp={this.changeContent}>Delete Koala</MainBtn></a>
 
-                                    <a href="changingControls?add=New"><MainBtn classProp="button red-btn" clickProp={this.changeContent}>Delete Cheetah</MainBtn></a>
+                                    <a href="changingControls?add=New"><MainBtn classProp="button red-btn" clickProp={this.changeContent}>Delete Dolphin</MainBtn></a>
 
                                 </div>
 

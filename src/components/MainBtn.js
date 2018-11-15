@@ -11,9 +11,9 @@ const MainBtn = props => {
 
     return (
         <button className={props.classProp} id={props.idProp} onClick={props.clickProp} >
-            {props.titleProp} {props.children}
+            {props.children}
 
-            {/* props are OUTPUT here */}
+            {/* props are OUTPUT here , but reusable from here*/}
         </button>
     );
 };
