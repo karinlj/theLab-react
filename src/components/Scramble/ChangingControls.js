@@ -7,38 +7,20 @@ import HeaderText from '../HeaderText';
 class ChangingControls extends Component {
     state = {
         contentAdd: 'Add',
-        contentDelete: '',
+        contentDelete: 'Delete',
         message: '',
         messageClass: 'message',
     };
 
-
-
-    changeContent = () => {
-
+    handleChangeAdd = (e) => {  //e = here: the input element
         this.setState({
-            messageClass: 'message show',
+            contentAdd: e.target.value   //value= what user types in
         })
     }
-
 
     handleSubmitAdd = (e) => {
         e.preventDefault();
         console.log(this.state);
-        //submitting the new todo
-        if (this.state.contentAdd) { //if has content
-            alert(this.state.contentAdd);
-            // this.props.addTodoProp(this.state); //calling the prop:addTodo that refers to the func:AddTodo (in TodoList) ,call the func and pass in this.state from THIS component
-            this.setState({ //setting state.content= ''
-                contentAdd: ''
-            })
-        }
-    }
-
-    handleChangeAdd = (e) => {
-        this.setState({ //value= what user types in
-            contentAdd: e.target.value
-        })
     }
 
     handleChangeDelete = (e) => {
@@ -46,9 +28,13 @@ class ChangingControls extends Component {
             contentDelete: e.target.value
         })
     }
+    handleSubmitDelete = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+    }
 
 
-    compare = (isSuccess) => {
+    printAnimal = () => {
 
         this.setState({
             messageClass: 'message show',
@@ -82,23 +68,20 @@ class ChangingControls extends Component {
                             <div className="row justify-content-between">
 
                                 <div className="col-6">
-                                    <a href="changingControls?add=New"><MainBtn classProp="button orange-btn" clickProp={this.changeContent}>{this.state.contentAdd} Kangaroo</MainBtn></a>
+                                    <MainBtn classProp="button orange-btn" clickProp={this.printAnimal}>{this.state.contentAdd} Kangaroo</MainBtn>
 
-                                    <a href="changingControls?add=New"><MainBtn classProp="button green-btn" clickProp={this.changeContent}>Koala</MainBtn></a>
+                                    <MainBtn classProp="button green-btn" clickProp={this.printAnimal}>{this.state.contentAdd}  Koala</MainBtn>
 
-                                    <a href="changingControls?add=New"><MainBtn classProp="button red-btn" clickProp={this.changeContent}>Dolphin</MainBtn></a>
-
+                                    <MainBtn classProp="button red-btn" clickProp={this.printAnimal}>{this.state.contentAdd} Dolphin</MainBtn>
                                 </div>
 
                                 <div className="col-6">
-                                    <a href="changingControls?add=New"><MainBtn classProp="button orange-btn" clickProp={this.changeContent}>Delete Kangaroo</MainBtn></a>
+                                    <MainBtn classProp="button orange-btn" clickProp={this.printAnimal}>{this.state.contentDelete} Kangaroo</MainBtn>
 
-                                    <a href="changingControls?add=New"><MainBtn classProp="button green-btn" clickProp={this.changeContent}>Delete Koala</MainBtn></a>
+                                    <MainBtn classProp="button green-btn" clickProp={this.printAnimal}>{this.state.contentDelete} Koala</MainBtn>
 
-                                    <a href="changingControls?add=New"><MainBtn classProp="button red-btn" clickProp={this.changeContent}>Delete Dolphin</MainBtn></a>
-
+                                    <MainBtn classProp="button red-btn" clickProp={this.printAnimal}>{this.state.contentDelete} Dolphin</MainBtn>
                                 </div>
-
                             </div>
                         </div>
 

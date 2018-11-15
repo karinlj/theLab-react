@@ -19,7 +19,9 @@ class AddTodo extends Component {
         //submitting the new todo
         if (this.state.content) { //if has content
             // alert(this.state.content);
-            this.props.addTodoProp(this.state); //calling the prop:addTodo that refers to the func:AddTodo (in TodoList) ,call the func and pass in this.state from THIS component
+            this.props.addTodoProp(this.state); //calling the prop:addTodo that refers to the func:AddTodo (in TodoList),
+            //call the func and pass in this.state from THIS component
+
             this.setState({ //setting state.content= ''
                 content: ''
             })

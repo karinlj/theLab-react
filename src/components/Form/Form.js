@@ -56,7 +56,6 @@ class Form extends Component { //class based component
             // alert('Username needs to be al least 5 characters');
         }
 
-
         this.setState({
             ...this.state, //state is staying the same
             ...errors  //expanding errors
