@@ -100,18 +100,27 @@
 
     .changingControlBtns {
         margin: 3rem 0 1rem 0;
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .button {
+            display: block;
+            margin-bottom: 1rem;
+            text-decoration: none;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
     }
 
     .changingControlLinks {
         margin: 1rem 0 2rem 0;
-    }
 
-    .button {
-        display: block;
-        margin-bottom: 1rem;
-    }
-
-    a {
-        color: #d1eafa;
+        a {
+            color: $themecolorBlueDarkest;
+        }
     }
 }

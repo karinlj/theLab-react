@@ -128,7 +128,7 @@ class ChangingControls extends Component {
 
                             <div className="col">
                                 <div className="scrambleText">
-                                    <p>Click the links to test common wording changes</p>
+                                    <p>Click the links to test common wording changes.</p>
 
                                 </div>
                             </div>
