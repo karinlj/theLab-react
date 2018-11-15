@@ -105,12 +105,13 @@ class Scramble extends Component { //class based
         //if (isLeft) {  //only to output the buttons
         if ((isLeftPosition && !this.state.isReversed) || (!isLeftPosition && this.state.isReversed)) {  //to move the buttons
             return (
-                <MainBtn idProp={this.state.id} classProp={this.state.class} titleProp={this.state.content} clickProp={() => this.compare(true)} />
+                <MainBtn idProp={this.state.id} classProp={this.state.class}
+                    clickProp={() => this.compare(true)}>{this.state.content}</MainBtn>
             );
         }
         else {
             return (
-                <MainBtn idProp="normal" classProp="button green-btn" titleProp="elephant" clickProp={() => this.compare(false)} />
+                <MainBtn idProp="normal" classProp="button green-btn" clickProp={() => this.compare(false)}>elephant</MainBtn>
             );
         }
     }

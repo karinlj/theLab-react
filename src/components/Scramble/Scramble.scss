@@ -116,11 +116,11 @@
         }
     }
 
-    .changingControlLinks {
-        margin: 1rem 0 2rem 0;
+    .message {
+        float: none;
 
-        a {
-            color: $themecolorBlueDarkest;
+        @media all and (min-width: $xl-min) {
+            font-size: 85%;
         }
     }
 }
