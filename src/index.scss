@@ -61,7 +61,7 @@ h5 {
   box-shadow: $themeBoxShadow;
   color: #fff;
   cursor: pointer;
-  font-size: 0.9em;
+  font-size: 0.8em;
   border: none;
   transition: 1s;
   text-transform: uppercase;
@@ -73,7 +73,11 @@ h5 {
   -o-border-radius: $themeBorderRadius;
 
   &:hover {
-    //  opacity: 0.8;
+    opacity: 0.9;
+  }
+
+  @media all and (min-width: $sm-min) {
+    font-size: 0.9em;
   }
 }
 

@@ -52,7 +52,7 @@ const Navbar = props => (
                         <li>Scramble
                         <ul className="sub-list">
                                 <li><NavLink to="/scramble">Scramble</NavLink></li>
-                                <li><NavLink to="/changingControls">ChangingControls</NavLink></li>
+                                <li><NavLink to="/changingControls">Changing controls</NavLink></li>
                             </ul>
                         </li>
 

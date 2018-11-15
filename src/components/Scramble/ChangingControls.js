@@ -6,7 +6,8 @@ import HeaderText from '../HeaderText';
 
 class ChangingControls extends Component {
     state = {
-        content: '',
+        contentAdd: 'Add',
+        contentDelete: '',
         message: '',
         messageClass: 'message',
     };
@@ -21,13 +22,29 @@ class ChangingControls extends Component {
     }
 
 
-    handleSubmit = () => {
-
+    handleSubmitAdd = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+        //submitting the new todo
+        if (this.state.contentAdd) { //if has content
+            alert(this.state.contentAdd);
+            // this.props.addTodoProp(this.state); //calling the prop:addTodo that refers to the func:AddTodo (in TodoList) ,call the func and pass in this.state from THIS component
+            this.setState({ //setting state.content= ''
+                contentAdd: ''
+            })
+        }
     }
 
+    handleChangeAdd = (e) => {
+        this.setState({ //value= what user types in
+            contentAdd: e.target.value
+        })
+    }
 
-    handleChange = () => {
-
+    handleChangeDelete = (e) => {
+        this.setState({ //value= what user types in
+            contentDelete: e.target.value
+        })
     }
 
 
@@ -49,43 +66,39 @@ class ChangingControls extends Component {
                             <HeaderText componentName="changingControls" />
                         </header>
 
-                        <form className="todo-form" onSubmit={this.handleSubmit}>
+                        <form className="todo-form" onSubmit={this.handleSubmitAdd}>
                             <label htmlFor="">Change wording for Add:</label><br></br>
 
-                            <input type="text" onChange={this.handleChange} value={this.state.content} />
+                            <input type="text" onChange={this.handleChangeAdd} value={this.state.contentAdd} />
                         </form>
 
                         <form className="todo-form" onSubmit={this.handleSubmit}>
                             <label htmlFor="">Change wording for Delete:</label><br></br>
 
-                            <input type="text" onChange={this.handleChange} value={this.state.content} />
+                            <input type="text" onChange={this.handleChangeDelete} value={this.state.contentDelete} />
                         </form>
 
                         <div className="changingControlBtns">
                             <div className="row justify-content-between">
 
-                                <div className="col-sm-4 col-md-12 col-xl-4">
-                                    <MainBtn classProp="button pink-btn" titleProp="Add Donkey" clickProp={this.changeContent} />
-                                </div>
-                                <div className="col-sm-4 col-md-12 col-xl-4">
-                                    <MainBtn classProp="button pink-btn" titleProp="Delete Donkey" clickProp={this.changeContent} />
-                                </div>
-                                <div className="col-sm-4 col-md-12 col-xl-4">
-                                    <MainBtn classProp="button turquoise-btn" titleProp="Add Zebra" clickProp={this.changeContent} />
+                                <div className="col-6">
+                                    <a href="changingControls?add=New"><MainBtn classProp="button orange-btn" clickProp={this.changeContent}>{this.state.contentAdd} Giraffe</MainBtn></a>
+
+                                    <a href="changingControls?add=New"><MainBtn classProp="button green-btn" clickProp={this.changeContent}>Antelope</MainBtn></a>
+
+                                    <a href="changingControls?add=New"><MainBtn classProp="button red-btn" clickProp={this.changeContent}>Cheetah</MainBtn></a>
 
                                 </div>
-                                 <div className="col-sm-4 col-md-12 col-xl-4">
-                                    <MainBtn classProp="button turquoise-btn" titleProp="Delete Zebra" clickProp={this.changeContent} />
+
+                                <div className="col-6">
+                                    <a href="changingControls?add=New"><MainBtn classProp="button orange-btn" clickProp={this.changeContent} >Delete Giraffe</MainBtn></a>
+
+                                    <a href="changingControls?add=New"><MainBtn classProp="button green-btn" clickProp={this.changeContent}>Delete Antelope</MainBtn></a>
+
+                                    <a href="changingControls?add=New"><MainBtn classProp="button red-btn" clickProp={this.changeContent}>Delete Cheetah</MainBtn></a>
 
                                 </div>
-                                <div className="col-sm-4 col-md-12 col-xl-4">
-                                    <MainBtn classProp="button yellow-btn" titleProp="Add Horse" clickProp={this.changeContent} />
 
-                                </div> 
-                                <div className="col-sm-4 col-md-12 col-xl-4">
-                                    <MainBtn classProp="button yellow-btn" titleProp="Delete Horse" clickProp={this.changeContent} />
-
-                                </div>
                             </div>
                         </div>
 
