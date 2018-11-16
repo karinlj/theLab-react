@@ -20,6 +20,8 @@ const Navbar = props => (
                         <li>Forms
                             <ul className="sub-list">
                                 <li><NavLink to="/form">Form validation</NavLink></li>
+                                {/*  <li><NavLink to="/login">Login</NavLink></li> */}
+
                             </ul>
                         </li>
 

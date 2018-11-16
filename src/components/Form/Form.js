@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Form.scss';
 import Sidebar from '../Sidebar';
 import SubmitBtn from '../SubmitBtn';
-import MainBtn from '../MainBtn';
 import HeaderText from '../HeaderText';
 import PrintForm from './PrintForm';
 
@@ -125,10 +124,6 @@ class Form extends Component { //class based component
                             </header>
                         </header>
                         <form className="form-validation" action="">
-                            {/*  <input type="text" placeholder='First name'
-                                    value={this.state.firstname}
-                                    onChange={e => this.setState({ firstname: e.target.value })} /> */}
-
                             <input name='firstname' type="text"
                                 placeholder='First name'
                                 value={this.state.firstname}

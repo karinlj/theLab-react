@@ -17,6 +17,7 @@ import Speed from './components/Timing/Speed';
 import Wait from './components/Timing/Wait';
 import Scramble from './components/Scramble/Scramble';
 import ChangingControls from './components/Scramble/ChangingControls';
+import Login from './components/Form/Login';
 
 import Timer from './components/Timing/Timer';
 import Blog from './components/Blog/Blog'
@@ -66,6 +67,7 @@ class App extends Component {
                 <Route exact path='/' component={Home} />
                 <Route path='/TodoList' component={TodoList} />
                 <Route path="/Form" component={Form} />
+                <Route path="/Login" component={Login} />
                 <Route path="/YellowOrRed" component={YellowOrRed} />
                 <Route path="/CatOrDog" component={CatOrDog} />
                 <Route path="/ConcatStrings" component={ConcatStrings} />

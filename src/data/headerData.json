@@ -54,5 +54,11 @@
         "text": "This is a simple game where you can change the action labels that manipulates something in your data model. In a typical SaaS application this could for example be Project, User or Bank Account - here represented by Kangaroo, Koala, or Dolphin. \n\n The trick is to let your test automation tool still find the buttons even if the wording is changing, but only affecting the appropriate buttons.",
         "sidebarHeading": "Why learn: Changing Controls?",
         "sidebarText": "Often when doing code updates for an application the wording changes for common actions. \"Add\" gets replaced by \"Create\", \"Delete\" get replaced by \"Remove\". \n\nThis example illustrates how to handle these updates with minimum maintenance work on your automated tests."
+    },
+    "login": {
+        "heading": "Login",
+        "text": "Finibus mi eleifend, molestie enim. Sed non massa nec lectus feugiat sollicitudin ut et nunc. Ut ac felis tellus.",
+        "sidebarHeading": "Why learn: Login?",
+        "sidebarText": "Ut eros justo, fringilla vulputate ultricies vel, volutpat in nisi."
     }
 }

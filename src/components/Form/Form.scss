@@ -48,6 +48,17 @@
     -o-border-radius: $themeBorderRadius;
     opacity: 0;
     transition: 1s;
+
+    li>strong {
+        color: $themecolorBlue;
+        font-weight: 300;
+        padding-right: 0.5rem;
+        font-size: 110%;
+    }
+
+    p {
+        font-size: 1em;
+    }
 }
 
 .formPrint.show {
