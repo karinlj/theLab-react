@@ -18,6 +18,7 @@ class Form extends Component { //class based component
         emailError: '',
         password: '',
         passwordError: '',
+        // errors: [],
 
         printName: '',
         printUsername: '',
@@ -64,10 +65,11 @@ class Form extends Component { //class based component
             // alert('Password needs to be al least 8 characters');
         }
 
-        this.setState({
-            ...this.state, //state is staying the same
-            ...errors  //expanding errors
-        });
+        this.setState(errors);
+
+        /*  this.setState({
+             errors: errors
+         }); */
         return isError;
     };
 
