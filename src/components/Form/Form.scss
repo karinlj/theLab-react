@@ -36,3 +36,20 @@
 
     }
 }
+
+.formPrint {
+    width: calc(100% - 40px);
+    background: #fff;
+    margin-top: 3rem;
+    border-radius: $themeBorderRadius;
+    -webkit-border-radius: $themeBorderRadius;
+    -moz-border-radius: $themeBorderRadius;
+    -ms-border-radius: $themeBorderRadius;
+    -o-border-radius: $themeBorderRadius;
+    opacity: 0;
+    transition: 1s;
+}
+
+.formPrint.show {
+    opacity: 1;
+}

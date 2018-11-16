@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import './Form.scss';
 import Sidebar from '../Sidebar';
 import SubmitBtn from '../SubmitBtn';
+import MainBtn from '../MainBtn';
 import HeaderText from '../HeaderText';
+import PrintForm from './PrintForm';
 
 class Form extends Component { //class based component
     state = {
@@ -15,7 +17,13 @@ class Form extends Component { //class based component
         email: '',
         emailError: '',
         password: '',
-        passwordError: ''
+        passwordError: '',
+
+        printName: '',
+        printUsername: '',
+        printEmail: '',
+        prinPassword: '',
+        formPrintClass: 'formPrint'
     }
 
     handleChange = (e) => {
@@ -53,7 +61,7 @@ class Form extends Component { //class based component
         if (this.state.password.length < 8) {
             isError = true;
             errors.passwordError = 'Password needs to be al least 8 characters';
-            // alert('Username needs to be al least 5 characters');
+            // alert('Password needs to be al least 8 characters');
         }
 
         this.setState({
@@ -66,8 +74,11 @@ class Form extends Component { //class based component
     handleSubmit = (e) => {
         e.preventDefault();
         //console.log(this.state);
+
         const err = this.validate(); //calling validate-func
         if (!err) {
+            this.printForm(); //call printForm if no errors in the form
+
             this.setState({ //clear form
                 firstname: '',
                 firstnameError: '',
@@ -83,6 +94,22 @@ class Form extends Component { //class based component
         }
     }
 
+    printForm = () => {
+
+        this.setState({
+            printName: this.state.firstname + ' ' + this.state.lastname,
+            printUsername: this.state.username,
+            printEmail: this.state.email,
+            printPassword: this.state.password,
+            formPrintClass: 'formPrint show'
+        })
+    }
+
+    clearPrint = () => {
+        this.setState({
+            formPrintClass: 'formPrint',
+        })
+    }
     render() {
 
         return (
@@ -103,7 +130,8 @@ class Form extends Component { //class based component
                             <input name='firstname' type="text"
                                 placeholder='First name'
                                 value={this.state.firstname}
-                                onChange={e => this.handleChange(e)} />
+                                onChange={e => this.handleChange(e)}
+                                onClick={this.clearPrint} />
                             <span className="warn">{this.state.firstnameError}</span>
 
                             <input name='lastname' type="text"
@@ -131,9 +159,13 @@ class Form extends Component { //class based component
                             <span className="warn">{this.state.passwordError}</span>
 
                             <SubmitBtn clickProp={this.handleSubmit}>Submit</SubmitBtn>
+
                         </form>
 
-                        {/* onClick={e => this.handleSubmit(e)}>Submit</button> */}
+                        <PrintForm classProp={this.state.formPrintClass} nameProp={this.state.printName}
+                            userProp={this.state.printUsername}
+                            emailProp={this.state.printEmail}
+                            passProp={this.state.printPassword} />
                     </div>
                 </div>
 
