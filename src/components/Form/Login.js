@@ -7,16 +7,18 @@ import HeaderText from '../HeaderText';
 import Lion from '../../img/lion.jpeg';
 import Zebra from '../../img/zebra.jpeg';
 import Lemur from '../../img/lemur.jpg';
+import AccountData from '../../data/accounts.json';
 
 class Login extends Component { //class based component
     state = {
+        role: '',
         email: '',
         password: '',
-        errorMess: '',
+        errorText: '',
         loggedInText: '',
         formClass: 'form show',
-        loggedinClass: 'loggedin',
-        account: ['username', 'password', 'role'],
+        loggedinClass: 'loggedin'
+        // account: ['username', 'password', 'role'],
 
     }
 
@@ -28,75 +30,83 @@ class Login extends Component { //class based component
 
 
     validate = () => {
-
     }
 
     handleLogin = (e) => {
         e.preventDefault();
-        // console.log(this.state);
-        console.log(this.state.email, this.state.password);
 
-        //const err = this.validate(); //calling validate-func
+        let username = this.state.email;
+        let newRole = AccountData[username].role;
 
-        // if (!err) {
-        this.loggedIn();
+        //console.log(AccountData[username]);
+        //console.log('pass ' + AccountData[username].password);
 
-        this.setState({ //clear form
-            email: '',
-            password: '',
-            formClass: 'form',
-            loggedinClass: 'loggedin show'
-        })
-        //}
-    }
+        if (AccountData[username].password === this.state.password) {
+            //console.log('passcheck ' + this.state.password);
 
-    loggedIn = () => {
-        this.setState({ //clear form
-            loggedInText: this.state.email
-        })
+            this.setState({ //clear form
+                role: newRole,
+                formClass: 'form',
+                loggedinClass: 'loggedin show',
+                loggedInText: this.state.email
+            })
+        }
+        else {
+            // console.log('fel pass');
+            this.setState({
+                errorText: 'Password is incorrect'
+            })
+        }
     }
 
     handleLogout = () => {
-        alert('logout');
-
-        this.setState({ //clear form
+        this.setState({  //clear form
+            email: '',
+            password: '',
+            errorText: '',
             formClass: 'form show',
             loggedinClass: 'loggedin'
         })
     }
 
-
-    /*    validate = () => {
-           let isError = false;
-           const errors = {
-               emailError: '',
-               passwordError: ''
-           };
-   
-           if (this.state.email.indexOf('@') === -1) {
-               isError = true;
-               errors.emailError = 'Please fill out valid email';
-           }
-           if (this.state.password.length < 8) {
-               isError = true;
-               errors.passwordError = 'Password needs to be al least 8 characters';
-               // alert('Password needs to be al least 8 characters');
-           }
-   
-           this.setState(errors);
-   
-           return isError;
-       }; */
-
     render() {
+        //console.log(this.state.role);
+
+        let displayAnimal;
+        let displayBtns;
+
+        if (this.state.role === 'lion') {
+            displayAnimal = <img src={Lion} alt="" />;
+            displayBtns =
+                <div className="btns">
+                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
+                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
+                    <MainBtn classProp="button pink-btn" clickProp={this.handleClick}>three</MainBtn>
+                </div>;
+
+        } else if (this.state.role === 'zebra') {
+            displayAnimal = <img src={Zebra} alt="" />;
+            displayBtns =
+                <div className="btns">
+                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
+                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
+                </div>;
+        }
+        else if (this.state.role === 'lemur') {
+            displayAnimal = <img src={Lemur} alt="" />;
+            displayBtns =
+                <div className="btns">
+                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
+                </div>;
+        }
+
 
         return (
-            <div className="row justify-content-between" >
+            <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
                     <div className="login-section">
                         <header>
                             <HeaderText componentName="login" />
-
                         </header>
 
                         <div className={this.state.formClass}>
@@ -130,13 +140,12 @@ class Login extends Component { //class based component
                                     placeholder='Email'
                                     value={this.state.email}
                                     onChange={e => this.handleChange(e)} />
-                                <span className="warn">{this.state.emailError}</span>
 
                                 <input name='password' type="password"
                                     placeholder='Password'
                                     value={this.state.password}
                                     onChange={e => this.handleChange(e)} />
-                                <span className="warn">{this.state.passwordError}</span>
+                                <span className="warn">{this.state.errorText}</span>
 
                                 <SubmitBtn clickProp={this.handleLogin}>Log in</SubmitBtn>
 
@@ -149,7 +158,8 @@ class Login extends Component { //class based component
                                 <div>
                                     <p>Logged in as:</p>
                                     <div className="user">
-                                        <img src={Lion} alt="" />
+                                        {/*  <img src={Lion} alt="" /> */}
+                                        {displayAnimal}
                                         <h5>{this.state.loggedInText}</h5>
                                     </div>
                                 </div>
@@ -157,15 +167,16 @@ class Login extends Component { //class based component
                             </div>
                             <div className="permissions">
 
-                                <p>Since I am <strong>the Lion</strong>, I have access to these buttons:</p>
-                                <div className="btns">
-                                    <MainBtn classProp="button pink-btn" clickProp={this.handleClick}>one</MainBtn>
-                                    <MainBtn classProp="button orange-btn" clickProp={this.handleClick}>two</MainBtn>
-                                    <MainBtn classProp="button yellow-btn" clickProp={this.handleClick}>three</MainBtn>
-                                </div>
+                                <p>Since I am the <strong>{this.state.role}</strong>, I have access to these buttons:</p>
+                                {/*      <div className="btns">
+                                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
+                                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
+                                    <MainBtn classProp="button pink-btn" clickProp={this.handleClick}>three</MainBtn>
+                                </div> */}
+
+                                {displayBtns}
                             </div>
                         </div>
-
 
 
                     </div>
@@ -175,7 +186,7 @@ class Login extends Component { //class based component
                     <Sidebar componentName="login" />
                 </div>
 
-            </div >
+            </div>
         );
     }
 }

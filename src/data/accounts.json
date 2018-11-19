@@ -1,0 +1,14 @@
+{
+    "lion@thelab.com": {
+        "password": "iamthelion",
+        "role": "lion"
+    },
+    "zebra@thelab.com": {
+        "password": "iamthezebra",
+        "role": "zebra"
+    },
+    "lemur@thelab.com": {
+        "password": "iamthelemur",
+        "role": "lemur"
+    }
+}
