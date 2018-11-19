@@ -4,6 +4,9 @@ import Sidebar from '../Sidebar';
 import SubmitBtn from '../SubmitBtn';
 import MainBtn from '../MainBtn';
 import HeaderText from '../HeaderText';
+import Lion from '../../img/lion.jpeg';
+import Zebra from '../../img/zebra.jpeg';
+import Lemur from '../../img/lemur.jpg';
 
 class Login extends Component { //class based component
     state = {
@@ -13,7 +16,9 @@ class Login extends Component { //class based component
         passwordError: '',
         loggedInText: '',
         formClass: 'form show',
-        loggedinClass: 'loggedin'
+        loggedinClass: 'loggedin',
+        account: ['username', 'password', 'role'],
+
     }
 
     handleChange = (e) => {
@@ -49,20 +54,20 @@ class Login extends Component { //class based component
         // console.log(this.state);
         console.log(this.state.email, this.state.password);
 
-        const err = this.validate(); //calling validate-func
+        //const err = this.validate(); //calling validate-func
 
-        if (!err) {
-            this.loggedIn();
+        // if (!err) {
+        this.loggedIn();
 
-            this.setState({ //clear form
-                email: '',
-                emailError: '',
-                password: '',
-                passwordError: '',
-                formClass: 'form',
-                loggedinClass: 'loggedin show'
-            })
-        }
+        this.setState({ //clear form
+            email: '',
+            emailError: '',
+            password: '',
+            passwordError: '',
+            formClass: 'form',
+            loggedinClass: 'loggedin show'
+        })
+        //}
     }
 
     loggedIn = () => {
@@ -87,14 +92,35 @@ class Login extends Component { //class based component
                 <div className="col-12 col-md-6">
                     <div className="login-section">
                         <header>
-                            <header>
-                                <HeaderText componentName="login" />
+                            <HeaderText componentName="login" />
 
-                            </header>
                         </header>
 
-                        {/*  <MainBtn classProp="button green-btn" clickProp={this.login}>Login</MainBtn> */}
                         <div className={this.state.formClass}>
+                            <div className="login-options">
+                                <div className="login-option">
+                                    <h5>Role</h5>
+                                    <h5>Username</h5>
+                                    <h5>Password</h5>
+                                </div>
+                                <div className="login-option">
+                                    <p>Lion</p>
+                                    <p>lion@thelab.com</p>
+                                    <p>iamthelion</p>
+                                </div>
+
+                                <div className="login-option">
+                                    <p>Zebra</p>
+                                    <p>zebra@thelab.com</p>
+                                    <p>iamthezebra</p>
+                                </div>
+                                <div className="login-option">
+                                    <p>Lemur</p>
+                                    <p>lemur@thelab.com</p>
+                                    <p>iamthelemur</p>
+                                </div>
+                            </div>
+
                             <form className="form-validation" action="">
 
                                 <input name='email' type="email"
@@ -116,16 +142,28 @@ class Login extends Component { //class based component
 
                         <div className={this.state.loggedinClass}>
                             <div className="loginBar">
+
                                 <div>
                                     <p>Logged in as:</p>
-                                    <h4>{this.state.loggedInText}</h4>
+                                    <div className="user">
+                                        <img src={Lion} alt="" />
+                                        <h5>{this.state.loggedInText}</h5>
+                                    </div>
                                 </div>
-
-
                                 <MainBtn classProp="button red-btn" clickProp={this.handleLogout}>Log out</MainBtn>
                             </div>
+                            <div className="permissions">
 
+                                <p>Since I am <strong>the Lion</strong>, I have access to these buttons:</p>
+                                <div className="btns">
+                                    <MainBtn classProp="button pink-btn" clickProp={this.handleClick}>one</MainBtn>
+                                    <MainBtn classProp="button orange-btn" clickProp={this.handleClick}>two</MainBtn>
+                                    <MainBtn classProp="button yellow-btn" clickProp={this.handleClick}>three</MainBtn>
+                                </div>
+                            </div>
                         </div>
+
+
 
                     </div>
                 </div>
@@ -134,7 +172,7 @@ class Login extends Component { //class based component
                     <Sidebar componentName="login" />
                 </div>
 
-            </div>
+            </div >
         );
     }
 }
