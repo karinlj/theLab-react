@@ -17,7 +17,6 @@ class Form extends Component { //class based component
         emailError: '',
         password: '',
         passwordError: '',
-        // errors: [],
 
         printName: '',
         printUsername: '',
@@ -66,15 +65,12 @@ class Form extends Component { //class based component
 
         this.setState(errors);
 
-        /*  this.setState({
-             errors: errors
-         }); */
         return isError;
     };
 
     handleSubmit = (e) => {
         e.preventDefault();
-        //console.log(this.state);
+        // console.log(this.state);
 
         const err = this.validate(); //calling validate-func
         if (!err) {

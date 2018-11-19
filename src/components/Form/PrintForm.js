@@ -4,7 +4,6 @@ import React from 'react';
 const PrintForm = props => {
 
     //console.log(props);
-
     return (
         <div className={props.classProp}>
             <div className="card">

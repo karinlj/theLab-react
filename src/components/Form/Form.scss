@@ -1,5 +1,6 @@
 @import '../../variables.scss';
 
+//form validation
 .form-validation {
 
     input {
@@ -63,4 +64,34 @@
 
 .formPrint.show {
     opacity: 1;
+}
+
+//login
+.login-section {
+    .loginBar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p,
+        h4 {
+            color: #fff;
+        }
+    }
+
+    .form {
+        display: none;
+    }
+
+    .form.show {
+        display: block;
+    }
+
+    .loggedin {
+        display: none;
+    }
+
+    .loggedin.show {
+        display: block;
+    }
 }

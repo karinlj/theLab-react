@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Form.scss';
 import Sidebar from '../Sidebar';
 import SubmitBtn from '../SubmitBtn';
+import MainBtn from '../MainBtn';
 import HeaderText from '../HeaderText';
 
 class Login extends Component { //class based component
@@ -10,7 +11,9 @@ class Login extends Component { //class based component
         emailError: '',
         password: '',
         passwordError: '',
-        errors: [],
+        loggedInText: '',
+        formClass: 'form show',
+        loggedinClass: 'loggedin'
     }
 
     handleChange = (e) => {
@@ -36,25 +39,45 @@ class Login extends Component { //class based component
             // alert('Password needs to be al least 8 characters');
         }
 
-        this.setState({
-            errors: errors
-        });
+        this.setState(errors);
+
         return isError;
     };
 
-    handleSubmit = (e) => {
+    handleLogin = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
+        console.log(this.state.email, this.state.password);
 
         const err = this.validate(); //calling validate-func
+
         if (!err) {
+            this.loggedIn();
+
             this.setState({ //clear form
                 email: '',
                 emailError: '',
                 password: '',
-                passwordError: ''
+                passwordError: '',
+                formClass: 'form',
+                loggedinClass: 'loggedin show'
             })
         }
+    }
+
+    loggedIn = () => {
+        this.setState({ //clear form
+            loggedInText: this.state.email
+        })
+    }
+
+    handleLogout = () => {
+        alert('logout');
+
+        this.setState({ //clear form
+            formClass: 'form show',
+            loggedinClass: 'loggedin'
+        })
     }
 
     render() {
@@ -62,30 +85,48 @@ class Login extends Component { //class based component
         return (
             <div className="row justify-content-between" >
                 <div className="col-12 col-md-6">
-                    <div className="form-section">
+                    <div className="login-section">
                         <header>
                             <header>
                                 <HeaderText componentName="login" />
 
                             </header>
                         </header>
-                        <form className="form-validation" action="">
 
-                            <input name='email' type="email"
-                                placeholder='Email'
-                                value={this.state.email}
-                                onChange={e => this.handleChange(e)} />
-                            <span className="warn">{this.state.emailError}</span>
+                        {/*  <MainBtn classProp="button green-btn" clickProp={this.login}>Login</MainBtn> */}
+                        <div className={this.state.formClass}>
+                            <form className="form-validation" action="">
 
-                            <input name='password' type="password"
-                                placeholder='Password'
-                                value={this.state.password}
-                                onChange={e => this.handleChange(e)} />
-                            <span className="warn">{this.state.passwordError}</span>
+                                <input name='email' type="email"
+                                    placeholder='Email'
+                                    value={this.state.email}
+                                    onChange={e => this.handleChange(e)} />
+                                <span className="warn">{this.state.emailError}</span>
 
-                            <SubmitBtn clickProp={this.handleSubmit}>Submit</SubmitBtn>
+                                <input name='password' type="password"
+                                    placeholder='Password'
+                                    value={this.state.password}
+                                    onChange={e => this.handleChange(e)} />
+                                <span className="warn">{this.state.passwordError}</span>
 
-                        </form>
+                                <SubmitBtn clickProp={this.handleLogin}>Log in</SubmitBtn>
+
+                            </form>
+                        </div>
+
+                        <div className={this.state.loggedinClass}>
+                            <div className="loginBar">
+                                <div>
+                                    <p>Logged in as:</p>
+                                    <h4>{this.state.loggedInText}</h4>
+                                </div>
+
+
+                                <MainBtn classProp="button red-btn" clickProp={this.handleLogout}>Log out</MainBtn>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
 
