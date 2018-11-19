@@ -11,9 +11,8 @@ import Lemur from '../../img/lemur.jpg';
 class Login extends Component { //class based component
     state = {
         email: '',
-        emailError: '',
         password: '',
-        passwordError: '',
+        errorMess: '',
         loggedInText: '',
         formClass: 'form show',
         loggedinClass: 'loggedin',
@@ -27,27 +26,10 @@ class Login extends Component { //class based component
         })
     };
 
+
     validate = () => {
-        let isError = false;
-        const errors = {
-            emailError: '',
-            passwordError: ''
-        };
 
-        if (this.state.email.indexOf('@') === -1) {
-            isError = true;
-            errors.emailError = 'Please fill out valid email';
-        }
-        if (this.state.password.length < 8) {
-            isError = true;
-            errors.passwordError = 'Password needs to be al least 8 characters';
-            // alert('Password needs to be al least 8 characters');
-        }
-
-        this.setState(errors);
-
-        return isError;
-    };
+    }
 
     handleLogin = (e) => {
         e.preventDefault();
@@ -61,9 +43,7 @@ class Login extends Component { //class based component
 
         this.setState({ //clear form
             email: '',
-            emailError: '',
             password: '',
-            passwordError: '',
             formClass: 'form',
             loggedinClass: 'loggedin show'
         })
@@ -84,6 +64,29 @@ class Login extends Component { //class based component
             loggedinClass: 'loggedin'
         })
     }
+
+
+    /*    validate = () => {
+           let isError = false;
+           const errors = {
+               emailError: '',
+               passwordError: ''
+           };
+   
+           if (this.state.email.indexOf('@') === -1) {
+               isError = true;
+               errors.emailError = 'Please fill out valid email';
+           }
+           if (this.state.password.length < 8) {
+               isError = true;
+               errors.passwordError = 'Password needs to be al least 8 characters';
+               // alert('Password needs to be al least 8 characters');
+           }
+   
+           this.setState(errors);
+   
+           return isError;
+       }; */
 
     render() {
 
