@@ -20,18 +20,14 @@ class Login extends Component {
         loggedinClass: 'loggedin'
     }
 
-    handleChange = (e) => {     //in loginView?
+    handleChange = (e) => {
         this.setState({ //value= what user types in
             [e.target.name]: e.target.value
         })
     };
 
-    validate = () => {
-    }
-
     handleLogin = (e) => {
         e.preventDefault();
-
         let username = this.state.email;
 
         //console.log(AccountData[username]);
@@ -96,9 +92,25 @@ class Login extends Component {
         })
     }
 
+    handleClick = () => {
+        alert('click');
+    }
+
     render() {
         // returned object of values from displayPictAndBtns-func put in variable 
         let displayThings = this.displayPictAndBtns();
+
+
+        console.log(AccountData['lion@thelab.com']);
+        //console.log(AccountData);
+
+        const myObj = AccountData;
+        console.log(myObj); //alla username
+
+        let x;
+        for (x in myObj) {
+            console.log(myObj[x]);  //alla roller och lösen
+        }
 
         return (
             <div className="row justify-content-between">
@@ -116,7 +128,7 @@ class Login extends Component {
                                     <h5>Username</h5>
                                     <h5>Password</h5>
                                 </div>
-                                <div className="login-option">
+                                <div className="login-option">  {/* loop för varje option? */}
                                     <p>Lion</p>
                                     <p>lion@thelab.com</p>
                                     <p>iamthelion</p>
@@ -151,7 +163,7 @@ class Login extends Component {
                             </form>
                         </div>
 
-                        {/* loggedinView */}
+                        {/* logoutView */}
                         <div className={this.state.loggedinClass}>
                             <div className="loginBar">
 
@@ -186,5 +198,4 @@ class Login extends Component {
         );
     }
 }
-
 export default Login
