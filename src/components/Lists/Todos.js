@@ -2,21 +2,24 @@ import React from 'react';
 import './Lists.scss';
 
 //only listing single todos here
-const Todos = props => {  //Stateless UI component
-    //passing states from TodoList.js = passing todos-array via props
+const Todos = props => {         //destructuring: ({ todosProp, deleteTodoProp})  //passing state from TodoList via prop
 
-    //iternary op - true if we have todo's
-    const todoList = props.todosProp.length ? (
+    //ternary op - true if we have todo's
+    const todoList = props.todosProp.length ? (  //state from TodoList!!!!!!
+
         //if we have todo's (from todoList) - map through todos
-        props.todosProp.map(todo => {
-            //fire a function on todo
-            return (   //draw single todo
+        props.todosProp.map(todo => {    //fire a function on todo
+
+            return (   // single todo
                 <div className="collection-item" key={todo.id}> {/* adding id */}
-                    {/* preventing auto invoking because parentesis */}
+
+                    {/* prop: content from state.todos in TodoList */}
                     <span>{todo.content}</span>
 
                     {/* Getting prop from TodoList.js that takes ID as argument (from here)
                     Click on btn calls func in TodoList.js */}
+                    {/* preventing auto invoking because parenthesis */}
+
                     <button className="deleteBtn" onClick={() => { props.deleteTodoProp(todo.id) }}>Delete</button>
                 </div>
             )

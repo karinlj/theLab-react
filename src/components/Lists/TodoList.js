@@ -13,28 +13,30 @@ class TodoList extends Component { //class based component
             { id: 2, content: 'Cuddle with cats' }
         ]
     }
-    deleteTodo = (id) => { //has to be here to interact with the state
+    deleteTodo = (id) => { //func has to be here to interact with the state
         //getting ID from todos.js, putting it in as argument
         //console.log(id);
 
         //new array in variable and that filters out todo for not changing array destructively
-        //only filter out
-        const todos = this.state.todos.filter(todo => {
+        const todosNew = this.state.todos.filter(todo => {
             return todo.id !== id
             //satisfying the return statement = returning true
             //that is if the id:s are not the same - keeping the item
         });
         this.setState({
-            todos: todos
+            todos: todosNew
         })
     }
-    addTodo = (todo) => { //func has to be here to interact with the state
+
+    //func has to be here to interact with the state
+    addTodo = (todo) => {   //pass in state from AddTodo  (content)!!!!
+
         //generate random id for todo
         todo.id = Math.random();
-        //new array with spread op
-        let todos = [...this.state.todos, todo]; //lägga till
+        //new array with spread op, passing in the old one, and adding one item
+        let todosNew = [...this.state.todos, todo]; //lägga till
         this.setState({
-            todos: todos //key and value
+            todos: todosNew //key and new value
         })
     }
     render() {
@@ -48,10 +50,12 @@ class TodoList extends Component { //class based component
                             <HeaderText componentName="todoList" />
 
                         </header>
-                        {/* nesting component, passing todos-array, add-func and delete-func */}
-                        {/* props defined here */}
+                        {/* sending  and delete-func */}
+                        {/* sending the state of this comp. to Todos!!!!!!!! */}
                         <Todos todosProp={this.state.todos} deleteTodoProp={this.deleteTodo} />
-                        <AddTodo addTodoProp={this.addTodo} />{/* defining prop: addTodo that refers to the func:addTodo */}
+
+                        {/* sending add-func to AddTodo*/}
+                        <AddTodo addTodoProp={this.addTodo} />
                     </div>
                 </div>
 

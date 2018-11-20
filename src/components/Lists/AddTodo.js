@@ -8,21 +8,20 @@ class AddTodo extends Component {
         content: ''
     }
     handleChange = (e) => {
-        this.setState({ //value= what user types in
+        this.setState({     //value= what user types in
             content: e.target.value
         })
     }
     handleSubmit = (e) => {
-        //prevent refreshing page on submit
         e.preventDefault();
         // console.log(this.state);
-        //submitting the new todo
-        if (this.state.content) { //if has content
-            // alert(this.state.content);
-            this.props.addTodoProp(this.state); //calling the prop:addTodo that refers to the func:AddTodo (in TodoList),
-            //call the func and pass in this.state from THIS component
 
-            this.setState({ //setting state.content= ''
+        if (this.state.content) { //if has content   // alert(this.state.content);
+
+            //calling the AddTodo-func from TodoList, pass in this.state from THIS component!!!!!
+            this.props.addTodoProp(this.state);
+
+            this.setState({ //clear form
                 content: ''
             })
         }

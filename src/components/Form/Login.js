@@ -9,7 +9,7 @@ import Zebra from '../../img/zebra.jpeg';
 import Lemur from '../../img/lemur.jpg';
 import AccountData from '../../data/accounts.json';
 
-class Login extends Component { //class based component
+class Login extends Component {
     state = {
         role: '',
         email: '',
@@ -18,16 +18,13 @@ class Login extends Component { //class based component
         loggedInText: '',
         formClass: 'form show',
         loggedinClass: 'loggedin'
-        // account: ['username', 'password', 'role'],
-
     }
 
-    handleChange = (e) => {
+    handleChange = (e) => {     //in loginView?
         this.setState({ //value= what user types in
             [e.target.name]: e.target.value
         })
     };
-
 
     validate = () => {
     }
@@ -36,57 +33,33 @@ class Login extends Component { //class based component
         e.preventDefault();
 
         let username = this.state.email;
-        let newRole = AccountData[username].role;
-
-        //console.log(newRole);  => 'lion'
 
         //console.log(AccountData[username]);
         //console.log('pass ' + AccountData[username].password);
 
-        if (AccountData[username].password === this.state.password) {
-            //console.log('passcheck ' + this.state.password);
+        if (AccountData[username] && AccountData[username].password === this.state.password) {
+            let newRole = AccountData[username].role;
 
-            // console.log(this.state.role);  => nothing
-
-            this.setState({ //clear form
+            this.setState({
                 role: newRole,
                 formClass: 'form',
                 loggedinClass: 'loggedin show',
                 loggedInText: this.state.email
             })
-
-            //console.log(this.state.role);=> nothing
         }
         else {
-            // console.log('fel pass');
             this.setState({
-                errorText: 'Password is incorrect'
+                errorText: 'Username or Password is incorrect'
             })
         }
-        // console.log(this.state.role);  => nothing
     }
 
-    renderAnimals = () => {
+    displayPictAndBtns = () => {
         let displayAnimal;
-
-        if (this.state.role === 'lion') {
-            displayAnimal = <img src={Lion} alt="" />;
-
-        } else if (this.state.role === 'zebra') {
-            displayAnimal = <img src={Zebra} alt="" />;
-        }
-        else if (this.state.role === 'lemur') {
-            displayAnimal = <img src={Lemur} alt="" />;
-        }
-        return displayAnimal;
-    }
-
-    renderBtns = () => {
-        //console.log(this.state.role);  => 'lion'
-
         let displayBtns;
 
         if (this.state.role === 'lion') {
+            displayAnimal = <img src={Lion} alt="" />;
             displayBtns =
                 <div className="btns">
                     <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
@@ -95,6 +68,7 @@ class Login extends Component { //class based component
                 </div>;
 
         } else if (this.state.role === 'zebra') {
+            displayAnimal = <img src={Zebra} alt="" />;
             displayBtns =
                 <div className="btns">
                     <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
@@ -102,13 +76,15 @@ class Login extends Component { //class based component
                 </div>;
         }
         else if (this.state.role === 'lemur') {
+            displayAnimal = <img src={Lemur} alt="" />;
             displayBtns =
                 <div className="btns">
                     <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
                 </div>;
         }
-        return displayBtns;
+        return { animal: displayAnimal, btns: displayBtns };  //returning object
     }
+
 
     handleLogout = () => {
         this.setState({  //clear form
@@ -121,6 +97,8 @@ class Login extends Component { //class based component
     }
 
     render() {
+        // returned object of values from displayPictAndBtns-func put in variable 
+        let displayThings = this.displayPictAndBtns();
 
         return (
             <div className="row justify-content-between">
@@ -130,6 +108,7 @@ class Login extends Component { //class based component
                             <HeaderText componentName="login" />
                         </header>
 
+                        {/* loginView  */}
                         <div className={this.state.formClass}>
                             <div className="login-options">
                                 <div className="login-option">
@@ -172,14 +151,16 @@ class Login extends Component { //class based component
                             </form>
                         </div>
 
-                        {/* logged in */}
+                        {/* loggedinView */}
                         <div className={this.state.loggedinClass}>
                             <div className="loginBar">
 
                                 <div>
                                     <p>Logged in as:</p>
                                     <div className="user">
-                                        {this.renderAnimals()}
+                                        {/* returned value from displayPictAndBtns-func */}
+                                        {displayThings.animal}
+
                                         <h5>{this.state.loggedInText}</h5>
                                     </div>
                                 </div>
@@ -189,7 +170,8 @@ class Login extends Component { //class based component
                             <div className="permissions">
                                 <p>Since I am the <strong>{this.state.role}</strong>, I have access to these buttons:</p>
 
-                                {this.renderBtns()}
+                                {/* returned value from displayPictAndBtns-func */}
+                                {displayThings.btns}
                             </div>
                         </div>
 
