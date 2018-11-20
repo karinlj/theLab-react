@@ -143,8 +143,7 @@ class Scramble extends Component { //class based
 
     render() {
 
-        const orangeBtnTitles = ['Scramble Id', 'Scramble Content', 'Scramble Class', 'Scramble Order'];
-        const orangeBtnClass = 'button orange-btn';
+        const scrambleBtnClass = 'button orange-btn';
 
         return (
             <div className="row justify-content-between">
@@ -190,10 +189,10 @@ class Scramble extends Component { //class based
                             <div className="row justify-content-between">
 
                                 <div className="col-sm-6 col-md-12 col-xl-6">
-                                    <MainBtn classProp={orangeBtnClass} clickProp={this.scrambleId}>{orangeBtnTitles[0]}</MainBtn>
+                                    <MainBtn classProp={scrambleBtnClass} clickProp={this.scrambleId}>Scramble Id</MainBtn>
                                 </div>
                                 <div className="col-sm-6 col-md-12 col-xl-6">
-                                    <MainBtn classProp={orangeBtnClass} clickProp={this.scrambleContent}>{orangeBtnTitles[1]}</MainBtn>
+                                    <MainBtn classProp={scrambleBtnClass} clickProp={this.scrambleContent}>Scramble Content</MainBtn>
 
                                 </div>
                             </div>
@@ -201,10 +200,10 @@ class Scramble extends Component { //class based
                             <div className="row justify-content-between">
 
                                 <div className="col-sm-6 col-md-12 col-xl-6">
-                                    <MainBtn classProp={orangeBtnClass} clickProp={this.scrambleClass}>{orangeBtnTitles[2]}</MainBtn>
+                                    <MainBtn classProp={scrambleBtnClass} clickProp={this.scrambleClass}>Scramble Class</MainBtn>
                                 </div>
                                 <div className="col-sm-6 col-md-12 col-xl-6">
-                                    <MainBtn classProp={orangeBtnClass} clickProp={this.scrambleOrder}>{orangeBtnTitles[3]}</MainBtn>
+                                    <MainBtn classProp={scrambleBtnClass} clickProp={this.scrambleOrder}>Scramble Order</MainBtn>
 
                                 </div>
                             </div>

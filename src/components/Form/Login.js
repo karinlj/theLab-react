@@ -38,11 +38,15 @@ class Login extends Component { //class based component
         let username = this.state.email;
         let newRole = AccountData[username].role;
 
+        //console.log(newRole);  => 'lion'
+
         //console.log(AccountData[username]);
         //console.log('pass ' + AccountData[username].password);
 
         if (AccountData[username].password === this.state.password) {
             //console.log('passcheck ' + this.state.password);
+
+            // console.log(this.state.role);  => nothing
 
             this.setState({ //clear form
                 role: newRole,
@@ -50,6 +54,8 @@ class Login extends Component { //class based component
                 loggedinClass: 'loggedin show',
                 loggedInText: this.state.email
             })
+
+            //console.log(this.state.role);=> nothing
         }
         else {
             // console.log('fel pass');
@@ -57,6 +63,51 @@ class Login extends Component { //class based component
                 errorText: 'Password is incorrect'
             })
         }
+        // console.log(this.state.role);  => nothing
+    }
+
+    renderAnimals = () => {
+        let displayAnimal;
+
+        if (this.state.role === 'lion') {
+            displayAnimal = <img src={Lion} alt="" />;
+
+        } else if (this.state.role === 'zebra') {
+            displayAnimal = <img src={Zebra} alt="" />;
+        }
+        else if (this.state.role === 'lemur') {
+            displayAnimal = <img src={Lemur} alt="" />;
+        }
+        return displayAnimal;
+    }
+
+    renderBtns = () => {
+        //console.log(this.state.role);  => 'lion'
+
+        let displayBtns;
+
+        if (this.state.role === 'lion') {
+            displayBtns =
+                <div className="btns">
+                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
+                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
+                    <MainBtn classProp="button pink-btn" clickProp={this.handleClick}>three</MainBtn>
+                </div>;
+
+        } else if (this.state.role === 'zebra') {
+            displayBtns =
+                <div className="btns">
+                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
+                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
+                </div>;
+        }
+        else if (this.state.role === 'lemur') {
+            displayBtns =
+                <div className="btns">
+                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
+                </div>;
+        }
+        return displayBtns;
     }
 
     handleLogout = () => {
@@ -70,36 +121,6 @@ class Login extends Component { //class based component
     }
 
     render() {
-        //console.log(this.state.role);
-
-        let displayAnimal;
-        let displayBtns;
-
-        if (this.state.role === 'lion') {
-            displayAnimal = <img src={Lion} alt="" />;
-            displayBtns =
-                <div className="btns">
-                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
-                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
-                    <MainBtn classProp="button pink-btn" clickProp={this.handleClick}>three</MainBtn>
-                </div>;
-
-        } else if (this.state.role === 'zebra') {
-            displayAnimal = <img src={Zebra} alt="" />;
-            displayBtns =
-                <div className="btns">
-                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
-                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
-                </div>;
-        }
-        else if (this.state.role === 'lemur') {
-            displayAnimal = <img src={Lemur} alt="" />;
-            displayBtns =
-                <div className="btns">
-                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
-                </div>;
-        }
-
 
         return (
             <div className="row justify-content-between">
@@ -135,7 +156,6 @@ class Login extends Component { //class based component
                             </div>
 
                             <form className="form-validation" action="">
-
                                 <input name='email' type="email"
                                     placeholder='Email'
                                     value={this.state.email}
@@ -152,32 +172,26 @@ class Login extends Component { //class based component
                             </form>
                         </div>
 
+                        {/* logged in */}
                         <div className={this.state.loggedinClass}>
                             <div className="loginBar">
 
                                 <div>
                                     <p>Logged in as:</p>
                                     <div className="user">
-                                        {/*  <img src={Lion} alt="" /> */}
-                                        {displayAnimal}
+                                        {this.renderAnimals()}
                                         <h5>{this.state.loggedInText}</h5>
                                     </div>
                                 </div>
+
                                 <MainBtn classProp="button red-btn" clickProp={this.handleLogout}>Log out</MainBtn>
                             </div>
                             <div className="permissions">
-
                                 <p>Since I am the <strong>{this.state.role}</strong>, I have access to these buttons:</p>
-                                {/*      <div className="btns">
-                                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
-                                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
-                                    <MainBtn classProp="button pink-btn" clickProp={this.handleClick}>three</MainBtn>
-                                </div> */}
 
-                                {displayBtns}
+                                {this.renderBtns()}
                             </div>
                         </div>
-
 
                     </div>
                 </div>
