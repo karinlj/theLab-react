@@ -50,7 +50,7 @@ class TodoList extends Component { //class based component
                             <HeaderText componentName="todoList" />
 
                         </header>
-                        {/* sending  and delete-func */}
+                        {/* sending delete-func */}
                         {/* sending the state of this comp. to Todos!!!!!!!! */}
                         <Todos todosProp={this.state.todos} deleteTodoProp={this.deleteTodo} />
 

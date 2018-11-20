@@ -5,7 +5,7 @@ import './Lists.scss';
 const Todos = props => {         //destructuring: ({ todosProp, deleteTodoProp})  //passing state from TodoList via prop
 
     //ternary op - true if we have todo's
-    const todoList = props.todosProp.length ? (  //state from TodoList!!!!!!
+    const todoList = props.todosProp.length ? (  //pick up state from TodoList to draw the list item !!!!!!
 
         //if we have todo's (from todoList) - map through todos
         props.todosProp.map(todo => {    //fire a function on todo
