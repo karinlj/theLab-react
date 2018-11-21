@@ -8,6 +8,7 @@ import Lion from '../../img/lion.jpeg';
 import Zebra from '../../img/zebra.jpeg';
 import Lemur from '../../img/lemur.jpg';
 import AccountData from '../../data/accounts.json';
+//import TestForm from './TestForm';
 
 class Login extends Component {
     state = {
@@ -17,7 +18,8 @@ class Login extends Component {
         errorText: '',
         loggedInText: '',
         formClass: 'form show',
-        loggedinClass: 'loggedin'
+        loggedinClass: 'loggedin',
+        showBtnMessage: false
     }
 
     handleChange = (e) => {
@@ -92,30 +94,40 @@ class Login extends Component {
         })
     }
 
-    handleClick = () => {
-        alert('click');
+    handleClick = (e) => {
+        //alert('click');
+        this.setState({
+            showBtnMessage: !this.state.showBtnMessage
+        })
     }
+
+    /*   handleDataCallback = (helloMess) => {  //being called in childComp via prop in TestForm
+          console.log(this);
+          alert(helloMess);  //alert something
+      } */
 
     render() {
         // returned object of values from displayPictAndBtns-func put in variable 
         let displayThings = this.displayPictAndBtns();
+        const { showBtnMessage } = this.state       // =const showBtnMessage =  this.state.showBtnMessage
 
 
-        console.log(AccountData['lion@thelab.com']);
-        //console.log(AccountData);
-
-        const myObj = AccountData;
-        console.log(myObj); //alla username
+        // console.log(AccountData['lion@thelab.com']);
+        console.log(AccountData);   //alla username
 
         let x;
-        for (x in myObj) {
-            console.log(myObj[x]);  //alla roller och lösen
+        for (x in AccountData) {
+            console.log(AccountData[x].role);
+            console.log(AccountData[x].password);
         }
 
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
                     <div className="login-section">
+
+                        {/* For testing only  <TestForm dataCallback={this.handleDataCallback} />  */}
+
                         <header>
                             <HeaderText componentName="login" />
                         </header>
@@ -185,6 +197,8 @@ class Login extends Component {
                                 {/* returned value from displayPictAndBtns-func */}
                                 {displayThings.btns}
                             </div>
+                            {/* if showMessage is true, display message, otherwise nothing */}
+                            {showBtnMessage === true ? <p>I can do this...</p> : ''}
                         </div>
 
                     </div>
