@@ -59,8 +59,7 @@ const Navbar = props => (
                         </li>
 
                         <li><NavLink to="/about">About</NavLink></li>
-                        <li><NavLink to="/test">Test</NavLink></li>
-
+                        {/*  <li><NavLink to="/test">Test</NavLink></li> */}
 
                     </ul>
                 </div>

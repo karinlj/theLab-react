@@ -83,7 +83,6 @@ class Login extends Component {
         return { animal: displayAnimal, btns: displayBtns };  //returning object
     }
 
-
     handleLogout = () => {
         this.setState({  //clear form
             email: '',
