@@ -13,25 +13,32 @@ class LoginOptions extends Component {
         // console.log(AccountData['lion@thelab.com']);
         // console.log(AccountData);   //alla username
 
-        let user = '';
+        let user;
+        let role;
+        let pass;
 
         for (user in AccountData) {
+
+            role = <p>{AccountData[user].role}</p>
+            user = <p>{user}</p>;
+            pass = <p>{AccountData[user].password}</p>
+
             return (
                 <div className="login-options">
+                    {role}
+                    {user}
+                    {pass}
 
+                    {/*     <div className="login-options">
                     <div className="login-options">
-
                         <p>{AccountData[user].role}</p>
-
                         <p>{user}</p>
-
                         <p>{AccountData[user].password}</p>
-
                     </div>
+                </div> */}
                 </div>
             )
         }
-
 
         let accountItem;
         for (accountItem in AccountData) {
@@ -40,6 +47,22 @@ class LoginOptions extends Component {
             console.log(AccountData[accountItem].password);
         }
 
+        let user;
+        let role;
+        let pass;
+
+        for (user in AccountData) {
+            role = AccountData[user].role;
+            pass = AccountData[user].password;
+        }
+        return (
+            <div className="login-option">
+                <p>{role}</p>
+                <p>{user}</p>
+                <p>{pass}</p>
+
+            </div>
+        )
 
         /*   for (key in AccountData) {
               for (innerKey in AccountData[key]) {

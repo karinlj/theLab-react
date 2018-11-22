@@ -132,7 +132,7 @@ class Login extends Component {
                                     <h5>Username</h5>
                                     <h5>Password</h5>
                                 </div>
-                                <div className="login-option">  {/* loop för varje option? */}
+                                <div className="login-option">
                                     <p>Lion</p>
                                     <p>lion@thelab.com</p>
                                     <p>iamthelion</p>
@@ -194,13 +194,13 @@ class Login extends Component {
                         </div>
 
                     </div>
-                </div>
+                </div >
 
                 <div className="col-12 col-md-5">
                     <Sidebar componentName="login" />
                 </div>
 
-            </div>
+            </div >
         );
     }
 }

@@ -64,7 +64,7 @@ const SideDrawer = props => {
                     </nav>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 export default SideDrawer   
