@@ -8,7 +8,7 @@ import Lion from '../../img/lion.jpeg';
 import Zebra from '../../img/zebra.jpeg';
 import Lemur from '../../img/lemur.jpg';
 import AccountData from '../../data/accounts.json';
-import LoginOptions from './LoginOptions';
+//import LoginOptions from './LoginOptions';
 
 class Login extends Component {
     state = {
@@ -118,7 +118,29 @@ class Login extends Component {
                         {/* loginView  */}
                         <div className={this.state.formClass}>
 
-                            <LoginOptions />
+                            <div className="login-options">
+                                <div className="login-option">
+                                    <h5>Role</h5>
+                                    <h5>Username</h5>
+                                    <h5>Password</h5>
+                                </div>
+                                <div className="login-option">  {/* loop för varje option? */}
+                                    <p>Lion</p>
+                                    <p>lion@thelab.com</p>
+                                    <p>iamthelion</p>
+                                </div>
+
+                                <div className="login-option">
+                                    <p>Zebra</p>
+                                    <p>zebra@thelab.com</p>
+                                    <p>iamthezebra</p>
+                                </div>
+                                <div className="login-option">
+                                    <p>Lemur</p>
+                                    <p>lemur@thelab.com</p>
+                                    <p>iamthelemur</p>
+                                </div>
+                            </div>
 
                             <form className="form-validation" action="">
                                 <input name='email' type="email"
