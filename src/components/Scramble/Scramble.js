@@ -96,7 +96,6 @@ class Scramble extends Component { //class based
     }
 
     renderBtns = (isLeftPosition) => {  //isLeftPosition: true eller false i två rader på en lapp. om isReversed i kolumner som tabell. fyller i i tabellen var ska knappen vara. Hälften ska vara till höger och tvärtom.
-
         //false + false = false
         //false + true = true
         //true + false = true
@@ -117,7 +116,6 @@ class Scramble extends Component { //class based
     }
 
     scrambleOrder = () => {
-
         this.setState({
             isReversed: !this.state.isReversed
         })
@@ -128,7 +126,6 @@ class Scramble extends Component { //class based
         let messageNew = '';
         if (isSuccess) {  //if isSuccess is true
             messageNew = 'Success!';
-            // console.log(messageNew);
         }
         else {
             messageNew = 'Fail!';

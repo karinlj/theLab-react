@@ -14,9 +14,6 @@ class LoginOptions extends Component {
         // console.log(AccountData);   //alla username
 
         let user = '';
-        let role = '';
-        let pass = '';
-
 
         for (user in AccountData) {
             return (
@@ -33,8 +30,6 @@ class LoginOptions extends Component {
                     </div>
                 </div>
             )
-
-
         }
 
 
@@ -46,7 +41,15 @@ class LoginOptions extends Component {
         }
 
 
-        /*      let x;
+        /*   for (key in AccountData) {
+              for (innerKey in AccountData[key]) {
+                  return (
+                      <li>{AccountData[key][innerKey]}</li>
+                  )
+              }
+          } */
+
+        /*   let x;
              let y;
              for (x in AccountData) {
                  console.log(x);

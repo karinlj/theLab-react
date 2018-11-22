@@ -19,7 +19,7 @@ class Login extends Component {
         loggedInText: '',
         formClass: 'form show',
         loggedinClass: 'loggedin',
-        showBtnMessage: false
+        btnMessage: ''
     }
 
     handleChange = (e) => {
@@ -60,24 +60,24 @@ class Login extends Component {
             displayAnimal = <img src={Lion} alt="" />;
             displayBtns =
                 <div className="btns">
-                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
-                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
-                    <MainBtn classProp="button pink-btn" clickProp={this.handleClick}>three</MainBtn>
+                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick.bind(this, 'one')}>one</MainBtn>
+                    <MainBtn classProp="button green-btn" clickProp={this.handleClick.bind(this, 'two')}>two</MainBtn>
+                    <MainBtn classProp="button pink-btn" clickProp={this.handleClick.bind(this, 'three')}>three</MainBtn>
                 </div>;
 
         } else if (this.state.role === 'zebra') {
             displayAnimal = <img src={Zebra} alt="" />;
             displayBtns =
                 <div className="btns">
-                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
-                    <MainBtn classProp="button green-btn" clickProp={this.handleClick}>two</MainBtn>
+                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick.bind(this, 'one')}>one</MainBtn>
+                    <MainBtn classProp="button green-btn" clickProp={this.handleClick.bind(this, 'two')}>two</MainBtn>
                 </div>;
         }
         else if (this.state.role === 'lemur') {
             displayAnimal = <img src={Lemur} alt="" />;
             displayBtns =
                 <div className="btns">
-                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick}>one</MainBtn>
+                    <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick.bind(this, 'one')}>one</MainBtn>
                 </div>;
         }
         return { animal: displayAnimal, btns: displayBtns };  //returning object
@@ -90,21 +90,30 @@ class Login extends Component {
             password: '',
             errorText: '',
             formClass: 'form show',
-            loggedinClass: 'loggedin'
+            loggedinClass: 'loggedin',
+            btnMessage: ''
         })
     }
 
-    handleClick = (e) => {
-        //alert('click');
+    handleClick = (number) => {
+        let btnMessageNew;
+        if (number === 'one') {
+            btnMessageNew = 'I can do this...';
+        }
+        else if (number === 'two') {
+            btnMessageNew = 'I can do this too...';
+        }
+        else if (number === 'three') {
+            btnMessageNew = 'I can also do this...';
+        }
         this.setState({
-            showBtnMessage: !this.state.showBtnMessage
+            btnMessage: btnMessageNew
         })
     }
 
     render() {
         // returned object of values from displayPictAndBtns-func put in variable 
         let displayThings = this.displayPictAndBtns();
-        const { showBtnMessage } = this.state       // =const showBtnMessage =  this.state.showBtnMessage
 
         return (
             <div className="row justify-content-between">
@@ -181,8 +190,8 @@ class Login extends Component {
                                 {/* returned value from displayPictAndBtns-func */}
                                 {displayThings.btns}
                             </div>
-                            {/* if showMessage is true, display message, otherwise nothing */}
-                            {showBtnMessage === true ? <p>I can do this...</p> : ''}
+                            {this.state.btnMessage}
+
                         </div>
 
                     </div>
