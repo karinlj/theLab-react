@@ -7,6 +7,32 @@ class LoginOptions extends Component {
     state = {
     }
 
+
+    createTable = () => {
+        let user = '';
+        let role = '';
+        let pass = '';
+
+        const myData = [];
+
+        for (user in AccountData) {
+
+            <div className="login-options">
+
+                <div className="login-options">
+
+                    <p>{AccountData[user].role}</p>
+
+                    <p>{user}</p>
+
+                    <p>{AccountData[user].password}</p>
+
+                </div>
+            </div>
+        }
+    }
+
+
     render() {
 
         // console.log(AccountData['lion@thelab.com']);
@@ -34,29 +60,6 @@ class LoginOptions extends Component {
             console.log(AccountData[accountItem].role);
             console.log(AccountData[accountItem].password);
         }
-
-
-        let user = '';
-        let role = '';
-        let pass = '';
-
-        /*     for (user in AccountData) {
-    
-                return (
-                    <div className="login-options">
-    
-                        <div className="login-options">
-    
-                            <p>{AccountData[user].role}</p>
-    
-                            <p>{user}</p>
-    
-                            <p>{AccountData[user].password}</p>
-    
-                        </div>
-                    </div>
-                )
-            } */
 
 
         /*      let x;
