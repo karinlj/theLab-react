@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './Form.scss';
 
-class TestForm extends Component {
+class TestChildOne extends Component {
     state = {
     }
 
@@ -18,9 +17,9 @@ class TestForm extends Component {
 
         return (
             <div>
-                <h1 onClick={this.titleClicked}>Testform</h1>
+                <h2 onClick={this.titleClicked}>TestChildOne - click on me!</h2>
             </div>
         );
     }
 }
-export default TestForm
+export default TestChildOne

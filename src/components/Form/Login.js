@@ -8,7 +8,7 @@ import Lion from '../../img/lion.jpeg';
 import Zebra from '../../img/zebra.jpeg';
 import Lemur from '../../img/lemur.jpg';
 import AccountData from '../../data/accounts.json';
-//import TestForm from './TestForm';
+import LoginOptions from './LoginOptions';
 
 class Login extends Component {
     state = {
@@ -101,32 +101,15 @@ class Login extends Component {
         })
     }
 
-    /*   handleDataCallback = (helloMess) => {  //being called in childComp via prop in TestForm
-          console.log(this);
-          alert(helloMess);  //alert something
-      } */
-
     render() {
         // returned object of values from displayPictAndBtns-func put in variable 
         let displayThings = this.displayPictAndBtns();
         const { showBtnMessage } = this.state       // =const showBtnMessage =  this.state.showBtnMessage
 
-
-        // console.log(AccountData['lion@thelab.com']);
-        console.log(AccountData);   //alla username
-
-        let x;
-        for (x in AccountData) {
-            console.log(AccountData[x].role);
-            console.log(AccountData[x].password);
-        }
-
         return (
             <div className="row justify-content-between">
                 <div className="col-12 col-md-6">
                     <div className="login-section">
-
-                        {/* For testing only  <TestForm dataCallback={this.handleDataCallback} />  */}
 
                         <header>
                             <HeaderText componentName="login" />
@@ -134,29 +117,8 @@ class Login extends Component {
 
                         {/* loginView  */}
                         <div className={this.state.formClass}>
-                            <div className="login-options">
-                                <div className="login-option">
-                                    <h5>Role</h5>
-                                    <h5>Username</h5>
-                                    <h5>Password</h5>
-                                </div>
-                                <div className="login-option">  {/* loop för varje option? */}
-                                    <p>Lion</p>
-                                    <p>lion@thelab.com</p>
-                                    <p>iamthelion</p>
-                                </div>
 
-                                <div className="login-option">
-                                    <p>Zebra</p>
-                                    <p>zebra@thelab.com</p>
-                                    <p>iamthezebra</p>
-                                </div>
-                                <div className="login-option">
-                                    <p>Lemur</p>
-                                    <p>lemur@thelab.com</p>
-                                    <p>iamthelemur</p>
-                                </div>
-                            </div>
+                            <LoginOptions />
 
                             <form className="form-validation" action="">
                                 <input name='email' type="email"

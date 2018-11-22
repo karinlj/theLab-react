@@ -21,7 +21,7 @@ import Login from './components/Form/Login';
 
 import Timer from './components/Timing/Timer';
 import Blog from './components/Blog/Blog'
-
+import Test from './components/Test/Test';
 
 
 class App extends Component {
@@ -79,6 +79,8 @@ class App extends Component {
 
                 <Route path="/Blog" component={Blog} />
                 <Route path='/timer' component={Timer} />
+                <Route path="/Test" component={Test} />
+
                 <Route path="/:post_id" component={Post} />
               </Switch>
 
