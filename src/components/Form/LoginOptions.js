@@ -22,10 +22,10 @@ const LoginOptions = props => {
 
                 {Object.keys(AccountData).map((item, index) => {
                     return (
-                        <div className="login-option">
-                            <p>{AccountData[item].role}</p>
-                            <p>{item}</p>
-                            <p>{AccountData[item].password}</p>
+                        <div key={index} className="login-option">
+                            <p key={AccountData[item].role}>{AccountData[item].role}</p>
+                            <p key={item}>{item}</p>
+                            <p key={AccountData[item].password}>{AccountData[item].password}</p>
                         </div>
                     )
                 })}
