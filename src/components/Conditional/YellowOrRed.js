@@ -3,7 +3,7 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import './Conditional.scss';
 import HeaderText from '../HeaderText';
-
+import Message from '../Message';
 
 class YellowOrRed extends Component {
     state = {
@@ -27,11 +27,9 @@ class YellowOrRed extends Component {
     compare = (compareValue) => {
 
         let messageNew = '';
-        if (compareValue === this.state.color) {
-            messageNew = 'Success!';
-        }
-        else
-            messageNew = 'Fail!';
+        let { color } = this.state; //color=this.state.color
+
+        messageNew = (compareValue === color ? 'Success!' : 'Fail!');
 
         this.setState({
             message: messageNew,
@@ -39,9 +37,6 @@ class YellowOrRed extends Component {
     }
 
     render() {
-        let { message } = this.state;
-        let messageClasses = 'message ';
-        messageClasses += (message === '' ? '' : 'show');
 
         return (
             <div className="row justify-content-between">
@@ -56,10 +51,8 @@ class YellowOrRed extends Component {
                             {/* properties are DEFINED and different VALUES are set */}
 
                             <MainBtn classProp="button orange-btn" clickProp={this.generateColor}>Generate color</MainBtn>
-                            <div className={messageClasses}>
-                                <h4>{this.state.message}</h4>
 
-                            </div>
+                            <Message>{this.state.message}</Message>
                         </div>
 
                         <h3 className="rand-color">{this.state.color}</h3>

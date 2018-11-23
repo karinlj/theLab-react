@@ -5,6 +5,7 @@ import Cat from '../../img/cat.jpg';
 import Dog from '../../img/dog.jpg';
 import './Conditional.scss';
 import HeaderText from '../HeaderText';
+import Message from '../Message';
 
 class CatOrDog extends Component { //class based
     state = {
@@ -27,11 +28,9 @@ class CatOrDog extends Component { //class based
     compare = (compareValue) => {
 
         let messageNew = '';
-        if (compareValue === this.state.pet) {
-            messageNew = 'Success!';
-        }
-        else
-            messageNew = 'Fail!';
+        let { pet } = this.state; //pet=this.state.pet
+
+        messageNew = (compareValue === pet ? 'Success!' : 'Fail!');
 
         this.setState({
             message: messageNew
@@ -39,9 +38,6 @@ class CatOrDog extends Component { //class based
     }
 
     render() {
-        let { message } = this.state;
-        let messageClasses = 'message ';
-        messageClasses += (message === '' ? '' : 'show'); //messageClasses='message' or 'message show'
 
         let { pet } = this.state;
         let displayPet;
@@ -49,12 +45,6 @@ class CatOrDog extends Component { //class based
         const dogImg = <img src={Dog} alt="" />;
 
         displayPet = (pet === 'cat' ? catImg : dogImg); //displayPet will show cat, otherwise dog 
-
-        /*  if (this.state.pet === 'cat') {
-             displayPet = <img src={Cat} alt="" />
-         } else if (this.state.pet === 'dog') {
-             displayPet = <img src={Dog} alt="" />
-         } */
 
         return (
             <div className="row justify-content-between">
@@ -66,9 +56,8 @@ class CatOrDog extends Component { //class based
 
                         <div className="btn-and-message">
                             <MainBtn classProp="button orange-btn" clickProp={this.generatePet}>Generate pet</MainBtn>
-                            <div className={messageClasses}>
-                                <h4>{this.state.message}</h4>
-                            </div>
+
+                            <Message>{this.state.message}</Message>
                         </div>
 
                         <div className="pet-img-wrapper">

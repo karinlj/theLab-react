@@ -53,7 +53,6 @@ class Speed extends Component { //class based
         }, 100)
     }
 
-
     handleStop = () => {
         if (this.state.isRunning) {
             // console.log('count ' + -this.state.count);

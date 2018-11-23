@@ -4,7 +4,7 @@ import MainBtn from '../MainBtn';
 import SubmitBtn from '../SubmitBtn';
 import './Strings.scss';
 import HeaderText from '../HeaderText';
-
+import Message from '../Message';
 
 class ConcatStrings extends Component { //class based
     state = {
@@ -12,8 +12,7 @@ class ConcatStrings extends Component { //class based
         string2: '',
         concatStr: '',
         inputStr: '',
-        message: '',
-        messageClass: 'message',
+        message: ''
     };
 
     generateStrings = () => {
@@ -51,8 +50,7 @@ class ConcatStrings extends Component { //class based
 
         this.setState({ //reset inputStr, set value={this.state.inputStr} to empty input
             inputStr: '',
-            message: messageNew,
-            messageClass: 'message show',
+            message: messageNew
         });
     }
 
@@ -68,19 +66,16 @@ class ConcatStrings extends Component { //class based
                         </header>
 
                         <div className="btn-and-message">
-                            {/* properties are DEFINED and different VALUES are set */}
 
                             <MainBtn classProp="button orange-btn" clickProp={this.generateStrings}>Generate strings</MainBtn>
-                            <div className={this.state.messageClass}>
-                                <h4>{this.state.message}</h4>
-                            </div>
+
+                            <Message>{this.state.message}</Message>
                         </div>
 
                         <h5 className="strings">
                             <span>{this.state.string1}</span> <br />
                             <span>{this.state.string2}</span>
-                        </h5> {/* output the two strings */}
-
+                        </h5>
 
                         <form className="todo-form" onSubmit={this.handleSubmit}>
 

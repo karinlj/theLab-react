@@ -3,6 +3,7 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import './Scramble.scss';
 import HeaderText from '../HeaderText';
+import Message from '../Message';
 
 class Scramble extends Component { //class based
     state = {
@@ -13,8 +14,7 @@ class Scramble extends Component { //class based
         indexContent: 0,
         content: 'lion',
         isReversed: false,
-        message: '',
-        messageClass: 'message',
+        message: ''
     };
 
     scrambleId = () => {
@@ -44,7 +44,7 @@ class Scramble extends Component { //class based
         this.setState({
             id: scrambleId,
             indexId: i,
-            messageClass: 'message'
+            message: ''
         })
     }
 
@@ -67,7 +67,7 @@ class Scramble extends Component { //class based
         this.setState({
             class: scrambleClass,
             indexClass: i,
-            messageClass: 'message'
+            message: ''
         })
     }
 
@@ -91,7 +91,7 @@ class Scramble extends Component { //class based
         this.setState({
             indexContent: i,
             content: scrambleContent,
-            messageClass: 'message'
+            message: ''
         })
     }
 
@@ -117,7 +117,8 @@ class Scramble extends Component { //class based
 
     scrambleOrder = () => {
         this.setState({
-            isReversed: !this.state.isReversed
+            isReversed: !this.state.isReversed,
+            message: ''
         })
     }
 
@@ -132,11 +133,9 @@ class Scramble extends Component { //class based
         }
 
         this.setState({
-            message: messageNew,
-            messageClass: 'message show',
+            message: messageNew
         })
     }
-
 
     render() {
 
@@ -154,17 +153,14 @@ class Scramble extends Component { //class based
                             <div className="row justify-content-between">
 
                                 <div className="col">
-
                                     {this.renderBtns(true)}
                                 </div>
 
                                 <div className="col">
-
                                     {this.renderBtns(false)}
                                 </div>
                             </div>
                         </div>
-
 
                         <div className="row justify-content-between">
 
@@ -176,9 +172,8 @@ class Scramble extends Component { //class based
                                 </div>
                             </div>
                             <div className="col">
-                                <div className={this.state.messageClass}>
-                                    <h4>{this.state.message}</h4>
-                                </div>
+                                <Message>{this.state.message}</Message>
+
                             </div>
                         </div>
 

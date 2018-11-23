@@ -3,13 +3,14 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import './Scramble.scss';
 import HeaderText from '../HeaderText';
+import Message from '../Message';
 
 class ChangingControls extends Component {
     state = {
         contentAdd: 'Add',
         contentDelete: 'Delete',
         message: '',
-        messageClass: 'message',
+        //  messageClass: 'message',
     };
 
     handleChangeAdd = (e) => {  //e = here: the input element
@@ -47,7 +48,7 @@ class ChangingControls extends Component {
         }
 
         this.setState({
-            messageClass: 'message show',
+            //  messageClass: 'message show',
             message: messageAdd
         })
     }
@@ -65,14 +66,15 @@ class ChangingControls extends Component {
         }
 
         this.setState({
-            messageClass: 'message show',
+            // messageClass: 'message show',
             message: messageDelete
         })
     }
 
     clearMessage = () => {
         this.setState({
-            messageClass: 'message',
+            message: ''
+            //  messageClass: 'message',
         })
     }
 
@@ -125,11 +127,10 @@ class ChangingControls extends Component {
                             </div>
                         </div>
 
-                        <div className="row justify-content-between">
+                        <div className="row">
                             <div className="col">
-                                <div className={this.state.messageClass}>
-                                    <h4>{this.state.message}</h4>
-                                </div>
+                                <Message>{this.state.message}</Message>
+
                             </div>
                         </div>
 

@@ -97,9 +97,7 @@ class Wait extends Component { //class based
                             </div>
 
                         </div>
-
                     </div>
-
                 </div>
 
                 <div className="col-12 col-md-5">

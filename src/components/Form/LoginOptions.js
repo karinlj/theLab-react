@@ -1,125 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Form.scss';
 import AccountData from '../../data/accounts.json';
 
+const LoginOptions = props => {
 
-class LoginOptions extends Component {
-    state = {
-    }
+    // console.log(AccountData['lion@thelab.com']);
+    // console.log(AccountData);   //alla username
 
-
-    render() {
-
-        // console.log(AccountData['lion@thelab.com']);
-        // console.log(AccountData);   //alla username
-
-        let user;
-        let role;
-        let pass;
-
-        for (user in AccountData) {
-
-            role = <p>{AccountData[user].role}</p>
-            user = <p>{user}</p>;
-            pass = <p>{AccountData[user].password}</p>
-
-            return (
-                <div className="login-options">
-                    {role}
-                    {user}
-                    {pass}
-
-                    {/*     <div className="login-options">
-                    <div className="login-options">
-                        <p>{AccountData[user].role}</p>
-                        <p>{user}</p>
-                        <p>{AccountData[user].password}</p>
-                    </div>
-                </div> */}
+    return (
+        <div>
+            <div className="login-options">
+                <div className="login-option">
+                    <h5>Role</h5>
+                    <h5>Username</h5>
+                    <h5>Password</h5>
                 </div>
-            )
-        }
 
-        let accountItem;
-        for (accountItem in AccountData) {
-            console.log(accountItem);
-            console.log(AccountData[accountItem].role);
-            console.log(AccountData[accountItem].password);
-        }
+                {/* <ul>{tags.map(tag => <li key={tag}>{tag}</li>)}</ul> */}
 
-        let user;
-        let role;
-        let pass;
+                {/*  Object.keys plockar ut keys ur objektet och stoppar in dem i array så vi kan använda map()*/}
 
-        for (user in AccountData) {
-            role = AccountData[user].role;
-            pass = AccountData[user].password;
-        }
-        return (
-            <div className="login-option">
-                <p>{role}</p>
-                <p>{user}</p>
-                <p>{pass}</p>
+                {Object.keys(AccountData).map((item, index) => {
+                    return (
+                        <div className="login-option">
+                            <p>{AccountData[item].role}</p>
+                            <p>{item}</p>
+                            <p>{AccountData[item].password}</p>
+                        </div>
+                    )
+                })}
+
+                {/*  return <>  </>  same as () with multiple lines*/}
 
             </div>
-        )
+        </div>
+    );
 
-        /*   for (key in AccountData) {
-              for (innerKey in AccountData[key]) {
-                  return (
-                      <li>{AccountData[key][innerKey]}</li>
-                  )
-              }
-          } */
-
-        /*   let x;
-             let y;
-             for (x in AccountData) {
-                 console.log(x);
-     
-                 for (y in AccountData[x]) {
-     
-                     console.log(y);
-                 }
-             } */
-
-
-        return (
-            <div>
-                <h2>LoginOptions</h2>
-
-
-                {/*  {AccountData.map((item, index) => {
-                    return <p>{item.role}</p>
-                })} */}
-
-
-
-                <div className="login-options">
-                    <div className="login-option">
-                        <h5>Role</h5>
-                        <h5>Username</h5>
-                        <h5>Password</h5>
-                    </div>
-                    <div className="login-option">  {/* loop för varje option? */}
-                        <p>Lion</p>
-                        <p>lion@thelab.com</p>
-                        <p>iamthelion</p>
-                    </div>
-
-                    <div className="login-option">
-                        <p>Zebra</p>
-                        <p>zebra@thelab.com</p>
-                        <p>iamthezebra</p>
-                    </div>
-                    <div className="login-option">
-                        <p>Lemur</p>
-                        <p>lemur@thelab.com</p>
-                        <p>iamthelemur</p>
-                    </div>
-                </div>
-            </div>
-        );
-    }
 }
 export default LoginOptions
