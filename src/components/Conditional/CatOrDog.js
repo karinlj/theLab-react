@@ -9,8 +9,7 @@ import HeaderText from '../HeaderText';
 class CatOrDog extends Component { //class based
     state = {
         pet: 'cat',
-        message: '',
-        messageClass: 'message',
+        message: ''
     };
 
     generatePet = () => {
@@ -21,7 +20,7 @@ class CatOrDog extends Component { //class based
 
         this.setState({
             pet: randPet,
-            messageClass: 'message'
+            message: ''
         })
     }
 
@@ -35,19 +34,27 @@ class CatOrDog extends Component { //class based
             messageNew = 'Fail!';
 
         this.setState({
-            message: messageNew,
-            messageClass: 'message show',
+            message: messageNew
         })
     }
 
     render() {
+        let { message } = this.state;
+        let messageClasses = 'message ';
+        messageClasses += (message === '' ? '' : 'show'); //messageClasses='message' or 'message show'
 
-        var displayPet;
-        if (this.state.pet === 'cat') {
-            displayPet = <img src={Cat} alt="" />
-        } else if (this.state.pet === 'dog') {
-            displayPet = <img src={Dog} alt="" />
-        }
+        let { pet } = this.state;
+        let displayPet;
+        const catImg = <img src={Cat} alt="" />;
+        const dogImg = <img src={Dog} alt="" />;
+
+        displayPet = (pet === 'cat' ? catImg : dogImg); //displayPet will show cat, otherwise dog 
+
+        /*  if (this.state.pet === 'cat') {
+             displayPet = <img src={Cat} alt="" />
+         } else if (this.state.pet === 'dog') {
+             displayPet = <img src={Dog} alt="" />
+         } */
 
         return (
             <div className="row justify-content-between">
@@ -59,7 +66,7 @@ class CatOrDog extends Component { //class based
 
                         <div className="btn-and-message">
                             <MainBtn classProp="button orange-btn" clickProp={this.generatePet}>Generate pet</MainBtn>
-                            <div className={this.state.messageClass}>
+                            <div className={messageClasses}>
                                 <h4>{this.state.message}</h4>
                             </div>
                         </div>

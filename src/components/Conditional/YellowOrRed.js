@@ -5,24 +5,22 @@ import './Conditional.scss';
 import HeaderText from '../HeaderText';
 
 
-class YellowOrRed extends Component { //class based
+class YellowOrRed extends Component {
     state = {
         color: '',
         message: '',
-        messageClass: 'message',
     };
 
-    //Arrow func to manually bind 'this' to the func in reaction to DOM events,
-    //so that we can use 'this'.
+    //Arrow func to manually bind 'this' to the func in reaction to DOM events, so we can use 'this'.
     generateColor = () => {
         let colors = ['yellow', 'red'];
 
         //floor avrundar neråt, rand()=> 0-1, *längden av array 
         let randColor = colors[Math.floor(Math.random() * colors.length)];
 
-        this.setState({ //only change the state inside the setState method
+        this.setState({
             color: randColor,
-            messageClass: 'message'
+            message: ''
         })
     }
 
@@ -37,11 +35,13 @@ class YellowOrRed extends Component { //class based
 
         this.setState({
             message: messageNew,
-            messageClass: 'message show',
         })
     }
 
     render() {
+        let { message } = this.state;
+        let messageClasses = 'message ';
+        messageClasses += (message === '' ? '' : 'show');
 
         return (
             <div className="row justify-content-between">
@@ -56,8 +56,9 @@ class YellowOrRed extends Component { //class based
                             {/* properties are DEFINED and different VALUES are set */}
 
                             <MainBtn classProp="button orange-btn" clickProp={this.generateColor}>Generate color</MainBtn>
-                            <div className={this.state.messageClass}>
+                            <div className={messageClasses}>
                                 <h4>{this.state.message}</h4>
+
                             </div>
                         </div>
 

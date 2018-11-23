@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import './Test.scss';
 
 class TestChildOne extends Component {
     state = {
+        count: 1
     }
 
     titleClicked = (e) => {
@@ -13,11 +15,34 @@ class TestChildOne extends Component {
         }
     }
 
+    formatCount = () => {
+        const { count } = this.state;
+        // const x = <h5>Zero</h5>;  //jsx expression in a variable is fine
+        const x = 'Zero';  //jsx expression in a variable
+
+        return (
+            count === 0 ? x : count  //om count=0, skriv ut x, annars skriv ut count
+        )
+    }
     render() {
+
+        let countClasses = 'button ';
+        const { count } = this.state;
+        countClasses += (count === 0 ? 'yellow-btn' : 'turquoise-btn');
 
         return (
             <div>
-                <h2 onClick={this.titleClicked}>TestChildOne - click on me!</h2>
+                <div className="card">
+                    <div className="card-body">
+                        <h4 onClick={this.titleClicked}>TestChildOne - nested component - click on me!</h4>
+
+                        <h5>Dynamic classes and counter</h5>
+                        <span className={countClasses}>{this.formatCount()}</span>
+                        <button className='button green-btn'>Increment</button>
+
+
+                    </div>
+                </div>
             </div>
         );
     }
