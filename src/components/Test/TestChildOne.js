@@ -24,6 +24,13 @@ class TestChildOne extends Component {
             count === 0 ? x : count  //om count=0, skriv ut x, annars skriv ut count
         )
     }
+
+    handleIncrement = () => {
+        console.log('hej');
+        this.setState({
+            count: this.state.count + 1  //just increment by 1
+        })
+    }
     render() {
 
         let countClasses = 'button ';
@@ -38,7 +45,8 @@ class TestChildOne extends Component {
 
                         <h5>Dynamic classes and counter</h5>
                         <span className={countClasses}>{this.formatCount()}</span>
-                        <button className='button green-btn'>Increment</button>
+                        <button
+                            onClick={this.handleIncrement} className='button green-btn'>Increment</button>
 
 
                     </div>
