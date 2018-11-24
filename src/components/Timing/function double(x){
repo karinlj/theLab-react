@@ -1,0 +1,8 @@
+function double(x){
+	return x*2;
+}
+
+function double(x){
+	let y = x*2;
+	return y;
+}
