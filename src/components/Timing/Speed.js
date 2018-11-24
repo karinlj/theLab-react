@@ -4,7 +4,6 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import HeaderText from '../HeaderText';
 
-
 class Speed extends Component { //class based
 
     state = {
@@ -97,6 +96,7 @@ class Speed extends Component { //class based
                             </div>
 
                             <div className={this.state.messageClass}>
+
                                 <h4>{this.state.message}</h4>
                                 <p>{this.state.messageSmall}</p>
                             </div>

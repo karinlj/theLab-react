@@ -7,7 +7,7 @@ import './Conditional.scss';
 import HeaderText from '../HeaderText';
 import Message from '../Message';
 
-class CatOrDog extends Component { //class based
+class CatOrDog extends Component {
     state = {
         pet: 'cat',
         message: ''
