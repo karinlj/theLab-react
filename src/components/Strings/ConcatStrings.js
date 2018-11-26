@@ -73,8 +73,8 @@ class ConcatStrings extends Component { //class based
                         </div>
 
                         <h5 className="strings">
-                            <span>{this.state.string1}</span> <br />
-                            <span>{this.state.string2}</span>
+                            <span className="string1">{this.state.string1}</span> <br />
+                            <span className="string2">{this.state.string2}</span>
                         </h5>
 
                         <form className="todo-form" onSubmit={this.handleSubmit}>
