@@ -18,49 +18,54 @@ const SideDrawer = props => {
 
                     <nav className={drawerClasses}>
                         <ul className="links">
-                            <li>Forms
+                            <li>Filling Forms
                             <ul className="sub-list">
                                     <li><NavLink to="/form">Form validation</NavLink></li>
-                                    <li><NavLink to="/login">Login</NavLink></li>
                                 </ul>
                             </li>
 
-                            <li>Lists
+                            <li>Handling lists
                             <ul className="sub-list">
                                     <li><NavLink to="/todoList">TodoList</NavLink></li>
                                 </ul>
                             </li>
 
                             <li>Conditional logic
-                        <ul className="sub-list">
+                                <ul className="sub-list">
                                     <li><NavLink to="/yellowOrRed">Yellow or Red</NavLink></li>
                                     <li><NavLink to="/catOrDog">Cat or Dog</NavLink></li>
                                 </ul>
                             </li>
 
-                            <li>Strings
-                        <ul className="sub-list">
-                                    <li><NavLink to="/ConcatStrings">Concat strings</NavLink></li>
+                            <li>Using data
+                                 <ul className="sub-list">
+                                    <li><NavLink to="/concatStrings">Concat strings</NavLink></li>
                                 </ul>
                             </li>
 
                             <li>Timing
-                        <ul className="sub-list">
-                                    <li><NavLink to="/Speed">Speed</NavLink></li>
-                                    <li><NavLink to="/Wait">Wait</NavLink></li>
+                                 <ul className="sub-list">
+                                    <li><NavLink to="/speed">Speed</NavLink></li>
+                                    <li><NavLink to="/wait">Wait</NavLink></li>
                                 </ul>
                             </li>
 
-                            <li>Scramble
-                        <ul className="sub-list">
+                            <li>DOM changes
+                                 <ul className="sub-list">
                                     <li><NavLink to="/scramble">Scramble</NavLink></li>
-                                    <li><NavLink to="/changingControls">ChangingControls</NavLink></li>
-
+                                    <li><NavLink to="/changingControls">Word scramble</NavLink></li>
                                 </ul>
                             </li>
 
+                            <li>Users and roles
+                                 <ul className="sub-list">
+                                    {/* <li><NavLink to="/login">Random login</NavLink></li> */}
+                                    <li><NavLink to="/login">Role-based login</NavLink></li>
+                                </ul>
+                            </li>
 
                             <li><NavLink to="/about">About</NavLink></li>
+
                         </ul>
                     </nav>
                 </div>
