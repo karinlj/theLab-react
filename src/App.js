@@ -76,8 +76,7 @@ class App extends Component {
                 <Route path='/about' component={About} />
                 <Route path="/Scramble" component={Scramble} />
                 <Route path="/ChangingControls" component={ChangingControls} />
-                <Route path="/randomDOM" component={RandomDOM} />
-
+             
                
                 <Route path="/Blog" component={Blog} />
                 <Route path='/timer' component={Timer} />
