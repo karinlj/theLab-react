@@ -24,15 +24,23 @@ const SideDrawer = props => {
                                 </ul>
                             </li>
 
+                            <li>Timing
+                                 <ul className="sub-list">
+                                    <li><NavLink to="/speed">Speed</NavLink></li>
+                                    <li><NavLink to="/wait">Wait</NavLink></li>
+                                </ul>
+                            </li>
+
                             <li>Handling lists
                             <ul className="sub-list">
-                                    <li><NavLink to="/todoList">TodoList</NavLink></li>
+                                    <li><NavLink to="/todoList">Sorted List</NavLink></li>
+                                    <li><NavLink to="/todoList">Unsorted List</NavLink></li>
                                 </ul>
                             </li>
 
                             <li>Conditional logic
                                 <ul className="sub-list">
-                                    <li><NavLink to="/yellowOrRed">Yellow or Red</NavLink></li>
+                                    <li><NavLink to="/yellowOrRed">Red or Yellow</NavLink></li>
                                     <li><NavLink to="/catOrDog">Cat or Dog</NavLink></li>
                                 </ul>
                             </li>
@@ -43,12 +51,7 @@ const SideDrawer = props => {
                                 </ul>
                             </li>
 
-                            <li>Timing
-                                 <ul className="sub-list">
-                                    <li><NavLink to="/speed">Speed</NavLink></li>
-                                    <li><NavLink to="/wait">Wait</NavLink></li>
-                                </ul>
-                            </li>
+                         
 
                             <li>DOM changes
                                  <ul className="sub-list">
@@ -60,6 +63,7 @@ const SideDrawer = props => {
                             <li>Users and roles
                                  <ul className="sub-list">
                                     {/* <li><NavLink to="/login">Random login</NavLink></li> */}
+                                    <li><NavLink to="/login">Random login</NavLink></li>
                                     <li><NavLink to="/login">Role-based login</NavLink></li>
                                 </ul>
                             </li>

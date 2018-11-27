@@ -56,8 +56,7 @@ const Navbar = props => (
                              <ul className="sub-list">
                                 <li><NavLink to="/scramble">Scramble</NavLink></li>
                                 <li><NavLink to="/changingControls">Word scramble</NavLink></li>
-                                 <li><NavLink to="/randomDOM">RandomDOM</NavLink></li>
-                            </ul>
+                              </ul>
                         </li>
 
                         <li>Users and roles
