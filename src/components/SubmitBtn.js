@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-//functional/stateless component accepting prop
+//functional/stateless component accepting props
 const SubmitBtn = props => {
 
     //props are OUTPUT here 

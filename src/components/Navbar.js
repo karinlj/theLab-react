@@ -46,14 +46,14 @@ const Navbar = props => (
                         </li>
 
                         <li>Using data
-                        <ul className="sub-list">
+                             <ul className="sub-list">
                                 <li><NavLink to="/concatStrings">Concat strings</NavLink></li>
                             </ul>
                         </li>
 
 
                         <li>DOM changes
-                        <ul className="sub-list">
+                             <ul className="sub-list">
                                 <li><NavLink to="/scramble">Scramble</NavLink></li>
                                 <li><NavLink to="/changingControls">Word scramble</NavLink></li>
                                  <li><NavLink to="/randomDOM">RandomDOM</NavLink></li>
@@ -61,7 +61,7 @@ const Navbar = props => (
                         </li>
 
                         <li>Users and roles
-                        <ul className="sub-list">
+                            <ul className="sub-list">
                                 <li><NavLink to="/login">Random login</NavLink></li>
                                 <li><NavLink to="/login">Role-based login</NavLink></li>
                             </ul>
