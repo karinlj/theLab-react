@@ -17,7 +17,6 @@ import Speed from './components/Timing/Speed';
 import Wait from './components/Timing/Wait';
 import Scramble from './components/Scramble/Scramble';
 import ChangingControls from './components/Scramble/ChangingControls';
-import RandomDOM from './components/Scramble/RandomDOM';
 import Login from './components/Form/Login';
 
 import Timer from './components/Timing/Timer';
