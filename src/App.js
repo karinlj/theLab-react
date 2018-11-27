@@ -17,6 +17,7 @@ import Speed from './components/Timing/Speed';
 import Wait from './components/Timing/Wait';
 import Scramble from './components/Scramble/Scramble';
 import ChangingControls from './components/Scramble/ChangingControls';
+import RandomDOM from './components/Scramble/RandomDOM';
 import Login from './components/Form/Login';
 
 import Timer from './components/Timing/Timer';
@@ -76,7 +77,9 @@ class App extends Component {
                 <Route path='/about' component={About} />
                 <Route path="/Scramble" component={Scramble} />
                 <Route path="/ChangingControls" component={ChangingControls} />
+                <Route path="/randomDOM" component={RandomDOM} />
 
+               
                 <Route path="/Blog" component={Blog} />
                 <Route path='/timer' component={Timer} />
                 <Route path="/Test" component={Test} />
