@@ -1,10 +1,12 @@
-import React from 'react';
-import './Backdrop.scss';
+import React from "react";
+import "./Backdrop.scss";
 
+const Backdrop = props => {
+  return (
+    <div className="backdrop" />
 
-//functional/stateless component accepting prop
-const Backdrop = props => (  //eller:  const Backdrop = (clickBackdrop) => { ??
+    /* <div className="backdrop" onClick={props.clickBackdrop} />   closing sidedrawer */
+  );
+};
 
-    <div className="backdrop" onClick={props.clickBackdrop}></div>
-)
 export default Backdrop;
