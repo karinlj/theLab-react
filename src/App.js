@@ -36,13 +36,13 @@ class App extends Component {
       return { sideDrawerOpen: !prevState.sideDrawerOpen }; //set the opposite
     });
   };
-
-  /*   handleBackdropClick = () => {
+  /* 
+  handleBackdropClick = () => {
     // closing sidedrawer
     this.setState({ sideDrawerOpen: false });
   }; */
 
-  handleLinkClick = () => {
+  handleClickLinkOrBackdrop = () => {
     // closing sidedrawer
     this.setState({ sideDrawerOpen: false });
   };
@@ -52,7 +52,7 @@ class App extends Component {
     //if SideDrawer open=true
     if (this.state.sideDrawerOpen) {
       // closing sidedrawer
-      backdrop = <Backdrop />;
+      backdrop = <Backdrop clickBackdrop={this.handleClickLinkOrBackdrop} />;
     }
     return (
       <BrowserRouter>
@@ -62,7 +62,7 @@ class App extends Component {
           <Navbar handleDrawerClick={this.handleToggle} />
           <SideDrawer
             show={this.state.sideDrawerOpen}
-            clickLink={this.handleLinkClick}
+            clickLink={this.handleClickLinkOrBackdrop}
           />
           {backdrop} {/* conditionally rendered */}
           <Header className="header" />
