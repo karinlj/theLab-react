@@ -30,6 +30,7 @@ const Navbar = props => (
               <ul className="sub-list">
                 <li>
                   <NavLink to="/todoList">Sorted List</NavLink>
+                  <NavLink to="/randomTodoList">Unsorted List</NavLink>
                 </li>
               </ul>
             </li>
