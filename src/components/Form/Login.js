@@ -189,7 +189,7 @@ class Login extends Component {
                     Random login
                   </MainBtn>} */}
 
-                {this.constructor.name === RandomLogin
+                {this.constructor.name === "RandomLogin"
                   ? <MainBtn
                       classProp="button orange-btn random-login"
                       clickProp={this.randomLogin}
