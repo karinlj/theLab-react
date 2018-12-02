@@ -181,22 +181,13 @@ class Login extends Component {
 
                 <SubmitBtn clickProp={this.handleLogin}>Log in</SubmitBtn>
 
-                {/*  {this.constructor.name === RandomLogin &&
+                {this.constructor.name === "RandomLogin" &&
                   <MainBtn
                     classProp="button orange-btn random-login"
                     clickProp={this.randomLogin}
                   >
                     Random login
-                  </MainBtn>} */}
-
-                {this.constructor.name === "RandomLogin"
-                  ? <MainBtn
-                      classProp="button orange-btn random-login"
-                      clickProp={this.randomLogin}
-                    >
-                      {" "}Random login
-                    </MainBtn>
-                  : ""}
+                  </MainBtn>}
               </form>
             </div>
 
