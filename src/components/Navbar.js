@@ -85,7 +85,9 @@ const Navbar = props =>
             <li>
               Users and roles
               <ul className="sub-list">
-                {/* <li><NavLink to="/login">Random login</NavLink></li> */}
+                <li>
+                  <NavLink to="/randomLogin">Random login</NavLink>
+                </li>
                 <li>
                   <NavLink to="/login">Role-based login</NavLink>
                 </li>
@@ -95,7 +97,7 @@ const Navbar = props =>
             <li>
               <NavLink to="/about">About</NavLink>
             </li>
-            {/* <li><NavLink to="/test">Test</NavLink></li> */}
+            {/*   <li><NavLink to="/test">Test</NavLink></li>  */}
           </ul>
         </div>
       </div>

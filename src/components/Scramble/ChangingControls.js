@@ -1,147 +1,178 @@
-import React, { Component } from 'react'
-import Sidebar from '../Sidebar';
-import MainBtn from '../MainBtn';
-import './Scramble.scss';
-import HeaderText from '../HeaderText';
-import Message from '../Message';
+import React, { Component } from "react";
+import Sidebar from "../Sidebar";
+import MainBtn from "../MainBtn";
+import "./Scramble.scss";
+import HeaderText from "../HeaderText";
+import Message from "../Message";
 
 class ChangingControls extends Component {
-    state = {
-        contentAdd: 'Add',
-        contentDelete: 'Delete',
-        message: '',
-        //  messageClass: 'message',
-    };
+  state = {
+    contentAdd: "Add",
+    contentDelete: "Delete",
+    message: ""
+    //  messageClass: 'message',
+  };
 
-    handleChangeAdd = (e) => {  //e = here: the input element
-        this.setState({
-            contentAdd: e.target.value   //value= what user types in
-        })
+  handleChangeAdd = e => {
+    //e = here: the input element
+    this.setState({
+      contentAdd: e.target.value //value= what user types in
+    });
+  };
+
+  handleSubmitAdd = e => {
+    e.preventDefault();
+    //console.log(this.state);
+  };
+
+  handleChangeDelete = e => {
+    this.setState({
+      //value= what user types in
+      contentDelete: e.target.value
+    });
+  };
+  handleSubmitDelete = e => {
+    e.preventDefault();
+    //console.log(this.state);
+  };
+
+  printAnimalAdd = animal => {
+    let messageAdd;
+    if (animal === "kangaroo") {
+      messageAdd = "Kangaroo added";
+    } else if (animal === "koala") {
+      messageAdd = "Koala added";
+    } else if (animal === "dolphin") {
+      messageAdd = "Dolphin added";
     }
 
-    handleSubmitAdd = (e) => {
-        e.preventDefault();
-        //console.log(this.state);
+    this.setState({
+      //  messageClass: 'message show',
+      message: messageAdd
+    });
+  };
+
+  printAnimalDelete = animal => {
+    let messageDelete;
+    if (animal === "kangaroo") {
+      messageDelete = "Kangaroo deleted";
+    } else if (animal === "koala") {
+      messageDelete = "Koala deleted";
+    } else if (animal === "dolphin") {
+      messageDelete = "Dolphin deleted";
     }
 
-    handleChangeDelete = (e) => {
-        this.setState({ //value= what user types in
-            contentDelete: e.target.value
-        })
-    }
-    handleSubmitDelete = (e) => {
-        e.preventDefault();
-        //console.log(this.state);
-    }
+    this.setState({
+      // messageClass: 'message show',
+      message: messageDelete
+    });
+  };
 
+  clearMessage = () => {
+    this.setState({
+      message: ""
+      //  messageClass: 'message',
+    });
+  };
 
-    printAnimalAdd = (animal) => {
-        let messageAdd;
-        if (animal === 'kangaroo') {
-            messageAdd = 'Kangaroo added'
-        }
-        else if (animal === 'koala') {
-            messageAdd = 'Koala added'
-        }
-        else if (animal === 'dolphin') {
-            messageAdd = 'Dolphin added'
-        }
+  render() {
+    return (
+      <div className="row justify-content-between">
+        <div className="col-12 col-md-6">
+          <div className="changingControl-section">
+            <header>
+              <HeaderText componentName={this.constructor.name} />
+            </header>
 
-        this.setState({
-            //  messageClass: 'message show',
-            message: messageAdd
-        })
-    }
+            <form className="todo-form" onSubmit={this.handleSubmitAdd}>
+              <label htmlFor="">Change wording for Add:</label>
+              <br />
 
-    printAnimalDelete = (animal) => {
-        let messageDelete;
-        if (animal === 'kangaroo') {
-            messageDelete = 'Kangaroo deleted'
-        }
-        else if (animal === 'koala') {
-            messageDelete = 'Koala deleted'
-        }
-        else if (animal === 'dolphin') {
-            messageDelete = 'Dolphin deleted'
-        }
+              <input
+                type="text"
+                onChange={this.handleChangeAdd}
+                value={this.state.contentAdd}
+                onClick={this.clearMessage}
+              />
+            </form>
 
-        this.setState({
-            // messageClass: 'message show',
-            message: messageDelete
-        })
-    }
+            <form className="todo-form" onSubmit={this.handleSubmit}>
+              <label htmlFor="">Change wording for Delete:</label>
+              <br />
 
-    clearMessage = () => {
-        this.setState({
-            message: ''
-            //  messageClass: 'message',
-        })
-    }
+              <input
+                type="text"
+                onChange={this.handleChangeDelete}
+                value={this.state.contentDelete}
+                onClick={this.clearMessage}
+              />
+            </form>
 
-    render() {
+            <div className="changingControlBtns">
+              <div className="row justify-content-between">
+                <div className="col-6">
+                  <MainBtn
+                    classProp="button orange-btn"
+                    clickProp={this.printAnimalAdd.bind(this, "kangaroo")}
+                  >
+                    {this.state.contentAdd} Kangaroo
+                  </MainBtn>
 
-        return (
-            <div className="row justify-content-between">
-                <div className="col-12 col-md-6">
-                    <div className="changingControl-section">
-                        <header>
-                            <HeaderText componentName="changingControls" />
-                        </header>
+                  <MainBtn
+                    classProp="button green-btn"
+                    clickProp={this.printAnimalAdd.bind(this, "koala")}
+                  >
+                    {this.state.contentAdd} Koala
+                  </MainBtn>
 
-                        <form className="todo-form" onSubmit={this.handleSubmitAdd}>
-                            <label htmlFor="">Change wording for Add:</label><br></br>
-
-                            <input type="text" onChange={this.handleChangeAdd} value={this.state.contentAdd} onClick={this.clearMessage} />
-                        </form>
-
-                        <form className="todo-form" onSubmit={this.handleSubmit}>
-                            <label htmlFor="">Change wording for Delete:</label><br></br>
-
-                            <input type="text" onChange={this.handleChangeDelete} value={this.state.contentDelete} onClick={this.clearMessage} />
-                        </form>
-
-                        <div className="changingControlBtns">
-                            <div className="row justify-content-between">
-
-                                <div className="col-6">
-                                    <MainBtn classProp="button orange-btn"
-                                        clickProp={this.printAnimalAdd.bind(this, 'kangaroo')}>{this.state.contentAdd} Kangaroo</MainBtn>
-
-                                    <MainBtn classProp="button green-btn"
-                                        clickProp={this.printAnimalAdd.bind(this, 'koala')}>{this.state.contentAdd}  Koala</MainBtn>
-
-                                    <MainBtn classProp="button red-btn"
-                                        clickProp={this.printAnimalAdd.bind(this, 'dolphin')}>{this.state.contentAdd} Dolphin</MainBtn>
-                                </div>
-
-                                <div className="col-6">
-                                    <MainBtn classProp="button orange-btn"
-                                        clickProp={this.printAnimalDelete.bind(this, 'kangaroo')}>{this.state.contentDelete} Kangaroo</MainBtn>
-
-                                    <MainBtn classProp="button green-btn"
-                                        clickProp={this.printAnimalDelete.bind(this, 'koala')}>{this.state.contentDelete} Koala</MainBtn>
-
-                                    <MainBtn classProp="button red-btn"
-                                        clickProp={this.printAnimalDelete.bind(this, 'dolphin')}>{this.state.contentDelete} Dolphin</MainBtn>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="row">
-                            <div className="col">
-                                <Message>{this.state.message}</Message>
-
-                            </div>
-                        </div>
-
-                    </div>
+                  <MainBtn
+                    classProp="button red-btn"
+                    clickProp={this.printAnimalAdd.bind(this, "dolphin")}
+                  >
+                    {this.state.contentAdd} Dolphin
+                  </MainBtn>
                 </div>
 
-                <div className="col-12 col-md-5">
-                    <Sidebar componentName="changingControls" />
+                <div className="col-6">
+                  <MainBtn
+                    classProp="button orange-btn"
+                    clickProp={this.printAnimalDelete.bind(this, "kangaroo")}
+                  >
+                    {this.state.contentDelete} Kangaroo
+                  </MainBtn>
+
+                  <MainBtn
+                    classProp="button green-btn"
+                    clickProp={this.printAnimalDelete.bind(this, "koala")}
+                  >
+                    {this.state.contentDelete} Koala
+                  </MainBtn>
+
+                  <MainBtn
+                    classProp="button red-btn"
+                    clickProp={this.printAnimalDelete.bind(this, "dolphin")}
+                  >
+                    {this.state.contentDelete} Dolphin
+                  </MainBtn>
                 </div>
+              </div>
             </div>
-        )
-    }
+
+            <div className="row">
+              <div className="col">
+                <Message>
+                  {this.state.message}
+                </Message>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-md-5">
+          <Sidebar componentName={this.constructor.name} />
+        </div>
+      </div>
+    );
+  }
 }
-export default ChangingControls
+export default ChangingControls;

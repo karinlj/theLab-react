@@ -106,11 +106,11 @@ const SideDrawer = props => {
               <li>
                 Users and roles
                 <ul className="sub-list">
-                  {/*   <li>
-                    <NavLink to="/login">
+                  <li>
+                    <NavLink to="/randomLogin">
                       <div onClick={props.clickLink}>Random login</div>
                     </NavLink>
-                  </li> */}
+                  </li>
                   <li>
                     <NavLink to="/login">
                       <div onClick={props.clickLink}>Role-based login</div>
