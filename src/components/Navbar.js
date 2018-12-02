@@ -29,7 +29,7 @@ const Navbar = props => (
               Handling lists
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/todoList">TodoList</NavLink>
+                  <NavLink to="/todoList">Sorted List</NavLink>
                 </li>
               </ul>
             </li>
