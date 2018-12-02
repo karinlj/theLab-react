@@ -52,12 +52,12 @@ class RandomLogin extends Login {
                 </span>
 
                 <SubmitBtn clickProp={this.handleLogin}>Log in</SubmitBtn>
-                <MainBtn
+                {/*    <MainBtn
                   classProp="button orange-btn random-login"
                   clickProp={this.randomLogin}
                 >
                   Random login
-                </MainBtn>
+                </MainBtn> */}
               </form>
             </div>
 
