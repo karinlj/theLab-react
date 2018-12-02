@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import ToggleBtn from "./SideDrawer/ToggleBtn";
 
-const Navbar = props => (
+const Navbar = props =>
   <nav className="nav">
     <div className="container">
       <div className="row">
@@ -30,6 +30,8 @@ const Navbar = props => (
               <ul className="sub-list">
                 <li>
                   <NavLink to="/todoList">Sorted List</NavLink>
+                </li>
+                <li>
                   <NavLink to="/randomTodoList">Unsorted List</NavLink>
                 </li>
               </ul>
@@ -98,6 +100,5 @@ const Navbar = props => (
         </div>
       </div>
     </div>
-  </nav>
-);
+  </nav>;
 export default Navbar;

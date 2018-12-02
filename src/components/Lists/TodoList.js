@@ -6,7 +6,6 @@ import "./Lists.scss";
 import HeaderText from "../HeaderText";
 
 class TodoList extends Component {
-  //class based component
   state = {
     todos: [
       { id: 1, content: "Buy some milk" },
@@ -18,7 +17,7 @@ class TodoList extends Component {
     //getting ID from todos.js, putting it in as argument
     //console.log(id);
 
-    //new array in variable and that filters out todo for not changing array destructively
+    //new array in variable and that filters out todo
     const todosNew = this.state.todos.filter(todo => {
       return todo.id !== id;
       //satisfying the return statement = returning true
@@ -47,7 +46,7 @@ class TodoList extends Component {
         <div className="col-12 col-md-6">
           <div className="todo-section">
             <header>
-              <HeaderText componentName="todoList" />
+              <HeaderText componentName={this.constructor.name} />
             </header>
             {/* sending delete-func */}
             {/* sending the state of this comp. to Todos!!!!!!!! */}
@@ -62,7 +61,7 @@ class TodoList extends Component {
         </div>
 
         <div className="col-12 col-md-5">
-          <Sidebar componentName="todoList" />
+          <Sidebar componentName={this.constructor.name} />
         </div>
       </div>
     );

@@ -6,11 +6,17 @@
     "sidebarText": "In test automation, it's important not to not hard-code information entered in forms, as this will often change. \n\n A common mistake is to record separate flows for each set of data, making tests numerous and difficult to maintain. Ideally, you want to be able to keep your data separate in a JSON or CSV, and map this data directly into forms."
   },
 
-  "todoList": {
-    "heading": "Todo's",
+  "TodoList": {
+    "heading": "Sorted list",
     "text": "In this simple application we can add and delete todos from a list. There are several small tests we can do on top of this application, and they illustrate element selection and data handling. \n\n    In order to cover most cases, we should add a list of items to the todo-list, randomize the list order and then remove the list of items again.",
-    "sidebarHeading": "Why learn: Todo's?",
+    "sidebarHeading": "Why learn: Sorted list?",
     "sidebarText": "In many SaaS applications, data lists of different kinds are often used. One common problem in test automation is to be able to uniquely identify objects in lists. \n\n When identifying elements using CSS selectors, sometimes you'll need to make assumptions about the order of an item. In general, this is bad practice, as it makes the test sensitive to preconditions, something we want to avoid."
+  },
+  "RandomTodoList": {
+    "heading": "Unsorted list",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. ",
+    "sidebarHeading": "Why learn: Unsorted list?",
+    "sidebarText": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. "
   },
   "yellowOrRed": {
     "heading": "Red or yellow",

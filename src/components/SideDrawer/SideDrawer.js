@@ -36,6 +36,11 @@ const SideDrawer = props => {
                       <div onClick={props.clickLink}>Sorted List</div>
                     </NavLink>
                   </li>
+                  <li>
+                    <NavLink to="/randomTodoList">
+                      <div onClick={props.clickLink}>Unsorted List</div>
+                    </NavLink>
+                  </li>
                 </ul>
               </li>
 
