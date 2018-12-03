@@ -1,13 +1,14 @@
 .test-section {
-    .card {
-        margin-bottom: 2rem;
+  .card {
+    margin-bottom: 2rem;
 
-        .button {
-            margin-bottom: 1rem;
-        }
+    .button {
+      margin-bottom: 1rem;
     }
+  }
 
-    .navbar {
-        margin-bottom: 2rem;
-    }
+  .navbar {
+    margin-bottom: 2rem;
+    display: block;
+  }
 }

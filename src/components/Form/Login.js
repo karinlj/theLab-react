@@ -19,7 +19,8 @@ class Login extends Component {
     loggedInText: "",
     formClass: "form show",
     loggedinClass: "loggedin",
-    btnMessage: ""
+    btnMessage: "",
+    roleText: ""
   };
 
   handleChange = e => {
@@ -177,7 +178,7 @@ class Login extends Component {
                     {displayThings.animal}
 
                     <h5>
-                      {this.state.loggedInText}
+                      {this.state.loggedInText} {this.state.roleText}
                     </h5>
                   </div>
                 </div>
