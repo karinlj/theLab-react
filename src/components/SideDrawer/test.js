@@ -17,20 +17,6 @@ const SideDrawer = props => {
         <div className="col">
           <nav className={drawerClasses}>
             <ul className="links">
-            <li>
-              Introduction
-              <ul className="sub-list">
-                <li>
-                  <NavLink to="/form">Why do test automation?</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/form">The Boozang approach</NavLink>
-                </li>
-                 <li>
-                  <NavLink to="/form">The Boozang tool</NavLink>
-                </li>
-              </ul>
-            </li>
               <li>
                 Filling Forms
                 <ul className="sub-list">
@@ -47,12 +33,7 @@ const SideDrawer = props => {
                 <ul className="sub-list">
                   <li>
                     <NavLink to="/todoList">
-                      <div onClick={props.clickLink}>Sorted List</div>
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/randomTodoList">
-                      <div onClick={props.clickLink}>Unsorted List</div>
+                      <div onClick={props.clickLink}>TodoList</div>
                     </NavLink>
                   </li>
                 </ul>
@@ -120,11 +101,11 @@ const SideDrawer = props => {
               <li>
                 Users and roles
                 <ul className="sub-list">
-                  <li>
-                    <NavLink to="/randomLogin">
+                  {/*   <li>
+                    <NavLink to="/login">
                       <div onClick={props.clickLink}>Random login</div>
                     </NavLink>
-                  </li>
+                  </li> */}
                   <li>
                     <NavLink to="/login">
                       <div onClick={props.clickLink}>Role-based login</div>
@@ -146,3 +127,4 @@ const SideDrawer = props => {
   );
 };
 export default SideDrawer;
+
