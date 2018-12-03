@@ -36,10 +36,7 @@ class Login extends Component {
     //console.log(AccountData[username]);
     //console.log('pass ' + AccountData[username].password);
 
-    if (
-      AccountData[username] &&
-      AccountData[username].password === this.state.password
-    ) {
+    if (AccountData[username] && AccountData[username].password === this.state.password) {
       let newRole = AccountData[username].role;
 
       this.setState({
@@ -63,22 +60,13 @@ class Login extends Component {
       displayAnimal = <img src={Lion} alt="" />;
       displayBtns = (
         <div className="btns">
-          <MainBtn
-            classProp="button turquoise-btn"
-            clickProp={this.handleClick.bind(this, "one")}
-          >
+          <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick.bind(this, "one")}>
             one
           </MainBtn>
-          <MainBtn
-            classProp="button green-btn"
-            clickProp={this.handleClick.bind(this, "two")}
-          >
+          <MainBtn classProp="button green-btn" clickProp={this.handleClick.bind(this, "two")}>
             two
           </MainBtn>
-          <MainBtn
-            classProp="button pink-btn"
-            clickProp={this.handleClick.bind(this, "three")}
-          >
+          <MainBtn classProp="button pink-btn" clickProp={this.handleClick.bind(this, "three")}>
             three
           </MainBtn>
         </div>
@@ -87,16 +75,10 @@ class Login extends Component {
       displayAnimal = <img src={Zebra} alt="" />;
       displayBtns = (
         <div className="btns">
-          <MainBtn
-            classProp="button turquoise-btn"
-            clickProp={this.handleClick.bind(this, "one")}
-          >
+          <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick.bind(this, "one")}>
             one
           </MainBtn>
-          <MainBtn
-            classProp="button green-btn"
-            clickProp={this.handleClick.bind(this, "two")}
-          >
+          <MainBtn classProp="button green-btn" clickProp={this.handleClick.bind(this, "two")}>
             two
           </MainBtn>
         </div>
@@ -105,10 +87,7 @@ class Login extends Component {
       displayAnimal = <img src={Lemur} alt="" />;
       displayBtns = (
         <div className="btns">
-          <MainBtn
-            classProp="button turquoise-btn"
-            clickProp={this.handleClick.bind(this, "one")}
-          >
+          <MainBtn classProp="button turquoise-btn" clickProp={this.handleClick.bind(this, "one")}>
             one
           </MainBtn>
         </div>
@@ -182,10 +161,7 @@ class Login extends Component {
                 <SubmitBtn clickProp={this.handleLogin}>Log in</SubmitBtn>
 
                 {this.constructor.name === "RandomLogin" &&
-                  <MainBtn
-                    classProp="button orange-btn random-login"
-                    clickProp={this.randomLogin}
-                  >
+                  <MainBtn classProp="button orange-btn random-login" clickProp={this.randomLogin}>
                     Random login
                   </MainBtn>}
               </form>
@@ -206,17 +182,13 @@ class Login extends Component {
                   </div>
                 </div>
 
-                <MainBtn
-                  classProp="button red-btn"
-                  clickProp={this.handleLogout}
-                >
+                <MainBtn classProp="button red-btn" clickProp={this.handleLogout}>
                   Log out
                 </MainBtn>
               </div>
               <div className="permissions">
                 <p>
-                  Since I am the <strong>{this.state.role}</strong>, I have
-                  access to these buttons:
+                  Since I am the <strong>{this.state.role}</strong>, I have access to these buttons:
                 </p>
 
                 {/* returned value from displayPictAndBtns-func */}
