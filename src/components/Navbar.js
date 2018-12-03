@@ -16,8 +16,7 @@ const Navbar = props =>
           </h2>
 
           <ul className="links">
-
-              <li>
+            <li>
               Introduction
               <ul className="sub-list">
                 <li>
@@ -26,7 +25,7 @@ const Navbar = props =>
                 <li>
                   <NavLink to="/form">The Boozang approach</NavLink>
                 </li>
-                 <li>
+                <li>
                   <NavLink to="/form">The Boozang tool</NavLink>
                 </li>
               </ul>
@@ -107,10 +106,6 @@ const Navbar = props =>
                   <NavLink to="/login">Role-based login</NavLink>
                 </li>
               </ul>
-            </li>
-
-            <li>
-              <NavLink to="/about">About</NavLink>
             </li>
             {/*   <li><NavLink to="/test">Test</NavLink></li>  */}
           </ul>

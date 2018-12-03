@@ -5,24 +5,18 @@ import LoginOptions from "./LoginOptions";
 class RandomLogin extends Login {
   randomLogin = e => {
     e.preventDefault();
-    const lion = AccountData["lion@thelab.com"].role;
-    const zebra = AccountData["zebra@thelab.com"].role;
-    const lemur = AccountData["lemur@thelab.com"].role;
-    const nobody = "ingen";
 
-    //this.state.role === "lion"
+    const loginRoles = ["lion", "zebra", "lemur", "passwordFailed"];
 
-    const loginOptions = [lion, zebra, lemur, nobody];
+    let randRole = loginRoles[Math.floor(Math.random() * loginRoles.length)];
 
-    let randOption = loginOptions[Math.floor(Math.random() * loginOptions.length)];
-
-    console.log(randOption);
-
-    //console.log(lion, zebra, lemur, nobody, randomNr);
+    console.log(loginRoles);
 
     this.setState({
+      role: randRole,
       formClass: "form",
-      loggedinClass: "loggedin show"
+      loggedinClass: "loggedin show",
+      loggedInText: this.state.email
     });
   };
 }

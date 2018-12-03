@@ -17,20 +17,20 @@ const SideDrawer = props => {
         <div className="col">
           <nav className={drawerClasses}>
             <ul className="links">
-            <li>
-              Introduction
-              <ul className="sub-list">
-                <li>
-                  <NavLink to="/form">Why do test automation?</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/form">The Boozang approach</NavLink>
-                </li>
-                 <li>
-                  <NavLink to="/form">The Boozang tool</NavLink>
-                </li>
-              </ul>
-            </li>
+              <li>
+                Introduction
+                <ul className="sub-list">
+                  <li>
+                    <NavLink to="/form">Why do test automation?</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/form">The Boozang approach</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/form">The Boozang tool</NavLink>
+                  </li>
+                </ul>
+              </li>
               <li>
                 Filling Forms
                 <ul className="sub-list">
@@ -131,12 +131,6 @@ const SideDrawer = props => {
                     </NavLink>
                   </li>
                 </ul>
-              </li>
-
-              <li>
-                <NavLink to="/about">
-                  <div onClick={props.clickLink}>About</div>
-                </NavLink>
               </li>
             </ul>
           </nav>
