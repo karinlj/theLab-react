@@ -1,6 +1,4 @@
 import Login from "./Login";
-import AccountData from "../../data/accounts.json";
-import LoginOptions from "./LoginOptions";
 
 class RandomLogin extends Login {
   randomLogin = e => {

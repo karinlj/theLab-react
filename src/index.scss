@@ -309,19 +309,18 @@ h5 {
   }
 }
 
-//home, about
-.about-section,
-.home-section {
+//home tec
+.textComp-section {
   h1 {
     margin-bottom: 2rem;
   }
 
   .card {
-    min-height: 300px;
+    min-height: 150px;
     padding: 0.5rem 0.75rem;
 
     @media all and (min-width: $xl-min) {
-      padding: 1.5rem 2rem;
+      padding: 0.5rem 1rem;
     }
   }
 }

@@ -21,13 +21,19 @@ const SideDrawer = props => {
                 Introduction
                 <ul className="sub-list">
                   <li>
-                    <NavLink to="/form">Why do test automation?</NavLink>
+                    <NavLink to="/whyDoTest">
+                      <div onClick={props.clickLink}>Why do test automation?</div>
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/form">The Boozang approach</NavLink>
+                    <NavLink to="/approach">
+                      <div onClick={props.clickLink}>The Boozang approach</div>
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/form">The Boozang tool</NavLink>
+                    <NavLink to="/tool">
+                      <div onClick={props.clickLink}>The Boozang tool</div>
+                    </NavLink>
                   </li>
                 </ul>
               </li>

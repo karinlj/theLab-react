@@ -20,13 +20,13 @@ const Navbar = props =>
               Introduction
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/form">Why do test automation?</NavLink>
+                  <NavLink to="/whyDoTest">Why do test automation?</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/form">The Boozang approach</NavLink>
+                  <NavLink to="/approach">The Boozang approach</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/form">The Boozang tool</NavLink>
+                  <NavLink to="/tool">The Boozang tool</NavLink>
                 </li>
               </ul>
             </li>

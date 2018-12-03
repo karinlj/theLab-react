@@ -3,8 +3,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
-import About from "./components/About";
+import Home from "./components/textComponents/Home";
+import WhyDoTest from "./components/textComponents/WhyDoTest";
+import Approach from "./components/textComponents/Approach";
+import Tool from "./components/textComponents/Tool";
 import TodoList from "./components/Lists/TodoList";
 import RandomTodoList from "./components/Lists/RandomTodoList";
 import Post from "./components/Blog/Post";
@@ -70,6 +72,9 @@ class App extends Component {
               <Switch>
                 {" "}{/* only want to match one at a time */}
                 <Route exact path="/" component={Home} />
+                <Route path="/whyDoTest" component={WhyDoTest} />
+                <Route path="/approach" component={Approach} />
+                <Route path="/tool" component={Tool} />
                 <Route path="/TodoList" component={TodoList} />
                 <Route path="/RandomTodoList" component={RandomTodoList} />
                 <Route path="/Form" component={Form} />
@@ -80,7 +85,6 @@ class App extends Component {
                 <Route path="/ConcatStrings" component={ConcatStrings} />
                 <Route path="/Speed" component={Speed} />
                 <Route path="/Wait" component={Wait} />
-                <Route path="/about" component={About} />
                 <Route path="/Scramble" component={Scramble} />
                 <Route path="/ChangingControls" component={ChangingControls} />
                 <Route path="/Blog" component={Blog} />
