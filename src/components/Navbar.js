@@ -28,7 +28,7 @@ const Navbar = props =>
               </ul>
             </li>
             <li>
-              Filling Forms
+              Handling Forms
               <ul className="sub-list">
                 <li>
                   <NavLink to="/form">Form validation</NavLink>
@@ -76,10 +76,10 @@ const Navbar = props =>
               DOM changes
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/scramble">Scramble</NavLink>
+                  <NavLink to="/scramble">Scramble items</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/changingControls">Word scramble</NavLink>
+                  <NavLink to="/changingControls">Multi-scramble</NavLink>
                 </li>
               </ul>
             </li>
