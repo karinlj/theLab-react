@@ -8,11 +8,7 @@ const MainBtn = props => {
   //only need to output them like {click}
 
   return (
-    <button
-      className={props.classProp}
-      id={props.idProp}
-      onClick={props.clickProp}
-    >
+    <button className={props.classProp} id={props.idProp} onClick={props.clickProp}>
       {props.children}
     </button>
   );

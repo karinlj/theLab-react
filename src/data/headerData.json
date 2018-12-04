@@ -54,7 +54,7 @@
     "sidebarHeading": "Why learn: Scramble?",
     "sidebarText": "XPath and CSS selectors are notoriously brittle, and often changes to id and class attributes will break test cases. \n\n Here you can simulate changes to both id, class and content to see how your test tool handles the challenge."
   },
-  "ChangingControls": {
+  "ScrambleMulti": {
     "heading": "Multi-scramble",
     "text": "This is a simple game where you can change the action labels that manipulates something in your data model. In a typical SaaS application this could for example be Project, User or Bank Account - here represented by Kangaroo, Koala, or Dolphin. \n\n The trick is to let your test automation tool still find the buttons even if the wording is changing, but only affecting the appropriate buttons.",
     "sidebarHeading": "Why learn: Changing Controls?",
