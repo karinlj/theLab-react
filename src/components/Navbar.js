@@ -17,16 +17,13 @@ const Navbar = props =>
 
           <ul className="links">
             <li>
-              Introduction
+              Gettring started
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/whyDoTest">Why do test automation?</NavLink>
+                  <NavLink to="/whyDoTest">Introduction</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/approach">The Boozang approach</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/tool">The Boozang tool</NavLink>
+                  <NavLink to="/approach">Overview of the tool</NavLink>
                 </li>
               </ul>
             </li>
@@ -52,27 +49,6 @@ const Navbar = props =>
             </li>
 
             <li>
-              Conditional logic
-              <ul className="sub-list">
-                <li>
-                  <NavLink to="/yellowOrRed">Yellow or Red</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/catOrDog">Cat or Dog</NavLink>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              Using data
-              <ul className="sub-list">
-                <li>
-                  <NavLink to="/concatStrings">Concat strings</NavLink>
-                </li>
-              </ul>
-            </li>
-
-            <li>
               Timing
               <ul className="sub-list">
                 <li>
@@ -80,6 +56,18 @@ const Navbar = props =>
                 </li>
                 <li>
                   <NavLink to="/wait">Wait</NavLink>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              Conditional logic
+              <ul className="sub-list">
+                <li>
+                  <NavLink to="/yellowOrRed">Yellow or Red</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/catOrDog">Cat or Dog</NavLink>
                 </li>
               </ul>
             </li>
@@ -96,6 +84,17 @@ const Navbar = props =>
               </ul>
             </li>
 
+
+            <li>
+              Using data
+              <ul className="sub-list">
+                <li>
+                  <NavLink to="/concatStrings">Concat strings</NavLink>
+                </li>
+              </ul>
+            </li>
+      
+
             <li>
               Users and roles
               <ul className="sub-list">
@@ -104,6 +103,17 @@ const Navbar = props =>
                 </li>
                 <li>
                   <NavLink to="/login">Role-based login</NavLink>
+                </li>
+              </ul>
+            </li>
+            <li>
+              CI server
+              <ul className="sub-list">
+                <li>
+                  <NavLink to="/concatStrings">Running from CLI</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/concatStrings">CI integration</NavLink>
                 </li>
               </ul>
             </li>
