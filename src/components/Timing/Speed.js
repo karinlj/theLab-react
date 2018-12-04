@@ -67,8 +67,18 @@ class Speed extends Component {
 
   message = () => {
     let countOutput = -this.state.count;
-    let messageNew = "Wow! but...";
-    let messageSmallNew = "You clicked " + countOutput + " ms too late..."; //need better output
+    let messageNew;
+    let messageSmallNew;
+
+    alert(countOutput);
+
+    if (countOutput < 0) {
+      messageNew = "Fail!";
+      messageSmallNew = "No cheating... you clicked too early.";
+    } else {
+      messageNew = "Success!";
+      messageSmallNew = "You clicked " + countOutput + " ms too late...";
+    }
 
     this.setState({
       message: messageNew,
@@ -88,17 +98,11 @@ class Speed extends Component {
 
             <div className="btn-and-message higher">
               <div>
-                <MainBtn
-                  classProp="button start-btn"
-                  clickProp={this.handleStart}
-                >
+                <MainBtn classProp="button start-btn" clickProp={this.handleStart}>
                   Start game
                 </MainBtn>
 
-                <MainBtn
-                  classProp={this.state.stopClass}
-                  clickProp={this.handleStop}
-                >
+                <MainBtn classProp={this.state.stopClass} clickProp={this.handleStop}>
                   End game
                 </MainBtn>
               </div>
