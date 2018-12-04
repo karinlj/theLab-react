@@ -70,8 +70,6 @@ class Speed extends Component {
     let messageNew;
     let messageSmallNew;
 
-    alert(countOutput);
-
     if (countOutput < 0) {
       messageNew = "Fail!";
       messageSmallNew = "No cheating... you clicked too early.";
