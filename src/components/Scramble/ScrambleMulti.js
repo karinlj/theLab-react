@@ -5,7 +5,7 @@ import "./Scramble.scss";
 import HeaderText from "../HeaderText";
 import Message from "../Message";
 
-class ChangingControls extends Component {
+class ScrambleMulti extends Component {
   state = {
     contentAdd: "Add",
     contentDelete: "Delete",
@@ -79,7 +79,7 @@ class ChangingControls extends Component {
     return (
       <div className="row justify-content-between">
         <div className="col-12 col-md-6">
-          <div className="changingControl-section">
+          <div className="scrambleMulti-section">
             <header>
               <HeaderText componentName={this.constructor.name} />
             </header>
@@ -108,7 +108,7 @@ class ChangingControls extends Component {
               />
             </form>
 
-            <div className="changingControlBtns">
+            <div className="scrambleMultiBtns">
               <div className="row justify-content-between">
                 <div className="col-6">
                   <MainBtn
@@ -175,4 +175,4 @@ class ChangingControls extends Component {
     );
   }
 }
-export default ChangingControls;
+export default ScrambleMulti;

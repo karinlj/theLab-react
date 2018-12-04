@@ -1,12 +1,12 @@
 import React from "react";
 import VideoSidebar from "../Video/VideoSidebar";
 
-const WhyDoTest = () => {
+const Introduction = () => {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
         <div className="textComp-section">
-          <h1 className="center">Why do test automation?</h1>
+          <h1 className="center">Introduction</h1>
 
           <div className="card">
             <div className="card-body">
@@ -35,4 +35,4 @@ const WhyDoTest = () => {
     </div>
   );
 };
-export default WhyDoTest;
+export default Introduction;

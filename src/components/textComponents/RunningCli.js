@@ -1,12 +1,12 @@
 import React from "react";
 import VideoSidebar from "../Video/VideoSidebar";
 
-const Tool = () => {
+const RunningCli = () => {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
         <div className="textComp-section">
-          <h1 className="center">The Boozang Tool</h1>
+          <h1 className="center">Running from CLI</h1>
 
           <div className="card">
             <div className="card-body">
@@ -35,4 +35,4 @@ const Tool = () => {
     </div>
   );
 };
-export default Tool;
+export default RunningCli;

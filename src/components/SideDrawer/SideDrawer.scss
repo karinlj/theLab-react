@@ -1,6 +1,5 @@
 @import '../../variables.scss';
 
-
 .side-drawer {
   height: 100%;
   background: #21242c;
@@ -20,20 +19,19 @@
 
     li {
       display: block;
-      margin: 10px 0;
+      margin: 8px 0;
       color: #fff;
       font-weight: 300;
+      font-size: 0.9rem;
 
       a {
         color: #fff;
       }
 
       ul.sub-list {
-        // margin: 4px 7px;
-
         li {
-          font-size: 90%;
-          margin: 4px 7px;
+          font-size: 0.86rem;
+          margin: 1px 14px;
 
           a {
             color: #979eb4;
@@ -66,7 +64,7 @@
   -ms-transition: transform 0.5s ease-out;
   -o-transition: transform 0.5s ease-out;
 
-  @media all and (min-width:$lg-min) {
+  @media all and (min-width: $lg-min) {
     display: none;
   }
 }
@@ -77,5 +75,4 @@
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
-
 }

@@ -20,15 +20,15 @@ const Navbar = props =>
               Getting started
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/whyDoTest">Introduction</NavLink>
+                  <NavLink to="/introduction">Introduction</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/approach">Overview of the tool</NavLink>
+                  <NavLink to="/overview">Overview of the tool</NavLink>
                 </li>
               </ul>
             </li>
             <li>
-              Handling Forms
+              Handling forms
               <ul className="sub-list">
                 <li>
                   <NavLink to="/form">Form validation</NavLink>
@@ -40,10 +40,10 @@ const Navbar = props =>
               Handling lists
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/todoList">Sorted List</NavLink>
+                  <NavLink to="/todoList">Sorted list</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/randomTodoList">Unsorted List</NavLink>
+                  <NavLink to="/randomTodoList">Unsorted list</NavLink>
                 </li>
               </ul>
             </li>
@@ -64,10 +64,10 @@ const Navbar = props =>
               Conditional logic
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/yellowOrRed">Yellow or Red</NavLink>
+                  <NavLink to="/yellowOrRed">Yellow or red</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/catOrDog">Cat or Dog</NavLink>
+                  <NavLink to="/catOrDog">Cat or dog</NavLink>
                 </li>
               </ul>
             </li>
@@ -79,11 +79,10 @@ const Navbar = props =>
                   <NavLink to="/scramble">Scramble items</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/changingControls">Multi-scramble</NavLink>
+                  <NavLink to="/scrambleMulti">Multi-scramble</NavLink>
                 </li>
               </ul>
             </li>
-
 
             <li>
               Using data
@@ -93,7 +92,6 @@ const Navbar = props =>
                 </li>
               </ul>
             </li>
-      
 
             <li>
               Users and roles
@@ -110,10 +108,10 @@ const Navbar = props =>
               CI server
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/concatStrings">Running from CLI</NavLink>
+                  <NavLink to="/runningCli">Running from CLI</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/concatStrings">CI integration</NavLink>
+                  <NavLink to="/ciIntegration">CI integration</NavLink>
                 </li>
               </ul>
             </li>

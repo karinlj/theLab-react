@@ -49,13 +49,13 @@
     "sidebarText": "Sometimes there is a necessity to wait a certain time to make sure the application catches up. \n In test automation, being reactive is not always the best medcine, and sometimes it pays off to be patient.\n\n A common scenario is when a back-end system needs to process something behind the scenes, that the front-end isn't aware of. In these cases, it's crucial to be able to force a delay."
   },
   "Scramble": {
-    "heading": "Scramble",
+    "heading": "Scramble items",
     "text": "This is a super-simple game where simply pressing the right button will result in success. We make the game harder by having buttons that scrambles the button id, class, content and order attributes, respectively. \n\n This game, which is simple for a human to play, can be surprisingly hard for a machine to play, as they often rely on attributes hidden in the html, such as class and id.",
     "sidebarHeading": "Why learn: Scramble?",
     "sidebarText": "XPath and CSS selectors are notoriously brittle, and often changes to id and class attributes will break test cases. \n\n Here you can simulate changes to both id, class and content to see how your test tool handles the challenge."
   },
   "ChangingControls": {
-    "heading": "Word scramble",
+    "heading": "Multi-scramble",
     "text": "This is a simple game where you can change the action labels that manipulates something in your data model. In a typical SaaS application this could for example be Project, User or Bank Account - here represented by Kangaroo, Koala, or Dolphin. \n\n The trick is to let your test automation tool still find the buttons even if the wording is changing, but only affecting the appropriate buttons.",
     "sidebarHeading": "Why learn: Changing Controls?",
     "sidebarText": "Keeping your tests stable for code updates are one of the biggest challenges to test automation. Often, technical details like class and id are changing constanly. \n\n But even the wording can change for common actions. \"Add\" gets replaced by \"Create\", \"Delete\" get replaced by \"Remove\"."

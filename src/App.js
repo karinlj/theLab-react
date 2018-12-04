@@ -4,9 +4,10 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/textComponents/Home";
-import WhyDoTest from "./components/textComponents/WhyDoTest";
-import Approach from "./components/textComponents/Approach";
-import Tool from "./components/textComponents/Tool";
+import Introduction from "./components/textComponents/Introduction";
+import Overview from "./components/textComponents/Overview";
+import RunningCli from "./components/textComponents/RunningCli";
+import CiIntegration from "./components/textComponents/CiIntegration";
 import TodoList from "./components/Lists/TodoList";
 import RandomTodoList from "./components/Lists/RandomTodoList";
 import Post from "./components/Blog/Post";
@@ -19,7 +20,7 @@ import ConcatStrings from "./components/Strings/ConcatStrings";
 import Speed from "./components/Timing/Speed";
 import Wait from "./components/Timing/Wait";
 import Scramble from "./components/Scramble/Scramble";
-import ChangingControls from "./components/Scramble/ChangingControls";
+import ScrambleMulti from "./components/Scramble/ScrambleMulti";
 import Login from "./components/Form/Login";
 import RandomLogin from "./components/Form/RandomLogin";
 
@@ -72,9 +73,10 @@ class App extends Component {
               <Switch>
                 {" "}{/* only want to match one at a time */}
                 <Route exact path="/" component={Home} />
-                <Route path="/whyDoTest" component={WhyDoTest} />
-                <Route path="/approach" component={Approach} />
-                <Route path="/tool" component={Tool} />
+                <Route path="/introduction" component={Introduction} />
+                <Route path="/overview" component={Overview} />
+                <Route path="/runningCli" component={RunningCli} />
+                <Route path="/ciIntegration" component={CiIntegration} />
                 <Route path="/TodoList" component={TodoList} />
                 <Route path="/RandomTodoList" component={RandomTodoList} />
                 <Route path="/Form" component={Form} />
@@ -86,7 +88,7 @@ class App extends Component {
                 <Route path="/Speed" component={Speed} />
                 <Route path="/Wait" component={Wait} />
                 <Route path="/Scramble" component={Scramble} />
-                <Route path="/ChangingControls" component={ChangingControls} />
+                <Route path="/scrambleMulti" component={ScrambleMulti} />
                 <Route path="/Blog" component={Blog} />
                 <Route path="/timer" component={Timer} />
                 <Route path="/Test" component={Test} />

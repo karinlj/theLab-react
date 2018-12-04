@@ -1,12 +1,12 @@
 import React from "react";
 import VideoSidebar from "../Video/VideoSidebar";
 
-const Approach = () => {
+const CiIntegration = () => {
   return (
     <div className="row justify-content-between">
       <div className="col-12 col-md-6">
         <div className="textComp-section">
-          <h1 className="center">The Boozang Approach</h1>
+          <h1 className="center">CI integration</h1>
 
           <div className="card">
             <div className="card-body">
@@ -35,4 +35,4 @@ const Approach = () => {
     </div>
   );
 };
-export default Approach;
+export default CiIntegration;
