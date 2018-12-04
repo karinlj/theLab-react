@@ -17,7 +17,7 @@ const Navbar = props =>
 
           <ul className="links">
             <li>
-              Gettring started
+              Getting started
               <ul className="sub-list">
                 <li>
                   <NavLink to="/whyDoTest">Introduction</NavLink>
