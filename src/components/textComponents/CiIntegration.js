@@ -11,14 +11,17 @@ const CiIntegration = () => {
           <div className="card">
             <div className="card-body">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh quis
-                mauris vehicula lacinia in ac risus. Nulla eget magna tempus
+               Now when you've made sure your tests are running from the command-line you are ready 
+               to plug them in to your CI pipeline. In this example we will be using Jenkins CI server, but
+               the approach is the same for any CI server integration. 
               </p>
-              <p>
-                {" "}porttitor quam et, tincidunt magna. Vestibulum tempus bibendum nunc, id
-                lobortis dolor vulputate eget. Integer blandit justo vitae quam posuere, id eleifend
-                nisi accumsan.
+               <p>
+               If you are currently not using a CI server such as Jenkins or CirleCI, don't worry. Boozang has basic
+               CI functionality built-in, and by simply making sure your tests can be run unsupervised, you are
+               almost there. Boozang has both built-in scheduling and email notfications, which makes a CI server 
+               a nice-to-have but not a necessity. 
               </p>
+        
             </div>
           </div>
         </div>

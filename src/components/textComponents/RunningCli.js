@@ -11,13 +11,19 @@ const RunningCli = () => {
           <div className="card">
             <div className="card-body">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh quis
-                mauris vehicula lacinia in ac risus. Nulla eget magna tempus
+               After making sure your tests are running stable in your browser (supervised), it's time to take
+               the step to start plugging in your tests from the command-line. 
               </p>
               <p>
-                {" "}porttitor quam et, tincidunt magna. Vestibulum tempus bibendum nunc, id
-                lobortis dolor vulputate eget. Integer blandit justo vitae quam posuere, id eleifend
-                nisi accumsan.
+              In this example, we use Node Package Manage to install the open-source package Boozang, 
+              that utilizes <a traget="_blank" href="https://github.com/GoogleChrome/puppeteer">Puppetteer</a>, 
+              from Google Chrome development team, that utilized Boozang to be run from the command-line 
+              ("headless" or "normal" mode).
+              </p>
+              <p>
+               Remember, a CI server is simply a command-line runner and a repository for your reports. 
+               Use this as a great starting point to automate your whole release pipeline and start pushing
+               code confidently and fast. 
               </p>
             </div>
           </div>

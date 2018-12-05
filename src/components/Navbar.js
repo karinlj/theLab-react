@@ -59,6 +59,17 @@ const Navbar = props =>
                 </li>
               </ul>
             </li>
+            <li>
+              Bug reporting
+              <ul className="sub-list">
+                <li>
+                  <NavLink to="/yellowOrRed">Reporting a bug</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/catOrDog">Test checklist</NavLink>
+                </li>
+              </ul>
+            </li>
 
             <li>
               Conditional logic

@@ -1,22 +1,22 @@
 {
   "Form": {
     "heading": "Form validation",
-    "text": "Many applications uses forms to submit data. Here you can submit a form and the contents of the form is displayed below.",
+    "text": "Many applications uses forms to submit data. Here you can submit a form and the contents of the form will be displayed below.",
     "sidebarHeading": "Why learn: Form validation?",
-    "sidebarText": "In test automation, it's important not to not hard-code information entered in forms, as this will often change. \n\n A common mistake is to record separate flows for each set of data, making tests numerous and difficult to maintain. Ideally, you want to be able to keep your data separate in a JSON or CSV, and map this data directly into forms."
+    "sidebarText": "In test automation, it's important not to not hard-code information entered in forms, as this information will often change. \n\n A common mistake is to record separate flows for each set of data, making tests numerous and difficult to maintain. Ideally, you want to be able to keep your data separate in a JSON or CSV, and map this data directly into forms."
   },
 
   "TodoList": {
     "heading": "Sorted list",
-    "text": "In this simple application we can add and delete todos from a list. There are several small tests we can do on top of this application, and they illustrate element selection and data handling. \n\n    In order to cover most cases, we should add a list of items to the todo-list, randomize the list order and then remove the list of items again.",
+    "text": "In this simple application we can add and delete todos from a list. There are several small tests we can do on top of this application, and they illustrate element selection and data handling. \n\n In order to cover most cases, we should add a list of items to the todo-list, and then remove the list of items again.",
     "sidebarHeading": "Why learn: Sorted list?",
-    "sidebarText": "In many SaaS applications, data lists of different kinds are often used. One common problem in test automation is to be able to uniquely identify objects in lists. \n\n When identifying elements using CSS selectors, sometimes you'll need to make assumptions about the order of an item. In general, this is bad practice, as it makes the test sensitive to preconditions, something we want to avoid."
+    "sidebarText": "In many SaaS applications, data lists of different kinds are often used. Being able to add items in bulk to a list and removing them again is common practice. \n\n These operations are key to most SaaS applications and having a good grasp of list handling is essential to automating tests of any application."
   },
   "RandomTodoList": {
     "heading": "Unsorted list",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. ",
+    "text": "Here we repeat the same exercise as in sorted lists, but allowing the list items to be added to a random position in the list. This adds complexity when identifying the elements to remove.",
     "sidebarHeading": "Why learn: Unsorted list?",
-    "sidebarText": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. "
+    "sidebarText": "One common problem in test automation is to be able to uniquely identify objects in lists. \n\n When identifying elements using CSS selectors, sometimes you'll need to make assumptions about the order of an item. In general, this is bad practice, as it makes the test sensitive to preconditions, something we want to avoid."
   },
   "YellowOrRed": {
     "heading": "Red or yellow",

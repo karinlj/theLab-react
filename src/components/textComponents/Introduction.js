@@ -11,13 +11,17 @@ const Introduction = () => {
           <div className="card">
             <div className="card-body">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh quis
-                mauris vehicula lacinia in ac risus. Nulla eget magna tempus
+                Sometimes wrting test automation code is as time-consuming as writing the code itself. 
+                One could wonder if it's really worth it. Isn't writing the features more important than testing them?
+                Perhaps this is accurate in the beginning of your applications life-cycle. But as your application grows, 
+                new application features tend to break existing ones. 
               </p>
               <p>
-                {" "}porttitor quam et, tincidunt magna. Vestibulum tempus bibendum nunc, id
-                lobortis dolor vulputate eget. Integer blandit justo vitae quam posuere, id eleifend
-                nisi accumsan.
+                Having automated end-to-end tests greatly reduces the amount of manual testing needed. 
+                Developers get instant feedback when their code updates break crucial application flows.  
+                This increases the productive output from your development team dramatically, and allows you to
+                push features into your live system at a faster pace, while resting assured you didn't 
+                introduce bugs in your live system.
               </p>
             </div>
           </div>

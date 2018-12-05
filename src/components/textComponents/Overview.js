@@ -11,13 +11,20 @@ const Overview = () => {
           <div className="card">
             <div className="card-body">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nibh quis
-                mauris vehicula lacinia in ac risus. Nulla eget magna tempus
+                Boozang is a tool that runs directly in your browser, that allows you to test the application just like
+                a user would. It was built from the ground up, and differs from common test automation frameworks by being completely
+                code-less. Boozang instead uses natural-language element selectors, that has the advantage of being extremely
+                stable to code changes. Moreover, they allow you do differentiate element based on the what the user see, 
+                not underlying implementation details. 
               </p>
               <p>
-                {" "}porttitor quam et, tincidunt magna. Vestibulum tempus bibendum nunc, id
-                lobortis dolor vulputate eget. Integer blandit justo vitae quam posuere, id eleifend
-                nisi accumsan.
+               Here are the advantages of the Boozang appraoch:
+               <ul>
+                <li>Tests can be created thirty (x30) times faster compared to coding tests</li>  
+                <li>Non-programmers can do test automation</li>
+                <li>Tests are ultra-stable to changes to your application</li>
+                <li>AI can be used to automatically repair tests that are broken</li>
+               </ul>
               </p>
             </div>
           </div>
