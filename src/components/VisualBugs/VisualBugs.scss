@@ -1,0 +1,21 @@
+.visual-bugs-section {
+  .label-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 1rem 0;
+    h5 {
+      font-weight: 600;
+    }
+  }
+
+  .btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

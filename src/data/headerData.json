@@ -18,7 +18,7 @@
     "sidebarHeading": "Why learn: Unsorted list?",
     "sidebarText": "One common problem in test automation is to be able to uniquely identify objects in lists. \n\n When identifying elements using CSS selectors, sometimes you'll need to make assumptions about the order of an item. In general, this is bad practice, as it makes the test sensitive to preconditions, something we want to avoid."
   },
-   "ReportBug": {
+  "ReportBug": {
     "heading": "Reporting a visual bug",
     "text": "Click the Generate color button to display a color with a word and then click the button with the correspondent color.",
     "sidebarHeading": "Why Learn: Yellow or Red?",
@@ -82,6 +82,12 @@
     "heading": "Random login",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. Morbi tincidunt dui at arcu fermentum auctor.",
     "sidebarHeading": "Why learn: Random login?",
+    "sidebarText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. Morbi tincidunt dui at arcu fermentum auctor."
+  },
+  "VisualBugs": {
+    "heading": "VisualBugs",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. Morbi tincidunt dui at arcu fermentum auctor.",
+    "sidebarHeading": "Why learn: VisualBugs?",
     "sidebarText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. Morbi tincidunt dui at arcu fermentum auctor."
   }
 }

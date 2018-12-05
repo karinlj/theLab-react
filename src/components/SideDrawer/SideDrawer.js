@@ -44,7 +44,7 @@ const SideDrawer = props => {
               </li>
 
               <li>
-                Handling lists
+                Handling lists and forms
                 <ul className="sub-list">
                   <li>
                     <NavLink to="/todoList">
@@ -56,9 +56,13 @@ const SideDrawer = props => {
                       <div onClick={props.clickLink}>Unsorted list</div>
                     </NavLink>
                   </li>
+                  <li>
+                    <NavLink to="/form">
+                      <div onClick={props.clickLink}>Form validation</div>
+                    </NavLink>
+                  </li>
                 </ul>
               </li>
-
               <li>
                 Timing
                 <ul className="sub-list">
@@ -71,6 +75,14 @@ const SideDrawer = props => {
                     <NavLink to="/wait">
                       <div onClick={props.clickLink}>Wait</div>
                     </NavLink>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Bug reporting
+                <ul className="sub-list">
+                  <li>
+                    <NavLink to="/visualBugs">Visual bugs</NavLink>
                   </li>
                 </ul>
               </li>

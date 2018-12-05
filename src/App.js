@@ -23,6 +23,7 @@ import Scramble from "./components/Scramble/Scramble";
 import ScrambleMulti from "./components/Scramble/ScrambleMulti";
 import Login from "./components/Form/Login";
 import RandomLogin from "./components/Form/RandomLogin";
+import VisualBugs from "./components/VisualBugs/VisualBugs";
 
 import Timer from "./components/Timing/Timer";
 import Blog from "./components/Blog/Blog";
@@ -89,6 +90,7 @@ class App extends Component {
                 <Route path="/Wait" component={Wait} />
                 <Route path="/Scramble" component={Scramble} />
                 <Route path="/scrambleMulti" component={ScrambleMulti} />
+                <Route path="/visualBugs" component={VisualBugs} />
                 <Route path="/Blog" component={Blog} />
                 <Route path="/timer" component={Timer} />
                 <Route path="/Test" component={Test} />

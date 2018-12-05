@@ -58,7 +58,7 @@ const Navbar = props =>
               Bug reporting
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/yellowOrRed">Visual bugs</NavLink>
+                  <NavLink to="/visualBugs">Visual bugs</NavLink>
                 </li>
               </ul>
             </li>
