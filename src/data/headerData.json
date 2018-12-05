@@ -18,6 +18,18 @@
     "sidebarHeading": "Why learn: Unsorted list?",
     "sidebarText": "One common problem in test automation is to be able to uniquely identify objects in lists. \n\n When identifying elements using CSS selectors, sometimes you'll need to make assumptions about the order of an item. In general, this is bad practice, as it makes the test sensitive to preconditions, something we want to avoid."
   },
+   "ReportBug": {
+    "heading": "Reporting a visual bug",
+    "text": "Click the Generate color button to display a color with a word and then click the button with the correspondent color.",
+    "sidebarHeading": "Why Learn: Yellow or Red?",
+    "sidebarText": "In this case we look at basic condition handling. If something exists do this, otherwise do that.\n\n This is the fundament on doing tests on top of a system where the intial state isn't known, or a future state cannot be predicted. By using logic like this, we can allow our tests to adapt to how the application behaves."
+  },
+  "TestChecklist": {
+    "heading": "Test Checklist",
+    "text": "Click the Generate pet button to display an image and then click the button with the correspondent pet.",
+    "sidebarHeading": "Why learn: Cat or Dog?",
+    "sidebarText": "Often it's preferred to make all assertions on existance of elements or simple Boolean expressions. There are times in test automation where we need to base our logic on an image.\n\n This can be especially useful when asserting the state of a graphical toggle-button, where the element and text content is the same, regardless of state."
+  },
   "YellowOrRed": {
     "heading": "Red or yellow",
     "text": "Click the Generate color button to display a color with a word and then click the button with the correspondent color.",
