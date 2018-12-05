@@ -27,23 +27,18 @@ const Navbar = props =>
                 </li>
               </ul>
             </li>
-            <li>
-              Handling forms
-              <ul className="sub-list">
-                <li>
-                  <NavLink to="/form">Form validation</NavLink>
-                </li>
-              </ul>
-            </li>
 
             <li>
-              Handling lists
+              Handling lists and forms
               <ul className="sub-list">
                 <li>
                   <NavLink to="/todoList">Sorted list</NavLink>
                 </li>
                 <li>
                   <NavLink to="/randomTodoList">Unsorted list</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/form">Form validation</NavLink>
                 </li>
               </ul>
             </li>
@@ -63,10 +58,7 @@ const Navbar = props =>
               Bug reporting
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/yellowOrRed">Reporting a bug</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/catOrDog">Test checklist</NavLink>
+                  <NavLink to="/yellowOrRed">Visual bugs</NavLink>
                 </li>
               </ul>
             </li>

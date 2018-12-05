@@ -11,21 +11,23 @@ const Overview = () => {
           <div className="card">
             <div className="card-body">
               <p>
-                Boozang is a tool that runs directly in your browser, that allows you to test the application just like
-                a user would. It was built from the ground up, and differs from common test automation frameworks by being completely
-                code-less. Boozang instead uses natural-language element selectors, that has the advantage of being extremely
-                stable to code changes. Moreover, they allow you do differentiate element based on the what the user see, 
-                not underlying implementation details. 
+                Boozang is a tool that runs directly in your browser, that allows you to
+                test the application just like a user would. It was built from the ground
+                up, and differs from common test automation frameworks by being completely
+                code-less. Boozang instead uses natural-language element selectors, that
+                has the advantage of being extremely stable to code changes. Moreover,
+                they allow you do differentiate element based on the what the user see,
+                not underlying implementation details.
               </p>
-              <p>
-               Here are the advantages of the Boozang appraoch:
-               <ul>
-                <li>Tests can be created thirty (x30) times faster compared to coding tests</li>  
+              Here are the advantages of the Boozang appraoch:
+              <ul>
+                <li>
+                  Tests can be created thirty (x30) times faster compared to coding tests
+                </li>
                 <li>Non-programmers can do test automation</li>
                 <li>Tests are ultra-stable to changes to your application</li>
                 <li>AI can be used to automatically repair tests that are broken</li>
-               </ul>
-              </p>
+              </ul>
             </div>
           </div>
         </div>
