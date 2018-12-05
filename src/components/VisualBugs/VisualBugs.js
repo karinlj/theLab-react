@@ -10,8 +10,8 @@ import MainBtn from "../MainBtn";
 
 class VisualBugs extends Component {
   state = {
-    index: 0,
-    displayAnimal: "Elephant"
+    index: 0
+    //displayAnimal: "Elephant"
   };
 
   handleNext = () => {
