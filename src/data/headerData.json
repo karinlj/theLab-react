@@ -69,7 +69,7 @@
   "ScrambleMulti": {
     "heading": "Multi-scramble",
     "text": "This is a simple game where you can change the action labels that manipulates something in your data model. In a typical SaaS application this could for example be Project, User or Bank Account - here represented by Kangaroo, Koala, or Dolphin. \n\n The trick is to let your test automation tool still find the buttons even if the wording is changing, but only affecting the appropriate buttons.",
-    "sidebarHeading": "Why learn: Changing Controls?",
+    "sidebarHeading": "Why learn: Multi-scramble?",
     "sidebarText": "Keeping your tests stable for code updates are one of the biggest challenges to test automation. Often, technical details like class and id are changing constanly. \n\n But even the wording can change for common actions. \"Add\" gets replaced by \"Create\", \"Delete\" get replaced by \"Remove\"."
   },
   "Login": {
