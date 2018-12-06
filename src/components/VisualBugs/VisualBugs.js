@@ -3,7 +3,7 @@ import Sidebar from "../Sidebar";
 import "./VisualBugs.scss";
 import HeaderText from "../HeaderText";
 import MainBtn from "../MainBtn";
-import AnimalData from "./animalData.json";
+import AnimalData from "../../data/animalData.json";
 
 class VisualBugs extends Component {
   state = {
