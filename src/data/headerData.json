@@ -1,7 +1,7 @@
 {
   "Form": {
     "heading": "Form validation",
-    "text": "Many applications uses forms to submit data. Here you can submit a form and the contents of the form will be displayed below.",
+    "text": "Many applications use forms to submit data. Here you can submit a form and the contents of the form will be displayed below.",
     "sidebarHeading": "Why learn: Form validation?",
     "sidebarText": "In test automation, it's important not to not hard-code information entered in forms, as this information will often change. \n\n A common mistake is to record separate flows for each set of data, making tests numerous and difficult to maintain. Ideally, you want to be able to keep your data separate in a JSON or CSV, and map this data directly into forms."
   },
@@ -18,12 +18,6 @@
     "sidebarHeading": "Why learn: Unsorted list?",
     "sidebarText": "One common problem in test automation is to be able to uniquely identify objects in lists. \n\n When identifying elements using CSS selectors, sometimes you'll need to make assumptions about the order of an item. In general, this is bad practice, as it makes the test sensitive to preconditions, something we want to avoid."
   },
-  "ReportBug": {
-    "heading": "Reporting a visual bug",
-    "text": "Click the Generate color button to display a color with a word and then click the button with the correspondent color.",
-    "sidebarHeading": "Why Learn: Yellow or Red?",
-    "sidebarText": "In this case we look at basic condition handling. If something exists do this, otherwise do that.\n\n This is the fundament on doing tests on top of a system where the intial state isn't known, or a future state cannot be predicted. By using logic like this, we can allow our tests to adapt to how the application behaves."
-  },
   "TestChecklist": {
     "heading": "Test Checklist",
     "text": "Click the Generate pet button to display an image and then click the button with the correspondent pet.",
@@ -34,7 +28,7 @@
     "heading": "Red or yellow",
     "text": "Click the Generate color button to display a color with a word and then click the button with the correspondent color.",
     "sidebarHeading": "Why Learn: Yellow or Red?",
-    "sidebarText": "In this case we look at basic condition handling. If something exists do this, otherwise do that.\n\n This is the fundament on doing tests on top of a system where the intial state isn't known, or a future state cannot be predicted. By using logic like this, we can allow our tests to adapt to how the application behaves."
+    "sidebarText": "In this case, we look at basic condition handling. If something exists, do this, otherwise, do that.\n\n This is the fundament on doing tests on top of a system where the initial state isn't known, or a future state cannot be predicted. By using logic like this, we can allow our tests to adapt to how the application behaves."
   },
   "CatOrDog": {
     "heading": "Cat or dog",
@@ -46,48 +40,48 @@
     "heading": "Concatenate strings",
     "text": "Click the Generate string button to display two strings and then type in the strings together.",
     "sidebarHeading": "Why learn: Concat strings?",
-    "sidebarText": "Very often in test automation we need to be able to use the data that the application outputs in a later test step. \n\n A good example of this is when doing assetions based on computer-generatd id:s or time or date strings."
+    "sidebarText": "Very often in test automation, we need to be able to use the data that the application outputs in a later test step. \n\n A good example of this is when doing assertions based on computer-generated id:s or time or date strings."
   },
   "Speed": {
     "heading": "Speed Game",
-    "text": "This game tests the user reaction time. This is also useful to show-case test automation render waits. where x is random time between 1 and 10 seconds.  \n\n The hit the button as fast as you can. The smaller the number of milliseconds above, the better.",
+    "text": "This game tests the user reaction time. This is also useful to show-case test automation render waits. where x is a random time between 1 and 10 seconds.  \n\n The hit the button as fast as you can. The smaller the number of milliseconds above, the better.",
     "sidebarHeading": "Why learn: Speed Game?",
-    "sidebarText": "A classic problem in test automation is render waits. If certain elements are taking long to render, the test might fail. \n\n On the other hand, if we create long delays the overall test takes too long to run. Best if is we can wait until an element appears, but then click it as fast as we can."
+    "sidebarText": "A classic problem in test automation is handling render waits. If certain elements are taking longer to render, the test might fail. \n\n On the other hand, if we create long delays the overall test takes too long to run. Best if is we can wait until an element appears, but then click it as fast as we can."
   },
   "Wait": {
     "heading": "Wait Game",
     "text": "As opposed to speed game, this game tests the users time perception skill. This is also useful to showcase delay functionality in testing. \n\n  Try to to hit the \"End Game\" button after exactly 5 seconds, and the goal is to have as few milliseconds as possible above 5 seconds.",
     "sidebarHeading": "Why learn: Wait Game?",
-    "sidebarText": "Sometimes there is a necessity to wait a certain time to make sure the application catches up. \n In test automation, being reactive is not always the best medcine, and sometimes it pays off to be patient.\n\n A common scenario is when a back-end system needs to process something behind the scenes, that the front-end isn't aware of. In these cases, it's crucial to be able to force a delay."
+    "sidebarText": "Sometimes there is a necessity to wait a certain time to make sure the application catches up. \n In test automation, being reactive is not always the best medicine, and sometimes it pays off to be patient.\n\n A common scenario is when a back-end system needs to process something behind the scenes, that the front-end isn't aware of. In these cases, it's crucial to be able to force a delay."
   },
   "Scramble": {
     "heading": "Scramble items",
-    "text": "This is a super-simple game where simply pressing the right button will result in success. We make the game harder by having buttons that scrambles the button id, class, content and order attributes, respectively. \n\n This game, which is simple for a human to play, can be surprisingly hard for a machine to play, as they often rely on attributes hidden in the html, such as class and id.",
+    "text": "This is a super-simple game where simply pressing the right button will result in success. We make the game harder by having buttons that scramble the button id, class, content and order attributes, respectively. \n\n This game, which is simple for a human to play, can be surprisingly hard for a machine to play, as they often rely on attributes hidden in the HTML, such as class and id.",
     "sidebarHeading": "Why learn: Scramble?",
-    "sidebarText": "XPath and CSS selectors are notoriously brittle, and often changes to id and class attributes will break test cases. \n\n Here you can simulate changes to both id, class and content to see how your test tool handles the challenge."
+    "sidebarText": "XPath and CSS selectors are notoriously brittle, and often changes to id and class attributes will break test cases. \n\n Here you can simulate changes to both id, class, and content to see how your test tool handles the challenge."
   },
   "ScrambleMulti": {
     "heading": "Multi-scramble",
-    "text": "This is a simple game where you can change the action labels that manipulates something in your data model. In a typical SaaS application this could for example be Project, User or Bank Account - here represented by Kangaroo, Koala, or Dolphin. \n\n The trick is to let your test automation tool still find the buttons even if the wording is changing, but only affecting the appropriate buttons.",
+    "text": "This is a simple game where you can change the action labels that manipulate something in your data model. In a typical SaaS application, this could, for example, be Project, User or Bank Account - here represented by Kangaroo, Koala, or Dolphin. \n\n The trick is to let your test automation tool still find the buttons even if the wording is changing, but only affecting the appropriate buttons.",
     "sidebarHeading": "Why learn: Multi-scramble?",
-    "sidebarText": "Keeping your tests stable for code updates are one of the biggest challenges to test automation. Often, technical details like class and id are changing constanly. \n\n But even the wording can change for common actions. \"Add\" gets replaced by \"Create\", \"Delete\" get replaced by \"Remove\"."
+    "sidebarText": "Keeping your tests stable for code updates are one of the biggest challenges to test automation. Often, technical details like class and id are changing constantly. \n\n But even the wording can change for common actions. \"Add\" gets replaced by \"Create\", \"Delete\" get replaced by \"Remove\"."
   },
   "Login": {
     "heading": "Role-based login",
-    "text": "In this exercise we emulate roles and restrictions. Every login has a number of actions that can be performed. \n\n The Lion can do a lot of things (compare Admin), The Zebra is intermediate (compare User), while The Lemur can't do much (compare Guest login).",
+    "text": "In this exercise, we emulate roles and restrictions. Every login has a number of actions that can be performed. \n\n The Lion can do a lot of things (compare Admin), The Zebra is intermediate (compare User), while The Lemur can't do much (compare Guest login).",
     "sidebarHeading": "Why learn: Role-based login?",
-    "sidebarText": "In several SaaS applications, every user has a role assigned. Each role ususally has a policy associated, which govern what actions this role can take \n\n Doing testing across different roles and policies easily gets complicated and it's important to keep a structured approach. A common mistake is to create long testing flows for each role, that has little re-use and is difficult to maintain."
+    "sidebarText": "In several SaaS applications, every user has a role assigned. Each role usually has a policy associated, which govern what actions this role can take \n\n Doing testing across different roles and policies easily get complicated and it's important to keep a structured approach. A common mistake is to create long testing flows for each role, that has little re-use and is difficult to maintain."
   },
   "RandomLogin": {
     "heading": "Random login",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. Morbi tincidunt dui at arcu fermentum auctor.",
+    "text": "In this exercise, we allow you to login as different users. \n\n There is also a button to randomly toggle between diffent login states, to emulate that your application can be in different states, depedning who's logged in.",
     "sidebarHeading": "Why learn: Random login?",
-    "sidebarText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. Morbi tincidunt dui at arcu fermentum auctor."
+    "sidebarText": "In a system where you have many users with different roles assigned, it's useful to make sure your tests can run regardless of the state of the application. In this example, we have four states: not logged in, logged in as lion, logged in as zebra, and logged in as lemur.\n\n This allows you to build tests that are agnostic to execution order, which is great practice as it increases test re-use."
   },
   "VisualBugs": {
-    "heading": "VisualBugs",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. Morbi tincidunt dui at arcu fermentum auctor.",
-    "sidebarHeading": "Why learn: VisualBugs?",
-    "sidebarText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dui sit amet libero bibendum faucibus vel in felis. Morbi tincidunt dui at arcu fermentum auctor."
+    "heading": "Visual Bugs",
+    "text": "In this exercise, a city dweller not too familiar with the fauna of Africa was tasked my adding labels to pictures of a series of animal. Find the mistakes that were made.",
+    "sidebarHeading": "Why learn: Visual Bugs?",
+    "sidebarText": "Even if test automation can be a very powerful tool, doing certain kinds of tasks is best left to the human. An example of this is finding visual bugs. Here, you can still use automated bug reporting to help you out. \n\n Often writing the steps to reproduce a bug in emails or ticketing systems can be very time-consuming and add unnecessary overhead. Use test automation technology and in-browser annotations to partly automate this process."
   }
 }

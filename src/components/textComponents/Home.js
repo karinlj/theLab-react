@@ -18,9 +18,8 @@ const Home = () => {
               </p>
               <p>The site also to acts as a testing ground for your automation tools.</p>
               <p>
-                Here you find a number of test categories, that each has a number of problems to
-                solve. Each problem has a help text on how this is solved using the Boozang tool,
-                and a video on how to solve it.{" "}
+                Here you find a number of test categories, that each has a number of problems to solve. Each problem has a brief description and an information box of why this problem is worth solving.
+                There is also one or two videos on how to solve it using the Boozang tool.{" "}
               </p>
               <p>
                 <a href="https://boozang.com/">Boozang</a> also gives a free
