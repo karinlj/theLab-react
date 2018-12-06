@@ -455,8 +455,8 @@ h5 {
     padding: 3rem calc(3.75rem - 15px) 1rem calc(3.75rem - 15px);
   }
 
-  ul {
-    min-height: 250px;
+  ul.container-section {
+    min-height: 260px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -467,17 +467,64 @@ h5 {
 
         li.udemy {
           padding-top: 1rem;
+          a {
+            &:hover {
+              text-decoration: none;
+              opacity: 0.8;
+            }
+          }
         }
+      }
+    }
+    ul.lower-section {
+      li.social {
+        padding: 1rem 0;
+        a {
+          text-decoration: none;
+          font-size: 0;
+          display: inline-block;
+          margin-right: 2rem;
+          &:after {
+            font-family: FontAwesome;
+            font-size: 1.2rem;
+            color: #fff;
+            text-align: center;
+            border-radius: 50%;
+            transition: 1s;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        a.mail {
+          &:after {
+            content: "\f0e0";
+          }
+        }
+        a.fb {
+          &:after {
+            content: "\f09a";
+          }
+        }
+        a.linkedin {
+          &:after {
+            content: "\f0e1";
+          }
+        }
+        a.twitter {
+          &:after {
+            content: "\f099";
+          }
+        }
+      }
+      li.copy {
+        font-weight: 300;
       }
     }
 
     .thelab {
       font-weight: 300;
       color: #111;
-    }
-
-    .copy {
-      font-weight: 300;
     }
 
     a {
