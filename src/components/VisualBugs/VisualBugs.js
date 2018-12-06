@@ -1,36 +1,27 @@
 import React, { Component } from "react";
 import Sidebar from "../Sidebar";
-import Giraf from "../../img/giraf.jpg";
-import Zebra from "../../img/zebra-two.jpg";
+/* import Giraf from "../../img/giraf.jpg";
+import Zebra from "../../img/zebra.jpg";
 import Elephant from "../../img/elephant.jpg";
-import Lion from "../../img/lion-two.jpg";
-import Leopard from "../../img/leopard.jpg";
+import Lion from "../../img/lion.jpg";
+import Leopard from "../../img/leopard.jpg"; */
 import "./VisualBugs.scss";
 import HeaderText from "../HeaderText";
 import MainBtn from "../MainBtn";
+import AnimalData from "./animalData.json";
 
 class VisualBugs extends Component {
   state = {
     index: 0
-    //displayAnimal: "Elephant"
   };
 
   handleNext = () => {
-    //console.log("next ", this.state.index);
+    let { index } = this.state;
+    //console.log("next ", index);
 
-    // const animals = ["elephant", "lion", "zebra", "giraf"];
-
-    const animals = [
-      { pict: "elephant", label: "elephant" },
-      { pict: "lion", label: "lion" },
-      { pict: "zebra", label: "zebra" },
-      { pict: "giraf", label: "lion" },
-      { pict: "leopard", label: "leopard" }
-    ];
-
-    if (this.state.index < animals.length - 1) {
+    if (index < AnimalData.length - 1) {
       this.setState({
-        index: this.state.index + 1
+        index: index + 1
       });
     } else {
       this.setState({
@@ -40,45 +31,21 @@ class VisualBugs extends Component {
   };
 
   render() {
-    const animals = [
-      { pict: "elephant", label: "elephant" },
-      { pict: "lion", label: "lion" },
-      { pict: "zebra", label: "zebra" },
-      { pict: "giraf", label: "lion" },
-      { pict: "leopard", label: "leopard" }
-    ];
+    let images = AnimalData.map(pict => {
+      return (
+        <img
+          key={pict.image}
+          src={require(`../../img/${pict.image}.jpg`)}
+          // src={require("../../img/" + { pict } + ".jpg")}
+          alt={pict.image}
+          className="img-responsive"
+        />
+      );
+    });
 
-    let animalPict = animals[this.state.index].pict;
-
-    let animalLabel = animals[this.state.index].label;
-
-    /*  const animals = ["elephant", "lion", "zebra", "giraf", "leopard"];
-    let animal = animals[this.state.index];
-
-    const labels = ["elephant", "lion", "zebra", "lion", "leopard"];
-    let displayLabels = labels[this.state.index];
- */
-    //const imgUrls = ["Elephant", "Lion", "Zebra", "Giraf"];
-    // let displayAnimal = imgUrls[this.state.index];
-
-    //console.log(this.state.displayAnimal);
-    //let { index } = this.state;
-
-    //let displayLabels = animals.label[this.state.index];
-
-    let displayAnimal;
-    if (animalPict === "elephant") {
-      displayAnimal = <img src={Elephant} alt="elephant" />;
-    } else if (animalPict === "lion") {
-      displayAnimal = <img src={Lion} alt="lion" />;
-    } else if (animalPict === "zebra") {
-      displayAnimal = <img src={Zebra} alt="zebra" />;
-    } else if (animalPict === "giraf") {
-      displayAnimal = <img src={Giraf} alt="giraf" />;
-    } else if (animalPict === "leopard") {
-      displayAnimal = <img src={Leopard} alt="leopard" />;
-    }
-    console.log(displayAnimal + " " + this.state.index);
+    let { index } = this.state;
+    let animalPict = images[index];
+    let animalLabel = AnimalData[index].label;
 
     return (
       <div className="row justify-content-between">
@@ -90,10 +57,7 @@ class VisualBugs extends Component {
 
             <div>
               <div className="img-wrapper">
-                {/*  <img src={this.state.displayAnimal} alt="" /> */}
-                {/*  <img src={Lion} alt="" /> */}
-
-                {displayAnimal}
+                {animalPict}
               </div>
 
               <div className="label-wrapper">

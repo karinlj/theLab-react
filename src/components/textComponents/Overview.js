@@ -20,7 +20,7 @@ const Overview = () => {
                 not underlying implementation details.
               </p>
               Here are the advantages of the Boozang appraoch:
-              <ul>
+              <ul className="advantages-list">
                 <li>
                   Tests can be created thirty (x30) times faster compared to coding tests
                 </li>

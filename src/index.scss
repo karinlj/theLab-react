@@ -7,8 +7,9 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Raleway", "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Raleway", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: $themecolorBlue;
@@ -319,6 +320,13 @@ h5 {
 
     @media all and (min-width: $xl-min) {
       padding: 0.5rem 1rem;
+    }
+  }
+  ul.advantages-list {
+    list-style: circle;
+    padding: 1rem 0 0 1rem;
+    li {
+      font-size: 0.9rem;
     }
   }
 }
