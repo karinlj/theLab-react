@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 import Sidebar from "../Sidebar";
-/* import Giraf from "../../img/giraf.jpg";
-import Zebra from "../../img/zebra.jpg";
-import Elephant from "../../img/elephant.jpg";
-import Lion from "../../img/lion.jpg";
-import Leopard from "../../img/leopard.jpg"; */
 import "./VisualBugs.scss";
 import HeaderText from "../HeaderText";
 import MainBtn from "../MainBtn";
@@ -31,13 +26,12 @@ class VisualBugs extends Component {
   };
 
   render() {
-    let images = AnimalData.map(pict => {
+    let images = AnimalData.map(item => {
       return (
         <img
-          key={pict.image}
-          src={require(`../../img/${pict.image}.jpg`)}
-          // src={require("../../img/" + { pict } + ".jpg")}
-          alt={pict.image}
+          key={item.image}
+          src={require(`../../img/${item.image}.jpg`)}
+          alt={item.image}
           className="img-responsive"
         />
       );
