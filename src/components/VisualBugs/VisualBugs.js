@@ -32,7 +32,6 @@ class VisualBugs extends Component {
           key={item.image}
           src={require(`../../img/${item.image}.jpg`)}
           alt={item.image}
-          className="img-responsive"
         />
       );
     });
