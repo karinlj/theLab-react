@@ -4,6 +4,7 @@ import Giraf from "../../img/giraf.jpg";
 import Zebra from "../../img/zebra-two.jpg";
 import Elephant from "../../img/elephant.jpg";
 import Lion from "../../img/lion-two.jpg";
+import Leopard from "../../img/leopard.jpg";
 import "./VisualBugs.scss";
 import HeaderText from "../HeaderText";
 import MainBtn from "../MainBtn";
@@ -17,7 +18,15 @@ class VisualBugs extends Component {
   handleNext = () => {
     //console.log("next ", this.state.index);
 
-    const animals = ["elephant", "lion", "zebra", "giraf"];
+    // const animals = ["elephant", "lion", "zebra", "giraf"];
+
+    const animals = [
+      { pict: "elephant", label: "elephant" },
+      { pict: "lion", label: "lion" },
+      { pict: "zebra", label: "zebra" },
+      { pict: "giraf", label: "lion" },
+      { pict: "leopard", label: "leopard" }
+    ];
 
     if (this.state.index < animals.length - 1) {
       this.setState({
@@ -31,27 +40,43 @@ class VisualBugs extends Component {
   };
 
   render() {
-    const animals = ["elephant", "lion", "zebra", "giraf"];
+    const animals = [
+      { pict: "elephant", label: "elephant" },
+      { pict: "lion", label: "lion" },
+      { pict: "zebra", label: "zebra" },
+      { pict: "giraf", label: "lion" },
+      { pict: "leopard", label: "leopard" }
+    ];
+
+    let animalPict = animals[this.state.index].pict;
+
+    let animalLabel = animals[this.state.index].label;
+
+    /*  const animals = ["elephant", "lion", "zebra", "giraf", "leopard"];
     let animal = animals[this.state.index];
 
-    const labels = ["elephant", "lion", "zebra", "lion"];
+    const labels = ["elephant", "lion", "zebra", "lion", "leopard"];
     let displayLabels = labels[this.state.index];
-
+ */
     //const imgUrls = ["Elephant", "Lion", "Zebra", "Giraf"];
     // let displayAnimal = imgUrls[this.state.index];
 
     //console.log(this.state.displayAnimal);
     //let { index } = this.state;
 
+    //let displayLabels = animals.label[this.state.index];
+
     let displayAnimal;
-    if (animal === "elephant") {
+    if (animalPict === "elephant") {
       displayAnimal = <img src={Elephant} alt="elephant" />;
-    } else if (animal === "lion") {
+    } else if (animalPict === "lion") {
       displayAnimal = <img src={Lion} alt="lion" />;
-    } else if (animal === "zebra") {
+    } else if (animalPict === "zebra") {
       displayAnimal = <img src={Zebra} alt="zebra" />;
-    } else if (animal === "giraf") {
+    } else if (animalPict === "giraf") {
       displayAnimal = <img src={Giraf} alt="giraf" />;
+    } else if (animalPict === "leopard") {
+      displayAnimal = <img src={Leopard} alt="leopard" />;
     }
     console.log(displayAnimal + " " + this.state.index);
 
@@ -73,7 +98,7 @@ class VisualBugs extends Component {
 
               <div className="label-wrapper">
                 <h5>
-                  {displayLabels}
+                  {animalLabel}
                 </h5>
               </div>
             </div>
