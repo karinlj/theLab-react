@@ -36,12 +36,19 @@ const Overview = () => {
 
       <div className="col-12 col-md-5">
         <VideoSidebar
-          src="https://www.youtube.com/embed/YcCw6cS7Uy0"
+          src="https://www.youtube.com/embed/jNgMqZEGAZ4"
+          height="230"
+          width="100%"
+          title="getting-started"
+        />
+        <VideoSidebar
+          src="https://www.youtube.com/embed/0EZ2RVVM1Jo"
           height="230"
           width="100%"
           title="getting-started"
         />
       </div>
+
     </div>
   );
 };

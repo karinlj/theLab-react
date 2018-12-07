@@ -4,6 +4,7 @@ import AddTodo from "./AddTodo";
 import Sidebar from "../Sidebar";
 import "./Lists.scss";
 import HeaderText from "../HeaderText";
+import VideoSidebar from "../Video/VideoSidebar";
 
 class TodoList extends Component {
   state = {
@@ -62,7 +63,19 @@ class TodoList extends Component {
 
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
-        </div>
+          <VideoSidebar
+          src="https://www.youtube.com/embed/fH7rkRBgNzE"
+          height="230"
+          width="100%"
+          title="getting-started"
+        />
+         <VideoSidebar
+          src="https://www.youtube.com/embed/2xnX_9s2zWE"
+          height="230"
+          width="100%"
+          title="getting-started"
+        />
+      </div>
       </div>
     );
   }
