@@ -32,17 +32,7 @@ const SideDrawer = props => {
                   </li>
                 </ul>
               </li>
-              <li>
-                Handling forms
-                <ul className="sub-list">
-                  <li>
-                    <NavLink to="/form">
-                      <div onClick={props.clickLink}>Form validation</div>
-                    </NavLink>
-                  </li>
-                </ul>
-              </li>
-
+        
               <li>
                 Handling lists and forms
                 <ul className="sub-list">
