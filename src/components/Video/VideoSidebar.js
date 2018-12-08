@@ -11,7 +11,7 @@ const VideoSidebar = props => {
 
     return (
         <div className="video-section" >
-            <iframe allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" src={src} height={height} width={width} title={title} />
+            <iframe allowFullScreen="allowfullscreen" src={src} height={height} width={width} title={title} />
         </div>
     )
 }
