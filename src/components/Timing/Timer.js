@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ButtonTimer from './ButtonTimer';
 import './Timing.scss';
 import ElapsedTime from './ElapsedTime';
+import VideoSidebar from "../Video/VideoSidebar";
 
 class Timer extends Component { //class based
 

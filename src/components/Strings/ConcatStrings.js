@@ -5,6 +5,7 @@ import SubmitBtn from "../SubmitBtn";
 import "./Strings.scss";
 import HeaderText from "../HeaderText";
 import Message from "../Message";
+import VideoSidebar from "../Video/VideoSidebar";
 
 class ConcatStrings extends Component {
   state = {
@@ -108,6 +109,12 @@ class ConcatStrings extends Component {
 
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
+                  <VideoSidebar
+          src="https://www.youtube.com/embed/v7fbQHC5xfs"
+          height="230"
+          width="100%"
+          title="getting-started"
+        />
         </div>
       </div>
     );

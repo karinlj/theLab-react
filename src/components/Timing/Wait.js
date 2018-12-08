@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Sidebar from "../Sidebar";
 import MainBtn from "../MainBtn";
 import HeaderText from "../HeaderText";
+import VideoSidebar from "../Video/VideoSidebar";
 
 class Wait extends Component {
   //class based
@@ -111,6 +112,12 @@ class Wait extends Component {
 
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
+             <VideoSidebar
+          src="https://www.youtube.com/embed/R0I0Lw3KsO0"
+          height="230"
+          width="100%"
+          title="getting-started"
+        />
         </div>
       </div>
     );

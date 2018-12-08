@@ -4,6 +4,7 @@ import MainBtn from "../MainBtn";
 import "./Conditional.scss";
 import HeaderText from "../HeaderText";
 import Message from "../Message";
+import VideoSidebar from "../Video/VideoSidebar";
 
 class YellowOrRed extends Component {
   state = {
@@ -81,6 +82,13 @@ class YellowOrRed extends Component {
 
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
+                 <VideoSidebar
+          src="https://www.youtube.com/embed/tww_NYEJMcQ"
+          height="230"
+          width="100%"
+          title="getting-started"
+        />
+
         </div>
       </div>
     );

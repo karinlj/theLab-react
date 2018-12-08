@@ -4,6 +4,7 @@ import MainBtn from "../MainBtn";
 import "./Scramble.scss";
 import HeaderText from "../HeaderText";
 import Message from "../Message";
+import VideoSidebar from "../Video/VideoSidebar";
 
 class ScrambleMulti extends Component {
   state = {
@@ -170,6 +171,13 @@ class ScrambleMulti extends Component {
 
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
+
+             <VideoSidebar
+          src="https://www.youtube.com/embed/9aM53sWHHFU"
+          height="230"
+          width="100%"
+          title="getting-started"
+        />
         </div>
       </div>
     );
