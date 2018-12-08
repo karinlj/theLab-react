@@ -1,5 +1,5 @@
 import TodoList from "./TodoList";
-import React, { Component } from "react";
+import React from "react";
 import Todos from "./Todos";
 import AddTodo from "./AddTodo";
 import Sidebar from "../Sidebar";
@@ -21,7 +21,7 @@ class RandomTodoList extends TodoList {
       todos: todosNew
     });
   };
- render() {
+  render() {
     return (
       <div className="row justify-content-between">
         <div className="col-12 col-md-6">
@@ -31,10 +31,7 @@ class RandomTodoList extends TodoList {
             </header>
             {/* sending delete-func */}
             {/* sending the state of this comp. to Todos!!!!!!!! */}
-            <Todos
-              todosProp={this.state.todos}
-              deleteTodoProp={this.deleteTodo}
-            />
+            <Todos todosProp={this.state.todos} deleteTodoProp={this.deleteTodo} />
 
             {/* sending add-func to AddTodo*/}
             <AddTodo addTodoProp={this.addTodo} />
@@ -43,25 +40,24 @@ class RandomTodoList extends TodoList {
 
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
-     
-        <VideoSidebar
-          src="https://www.youtube.com/embed/uJZZucOToHk"
-          height="230"
-          width="100%"
-          title="getting-started"
-        />
 
-        <VideoSidebar
-          src="https://www.youtube.com/embed/pxibmAUP70s"
-          height="230"
-          width="100%"
-          title="getting-started"
-        />
-      </div>
+          <VideoSidebar
+            src="https://www.youtube.com/embed/uJZZucOToHk"
+            height="230"
+            width="100%"
+            title="getting-started"
+          />
+
+          <VideoSidebar
+            src="https://www.youtube.com/embed/pxibmAUP70s"
+            height="230"
+            width="100%"
+            title="getting-started"
+          />
+        </div>
       </div>
     );
   }
 }
-
 
 export default RandomTodoList;

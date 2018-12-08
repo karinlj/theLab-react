@@ -49,7 +49,7 @@ class VisualBugs extends Component {
               <HeaderText componentName={this.constructor.name} />
             </header>
 
-            <div>
+            <div className="img-section">
               <div className="img-wrapper">
                 {animalPict}
               </div>
@@ -72,19 +72,19 @@ class VisualBugs extends Component {
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
 
-             <VideoSidebar
-          src="https://www.youtube.com/embed/O4bvInDRZs4"
-          height="230"
-          width="100%"
-          title="getting-started"
-        />
+          <VideoSidebar
+            src="https://www.youtube.com/embed/O4bvInDRZs4"
+            height="230"
+            width="100%"
+            title="getting-started"
+          />
 
-             <VideoSidebar
-          src="https://www.youtube.com/embed/1c2fXv_fsUY"
-          height="230"
-          width="100%"
-          title="getting-started"
-        />
+          <VideoSidebar
+            src="https://www.youtube.com/embed/1c2fXv_fsUY"
+            height="230"
+            width="100%"
+            title="getting-started"
+          />
         </div>
       </div>
     );

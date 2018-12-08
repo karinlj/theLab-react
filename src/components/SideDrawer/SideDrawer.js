@@ -32,7 +32,7 @@ const SideDrawer = props => {
                   </li>
                 </ul>
               </li>
-        
+
               <li>
                 Handling lists and forms
                 <ul className="sub-list">
@@ -72,7 +72,9 @@ const SideDrawer = props => {
                 Bug reporting
                 <ul className="sub-list">
                   <li>
-                    <NavLink to="/visualBugs">Visual bugs</NavLink>
+                    <NavLink to="/visualBugs">
+                      <div onClick={props.clickLink}>Visual bugs</div>
+                    </NavLink>
                   </li>
                 </ul>
               </li>
