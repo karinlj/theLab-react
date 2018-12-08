@@ -59,12 +59,12 @@ class VisualBugs extends Component {
                   {animalLabel}
                 </h5>
               </div>
-            </div>
 
-            <div className="btn-wrapper">
-              <MainBtn classProp="button pink-btn" clickProp={() => this.handleNext()}>
-                Next
-              </MainBtn>
+              <div className="btn-wrapper">
+                <MainBtn classProp="button pink-btn" clickProp={() => this.handleNext()}>
+                  Next
+                </MainBtn>
+              </div>
             </div>
           </div>
         </div>
