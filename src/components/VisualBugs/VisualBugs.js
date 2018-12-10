@@ -49,22 +49,22 @@ class VisualBugs extends Component {
               <HeaderText componentName={this.constructor.name} />
             </header>
 
-            <div className="img-section">
-              <div className="img-wrapper">
+            <div className="apect-ratio-box">
+              <div className="apect-ratio-inside">
                 {animalPict}
               </div>
+            </div>
 
-              <div className="label-wrapper">
-                <h5>
-                  {animalLabel}
-                </h5>
-              </div>
+            <div className="label-wrapper">
+              <h5>
+                {animalLabel}
+              </h5>
+            </div>
 
-              <div className="btn-wrapper">
-                <MainBtn classProp="button pink-btn" clickProp={() => this.handleNext()}>
-                  Next
-                </MainBtn>
-              </div>
+            <div className="btn-wrapper">
+              <MainBtn classProp="button pink-btn" clickProp={() => this.handleNext()}>
+                Next
+              </MainBtn>
             </div>
           </div>
         </div>
