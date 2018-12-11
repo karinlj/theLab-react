@@ -5,7 +5,7 @@ import SubmitBtn from "../SubmitBtn";
 import HeaderText from "../HeaderText";
 import PrintForm from "./PrintForm";
 
-class Form extends Component {
+class FormValidation extends Component {
   //class based component
   state = {
     firstname: "",
@@ -197,4 +197,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default FormValidation;

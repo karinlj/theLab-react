@@ -10,7 +10,7 @@ import Lemur from "../../img/lemur.jpg";
 import AccountData from "../../data/accounts.json";
 import LoginOptions from "./LoginOptions";
 
-class Login extends Component {
+class RoleBasedLogin extends Component {
   state = {
     role: "",
     email: "",
@@ -229,4 +229,4 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+export default RoleBasedLogin;

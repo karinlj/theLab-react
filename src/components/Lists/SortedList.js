@@ -6,12 +6,9 @@ import "./Lists.scss";
 import HeaderText from "../HeaderText";
 import VideoSidebar from "../Video/VideoSidebar";
 
-class TodoList extends Component {
+class SortedList extends Component {
   state = {
-    todos: [
-      { id: 1, content: "Buy some milk" },
-      { id: 2, content: "Cuddle with cats" }
-    ]
+    todos: [{ id: 1, content: "Buy some milk" }, { id: 2, content: "Cuddle with cats" }]
   };
   deleteTodo = id => {
     //func has to be here to interact with the state
@@ -51,10 +48,7 @@ class TodoList extends Component {
             </header>
             {/* sending delete-func */}
             {/* sending the state of this comp. to Todos!!!!!!!! */}
-            <Todos
-              todosProp={this.state.todos}
-              deleteTodoProp={this.deleteTodo}
-            />
+            <Todos todosProp={this.state.todos} deleteTodoProp={this.deleteTodo} />
 
             {/* sending add-func to AddTodo*/}
             <AddTodo addTodoProp={this.addTodo} />
@@ -64,21 +58,21 @@ class TodoList extends Component {
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
           <VideoSidebar
-          src="https://www.youtube.com/embed/fH7rkRBgNzE"
-          height="230"
-          width="100%"
-          title="getting-started"
-        />
-         <VideoSidebar
-          src="https://www.youtube.com/embed/2xnX_9s2zWE"
-          height="230"
-          width="100%"
-          title="getting-started"
-        />
-      </div>
+            src="https://www.youtube.com/embed/fH7rkRBgNzE"
+            height="230"
+            width="100%"
+            title="getting-started"
+          />
+          <VideoSidebar
+            src="https://www.youtube.com/embed/2xnX_9s2zWE"
+            height="230"
+            width="100%"
+            title="getting-started"
+          />
+        </div>
       </div>
     );
   }
 }
 
-export default TodoList;
+export default SortedList;

@@ -8,20 +8,20 @@ import Introduction from "./components/textComponents/Introduction";
 import Overview from "./components/textComponents/Overview";
 import RunningCli from "./components/textComponents/RunningCli";
 import CiIntegration from "./components/textComponents/CiIntegration";
-import TodoList from "./components/Lists/TodoList";
-import RandomTodoList from "./components/Lists/RandomTodoList";
+import SortedList from "./components/Lists/SortedList";
+import UnsortedList from "./components/Lists/UnsortedList";
 import Post from "./components/Blog/Post";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop";
-import Form from "./components/Form/Form";
+import FormValidation from "./components/Form/FormValidation";
 import YellowOrRed from "./components/Conditional/YellowOrRed";
 import CatOrDog from "./components/Conditional/CatOrDog";
 import ConcatStrings from "./components/Strings/ConcatStrings";
 import Speed from "./components/Timing/Speed";
 import Wait from "./components/Timing/Wait";
 import Scramble from "./components/Scramble/Scramble";
-import ScrambleMulti from "./components/Scramble/ScrambleMulti";
-import Login from "./components/Form/Login";
+import MultiScramble from "./components/Scramble/MultiScramble";
+import RoleBasedLogin from "./components/Form/RoleBasedLogin";
 import RandomLogin from "./components/Form/RandomLogin";
 import VisualBugs from "./components/VisualBugs/VisualBugs";
 
@@ -78,10 +78,10 @@ class App extends Component {
                 <Route path="/overview" component={Overview} />
                 <Route path="/runningCli" component={RunningCli} />
                 <Route path="/ciIntegration" component={CiIntegration} />
-                <Route path="/TodoList" component={TodoList} />
-                <Route path="/RandomTodoList" component={RandomTodoList} />
-                <Route path="/Form" component={Form} />
-                <Route path="/Login" component={Login} />
+                <Route path="/sortedList" component={SortedList} />
+                <Route path="/unsortedList" component={UnsortedList} />
+                <Route path="/FormValidation" component={FormValidation} />
+                <Route path="/roleBasedLogin" component={RoleBasedLogin} />
                 <Route path="/randomLogin" component={RandomLogin} />
                 <Route path="/YellowOrRed" component={YellowOrRed} />
                 <Route path="/CatOrDog" component={CatOrDog} />
@@ -89,7 +89,7 @@ class App extends Component {
                 <Route path="/Speed" component={Speed} />
                 <Route path="/Wait" component={Wait} />
                 <Route path="/Scramble" component={Scramble} />
-                <Route path="/scrambleMulti" component={ScrambleMulti} />
+                <Route path="/multiScramble" component={MultiScramble} />
                 <Route path="/visualBugs" component={VisualBugs} />
                 <Route path="/Blog" component={Blog} />
                 <Route path="/timer" component={Timer} />

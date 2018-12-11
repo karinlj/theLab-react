@@ -1,4 +1,4 @@
-import TodoList from "./TodoList";
+import SortedList from "./SortedList";
 import React from "react";
 import Todos from "./Todos";
 import AddTodo from "./AddTodo";
@@ -7,7 +7,7 @@ import "./Lists.scss";
 import HeaderText from "../HeaderText";
 import VideoSidebar from "../Video/VideoSidebar";
 
-class RandomTodoList extends TodoList {
+class UnsortedList extends SortedList {
   addTodo = todo => {
     todo.id = Math.random();
     //new array with spread op, passing in the old one
@@ -60,4 +60,4 @@ class RandomTodoList extends TodoList {
   }
 }
 
-export default RandomTodoList;
+export default UnsortedList;

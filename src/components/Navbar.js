@@ -32,13 +32,13 @@ const Navbar = props =>
               Handling lists and forms
               <ul className="sub-list">
                 <li>
-                  <NavLink to="/todoList">Sorted list</NavLink>
+                  <NavLink to="/sortedList">Sorted list</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/randomTodoList">Unsorted list</NavLink>
+                  <NavLink to="/unsortedList">Unsorted list</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/form">Form validation</NavLink>
+                  <NavLink to="/formValidation">Form validation</NavLink>
                 </li>
               </ul>
             </li>
@@ -82,7 +82,7 @@ const Navbar = props =>
                   <NavLink to="/scramble">Scramble items</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/scrambleMulti">Multi-scramble</NavLink>
+                  <NavLink to="/multiScramble">Multi-scramble</NavLink>
                 </li>
               </ul>
             </li>
@@ -103,7 +103,7 @@ const Navbar = props =>
                   <NavLink to="/randomLogin">Random login</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/login">Role-based login</NavLink>
+                  <NavLink to="/roleBasedLogin">Role-based login</NavLink>
                 </li>
               </ul>
             </li>

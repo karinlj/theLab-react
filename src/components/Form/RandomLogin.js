@@ -1,7 +1,7 @@
-import Login from "./Login";
+import RoleBasedLogin from "./RoleBasedLogin";
 
 //extends Login Component and inherits everything
-class RandomLogin extends Login {
+class RandomLogin extends RoleBasedLogin {
   randomLogin = e => {
     e.preventDefault();
 

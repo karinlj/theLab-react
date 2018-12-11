@@ -1,18 +1,18 @@
 {
-  "Form": {
+  "FormValidation": {
     "heading": "Form validation",
     "text": "Many applications use forms to submit data. Here you can submit a form and the contents of the form will be displayed below.",
     "sidebarHeading": "Why learn: Form validation?",
     "sidebarText": "In test automation, it's important not to not hard-code information entered in forms, as this information will often change. \n\n A common mistake is to record separate flows for each set of data, making tests numerous and difficult to maintain. Ideally, you want to be able to keep your data separate in a JSON or CSV, and map this data directly into forms."
   },
 
-  "TodoList": {
+  "SortedList": {
     "heading": "Sorted list",
     "text": "In this simple application we can add and delete todos from a list. There are several small tests we can do on top of this application, and they illustrate element selection and data handling. \n\n In order to cover most cases, we should add a list of items to the todo-list, and then remove the list of items again.",
     "sidebarHeading": "Why learn: Sorted list?",
     "sidebarText": "In many SaaS applications, data lists of different kinds are often used. Being able to add items in bulk to a list and removing them again is common practice. \n\n These operations are key to most SaaS applications and having a good grasp of list handling is essential to automating tests of any application."
   },
-  "RandomTodoList": {
+  "UnsortedList": {
     "heading": "Unsorted list",
     "text": "Here we repeat the same exercise as in sorted lists, but allowing the list items to be added to a random position in the list. This adds complexity when identifying the elements to remove.",
     "sidebarHeading": "Why learn: Unsorted list?",
@@ -60,13 +60,13 @@
     "sidebarHeading": "Why learn: Scramble?",
     "sidebarText": "XPath and CSS selectors are notoriously brittle, and often changes to id and class attributes will break test cases. \n\n Here you can simulate changes to both id, class, and content to see how your test tool handles the challenge."
   },
-  "ScrambleMulti": {
+  "MultiScramble": {
     "heading": "Multi-scramble",
     "text": "This is a simple game where you can change the action labels that manipulate something in your data model. In a typical SaaS application, this could, for example, be Project, User or Bank Account - here represented by Kangaroo, Koala, or Dolphin. \n\n The trick is to let your test automation tool still find the buttons even if the wording is changing, but only affecting the appropriate buttons.",
     "sidebarHeading": "Why learn: Multi-scramble?",
     "sidebarText": "Keeping your tests stable for code updates are one of the biggest challenges to test automation. Often, technical details like class and id are changing constantly. \n\n But even the wording can change for common actions. \"Add\" gets replaced by \"Create\", \"Delete\" get replaced by \"Remove\"."
   },
-  "Login": {
+  "RoleBasedLogin": {
     "heading": "Role-based login",
     "text": "In this exercise, we emulate roles and restrictions. Every login has a number of actions that can be performed. \n\n The Lion can do a lot of things (compare Admin), The Zebra is intermediate (compare User), while The Lemur can't do much (compare Guest login).",
     "sidebarHeading": "Why learn: Role-based login?",
