@@ -37,17 +37,17 @@ const SideDrawer = props => {
                 Handling lists and forms
                 <ul className="sub-list">
                   <li>
-                    <NavLink to="/todoList">
+                    <NavLink to="/sortedList">
                       <div onClick={props.clickLink}>Sorted list</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/randomTodoList">
+                    <NavLink to="/unsortedList">
                       <div onClick={props.clickLink}>Unsorted list</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/form">
+                    <NavLink to="/formValidation">
                       <div onClick={props.clickLink}>Form validation</div>
                     </NavLink>
                   </li>
@@ -104,7 +104,7 @@ const SideDrawer = props => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/scrambleMulti">
+                    <NavLink to="/multiScramble">
                       <div onClick={props.clickLink}>Multi-scramble</div>
                     </NavLink>
                   </li>
@@ -131,7 +131,7 @@ const SideDrawer = props => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/login">
+                    <NavLink to="/roleBasedLogin">
                       <div onClick={props.clickLink}>Role-based login</div>
                     </NavLink>
                   </li>

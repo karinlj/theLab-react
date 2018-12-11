@@ -15,7 +15,10 @@ body {
   background: $themecolorBlue;
   height: 100%;
 }
-
+#root {
+  height: 100%;
+  //position: relative !important;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
