@@ -24,10 +24,10 @@ import MultiScramble from "./components/Scramble/MultiScramble";
 import RoleBasedLogin from "./components/Form/RoleBasedLogin";
 import RandomLogin from "./components/Form/RandomLogin";
 import VisualBugs from "./components/VisualBugs/VisualBugs";
+import Animals from "./components/Table/Animals";
 
 import Timer from "./components/Timing/Timer";
 import Blog from "./components/Blog/Blog";
-import Test from "./components/Test/Test";
 
 class App extends Component {
   state = {
@@ -93,7 +93,7 @@ class App extends Component {
                 <Route path="/visualBugs" component={VisualBugs} />
                 <Route path="/Blog" component={Blog} />
                 <Route path="/timer" component={Timer} />
-                <Route path="/Test" component={Test} />
+                <Route path="/Animals" component={Animals} />
                 <Route path="/:post_id" component={Post} />
               </Switch>
             </div>
