@@ -3,7 +3,7 @@ const animals = [
     _id: "1",
     name: "Doris",
     gender: "female",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Elephant" },
+    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Elephant" },
     birthDate: "2015-01-03",
     liked: true
   },
@@ -11,8 +11,7 @@ const animals = [
     _id: "2",
     name: "Lilly",
     gender: "female",
-
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
+    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
     birthDate: "2010-01-03",
     liked: true
   },
@@ -20,7 +19,7 @@ const animals = [
     _id: "3",
     name: "Buster",
     gender: "male",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Lion" },
+    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Lion" },
 
     birthDate: "2014-01-03",
     liked: true
@@ -29,7 +28,7 @@ const animals = [
     _id: "4",
     name: "Penny",
     gender: "female",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
+    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
     birthDate: "2011-01-03",
     liked: true
   },
@@ -38,7 +37,7 @@ const animals = [
     _id: "5",
     name: "Luca",
     gender: "male",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Lion" },
+    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Lion" },
     birthDate: "2012-01-03",
     liked: true
   },
@@ -46,7 +45,7 @@ const animals = [
     _id: "6",
     name: "Arthur",
     gender: "male",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Elephant" },
+    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Elephant" },
     birthDate: "2009-01-03",
     liked: true
   },
@@ -54,7 +53,7 @@ const animals = [
     _id: "4",
     name: "Rose",
     gender: "female",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
+    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
     birthDate: "2011-01-03",
     liked: true
   },
@@ -62,7 +61,7 @@ const animals = [
     _id: "4",
     name: "Minny",
     gender: "male",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
+    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
     birthDate: "2011-01-03",
     liked: true
   }
@@ -79,7 +78,7 @@ export function getAnimal(id) {
 /* export function saveMovie(movie) {
     let movieInDb = movies.find(m => m._id === movie._id) || {};
     movieInDb.name = movie.name;
-    movieInDb.genre = genresAPI.genres.find(g => g._id === movie.genreId);
+    movieInDb.species = speciessAPI.speciess.find(g => g._id === movie.speciesId);
     movieInDb.numberInStock = movie.numberInStock;
     movieInDb.dailyRentalRate = movie.dailyRentalRate;
   

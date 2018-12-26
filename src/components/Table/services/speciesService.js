@@ -4,6 +4,6 @@ export const species = [
   { _id: "5b21ca3eeb7f6fbccd471820", name: "Elephant" }
 ];
 
-export function getGenres() {
+export function getSpecies() {
   return species.filter(s => s);
 }
