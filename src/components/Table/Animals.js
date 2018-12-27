@@ -1,43 +1,28 @@
 import React, { Component } from "react";
-
-import { getAnimals } from "./services/animalService"; //import getAnimals-func
-import { getSpecies } from "./services/speciesService";
-import AnimalsTable from "./AnimalsTable";
-import Pagination from "./common/Pagination";
-import { paginate } from "./utilities/paginate";
-import ListGroup from "./common/ListGroup";
-import _ from "lodash";
+import "./Table.scss";
+import { getAnimals } from "./services/animalService";
+import Like from "./common/Like";
 
 class Animals extends Component {
-  //displaying a list of animals
   state = {
-    animals: [],
-    pageSize: 4,
-    currentPage: 1,
-    species: [],
-    // selectedSpecies: ""
-    sortColumn: {
-      path: "name",
-      order: "asc"
-    }
+    animals: []
   };
 
   //normally calling backend service, so here the ajax calls would be
-  //we set them to [] in the state while the data is being fetched for not having a rumtime error
+  //we set them to [] in the state while the data is being fetched for no rumtime error
   componentDidMount() {
     //new array with spread and adding new object
-    const species = [{ _id: "", name: "All species" }, ...getSpecies()];
+    //const species = [{ _id: "", name: "All species" }, ...getSpecies()];
     this.setState({
-      movies: getAnimals(),
-      species
+      animals: getAnimals()
+      // species
     });
   }
 
   handleDelete = animal => {
-    // console.log(animal);
-
+    console.log("animal", animal);
     //new array that contains all the objects except the one we are deleting
-    //keeping the items that fullfil the condition
+    //keeping the all items that fullfil the condition
     const animals = this.state.animals.filter(a => a._id !== animal._id);
     this.setState({
       animals
@@ -45,121 +30,92 @@ class Animals extends Component {
   };
 
   handleLike = animal => {
-    //parameter to know what movie is being liked
-    // console.log("liked", animal);
-
-    //make a copy of the state, and give it to the setState
-    const animals = [...this.state.animals];
+    //what animal is being liked
+    //clone the state
     //finding the index of the movie we recieve as a parameter (indexOf)
-    const index = animals.indexOf(animal);
-    console.log(index);
-    //make a copy of the particular object in the array, clone the movie at given location
-    animal[index] = { ...animal };
-    console.log("my new object", animal[index]);
+    //clone the movie at index-position
     //if true => false and viceversa
 
-    animal[index].liked = !animal[index].liked;
+    console.log("toggle-like", animal);
 
-    this.setState({
-      animals
-    });
-  };
+    const animals = [...this.state.animals];
+    const index = animals.indexOf(animal);
+    console.log(index);
 
-  //whenever the state of a comp is changed, that comp and all its children are rerendered - the render() is called
-  handlePageChange = page => {
-    //console.log(page);
-    this.setState({
-      currentPage: page
-    });
-  };
+    animals[index] = { ...animals[index] };
+    // console.log("animal at index positon", animal[index]);
 
-  handleSpeciesSelect = species => {
-    console.log("species", species);
-    this.setState({
-      selectedSpecies: species,
-      currentPage: 1 //så att 1a sidan alltid kommer upp på alla genres
-    });
-  };
-
-  handleSort = sortColumnNew => {
-    this.setState({
-      //setting sortColumn to an object with two props
-      sortColumn: sortColumnNew
-    });
-  };
-
-  getPageData = () => {
-    const filtered =
-      //if both selectedSpecies och selectedSpecies._id is truthy
-      this.state.selectedSpecies && this.state.selectedSpecies._id
-        ? /* alla m som uppfyller villkoret att id:t = id:t på selectedSpecies returneras */
-          this.state.animals.filter(a => a.species._id === this.state.selectedSpecies._id)
-        : this.state.animals;
-
-    console.log("hej species", this.state.selectedSpecies);
-
-    //måste ligga före paginate-function, men efter filter
-    const sorted = _.orderBy(
-      filtered,
-      [this.state.sortColumn.path],
-      [this.state.sortColumn.order]
-    );
-
-    //from the paginate function
-    const animals = paginate(sorted, this.state.currentPage, this.state.pageSize);
-
-    console.log("animals", animals);
-    //returns an object
-    return { totalCount: filtered.length, data: animals };
+    animals[index].liked = !animals[index].liked;
+    this.setState({ animals });
   };
 
   render() {
-    const { length: animalsCount } = this.state.animals; //=this.state.animals.length
-    const { currentPage, pageSize, sortColumn } = this.state;
+    // console.log("animals", this.state.animals);
+    /* for each animal we render a row
+        store the animals in an array and map each element to a tr-element 
+        key attr to the element you are repeating 
+        argument to know what animal is being liked
+        animal.liked -  false/true
+         */
 
-    // const result = this.getPageData();    //the returned value of getPageData in a const
-    //to get the props we want
-    const { totalCount, data: animals } = this.getPageData(); //rename data to animals
-
-    //ALT 1:
+    const { animals } = this.state;
     let textmessage;
-    if (this.state.animals === 0) {
-      textmessage = <p>There are no animals in the database!</p>;
-    } else {
-      textmessage = (
-        <p>
-          Showing {totalCount} animals from the database.
-        </p>
-      );
-    }
-
+    animals === 0
+      ? (textmessage = <p>There are no animals left</p>)
+      : (textmessage = (
+          <p>
+            Showing {animals.length} animals
+          </p>
+        ));
     return (
-      <div className="row">
-        <div className="col-3">
-          <ListGroup
-            items={this.state.species}
-            /* defaultProps */
-            selectedItem={this.state.selectedGenre}
-            onItemSelect={this.handleSpeciesSelect}
-          />
-        </div>
-        <div className="col">
-          {textmessage}
-          <AnimalsTable
-            animals={animals}
-            /*sortColumn to show the right sort order when page is loaded */
-            sortColumn={sortColumn}
-            onLike={this.handleLike}
-            onDelete={this.handleDelete}
-            onSort={this.handleSort}
-          />
-          <Pagination
-            itemsCount={animalsCount}
-            pageSize={pageSize}
-            onPageChange={this.handlePageChange}
-            currentPage={currentPage}
-          />
-        </div>
+      <div>
+        {textmessage}
+
+        <table id="animalTable" className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Species</th>
+              <th>Shoesize</th>
+              <th>Hairdo</th>
+              <th />
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            {animals.map(animal =>
+              <tr key={animal._id}>
+                <td>
+                  {animal.name}
+                </td>
+                <td>
+                  {animal.species.name}
+                </td>
+                <td>
+                  {animal.shoesize}
+                </td>
+                <td>
+                  {animal.hairdo}
+                </td>
+                <td>
+                  <Like
+                    /* liked={true} */
+                    liked={animal.liked}
+                    onLikeToggle={() => this.handleLike(animal)}
+                  />
+                </td>
+                <td>
+                  <button
+                    onClick={() => this.handleDelete(animal)}
+                    className="btn btn-danger btn-sm"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     );
   }

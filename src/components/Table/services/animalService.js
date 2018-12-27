@@ -2,68 +2,74 @@ const animals = [
   {
     _id: "1",
     name: "Doris",
-    gender: "female",
-    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Elephant" },
-    birthDate: "2015-01-03",
+    shoesize: "L",
+    species: { _id: "552", name: "Elephant" },
+    hairdo: "bald",
     liked: true
   },
   {
     _id: "2",
     name: "Lilly",
-    gender: "female",
-    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
-    birthDate: "2010-01-03",
-    liked: true
+    shoesize: "XS",
+    species: { _id: "551", name: "Zebra" },
+    hairdo: "mohawk"
   },
   {
     _id: "3",
-    name: "Buster",
-    gender: "male",
-    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Lion" },
-
-    birthDate: "2014-01-03",
-    liked: true
+    name: "June",
+    shoesize: "M",
+    species: { _id: "550", name: "Lion" },
+    hairdo: "short"
   },
   {
     _id: "4",
     name: "Penny",
-    gender: "female",
-    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
-    birthDate: "2011-01-03",
-    liked: true
+    shoesize: "S",
+    species: { _id: "551", name: "Zebra" },
+    hairdo: "mohawk"
   },
 
   {
     _id: "5",
-    name: "Luca",
-    gender: "male",
-    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Lion" },
-    birthDate: "2012-01-03",
-    liked: true
+    name: "Simba",
+    shoesize: "M",
+    species: { _id: "550", name: "Lion" },
+    hairdo: "mane"
   },
   {
     _id: "6",
     name: "Arthur",
-    gender: "male",
-    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Elephant" },
-    birthDate: "2009-01-03",
-    liked: true
+    shoesize: "XL",
+    species: { _id: "552", name: "Elephant" },
+    hairdo: "bald"
   },
   {
-    _id: "4",
+    _id: "7",
     name: "Rose",
-    gender: "female",
-    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
-    birthDate: "2011-01-03",
-    liked: true
+    shoesize: "S",
+    species: { _id: "551", name: "Zebra" },
+    hairdo: "mohawk"
   },
   {
-    _id: "4",
+    _id: "8",
     name: "Minny",
-    gender: "male",
-    species: { _id: "5b21ca3eeb7f6fbccd471818", name: "Zebra" },
-    birthDate: "2011-01-03",
-    liked: true
+    shoesize: "XS",
+    species: { _id: "551", name: "Zebra" },
+    hairdo: "mohawk"
+  },
+  {
+    _id: "9",
+    name: "Luca",
+    shoesize: "M",
+    species: { _id: "550", name: "Lion" },
+    hairdo: "short"
+  },
+  {
+    _id: "10",
+    name: "Sue",
+    shoesize: "XL",
+    species: { _id: "552", name: "Elephant" },
+    hairdo: "bald"
   }
 ];
 
