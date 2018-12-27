@@ -8,7 +8,7 @@ class Animals extends Component {
     animals: []
   };
 
-  //normally calling backend service, so here the ajax calls would be
+  //normally calling backend service, the ajax calls would be here
   //we set them to [] in the state while the data is being fetched for no rumtime error
   componentDidMount() {
     //new array with spread and adding new object
@@ -22,7 +22,7 @@ class Animals extends Component {
   handleDelete = animal => {
     console.log("animal", animal);
     //new array that contains all the objects except the one we are deleting
-    //keeping the all items that fullfil the condition
+    //keeping the all items that fulfill the condition
     const animals = this.state.animals.filter(a => a._id !== animal._id);
     this.setState({
       animals
@@ -36,14 +36,14 @@ class Animals extends Component {
     //clone the movie at index-position
     //if true => false and viceversa
 
-    console.log("toggle-like", animal);
+    // console.log("toggle-like", animal);
 
     const animals = [...this.state.animals];
     const index = animals.indexOf(animal);
-    console.log(index);
+    // console.log(index);
 
     animals[index] = { ...animals[index] };
-    // console.log("animal at index positon", animal[index]);
+    // console.log("animal at index positon", animals[index]);
 
     animals[index].liked = !animals[index].liked;
     this.setState({ animals });
