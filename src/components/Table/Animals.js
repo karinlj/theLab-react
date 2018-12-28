@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import "./Table.scss";
 import { getAnimals } from "./services/animalService";
 import Like from "./common/Like";
+import Pagination from "./common/Pagination";
+import Lion from "../../img/lion-small.jpeg";
+import Zebra from "../../img/zebra-small.jpeg";
 
 class Animals extends Component {
   state = {
-    animals: []
+    animals: [],
+    pageSize: 3,
+    currentPage: 1
   };
 
   //normally calling backend service, the ajax calls would be here
@@ -49,6 +54,11 @@ class Animals extends Component {
     this.setState({ animals });
   };
 
+  handlePageChange = page => {
+    //recieves the new page nr
+    console.log("page changed", page);
+    this.setState({ currentPage: page });
+  };
   render() {
     // console.log("animals", this.state.animals);
     /* for each animal we render a row
@@ -57,8 +67,8 @@ class Animals extends Component {
         argument to know what animal is being liked
         animal.liked -  false/true
          */
+    const { animals, pageSize, currentPage } = this.state;
 
-    const { animals } = this.state;
     let textmessage;
     animals === 0
       ? (textmessage = <p>There are no animals left</p>)
@@ -74,6 +84,7 @@ class Animals extends Component {
         <table id="animalTable" className="table">
           <thead>
             <tr>
+              <th />
               <th>Name</th>
               <th>Species</th>
               <th>Shoesize</th>
@@ -85,6 +96,9 @@ class Animals extends Component {
           <tbody>
             {animals.map(animal =>
               <tr key={animal._id}>
+                <td>
+                  <img src={Lion} alt="" />
+                </td>
                 <td>
                   {animal.name}
                 </td>
@@ -116,6 +130,12 @@ class Animals extends Component {
             )}
           </tbody>
         </table>
+        <Pagination
+          itemsTotal={animals.length}
+          pageSize={pageSize}
+          onPageChange={this.handlePageChange}
+          currentPage={currentPage}
+        />
       </div>
     );
   }
