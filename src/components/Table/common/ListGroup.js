@@ -1,31 +1,23 @@
 import React from "react";
 
 const ListGroup = props => {
-  const { items, textProp, valueProp, selectedItem, onItemSelect } = props;
-  //input: a list of items
+  //input: a list of items, the selected item
   //events: when a list item is chosen, the list of movies should be filtered
+  const { items, onItemSelect, textProp, valueProp, selectedItem } = props;
+
   return (
-    <div>
-      <ul className="list-group">
-        {items.map(item =>
-          <li /* bracket notation to access props dynamically */
-            key={item[valueProp]}
-            /*  dynamic class if item matches selected item */
-            className={
-              item === selectedItem ? "list-group-item active" : "list-group-item"
-            }
-            onClick={() => onItemSelect(item)}
-          >
-            {item[textProp]}
-          </li>
-        )}
-        {/* <li class="list-group-item active">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li> */}
-      </ul>
-    </div>
+    <ul className="list-group">
+      {items.map(item =>
+        <li
+          key={item[valueProp]}
+          className={item === selectedItem ? "list-group-item active" : "list-group-item"}
+          onClick={() => onItemSelect(item)}
+        >
+          {/*   {item.name}   using default props instead for reusability*/}
+          {item[textProp]}
+        </li>
+      )}
+    </ul>
   );
 };
 //defaultProps
@@ -34,3 +26,12 @@ ListGroup.defaultProps = {
   valueProp: "_id" //= item._id
 };
 export default ListGroup;
+{
+  /*   <li className="list-group-item active" onClick={onItemSelect}>
+        All species
+      </li>
+      <li className="list-group-item" onClick={onItemSelect}>
+        Elephants
+      </li>
+      */
+}

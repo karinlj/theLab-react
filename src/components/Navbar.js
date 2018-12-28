@@ -118,9 +118,9 @@ const Navbar = props =>
                 </li>
               </ul>
             </li>
-            {/*    <li>
+            <li>
               <NavLink to="/Animals">Animals</NavLink>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>

@@ -1,31 +1,61 @@
 @import '../../variables.scss';
 
-#animalTable {
-  tr {
-    border-bottom: 1px solid #ddd;
+.table-section {
+  .tableAnimals {
+    padding-bottom: 10rem;
+    p {
+      color: #fff;
+    }
   }
-  th {
-    color: #fff;
-    text-transform: uppercase;
-    border-top: none;
-    border-bottom: 1px solid #ddd;
-    font-size: 0.9em;
+
+  #animalTable {
+    tr {
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      color: #fff;
+      //text-transform: uppercase;
+      border-top: none;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.9em;
+      @media all and (max-width: $sm-max) {
+        font-size: 0.8em;
+      }
+    }
+    td {
+      color: #fff;
+      border-top: 1px solid #ddd;
+      @media all and (max-width: $sm-max) {
+        font-size: 0.8em;
+      }
+    }
+    button {
+      font-size: 0.8em;
+    }
+    img {
+      display: block;
+      margin-right: 0;
+      max-width: 50px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+
+    .pagination {
+      padding-bottom: 2rem;
+    }
   }
-  td {
-    color: #fff;
-    border-top: 1px solid #ddd;
+
+  .page-link {
+    //background-color: #a4d4f4;
+    //color: #fff !important;
   }
-  button {
-    font-size: 0.8em;
-  }
-  img {
-    display: block;
-    margin-right: -2rem;
-    max-width: 40px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+
+  .page-item.active {
+    .page-link {
+      color: #fff !important;
+    }
   }
 }

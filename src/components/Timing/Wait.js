@@ -83,17 +83,11 @@ class Wait extends Component {
 
             <div className="btn-and-message higher">
               <div>
-                <MainBtn
-                  classProp="button start-btn"
-                  clickProp={this.handleStart}
-                >
+                <MainBtn classProp="button start-btn" clickProp={this.handleStart}>
                   Start game
                 </MainBtn>
 
-                <MainBtn
-                  classProp={this.state.stopClass}
-                  clickProp={this.handleStop}
-                >
+                <MainBtn classProp={this.state.stopClass} clickProp={this.handleStop}>
                   End game
                 </MainBtn>
               </div>
@@ -112,12 +106,12 @@ class Wait extends Component {
 
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
-             <VideoSidebar
-          src="https://www.youtube.com/embed/R0I0Lw3KsO0"
-          height="230"
-          width="100%"
-          title="getting-started"
-        />
+          <VideoSidebar
+            src="https://www.youtube.com/embed/R0I0Lw3KsO0"
+            height="230"
+            width="100%"
+            title="getting-started"
+          />
         </div>
       </div>
     );

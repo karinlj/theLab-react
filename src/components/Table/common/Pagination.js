@@ -2,16 +2,14 @@ import React from "react";
 import _ from "lodash"; //lodash = optimized version of library 'Underscore'
 //import propTypes from "prop-types";
 
-//pagination list items - (page numbers)
 const Pagination = props => {
   //input: -total number of items (itemsCount)
   //        -items/page (pageSize)
   //        -current page
-
   const { itemsTotal, pageSize, onPageChange, currentPage } = props;
-  console.log("currentPage", currentPage);
-  console.log("itemsTotal", itemsTotal);
-  console.log("pageSize", pageSize);
+  //console.log("currentPage", currentPage);
+  //console.log("itemsTotal", itemsTotal);
+  //console.log("pageSize", pageSize);
 
   //how many pages? Round up to integer
   const pagesCount = Math.ceil(itemsTotal / pageSize);
@@ -27,33 +25,18 @@ const Pagination = props => {
   //array:
   const pages = _.range(1, pagesCount + 1);
 
-  //const activeClass;
-
   return (
     /*take the pages-array and map it to a list item 
      render class dynamically: active or not 
      when we click on a page-link, an event is raised  */
 
-    /*    <nav>
-      <ul className="pagination">
-  
-        {pages.map(page =>
-          <li
-            key={page}
-            className={currentPage === page ? "page-item active" : "page-item"}
-          >
-            <a href="/" className="page-link" onClick={() => onPageChange(page)}>
-              {page}
-            </a>
-          </li>
-        )}
-      </ul>
-    </nav> */
-
     <nav>
       <ul className="pagination">
         {pages.map(page =>
-          <li className="page-item" key={page}>
+          <li
+            className={currentPage === page ? "page-item active" : "page-item"}
+            key={page}
+          >
             {/* page from map */}
             <a className="page-link" onClick={() => onPageChange(page)}>
               {page}

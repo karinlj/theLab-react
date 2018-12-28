@@ -2,8 +2,6 @@ import _ from "lodash"; //lodash = optimized version of library 'underscore'
 
 //paginate function
 export function paginate(items, pageNumber, pageSize) {
-  //items=array of items
-
   //starting index of the items on pageNumber-page
   const startIndex = (pageNumber - 1) * pageSize;
 
