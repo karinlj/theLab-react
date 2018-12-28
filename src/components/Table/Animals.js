@@ -3,8 +3,6 @@ import "./Table.scss";
 import { getAnimals } from "./services/animalService";
 import Like from "./common/Like";
 import Pagination from "./common/Pagination";
-import Lion from "../../img/lion-small.jpeg";
-import Zebra from "../../img/zebra-small.jpeg";
 
 class Animals extends Component {
   state = {
@@ -97,7 +95,11 @@ class Animals extends Component {
             {animals.map(animal =>
               <tr key={animal._id}>
                 <td>
-                  <img src={Lion} alt="" />
+                  {/*  <img src={Lion} alt="" /> */}
+                  <img
+                    src={require(`../../img/${animal.image}.jpg`)}
+                    alt={animal.image}
+                  />
                 </td>
                 <td>
                   {animal.name}
