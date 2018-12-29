@@ -5,18 +5,20 @@ import HeaderText from "../HeaderText";
 import VideoSidebar from "../Video/VideoSidebar";
 import { getAnimals } from "./services/animalService";
 import { getSpecies } from "./services/speciesService";
-import Like from "./common/Like";
+import AnimalsTable from "./AnimalsTable";
 import Pagination from "./common/Pagination";
 import { paginate } from "./utilities/paginate";
 import ListGroup from "./common/ListGroup";
+import _ from "lodash";
 
 class Animals extends Component {
   state = {
     animals: [],
+    species: [],
+    // selectedSpecies: null,
     pageSize: 4,
     currentPage: 1,
-    species: [],
-    selectedSpecies: null
+    sortColumn: { path: "name", order: "asc" }
   };
 
   //normally calling backend service, the ajax calls would be here
@@ -69,7 +71,25 @@ class Animals extends Component {
     console.log("species", species);
     //putting selectedSpecies in the state and setting it to the current species
     this.setState({
-      selectedSpecies: species
+      selectedSpecies: species,
+      currentPage: 1 //for alqays begin at 1
+    });
+  };
+
+  handleSort = path => {
+    console.log("path", path);
+    //clone the state prop
+    const sortColumn = { ...this.state.sortColumn };
+    //if path is the same
+    if (sortColumn.path === path) {
+      //condition stored in variable
+      sortColumn.order = sortColumn.order === "asc" ? "desc" : "asc";
+    } else {
+      sortColumn.path = path;
+      sortColumn.order = "asc";
+    }
+    this.setState({
+      sortColumn
     });
   };
 
@@ -84,8 +104,31 @@ class Animals extends Component {
 
     //console.log("selectedSpecies", this.state.selectedSpecies);
 
-    const { animals, pageSize, currentPage, species, selectedSpecies } = this.state;
-    const animalsPaginated = paginate(animals, currentPage, pageSize);
+    const {
+      animals,
+      pageSize,
+      currentPage,
+      species,
+      selectedSpecies,
+      sortColumn
+    } = this.state;
+    //1. filtering - if there is a selected species
+    //the species of each animal= the selected species
+    //otherwise return all animals
+    const filteredAnimals =
+      selectedSpecies && selectedSpecies._id
+        ? animals.filter(a => a.species._id === selectedSpecies._id)
+        : animals;
+
+    //2. sorting
+    const sortedAnimals = _.orderBy(
+      filteredAnimals,
+      [sortColumn.path],
+      [sortColumn.order]
+    );
+
+    //3. pagination
+    const animalsPaginated = paginate(sortedAnimals, currentPage, pageSize);
 
     let textmessage;
     animals === 0 ? (textmessage = <p>There are no animals left</p>) : (textmessage = "");
@@ -109,61 +152,15 @@ class Animals extends Component {
               <div className="col-8">
                 <div className="tableAnimals">
                   {textmessage}
-                  <table id="animalTable" className="table">
-                    <thead>
-                      <tr>
-                        <th />
-                        <th>Name</th>
-                        <th>Species</th>
-                        <th>Shoesize</th>
-                        <th>Hairdo</th>
-                        <th />
-                        <th />
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {animalsPaginated.map(animal =>
-                        <tr key={animal._id}>
-                          <td>
-                            {/*  <img src={Lion} alt="" /> */}
-                            <img
-                              src={require(`../../img/${animal.image}.jpg`)}
-                              alt={animal.image}
-                            />
-                          </td>
-                          <td>
-                            {animal.name}
-                          </td>
-                          <td>
-                            {animal.species.name}
-                          </td>
-                          <td>
-                            {animal.shoesize}
-                          </td>
-                          <td>
-                            {animal.hairdo}
-                          </td>
-                          <td>
-                            <Like
-                              /* liked={true} */
-                              liked={animal.liked}
-                              onLikeToggle={() => this.handleLike(animal)}
-                            />
-                          </td>
-                          <td>
-                            <button
-                              onClick={() => this.handleDelete(animal)}
-                              className="btn btn-danger btn-sm"
-                            >
-                              Delete
-                            </button>
-                          </td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </table>
+
+                  <AnimalsTable
+                    animals={animalsPaginated}
+                    onLike={this.handleLike}
+                    onDelete={this.handleDelete}
+                    onSort={this.handleSort}
+                  />
                   <Pagination
-                    itemsTotal={animals.length}
+                    itemsTotal={filteredAnimals.length}
                     pageSize={pageSize}
                     onPageChange={this.handlePageChange}
                     currentPage={currentPage}
