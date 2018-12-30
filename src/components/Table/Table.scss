@@ -19,16 +19,22 @@
       width: 20%;
 
       .nav-link {
+        cursor: pointer;
         border: 1px solid #ddd;
         //border-radius: 0.25rem;
         height: 100%;
         @media all and (max-width: $sm-max) {
           font-size: 0.85em;
         }
+        &:hover {
+        }
       }
 
       .nav-link.active {
         border: 1px solid #007bff;
+        &:hover {
+          color: #fff;
+        }
       }
     }
   }
