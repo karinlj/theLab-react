@@ -6,19 +6,6 @@ const ListGroup = props => {
   const { items, onItemSelect, textProp, valueProp, selectedItem } = props;
 
   return (
-    /*   <ul className="list-group">
-      {items.map(item =>
-        <li
-          key={item[valueProp]}
-          //how to make first default item blue??
-          className={item == selectedItem ? "list-group-item active" : "list-group-item"}
-          onClick={() => onItemSelect(item)}
-        >
-          {item[textProp]}
-        </li>
-      )}
-    </ul> */
-
     <ul className="nav nav-pills nav-fill">
       {items.map(item =>
         <li
@@ -42,29 +29,3 @@ ListGroup.defaultProps = {
   valueProp: "_id" //= item._id
 };
 export default ListGroup;
-
-{
-  /* <ul class="nav nav-tabs">
-<li class="nav-item">
-  <a class="nav-link active" href="#">Active</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="#">Link</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="#">Link</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-</li>
-</ul> */
-}
-{
-  /*   <li className="list-group-item active" onClick={onItemSelect}>
-        All species
-      </li>
-      <li className="list-group-item" onClick={onItemSelect}>
-        Elephants
-      </li>
-      */
-}

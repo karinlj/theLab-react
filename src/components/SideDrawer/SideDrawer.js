@@ -34,7 +34,7 @@ const SideDrawer = props => {
               </li>
 
               <li>
-                Handling lists and forms
+                Lists, tables and forms
                 <ul className="sub-list">
                   <li>
                     <NavLink to="/sortedList">
@@ -44,6 +44,11 @@ const SideDrawer = props => {
                   <li>
                     <NavLink to="/unsortedList">
                       <div onClick={props.clickLink}>Unsorted list</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/Tables">
+                      <div onClick={props.clickLink}>Tables</div>
                     </NavLink>
                   </li>
                   <li>
@@ -153,11 +158,6 @@ const SideDrawer = props => {
                   </li>
                 </ul>
               </li>
-              {/*      <li>
-                <NavLink to="/Animals">
-                  <div onClick={props.clickLink}>Animals</div>
-                </NavLink>
-              </li> */}
             </ul>
           </nav>
         </div>

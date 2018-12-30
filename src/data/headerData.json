@@ -18,10 +18,10 @@
     "sidebarHeading": "Why learn: Unsorted list?",
     "sidebarText": "One common problem in test automation is to be able to uniquely identify objects in lists. \n\n When identifying elements using CSS selectors, sometimes you'll need to make assumptions about the order of an item. In general, this is bad practice, as it makes the test sensitive to preconditions, something we want to avoid."
   },
-  "Animals": {
-    "heading": "Table",
+  "Tables": {
+    "heading": "Tables",
     "text": "Nulla fringilla mi non mollis placerat. Aliquam non auctor libero, vel aliquet tortor. Integer ut suscipit tellus. Pellentesque eu mollis nunc.",
-    "sidebarHeading": "Why learn: Table?",
+    "sidebarHeading": "Why learn: Tables?",
     "sidebarText": "Nulla fringilla mi non mollis placerat. Aliquam non auctor libero, vel aliquet tortor. Integer ut suscipit tellus. Pellentesque eu mollis nunc."
   },
   "TestChecklist": {

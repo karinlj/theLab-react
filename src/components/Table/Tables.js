@@ -11,7 +11,7 @@ import { paginate } from "./utilities/paginate";
 import ListGroup from "./common/ListGroup";
 import _ from "lodash";
 
-class Animals extends Component {
+class Tables extends Component {
   state = {
     animals: [],
     species: [],
@@ -33,7 +33,7 @@ class Animals extends Component {
   }
 
   handleDelete = animal => {
-    console.log("animal", animal);
+    // console.log("animal", animal);
     //new array that contains all the objects except the one we are deleting
     //keeping the all items that fulfill the condition
     const animals = this.state.animals.filter(a => a._id !== animal._id);
@@ -63,12 +63,12 @@ class Animals extends Component {
 
   handlePageChange = page => {
     //recieves the new page nr
-    console.log("page changed", page);
+    //  console.log("page changed", page);
     this.setState({ currentPage: page });
   };
 
   handleSpeciesSelect = species => {
-    console.log("species", species);
+    // console.log("species", species);
     //putting selectedSpecies in the state and setting it to the current species
     this.setState({
       selectedSpecies: species,
@@ -168,7 +168,7 @@ class Animals extends Component {
               </div>
               <div className="col-12 col-md-6">
                 <VideoSidebar
-                  src="https://www.youtube.com/embed/R0I0Lw3KsO0"
+                  src="https://www.youtube.com/embed/YcCw6cS7Uy0"
                   height="230"
                   width="100%"
                   title="getting-started"
@@ -181,4 +181,4 @@ class Animals extends Component {
     );
   }
 }
-export default Animals;
+export default Tables;

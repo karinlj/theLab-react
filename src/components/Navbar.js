@@ -30,13 +30,16 @@ const Navbar = props =>
               </li>
 
               <li>
-                Handling lists and forms
+                Lists, tables and forms
                 <ul className="sub-list">
                   <li>
                     <NavLink to="/sortedList">Sorted list</NavLink>
                   </li>
                   <li>
                     <NavLink to="/unsortedList">Unsorted list</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/Tables">Tables</NavLink>
                   </li>
                   <li>
                     <NavLink to="/formValidation">Form validation</NavLink>
@@ -118,9 +121,6 @@ const Navbar = props =>
                     <NavLink to="/ciIntegration">CI integration</NavLink>
                   </li>
                 </ul>
-              </li>
-              <li>
-                <NavLink to="/Animals">Animals</NavLink>
               </li>
             </ul>
           </div>
