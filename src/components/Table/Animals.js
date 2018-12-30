@@ -15,7 +15,7 @@ class Animals extends Component {
   state = {
     animals: [],
     species: [],
-    // selectedSpecies: null,
+    // selectedSpecies: "",
     pageSize: 4,
     currentPage: 1,
     sortColumn: { path: "name", order: "asc" }
@@ -72,22 +72,11 @@ class Animals extends Component {
     //putting selectedSpecies in the state and setting it to the current species
     this.setState({
       selectedSpecies: species,
-      currentPage: 1 //for alqays begin at 1
+      currentPage: 1 //for always begin at 1
     });
   };
 
-  handleSort = path => {
-    console.log("path", path);
-    //clone the state prop
-    const sortColumn = { ...this.state.sortColumn };
-    //if path is the same
-    if (sortColumn.path === path) {
-      //condition stored in variable
-      sortColumn.order = sortColumn.order === "asc" ? "desc" : "asc";
-    } else {
-      sortColumn.path = path;
-      sortColumn.order = "asc";
-    }
+  handleSort = sortColumn => {
     this.setState({
       sortColumn
     });
@@ -112,6 +101,7 @@ class Animals extends Component {
       selectedSpecies,
       sortColumn
     } = this.state;
+
     //1. filtering - if there is a selected species
     //the species of each animal= the selected species
     //otherwise return all animals
@@ -140,16 +130,18 @@ class Animals extends Component {
               <HeaderText componentName={this.constructor.name} />
             </header>
 
-            <div className="row justify-content-between">
-              <div className="col-3">
+            <div className="row">
+              <div className="col-12">
                 <ListGroup
                   items={species}
                   selectedItem={selectedSpecies}
                   onItemSelect={this.handleSpeciesSelect}
                 />
               </div>
+            </div>
 
-              <div className="col-8">
+            <div className="row justify-content-between">
+              <div className="col-12">
                 <div className="tableAnimals">
                   {textmessage}
 
@@ -158,6 +150,7 @@ class Animals extends Component {
                     onLike={this.handleLike}
                     onDelete={this.handleDelete}
                     onSort={this.handleSort}
+                    sortColumn={sortColumn}
                   />
                   <Pagination
                     itemsTotal={filteredAnimals.length}

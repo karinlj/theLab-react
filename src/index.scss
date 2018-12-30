@@ -148,117 +148,119 @@ h5 {
 }
 
 //nav
-.nav {
-  width: 100%;
-  display: flex;
-  padding: 2rem calc(1.5rem - 15px);
-
-  @media all and (min-width: $sm-min) {
-    padding: 2rem calc(2.25rem - 15px);
-  }
-  @media all and (min-width: $md-min) {
-    padding: 2rem calc(3rem - 15px);
-  }
-
-  .col {
+.navigation {
+  .nav {
+    width: 100%;
     display: flex;
-    align-items: center;
-  }
+    padding: 2rem calc(1.5rem - 15px);
 
-  ul.links {
-    display: none;
-  }
-
-  h2 {
-    margin-bottom: 0;
-    margin-left: 1rem;
-    color: $themecolor;
-    font-size: 2.2rem;
-
-    a {
-      text-decoration: none;
-      color: $themecolor;
-
-      &:hover {
-        text-decoration: none;
-      }
+    @media all and (min-width: $sm-min) {
+      padding: 2rem calc(2.25rem - 15px);
     }
-  }
-
-  @media all and (min-width: $lg-min) {
-    padding: 2rem calc(1.75rem - 15px) 1rem calc(3.75rem - 15px);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 25%;
-    position: fixed;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    background: $themecolorDarkGrey;
+    @media all and (min-width: $md-min) {
+      padding: 2rem calc(3rem - 15px);
+    }
 
     .col {
-      display: block;
-    }
-
-    h2 {
-      margin-left: 0;
-      color: $themecolorBlue;
-      font-size: 2.2rem;
-      padding-bottom: 0.2rem;
-
-      a {
-        color: $themecolorBlue;
-      }
+      display: flex;
+      align-items: center;
     }
 
     ul.links {
-      display: block;
-      margin-top: 0;
+      display: none;
+    }
 
-      li {
+    h2 {
+      margin-bottom: 0;
+      margin-left: 1rem;
+      color: $themecolor;
+      font-size: 2.2rem;
+
+      a {
+        text-decoration: none;
+        color: $themecolor;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    @media all and (min-width: $lg-min) {
+      padding: 2rem calc(1.75rem - 15px) 1rem calc(3.75rem - 15px);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 25%;
+      position: fixed;
+      height: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background: $themecolorDarkGrey;
+
+      .col {
         display: block;
-        font-size: 0.9rem;
-        margin: 5px 0;
-        color: #fff;
-        font-weight: 300;
+      }
+
+      h2 {
+        margin-left: 0;
+        color: $themecolorBlue;
+        font-size: 2.2rem;
+        padding-bottom: 0.2rem;
 
         a {
-          color: #fff;
-
-          &:hover {
-            text-decoration: none;
-            color: #75bff0;
-          }
+          color: $themecolorBlue;
         }
+      }
 
-        ul.sub-list {
-          li {
-            font-size: 0.86rem;
-            margin: 1px 14px;
+      ul.links {
+        display: block;
+        margin-top: 0;
 
-            a {
-              color: #979eb4;
-              font-weight: 300;
+        li {
+          display: block;
+          font-size: 0.9rem;
+          margin: 5px 0;
+          color: #fff;
+          font-weight: 300;
 
-              &:hover {
-                text-decoration: none;
-                color: #75bff0;
-              }
+          a {
+            color: #fff;
 
-              &:active {
-                //when click
-                color: #75bff0;
+            &:hover {
+              text-decoration: none;
+              color: #75bff0;
+            }
+          }
+
+          ul.sub-list {
+            li {
+              font-size: 0.86rem;
+              margin: 1px 14px;
+
+              a {
+                color: #979eb4;
+                font-weight: 300;
+
+                &:hover {
+                  text-decoration: none;
+                  color: #75bff0;
+                }
+
+                &:active {
+                  //when click
+                  color: #75bff0;
+                }
               }
             }
           }
         }
       }
     }
-  }
-  @media all and (min-width: $xl-min) {
-    width: 20%;
-    padding: 2rem calc(1.75rem - 15px) 2rem calc(3.75rem - 15px);
+    @media all and (min-width: $xl-min) {
+      width: 20%;
+      padding: 2rem calc(1.75rem - 15px) 2rem calc(3.75rem - 15px);
+    }
   }
 }
 

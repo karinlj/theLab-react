@@ -7,6 +7,31 @@
       color: #fff;
     }
   }
+  .nav.nav-pills {
+    background: #fff;
+    margin: 3rem 0;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+    .nav-item {
+      width: 20%;
+
+      .nav-link {
+        border: 1px solid #ddd;
+        //border-radius: 0.25rem;
+        height: 100%;
+        @media all and (max-width: $sm-max) {
+          font-size: 0.85em;
+        }
+      }
+
+      .nav-link.active {
+        border: 1px solid #007bff;
+      }
+    }
+  }
 
   #animalTable {
     tr {
@@ -14,12 +39,17 @@
     }
     th {
       color: #fff;
+      cursor: pointer;
       //text-transform: uppercase;
       border-top: none;
       border-bottom: 1px solid #ddd;
       font-size: 0.95em;
       @media all and (max-width: $sm-max) {
-        font-size: 0.8em;
+        font-size: 0.85em;
+      }
+      .fa {
+        margin-left: 0.3rem;
+        display: inline;
       }
     }
     td {
@@ -27,7 +57,22 @@
       border-top: 1px solid #ddd;
       font-size: 0.95em;
       @media all and (max-width: $sm-max) {
-        font-size: 0.8em;
+        font-size: 0.85em;
+        .fa.fa-heart {
+          @media all and (max-width: $xs-max) {
+            display: none;
+          }
+        }
+        .fa.fa-heart-o {
+          @media all and (max-width: $xs-max) {
+            display: none;
+          }
+        }
+        .btn {
+          @media all and (max-width: $xs-max) {
+            display: none;
+          }
+        }
       }
     }
     button {
@@ -42,6 +87,9 @@
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
       -o-border-radius: 50%;
+      @media all and (max-width: $xs-max) {
+        display: none;
+      }
     }
 
     .pagination {
