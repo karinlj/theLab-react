@@ -1,43 +1,31 @@
 @import '../../variables.scss';
 
-
-.timer-wrapper {
-    width: 250px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .digits {
-        font-size: 3rem;
-    }
-}
-
 .start-btn {
-    background: $themecolorGreen;
-    margin-right: 1rem;
-    display: block;
-    width: 126px;
-    margin-top: 1rem;
+  background: $themecolorGreen;
+  margin-right: 1rem;
+  display: block;
+  width: 126px;
+  margin-top: 1rem;
 }
 
 .stop-btn {
-    background: $themecolorRed;
-    margin-right: 1rem;
-    display: block;
-    width: 126px;
-    margin-top: 1rem;
-    opacity: 0;
-    //display: none;
-    //transition: 1s;
+  background: $themecolorRed;
+  margin-right: 1rem;
+  display: block;
+  width: 126px;
+  margin-top: 1rem;
+  opacity: 0;
+  //display: none;
+  //transition: 1s;
 }
 
 .stop-btn.show {
-    opacity: 1;
-    //display: block;
+  opacity: 1;
+  //display: block;
 }
 
 .message-overflow {
-    color: #fff;
-    font-weight: 300;
-    font-size: 1.3em;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.3em;
 }

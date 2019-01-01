@@ -8,14 +8,9 @@ const ListGroup = props => {
   return (
     <ul className="nav nav-pills nav-fill">
       {items.map(item =>
-        <li
-          key={item[valueProp]}
-          //how to make first default item blue??
-          className="nav-item"
-          onClick={() => onItemSelect(item)}
-        >
-          <a className={item == selectedItem ? "nav-link active" : "nav-link"}>
-            {/*   {item.name}   using default props instead for reusability*/}
+        <li key={item[valueProp]} className="nav-item" onClick={() => onItemSelect(item)}>
+          <a className={item === selectedItem ? "nav-link active" : "nav-link"}>
+            {/* using default props instead for reusability*/}
             {item[textProp]}
           </a>
         </li>

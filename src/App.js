@@ -10,7 +10,6 @@ import RunningCli from "./components/textComponents/RunningCli";
 import CiIntegration from "./components/textComponents/CiIntegration";
 import SortedList from "./components/Lists/SortedList";
 import UnsortedList from "./components/Lists/UnsortedList";
-import Post from "./components/Blog/Post";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop";
 import FormValidation from "./components/Form/FormValidation";
@@ -25,9 +24,6 @@ import RoleBasedLogin from "./components/Form/RoleBasedLogin";
 import RandomLogin from "./components/Form/RandomLogin";
 import VisualBugs from "./components/VisualBugs/VisualBugs";
 import Tables from "./components/Table/Tables";
-
-import Timer from "./components/Timing/Timer";
-import Blog from "./components/Blog/Blog";
 
 class App extends Component {
   state = {
@@ -91,10 +87,8 @@ class App extends Component {
                 <Route path="/Scramble" component={Scramble} />
                 <Route path="/multiScramble" component={MultiScramble} />
                 <Route path="/visualBugs" component={VisualBugs} />
-                <Route path="/Blog" component={Blog} />
-                <Route path="/timer" component={Timer} />
                 <Route path="/tables" component={Tables} />
-                <Route path="/:post_id" component={Post} />
+                {/*   <Route path="/:post_id" component={Post} /> */}
               </Switch>
             </div>
           </div>

@@ -15,7 +15,7 @@ class Tables extends Component {
   state = {
     animals: [],
     species: [],
-    // selectedSpecies: "",
+
     pageSize: 4,
     currentPage: 1,
     sortColumn: { path: "name", order: "asc" }
@@ -28,7 +28,8 @@ class Tables extends Component {
     const species = [{ _id: "", name: "All species" }, ...getSpecies()];
     this.setState({
       animals: getAnimals(),
-      species
+      species,
+      selectedSpeciesItem: species[0] //for first selecting(color:blue) All species
     });
   }
 
@@ -67,11 +68,11 @@ class Tables extends Component {
     this.setState({ currentPage: page });
   };
 
-  handleSpeciesSelect = species => {
+  handleSpeciesSelect = speciesItem => {
     // console.log("species", species);
     //putting selectedSpecies in the state and setting it to the current species
     this.setState({
-      selectedSpecies: species,
+      selectedSpeciesItem: speciesItem,
       currentPage: 1 //for always begin at 1
     });
   };
@@ -98,7 +99,7 @@ class Tables extends Component {
       pageSize,
       currentPage,
       species,
-      selectedSpecies,
+      selectedSpeciesItem,
       sortColumn
     } = this.state;
 
@@ -106,8 +107,8 @@ class Tables extends Component {
     //the species of each animal= the selected species
     //otherwise return all animals
     const filteredAnimals =
-      selectedSpecies && selectedSpecies._id
-        ? animals.filter(a => a.species._id === selectedSpecies._id)
+      selectedSpeciesItem && selectedSpeciesItem._id
+        ? animals.filter(a => a.species._id === selectedSpeciesItem._id)
         : animals;
 
     //2. sorting
@@ -134,7 +135,7 @@ class Tables extends Component {
               <div className="col-12">
                 <ListGroup
                   items={species}
-                  selectedItem={selectedSpecies}
+                  selectedItem={selectedSpeciesItem}
                   onItemSelect={this.handleSpeciesSelect}
                 />
               </div>
