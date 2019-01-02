@@ -3,6 +3,7 @@ import Sidebar from "../Sidebar";
 import MainBtn from "../MainBtn";
 import HeaderText from "../HeaderText";
 import VideoSidebar from "../Video/VideoSidebar";
+import "./Timing.scss";
 
 class Wait extends Component {
   //class based

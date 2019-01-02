@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Todos from "./Todos";
-import AddTodo from "./AddTodo";
+import Items from "./Items";
+import AddItem from "./AddItem";
 import Sidebar from "../Sidebar";
 import "./Lists.scss";
 import HeaderText from "../HeaderText";
@@ -8,37 +8,46 @@ import VideoSidebar from "../Video/VideoSidebar";
 
 class SortedList extends Component {
   state = {
-    todos: [{ id: 1, content: "Buy some milk" }, { id: 2, content: "Cuddle with cats" }]
+    todos: [{ id: 1, content: "Buy some milk" }, { id: 2, content: "Cuddle with cats" }],
+    newContent: ""
   };
-  deleteTodo = id => {
-    //func has to be here to interact with the state
-    //getting ID from todos.js, putting it in as argument
-    //console.log(id);
 
-    //new array in variable and that filters out todo
-    const todosNew = this.state.todos.filter(todo => {
-      return todo.id !== id;
-      //satisfying the return statement = returning true
-      //that is if the id:s are not the same - keeping the item
-    });
+  handleChange = e => {
+    //value= what user types in
     this.setState({
-      todos: todosNew
+      newContent: e.target.value
     });
   };
 
-  //func has to be here to interact with the state
-  addTodo = todo => {
-    //pass in state from AddTodo  (content)!!!!
+  handleSubmit = e => {
+    e.preventDefault();
+    const { newContent } = this.state;
 
-    //generate random id for todo
-    todo.id = Math.random();
-    //new array with spread op, passing in the old one, and ADDING one item
-    let todosNew = [...this.state.todos, todo]; //lägga till
+    if (newContent) {
+      // console.log("state.newContent", newContent)
+      let tmpItem = { id: Math.random(), content: newContent };
+
+      //new array with spread op, passing in the old one, and adding one item
+      let todos = [...this.state.todos, tmpItem];
+      this.setState({
+        todos,
+        newContent: ""
+      });
+    }
+  };
+
+  handleDelete = id => {
+    //  console.log("delete todo", id);
+    //new array - keeping the all items that fulfill the condition
+    const todos = this.state.todos.filter(t => t.id !== id);
     this.setState({
-      todos: todosNew //key and new value
+      todos
     });
   };
+
   render() {
+    const { todos, newContent } = this.state;
+
     return (
       <div className="row justify-content-between">
         <div className="col-12 col-md-6">
@@ -46,12 +55,13 @@ class SortedList extends Component {
             <header>
               <HeaderText componentName={this.constructor.name} />
             </header>
-            {/* sending delete-func */}
-            {/* sending the state of this comp. to Todos!!!!!!!! */}
-            <Todos todosProp={this.state.todos} deleteTodoProp={this.deleteTodo} />
+            <Items items={todos} onDelete={this.handleDelete} />
 
-            {/* sending add-func to AddTodo*/}
-            <AddTodo addTodoProp={this.addTodo} />
+            <AddItem
+              inputContent={newContent}
+              onInputChange={this.handleChange}
+              onFormSubmit={this.handleSubmit}
+            />
           </div>
         </div>
 
@@ -74,5 +84,4 @@ class SortedList extends Component {
     );
   }
 }
-
 export default SortedList;

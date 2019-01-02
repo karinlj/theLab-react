@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Sidebar from "../Sidebar";
 import MainBtn from "../MainBtn";
 import HeaderText from "../HeaderText";
+import "./Timing.scss";
 
 class Speed extends Component {
   //class based

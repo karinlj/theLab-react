@@ -1,7 +1,7 @@
-import SortedList from "./SortedList";
 import React from "react";
-import Todos from "./Todos";
-import AddTodo from "./AddTodo";
+import SortedList from "./SortedList";
+import Items from "./Items";
+import AddItem from "./AddItem";
 import Sidebar from "../Sidebar";
 import "./Lists.scss";
 import HeaderText from "../HeaderText";
@@ -10,7 +10,7 @@ import VideoSidebar from "../Video/VideoSidebar";
 class UnsortedList extends SortedList {
   addTodo = todo => {
     todo.id = Math.random();
-    //new array with spread op, passing in the old one
+    //new array with spread op
     let todosNew = [...this.state.todos];
 
     let randomIndex = Math.floor(Math.random() * todosNew.length);
@@ -21,7 +21,34 @@ class UnsortedList extends SortedList {
       todos: todosNew
     });
   };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const { newContent } = this.state;
+    //temporary new object
+    let tmpItem = { id: Math.random(), content: newContent };
+
+    //new array with spread op
+    let todos = [...this.state.todos];
+
+    if (newContent) {
+      // console.log("state.newContent", newContent)
+
+      let randomIndex = Math.floor(Math.random() * todos.length);
+      //console.log("randomIndex", randomIndex);
+      //add todo at random index
+      todos.splice(randomIndex, 0, tmpItem);
+
+      this.setState({
+        todos,
+        newContent: ""
+      });
+    }
+  };
+
   render() {
+    const { todos, newContent } = this.state;
+
     return (
       <div className="row justify-content-between">
         <div className="col-12 col-md-6">
@@ -29,12 +56,13 @@ class UnsortedList extends SortedList {
             <header>
               <HeaderText componentName={this.constructor.name} />
             </header>
-            {/* sending delete-func */}
-            {/* sending the state of this comp. to Todos!!!!!!!! */}
-            <Todos todosProp={this.state.todos} deleteTodoProp={this.deleteTodo} />
+            <Items items={todos} onDelete={this.handleDelete} />
 
-            {/* sending add-func to AddTodo*/}
-            <AddTodo addTodoProp={this.addTodo} />
+            <AddItem
+              inputContent={newContent}
+              onInputChange={this.handleChange}
+              onFormSubmit={this.handleSubmit}
+            />
           </div>
         </div>
 
