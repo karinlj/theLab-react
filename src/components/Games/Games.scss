@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.game-section {
+  .game-square {
+    background: #fff;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    .item {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      position: absolute;
+      color: red;
+    }
+  }
+}

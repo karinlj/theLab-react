@@ -158,6 +158,11 @@ const SideDrawer = props => {
                   </li>
                 </ul>
               </li>
+              <li>
+                <NavLink to="/kittenGame">
+                  <div onClick={props.clickLink}>KittenGame</div>
+                </NavLink>
+              </li>
             </ul>
           </nav>
         </div>

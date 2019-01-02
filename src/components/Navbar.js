@@ -122,6 +122,9 @@ const Navbar = props =>
                   </li>
                 </ul>
               </li>
+              <li>
+                <NavLink to="/kittenGame">KittenGame</NavLink>
+              </li>
             </ul>
           </div>
         </div>
