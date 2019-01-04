@@ -4,6 +4,7 @@ import HeaderText from "../HeaderText";
 import "./Games.scss";
 import MainBtn from "../MainBtn";
 import CatIcon from "../../img/kitten-icon.png";
+import Hedgehog from "../../img/hedgehog-icon.png";
 
 import VideoSidebar from "../Video/VideoSidebar";
 
@@ -13,7 +14,9 @@ class KittenGame extends Component {
     time: 0,
     interval: 0,
     kittens: [],
-    points: 0
+    hedgehogs: [],
+    points: 0,
+    errorMessage: ""
   };
 
   handleStart = () => {
@@ -39,6 +42,9 @@ class KittenGame extends Component {
     //draw kitten every 5% of the time
     if (Math.random() < 0.05) this.drawKitten();
 
+    //draw hedgehog every 1% of the time
+    if (Math.random() < 0.01) this.drawHedgehog();
+
     if (time > finishTime) {
       clearInterval(interval);
 
@@ -49,13 +55,22 @@ class KittenGame extends Component {
     }
   };
 
-  drawKitten = () => {
+  randomPos = () => {
     const height = "400";
     const width = "600";
 
     let randHeight = Math.floor(Math.random() * (height - 48)) + "px";
     let randWidth = Math.floor(Math.random() * (width - 48)) + "px";
-    const catIcon = <img src={CatIcon} alt="cat icon" />;
+
+    return [randHeight, randWidth];
+  };
+
+  drawKitten = () => {
+    let randPos = this.randomPos();
+    let randHeight = randPos[0];
+    let randWidth = randPos[1];
+
+    const catIcon = <img src={CatIcon} alt="cat" />;
 
     let tmpKitten = { id: Math.random(), randHeight, randWidth, catIcon };
 
@@ -64,11 +79,25 @@ class KittenGame extends Component {
     this.setState({
       kittens
     });
-
-    console.log("drawKitten", kittens);
-
     //hide kitten after 1s
     setTimeout(() => this.hideKitten(tmpKitten.id), 1000);
+  };
+
+  drawHedgehog = () => {
+    let randPos = this.randomPos();
+    let randHeight = randPos[0];
+    let randWidth = randPos[1];
+
+    const hedgehogIcon = <img src={Hedgehog} alt="hedgehog" />;
+
+    let tmpHedgehog = { id: Math.random(), randHeight, randWidth, hedgehogIcon };
+
+    let hedgehogs = [...this.state.hedgehogs, tmpHedgehog]; //new array, adding object to array
+
+    this.setState({
+      hedgehogs
+    });
+    setTimeout(() => this.hideHedgehog(tmpHedgehog.id), 1000);
   };
 
   hideKitten = id => {
@@ -76,8 +105,12 @@ class KittenGame extends Component {
     this.setState({
       kittens
     });
-
-    console.log("hideKitten", kittens);
+  };
+  hideHedgehog = id => {
+    const hedgehogs = this.state.hedgehogs.filter(h => h.id !== id);
+    this.setState({
+      hedgehogs
+    });
   };
 
   kittenClick = id => {
@@ -87,6 +120,14 @@ class KittenGame extends Component {
     });
   };
 
+  hedgehogClick = id => {
+    // alert("dead");
+    clearInterval(this.state.interval);
+    this.setState({
+      isRunning: false,
+      time: 0
+    });
+  };
   render() {
     const { time, points } = this.state;
 
@@ -110,6 +151,17 @@ class KittenGame extends Component {
                       onClick={() => this.kittenClick(kitten.id)}
                     >
                       {kitten.catIcon}
+                    </h2>
+                  )}
+
+                  {this.state.hedgehogs.map(hedgehog =>
+                    <h2
+                      key={hedgehog.id}
+                      className="kitten"
+                      style={{ top: hedgehog.randHeight, left: hedgehog.randWidth }}
+                      onClick={() => this.hedgehogClick(hedgehog.id)}
+                    >
+                      {hedgehog.hedgehogIcon}
                     </h2>
                   )}
                 </div>
