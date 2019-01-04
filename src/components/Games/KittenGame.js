@@ -22,10 +22,7 @@ hideTime should be a couple of seconds after appearTime. */
     isRunning: false,
     time: 0,
     interval: 0,
-    kittens: [
-      { id: 1, randHeight: "20px", randWidth: "20px" },
-      { id: 2, randHeight: "40px", randWidth: "40px" }
-    ]
+    kittens: []
   };
 
   handleStart = () => {
@@ -42,7 +39,6 @@ hideTime should be a couple of seconds after appearTime. */
   tick = () => {
     const { interval, time } = this.state;
     let finishTime = 100; //should be 60s*10
-    // let finish = 5; //should be 60s
 
     this.setState({
       time: time + 1
@@ -63,7 +59,13 @@ hideTime should be a couple of seconds after appearTime. */
 
   //hide kitten after 1s
   drawKitten = () => {
-    let tmpKitten = { id: Math.random() };
+    const height = "380";
+    const width = "480";
+
+    let randHeight = Math.floor(Math.random() * height) + "px";
+    let randWidth = Math.floor(Math.random() * width) + "px";
+
+    let tmpKitten = { id: Math.random(), randHeight, randWidth };
 
     let kittens = [...this.state.kittens, tmpKitten];
 
@@ -85,23 +87,8 @@ hideTime should be a couple of seconds after appearTime. */
     console.log("hideKitten", kittens);
   };
 
-  randomPos = () => {
-    const height = "380";
-    const width = "480";
-
-    let randHeight = Math.floor(Math.random() * height) + "px";
-    let randWidth = Math.floor(Math.random() * width) + "px";
-
-    this.setState({
-      randHeight,
-      randWidth
-    });
-  };
-
   render() {
-    const { randHeight, randWidth, time } = this.state;
-    //  console.log("randHeight", randHeight);
-    //  console.log("randWidth", randWidth);
+    const { time } = this.state;
 
     // style={{ cursor: "pointer" }}
     return (
@@ -116,14 +103,15 @@ hideTime should be a couple of seconds after appearTime. */
               <div className="col-12 col-md-10 col-xl-7">
                 <div className="game-square">
                   {this.state.kittens.map(kitten =>
-                    <span className="item" style={{ top: randHeight, left: randWidth }}>
+                    <span
+                      key={kitten.id}
+                      className="item"
+                      style={{ top: kitten.randHeight, left: kitten.randWidth }}
+                    >
                       {kitten.id}
                     </span>
                   )}{" "}
                   *
-                  {/*  <span className="item" style={{ top: randHeight, left: randWidth }}>
-                    x
-                  </span> */}
                 </div>
               </div>
 
@@ -131,7 +119,6 @@ hideTime should be a couple of seconds after appearTime. */
                 <div className="counter">
                   <h2>
                     {Math.floor(time / 10)}
-                    {/*  {time} */}
                   </h2>
                 </div>
 
