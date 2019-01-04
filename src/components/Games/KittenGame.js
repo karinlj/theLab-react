@@ -110,8 +110,7 @@ hideTime should be a couple of seconds after appearTime. */
                     >
                       {kitten.id}
                     </span>
-                  )}{" "}
-                  *
+                  )}
                 </div>
               </div>
 
@@ -124,9 +123,6 @@ hideTime should be a couple of seconds after appearTime. */
 
                 <MainBtn classProp="button start-btn" clickProp={this.handleStart}>
                   Start game
-                </MainBtn>
-                <MainBtn classProp="button start-btn" clickProp={this.randomPos}>
-                  New pos
                 </MainBtn>
               </div>
             </div>
