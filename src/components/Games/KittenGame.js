@@ -46,7 +46,7 @@ hideTime should be a couple of seconds after appearTime. */
       time: time + 1
     });
 
-    if (Math.random() < 0.05) this.randomPos();
+    if (Math.random() < 0.05) this.drawKitten();
 
     if (time > finishTime) {
       clearInterval(interval);
@@ -60,7 +60,7 @@ hideTime should be a couple of seconds after appearTime. */
 
   drawKitten = () => {
     console.log("drawKitten");
-    let interval = setTimeout(() => this.hideKitten(), 1000);
+    setTimeout(() => this.hideKitten(), 10000);
   };
 
   hideKitten = () => {
@@ -83,8 +83,8 @@ hideTime should be a couple of seconds after appearTime. */
 
   render() {
     const { randHeight, randWidth, time } = this.state;
-    console.log("randHeight", randHeight);
-    console.log("randWidth", randWidth);
+    //  console.log("randHeight", randHeight);
+    //  console.log("randWidth", randWidth);
 
     // style={{ cursor: "pointer" }}
     return (
