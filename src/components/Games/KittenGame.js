@@ -8,17 +8,6 @@ import CatIcon from "../../img/kitten-icon.png";
 import VideoSidebar from "../Video/VideoSidebar";
 
 class KittenGame extends Component {
-  /* Time goes from 0 to 60 seconds.
-Kittens and hedgehogs appear at a random place in the grid for a limited time. 
-The key is to collect the kittens as fast as possible.
-One idea to implement it is to have appearTime and hideTime defined for all kittens and hedgehogs.
-
-Kittens = [{appearTime, hideTime}, {appearTime, hideTime}, ...]
-Kittens = [{23.1,24.2},{10.2,11.5},...]
-Hedgehogs = [{appearTime, hideTime}, {appearTime, hideTime}, ...]
-
-hideTime should be a couple of seconds after appearTime. */
-
   state = {
     isRunning: false,
     time: 0,
@@ -41,7 +30,7 @@ hideTime should be a couple of seconds after appearTime. */
 
   tick = () => {
     const { interval, time } = this.state;
-    let finishTime = 100; //should be 60s*10
+    let finishTime = 150; //should be 60s*10
 
     this.setState({
       time: time + 1
@@ -61,11 +50,11 @@ hideTime should be a couple of seconds after appearTime. */
   };
 
   drawKitten = () => {
-    const height = "380";
-    const width = "580";
+    const height = "400";
+    const width = "600";
 
-    let randHeight = Math.floor(Math.random() * height) + "px";
-    let randWidth = Math.floor(Math.random() * width) + "px";
+    let randHeight = Math.floor(Math.random() * (height - 48)) + "px";
+    let randWidth = Math.floor(Math.random() * (width - 48)) + "px";
     const catIcon = <img src={CatIcon} alt="cat icon" />;
 
     let tmpKitten = { id: Math.random(), randHeight, randWidth, catIcon };
