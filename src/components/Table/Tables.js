@@ -84,16 +84,6 @@ class Tables extends Component {
   };
 
   render() {
-    // console.log("animals", this.state.animals);
-    /* for each animal we render a row
-        store the animals in an array and map each element to a tr-element 
-        key attr to the element you are repeating 
-        argument to know what animal is being liked
-        animal.liked -  false/true
-         */
-
-    //console.log("selectedSpecies", this.state.selectedSpecies);
-
     const {
       animals,
       pageSize,
