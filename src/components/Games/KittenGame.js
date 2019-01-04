@@ -58,6 +58,16 @@ hideTime should be a couple of seconds after appearTime. */
     }
   };
 
+  drawKitten = () => {
+    console.log("drawKitten");
+    let interval = setTimeout(() => this.hideKitten(), 1000);
+  };
+
+  hideKitten = () => {
+    console.log("hideKitten");
+  };
+
+  hideKitten;
   randomPos = () => {
     const height = "380";
     const width = "480";
