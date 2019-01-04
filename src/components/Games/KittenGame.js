@@ -3,6 +3,7 @@ import Sidebar from "../Sidebar";
 import HeaderText from "../HeaderText";
 import "./Games.scss";
 import MainBtn from "../MainBtn";
+import CatIcon from "../../img/kitten-icon.png";
 
 import VideoSidebar from "../Video/VideoSidebar";
 
@@ -22,7 +23,8 @@ hideTime should be a couple of seconds after appearTime. */
     isRunning: false,
     time: 0,
     interval: 0,
-    kittens: []
+    kittens: [],
+    points: 0
   };
 
   handleStart = () => {
@@ -30,6 +32,7 @@ hideTime should be a couple of seconds after appearTime. */
       //call the tick func every 0.1s
       let interval = setInterval(() => this.tick(), 100);
       this.setState({
+        points: 0,
         interval,
         isRunning: true
       });
@@ -57,17 +60,17 @@ hideTime should be a couple of seconds after appearTime. */
     }
   };
 
-  //hide kitten after 1s
   drawKitten = () => {
     const height = "380";
-    const width = "480";
+    const width = "580";
 
     let randHeight = Math.floor(Math.random() * height) + "px";
     let randWidth = Math.floor(Math.random() * width) + "px";
+    const catIcon = <img src={CatIcon} alt="cat icon" />;
 
-    let tmpKitten = { id: Math.random(), randHeight, randWidth };
+    let tmpKitten = { id: Math.random(), randHeight, randWidth, catIcon };
 
-    let kittens = [...this.state.kittens, tmpKitten];
+    let kittens = [...this.state.kittens, tmpKitten]; //new array, adding object to array
 
     this.setState({
       kittens
@@ -75,7 +78,8 @@ hideTime should be a couple of seconds after appearTime. */
 
     console.log("drawKitten", kittens);
 
-    setTimeout(() => this.hideKitten(tmpKitten.id), 3000);
+    //hide kitten after 1s
+    setTimeout(() => this.hideKitten(tmpKitten.id), 1000);
   };
 
   hideKitten = id => {
@@ -88,13 +92,14 @@ hideTime should be a couple of seconds after appearTime. */
   };
 
   kittenClick = id => {
-    // alert("clicked", id);
-    //får poäng
     this.hideKitten(id);
+    this.setState({
+      points: this.state.points + 1
+    });
   };
 
   render() {
-    const { time } = this.state;
+    const { time, points } = this.state;
 
     // style={{ cursor: "pointer" }}
     return (
@@ -111,11 +116,11 @@ hideTime should be a couple of seconds after appearTime. */
                   {this.state.kittens.map(kitten =>
                     <h2
                       key={kitten.id}
-                      className="item"
+                      className="kitten"
                       style={{ top: kitten.randHeight, left: kitten.randWidth }}
                       onClick={() => this.kittenClick(kitten.id)}
                     >
-                      {kitten.id}
+                      {kitten.catIcon}
                     </h2>
                   )}
                 </div>
@@ -123,14 +128,22 @@ hideTime should be a couple of seconds after appearTime. */
 
               <div className="col-12 col-md-2 col-xl-5">
                 <div className="counter">
-                  <h2>
-                    {Math.floor(time / 10)}
-                  </h2>
+                  <h3>
+                    {" "}Time:
+                    <span>{Math.floor(time / 10)}</span>
+                  </h3>
                 </div>
 
                 <MainBtn classProp="button start-btn" clickProp={this.handleStart}>
                   Start game
                 </MainBtn>
+
+                <div className="points">
+                  <h3>
+                    Points:
+                    <span>{points}</span>
+                  </h3>
+                </div>
               </div>
             </div>
 

@@ -2,24 +2,31 @@
 
 .game-section {
   .game-square {
-    background: #fff;
-    width: 500px;
+    background: $themecolorLightgrey;
+    width: 600px;
     height: 400px;
     position: relative;
-    margin-bottom: 5rem;
-    .item {
-      margin: 0;
-      padding: 0;
-      font-size: 20px;
-      font-weight: 600;
+    margin-bottom: 8rem;
+    border-radius: 3px;
+    .kitten {
       cursor: pointer;
       position: absolute;
-      color: red;
+      padding: 3px;
     }
   }
-  .counter {
-    width: 126px;
-    text-align: center;
-    margin-bottom: 2rem;
+  .start-btn {
+    margin: 2rem 0;
+  }
+  .counter,
+  .points {
+    color: #fff;
+    span {
+      font-size: 2em;
+      padding-left: 0.5rem;
+      color: $themecolorPink;
+    }
+  }
+  .counter span {
+    color: #fff;
   }
 }

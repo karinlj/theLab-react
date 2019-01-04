@@ -3,12 +3,12 @@ $xs-max: 480px;
 $sm-min: 576px;
 
 $sm-max: 767.9px;
-$md-min:768px;
+$md-min: 768px;
 
-$md-max:991.9px;
-$lg-min:992px;
+$md-max: 991.9px;
+$lg-min: 992px;
 
-$lg-max:1199.9px;
+$lg-max: 1199.9px;
 $xl-min: 1200px;
 
 $xl-max: 1309px;
@@ -21,7 +21,7 @@ $themecolorOrange: #e6782e;
 $themecolorGreen: #18cd61;
 $themecolorPink: #e7329e; //#e62e9c;
 $themecolorYellow: #cdbb18;
-$themecolorRed:#e62e40; // rgba(255, 0, 0, 0.623);
+$themecolorRed: #e62e40; // rgba(255, 0, 0, 0.623);
 $themecolorLightgrey: #f9f9f9;
 $themecolorTurquoise: #15b7a6;
 $themecolorBlueDarkest: #2e40e6;
@@ -30,10 +30,6 @@ $themecolor: #333;
 
 $themeBorderRadius: 3px;
 
-$themeBoxShadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2),
-0 4px 20px 0 rgba(0, 0, 0, 0.19);
-
-//0 7px 34px 0 rgba(0, 0, 0, 0.07),
-//0 11px 34px 0 rgba(0, 0, 0, 0.04) 
+$themeBoxShadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 
 //$linkColor: #a4d4f4;
