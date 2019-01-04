@@ -23,7 +23,8 @@ hideTime should be a couple of seconds after appearTime. */
     time: 0,
     interval: 0,
     randHeight: "20px",
-    randWidth: "20px"
+    randWidth: "20px",
+    kittens: []
   };
 
   handleStart = () => {
@@ -39,13 +40,14 @@ hideTime should be a couple of seconds after appearTime. */
 
   tick = () => {
     const { interval, time } = this.state;
-    let finishTime = 50; //should be 60s*10
+    let finishTime = 100; //should be 60s*10
     // let finish = 5; //should be 60s
 
     this.setState({
       time: time + 1
     });
 
+    //draw kitten every 5% of the time
     if (Math.random() < 0.05) this.drawKitten();
 
     if (time > finishTime) {
@@ -58,16 +60,30 @@ hideTime should be a couple of seconds after appearTime. */
     }
   };
 
+  //hide kitten after 1s
   drawKitten = () => {
-    console.log("drawKitten");
-    setTimeout(() => this.hideKitten(), 10000);
+    let tmpKitten = { id: Math.random() };
+
+    let kittens = [...this.state.kittens, tmpKitten];
+
+    this.setState({
+      kittens
+    });
+
+    console.log("drawKitten", kittens);
+
+    setTimeout(() => this.hideKitten(tmpKitten.id), 1000);
   };
 
-  hideKitten = () => {
-    console.log("hideKitten");
+  hideKitten = id => {
+    const kittens = this.state.kittens.filter(k => k.id !== id);
+    this.setState({
+      kittens
+    });
+
+    console.log("hideKitten", kittens);
   };
 
-  hideKitten;
   randomPos = () => {
     const height = "380";
     const width = "480";
@@ -105,7 +121,7 @@ hideTime should be a couple of seconds after appearTime. */
                   )} */}
 
                   <span className="item" style={{ top: randHeight, left: randWidth }}>
-                    x
+                    {this.state.kittens.length}
                   </span>
                 </div>
               </div>
