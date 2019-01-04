@@ -23,8 +23,7 @@ hideTime should be a couple of seconds after appearTime. */
     time: 0,
     interval: 0,
     randHeight: "20px",
-    randWidth: "20px",
-    randTime: 0
+    randWidth: "20px"
   };
 
   handleStart = () => {
@@ -47,7 +46,7 @@ hideTime should be a couple of seconds after appearTime. */
       time: time + 1
     });
 
-    this.randomPos();
+    if (Math.random() < 0.05) this.randomPos();
 
     if (time > finishTime) {
       clearInterval(interval);
@@ -66,19 +65,9 @@ hideTime should be a couple of seconds after appearTime. */
     let randHeight = Math.floor(Math.random() * height) + "px";
     let randWidth = Math.floor(Math.random() * width) + "px";
 
-    let randTime = Math.floor(Math.random() * 600);
-    /* 
-    let i;
-    let randHeight;
-    let randWidth;
-    for (i = 0; i < items.length; i++) {
-      randHeight = Math.floor(Math.random() * height) + "px";
-      randWidth = Math.floor(Math.random() * width) + "px";
-    } */
     this.setState({
       randHeight,
-      randWidth,
-      randTime
+      randWidth
     });
   };
 
@@ -86,10 +75,6 @@ hideTime should be a couple of seconds after appearTime. */
     const { randHeight, randWidth, time } = this.state;
     console.log("randHeight", randHeight);
     console.log("randWidth", randWidth);
-
-    console.log("randTime", this.state.randTime);
-
-    // const items = ["minny", "polly", "luca"];
 
     // style={{ cursor: "pointer" }}
     return (
