@@ -22,9 +22,10 @@ hideTime should be a couple of seconds after appearTime. */
     isRunning: false,
     time: 0,
     interval: 0,
-    randHeight: "20px",
-    randWidth: "20px",
-    kittens: []
+    kittens: [
+      { id: 1, randHeight: "20px", randWidth: "20px" },
+      { id: 2, randHeight: "40px", randWidth: "40px" }
+    ]
   };
 
   handleStart = () => {
@@ -114,15 +115,15 @@ hideTime should be a couple of seconds after appearTime. */
             <div className="row">
               <div className="col-12 col-md-10 col-xl-7">
                 <div className="game-square">
-                  {/*  {items.map(item =>
+                  {this.state.kittens.map(kitten =>
                     <span className="item" style={{ top: randHeight, left: randWidth }}>
-                      {item}
+                      {kitten.id}
                     </span>
-                  )} */}
-
-                  <span className="item" style={{ top: randHeight, left: randWidth }}>
-                    {this.state.kittens.length}
-                  </span>
+                  )}{" "}
+                  *
+                  {/*  <span className="item" style={{ top: randHeight, left: randWidth }}>
+                    x
+                  </span> */}
                 </div>
               </div>
 
