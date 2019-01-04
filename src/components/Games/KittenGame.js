@@ -75,7 +75,7 @@ hideTime should be a couple of seconds after appearTime. */
 
     console.log("drawKitten", kittens);
 
-    setTimeout(() => this.hideKitten(tmpKitten.id), 1000);
+    setTimeout(() => this.hideKitten(tmpKitten.id), 3000);
   };
 
   hideKitten = id => {
@@ -85,6 +85,12 @@ hideTime should be a couple of seconds after appearTime. */
     });
 
     console.log("hideKitten", kittens);
+  };
+
+  kittenClick = id => {
+    // alert("clicked", id);
+    //får poäng
+    this.hideKitten(id);
   };
 
   render() {
@@ -103,13 +109,14 @@ hideTime should be a couple of seconds after appearTime. */
               <div className="col-12 col-md-10 col-xl-7">
                 <div className="game-square">
                   {this.state.kittens.map(kitten =>
-                    <span
+                    <h2
                       key={kitten.id}
                       className="item"
                       style={{ top: kitten.randHeight, left: kitten.randWidth }}
+                      onClick={() => this.kittenClick(kitten.id)}
                     >
                       {kitten.id}
-                    </span>
+                    </h2>
                   )}
                 </div>
               </div>
