@@ -34,6 +34,12 @@
     @media all and (min-width: $md-min) {
       margin-bottom: 8rem;
     }
+    @media all and (min-width: $lg-min) {
+      margin-bottom: 2rem;
+    }
+    @media all and (min-width: $xl-min) {
+      margin-bottom: 8rem;
+    }
   }
 
   .game-sidebar {
@@ -44,6 +50,12 @@
       margin: 2rem 0;
       margin-right: 2rem;
       @media all and (min-width: $md-min) {
+        margin-right: 0;
+      }
+      @media all and (min-width: $lg-min) {
+        margin-right: 2rem;
+      }
+      @media all and (min-width: $xl-min) {
         margin-right: 0;
       }
     }
@@ -59,12 +71,26 @@
       @media all and (min-width: $md-min) {
         margin-right: 0;
       }
+      @media all and (min-width: $lg-min) {
+        margin-right: 2rem;
+      }
+      @media all and (min-width: $xl-min) {
+        margin-right: 0;
+      }
     }
     .counter span {
       color: #fff;
     }
     @media all and (min-width: $md-min) {
       flex-direction: column;
+    }
+    @media all and (min-width: $lg-min) {
+      flex-direction: row;
+      margin-bottom: 5rem;
+    }
+    @media all and (min-width: $xl-min) {
+      flex-direction: column;
+      margin-bottom: 0;
     }
   }
 }

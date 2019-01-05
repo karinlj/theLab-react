@@ -153,7 +153,7 @@ class KittenCollect extends Component {
             </header>
 
             <div className="row">
-              <div className="col-12 col-md-10  col-xl-8">
+              <div className="col-12 col-md-10 col-lg-12  col-xl-6">
                 <div className="game-square">
                   {kittens.map(kitten =>
                     <span
@@ -185,7 +185,7 @@ class KittenCollect extends Component {
                 </div>
               </div>
 
-              <div className="col-12 col-md-2 col-xl-4">
+              <div className="col-12 col-md-2 col-lg-12 col-xl-6">
                 <div className="game-sidebar">
                   <div className="counter">
                     <h3>
