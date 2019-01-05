@@ -25,8 +25,7 @@ class KittenGame extends Component {
         isRunning: true,
         time: 0,
         interval,
-        points: 0,
-        kittens: []
+        points: 0
       });
     }
   };
