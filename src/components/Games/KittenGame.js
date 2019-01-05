@@ -14,7 +14,8 @@ class KittenGame extends Component {
     interval: 0,
     points: 0,
     kittens: [],
-    hedgehogs: []
+    hedgehogs: [],
+    textmessage: "Start playing"
   };
   handleStart = () => {
     //start the game, call on tick() in intervals of 100ms
@@ -25,7 +26,8 @@ class KittenGame extends Component {
         isRunning: true,
         time: 0,
         interval,
-        points: 0
+        points: 0,
+        textmessage: ""
       });
     }
   };
@@ -50,7 +52,8 @@ class KittenGame extends Component {
       clearInterval(this.state.interval);
 
       this.setState({
-        isRunning: false
+        isRunning: false,
+        textmessage: "Finish"
       });
     }
   };
@@ -134,11 +137,12 @@ class KittenGame extends Component {
     // alert("dead");
     clearInterval(this.state.interval);
     this.setState({
-      isRunning: false
+      isRunning: false,
+      textmessage: "Finish"
     });
   };
   render() {
-    const { time, points, kittens } = this.state;
+    const { time, points, kittens, hedgehogs, textmessage } = this.state;
 
     return (
       <div className="row">
@@ -162,7 +166,7 @@ class KittenGame extends Component {
                     </span>
                   )}
 
-                  {this.state.hedgehogs.map(hedgehog =>
+                  {hedgehogs.map(hedgehog =>
                     <span
                       key={hedgehog.id}
                       className="kitten"
@@ -172,6 +176,12 @@ class KittenGame extends Component {
                       {hedgehog.hedgehogIcon}
                     </span>
                   )}
+
+                  <div className="textmessage">
+                    <span>
+                      {textmessage}
+                    </span>
+                  </div>
                 </div>
               </div>
 
