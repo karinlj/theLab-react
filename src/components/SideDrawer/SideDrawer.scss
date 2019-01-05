@@ -29,26 +29,22 @@
       margin: 5px 0;
       color: #fff;
       font-weight: 300;
-      font-size: 0.9rem;
-
+      font-size: 0.85rem;
       a {
         color: #fff;
       }
-
       ul.sub-list {
         li {
-          font-size: 0.86rem;
+          font-size: 0.85rem;
           margin: 1px 14px;
 
           a {
             color: #979eb4;
             font-weight: 300;
-
             &:hover {
               text-decoration: none;
               color: #75bff0;
             }
-
             &:active {
               //when click
               color: #75bff0;
