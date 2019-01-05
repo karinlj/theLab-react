@@ -3,11 +3,12 @@
 .game-section {
   .game-square {
     background: $themecolorLightgrey;
-    width: 600px;
+    width: 550px;
     height: 400px;
     position: relative;
-    margin-bottom: 8rem;
+    margin-bottom: 3rem;
     border-radius: 3px;
+
     .kitten {
       cursor: pointer;
       position: absolute;
@@ -25,25 +26,45 @@
       transform: translate(-50%, -50%);
       text-align: center;
       span {
-        font-size: 3.7em;
-        font-weight: 900;
-        color: $themecolorTurquoise;
+        font-size: 2em;
+        font-weight: 600;
+        color: $themecolorOrange;
       }
     }
-  }
-  .start-btn {
-    margin: 2rem 0;
-  }
-  .counter,
-  .points {
-    color: #fff;
-    span {
-      font-size: 2em;
-      padding-left: 0.5rem;
-      color: $themecolorPink;
+    @media all and (min-width: $md-min) {
+      margin-bottom: 8rem;
     }
   }
-  .counter span {
-    color: #fff;
+
+  .game-sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .start-btn {
+      margin: 2rem 0;
+      margin-right: 2rem;
+      @media all and (min-width: $md-min) {
+        margin-right: 0;
+      }
+    }
+    .counter,
+    .points {
+      color: #fff;
+      margin-right: 2rem;
+      span {
+        font-size: 2em;
+        padding-left: 0.5rem;
+        color: $themecolorPink;
+      }
+      @media all and (min-width: $md-min) {
+        margin-right: 0;
+      }
+    }
+    .counter span {
+      color: #fff;
+    }
+    @media all and (min-width: $md-min) {
+      flex-direction: column;
+    }
   }
 }

@@ -24,7 +24,7 @@ import RoleBasedLogin from "./components/Form/RoleBasedLogin";
 import RandomLogin from "./components/Form/RandomLogin";
 import VisualBugs from "./components/VisualBugs/VisualBugs";
 import Tables from "./components/Table/Tables";
-import KittenGame from "./components/Games/KittenGame";
+import KittenCollect from "./components/Games/KittenCollect";
 
 class App extends Component {
   state = {
@@ -89,7 +89,7 @@ class App extends Component {
                 <Route path="/multiScramble" component={MultiScramble} />
                 <Route path="/visualBugs" component={VisualBugs} />
                 <Route path="/tables" component={Tables} />
-                <Route path="/kittenGame" component={KittenGame} />
+                <Route path="/kittenCollect" component={KittenCollect} />
                 {/*   <Route path="/:post_id" component={Post} /> */}
               </Switch>
             </div>

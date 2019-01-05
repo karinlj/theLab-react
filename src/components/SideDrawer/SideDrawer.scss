@@ -53,6 +53,11 @@
         }
       }
     }
+    li.games {
+      @media all and (max-width: $sm-max) {
+        display: none;
+      }
+    }
   }
 
   transform: translateX(-100%);

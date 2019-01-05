@@ -7,7 +7,7 @@ import VideoSidebar from "../Video/VideoSidebar";
 import CatIcon from "../../img/kitten-icon.png";
 import Hedgehog from "../../img/hedgehog-icon.png";
 
-class KittenGame extends Component {
+class KittenCollect extends Component {
   state = {
     isRunning: false,
     time: 0,
@@ -15,7 +15,7 @@ class KittenGame extends Component {
     points: 0,
     kittens: [],
     hedgehogs: [],
-    textmessage: "Start playing"
+    textmessage: "Start playing by clicking the start button!"
   };
   handleStart = () => {
     //start the game, call on tick() in intervals of 100ms
@@ -53,7 +53,7 @@ class KittenGame extends Component {
 
       this.setState({
         isRunning: false,
-        textmessage: "Finish"
+        textmessage: "Game over!"
       });
     }
   };
@@ -61,7 +61,7 @@ class KittenGame extends Component {
   randomPos = () => {
     //random x & y coordinates relative to square size
     const height = "400";
-    const width = "600";
+    const width = "550";
 
     let randHeight = Math.floor(Math.random() * (height - 48)) + "px";
     let randWidth = Math.floor(Math.random() * (width - 48)) + "px";
@@ -138,7 +138,7 @@ class KittenGame extends Component {
     clearInterval(this.state.interval);
     this.setState({
       isRunning: false,
-      textmessage: "Finish"
+      textmessage: "Game over!"
     });
   };
   render() {
@@ -153,7 +153,7 @@ class KittenGame extends Component {
             </header>
 
             <div className="row">
-              <div className="col-12 col-md-10 col-xl-7">
+              <div className="col-12 col-md-10  col-xl-8">
                 <div className="game-square">
                   {kittens.map(kitten =>
                     <span
@@ -185,23 +185,25 @@ class KittenGame extends Component {
                 </div>
               </div>
 
-              <div className="col-12 col-md-2 col-xl-5">
-                <div className="counter">
-                  <h3>
-                    Time:
-                    <span>{Math.floor(time / 10)}</span>
-                  </h3>
-                </div>
+              <div className="col-12 col-md-2 col-xl-4">
+                <div className="game-sidebar">
+                  <div className="counter">
+                    <h3>
+                      Time:
+                      <span>{Math.floor(time / 10)}</span>
+                    </h3>
+                  </div>
 
-                <MainBtn classProp="button start-btn" clickProp={this.handleStart}>
-                  Start game
-                </MainBtn>
+                  <MainBtn classProp="button start-btn" clickProp={this.handleStart}>
+                    Start game
+                  </MainBtn>
 
-                <div className="points">
-                  <h3>
-                    Points:
-                    <span>{points}</span>
-                  </h3>
+                  <div className="points">
+                    <h3>
+                      Points:
+                      <span>{points}</span>
+                    </h3>
+                  </div>
                 </div>
               </div>
             </div>
@@ -227,4 +229,4 @@ class KittenGame extends Component {
   }
 }
 
-export default KittenGame;
+export default KittenCollect;

@@ -122,11 +122,11 @@ const Navbar = props =>
                   </li>
                 </ul>
               </li>
-              <li>
+              <li className="games">
                 Games
                 <ul className="sub-list">
                   <li>
-                    <NavLink to="/kittenGame">KittenGame</NavLink>
+                    <NavLink to="/kittenCollect">Collecting kittens</NavLink>
                   </li>
                 </ul>
               </li>

@@ -90,10 +90,10 @@
     "sidebarHeading": "Why learn: Visual Bugs?",
     "sidebarText": "Even if test automation can be a very powerful tool, doing certain kinds of tasks is best left to the human. An example of this is finding visual bugs. Here, you can still use automated bug reporting to help you out. \n\n Often writing the steps to reproduce a bug in emails or ticketing systems can be very time-consuming and add unnecessary overhead. Use test automation technology and in-browser annotations to partly automate this process."
   },
-  "KittenGame": {
-    "heading": "KittenGame",
+  "KittenCollect": {
+    "heading": "Collecting kittens",
     "text": "Nulla fringilla mi non mollis placerat. Aliquam non auctor libero, vel aliquet tortor. Integer ut suscipit tellus. Pellentesque eu mollis nunc.",
-    "sidebarHeading": "Why learn: KittenGame?",
+    "sidebarHeading": "Why learn: Collecting kittens?",
     "sidebarText": "Nulla fringilla mi non mollis placerat. Aliquam non auctor libero, vel aliquet tortor. Integer ut suscipit tellus. Pellentesque eu mollis nunc."
   }
 }
