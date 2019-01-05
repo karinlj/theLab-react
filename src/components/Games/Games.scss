@@ -40,6 +40,9 @@
     @media all and (min-width: $xl-min) {
       margin-bottom: 8rem;
     }
+    @media all and (max-width: $sm-max) {
+      display: none;
+    }
   }
 
   .game-sidebar {
@@ -91,6 +94,9 @@
     @media all and (min-width: $xl-min) {
       flex-direction: column;
       margin-bottom: 0;
+    }
+    @media all and (max-width: $sm-max) {
+      display: none;
     }
   }
 }
