@@ -120,7 +120,7 @@ class KittenCollect extends Component {
 
     let hedgehogObj = { id: Math.random(), hedgehogIcon, randHeight, randWidth };
 
-    let hedgehogs = [...this.state.hedgehogs, hedgehogObj]; //new array, adding object to array
+    let hedgehogs = [...this.state.hedgehogs, hedgehogObj];
 
     this.setState({
       hedgehogs
@@ -136,7 +136,6 @@ class KittenCollect extends Component {
   };
 
   hedgehogClick = id => {
-    // alert("dead");
     clearInterval(this.state.interval);
     this.setState({
       isRunning: false,
