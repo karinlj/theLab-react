@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import Sidebar from "../Sidebar";
 import HeaderText from "../HeaderText";
 import "./Games.scss";
-import MainBtn from "../MainBtn";
+import GameSidebar from "./GameSidebar";
 import VideoSidebar from "../Video/VideoSidebar";
 import CatIcon from "../../img/kitten-icon.png";
 import Hedgehog from "../../img/hedgehog-icon.png";
+import Kitten from "./Kitten";
+import Hedgehogs from "./Hedgehogs";
 
 class KittenCollect extends Component {
   state = {
@@ -155,28 +157,12 @@ class KittenCollect extends Component {
             <div className="row">
               <div className="col-12 col-md-10 col-lg-12  col-xl-6">
                 <div className="game-square">
-                  {kittens.map(kitten =>
-                    <span
-                      key={kitten.id}
-                      className="kitten"
-                      style={{ top: kitten.randHeight, left: kitten.randWidth }}
-                      onClick={() => this.kittenClick(kitten.id)}
-                    >
-                      {kitten.catIcon}
-                    </span>
-                  )}
+                  <Kitten kittens={kittens} onKittenClick={this.kittenClick} />
 
-                  {hedgehogs.map(hedgehog =>
-                    <span
-                      key={hedgehog.id}
-                      className="kitten"
-                      style={{ top: hedgehog.randHeight, left: hedgehog.randWidth }}
-                      onClick={() => this.hedgehogClick(hedgehog.id)}
-                    >
-                      {hedgehog.hedgehogIcon}
-                    </span>
-                  )}
-
+                  <Hedgehogs
+                    hedgehogs={hedgehogs}
+                    onHedgehogsClick={this.hedgehogClick}
+                  />
                   <div className="textmessage">
                     <span>
                       {textmessage}
@@ -186,25 +172,7 @@ class KittenCollect extends Component {
               </div>
 
               <div className="col-12 col-md-2 col-lg-12 col-xl-6">
-                <div className="game-sidebar">
-                  <div className="counter">
-                    <h3>
-                      Time:
-                      <span>{Math.floor(time / 10)}</span>
-                    </h3>
-                  </div>
-
-                  <MainBtn classProp="button start-btn" clickProp={this.handleStart}>
-                    Start game
-                  </MainBtn>
-
-                  <div className="points">
-                    <h3>
-                      Points:
-                      <span>{points}</span>
-                    </h3>
-                  </div>
-                </div>
+                <GameSidebar time={time} points={points} onBtnClick={this.handleStart} />
               </div>
             </div>
 
