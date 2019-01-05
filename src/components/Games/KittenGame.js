@@ -3,84 +3,108 @@ import Sidebar from "../Sidebar";
 import HeaderText from "../HeaderText";
 import "./Games.scss";
 import MainBtn from "../MainBtn";
+import VideoSidebar from "../Video/VideoSidebar";
 import CatIcon from "../../img/kitten-icon.png";
 import Hedgehog from "../../img/hedgehog-icon.png";
-
-import VideoSidebar from "../Video/VideoSidebar";
 
 class KittenGame extends Component {
   state = {
     isRunning: false,
     time: 0,
     interval: 0,
-    kittens: [],
-    hedgehogs: [],
     points: 0,
-    errorMessage: ""
+    kittens: [],
+    hedgehogs: []
   };
-
   handleStart = () => {
+    //start the game, call on tick() in intervals of 100ms
+    let interval = setInterval(() => this.tick(), 100);
+
     if (!this.state.isRunning) {
-      //call the tick func every 0.1s
-      let interval = setInterval(() => this.tick(), 100);
       this.setState({
-        points: 0,
+        isRunning: true,
+        time: 0,
         interval,
-        isRunning: true
+        points: 0,
+        kittens: []
       });
     }
   };
 
   tick = () => {
-    const { interval, time } = this.state;
-    let finishTime = 150; //should be 60s*10
+    //call on drawKitten() randomly 5% of the time ?????????
+    //increase time with 1
+    //define finish time in ms
+    //clearInterval() if time===finishTime
 
-    this.setState({
-      time: time + 1
-    });
-
-    //draw kitten every 5% of the time
-    if (Math.random() < 0.05) this.drawKitten();
+    const finishTime = 150;
+    if (Math.random() < 0.06) this.drawKitten(); ///??????????
+    //if (0.04) this.drawKitten(); ///??????????
 
     //draw hedgehog every 1% of the time
     if (Math.random() < 0.01) this.drawHedgehog();
 
-    if (time > finishTime) {
-      clearInterval(interval);
+    this.setState({
+      time: this.state.time + 1
+    });
+    if (this.state.time > finishTime) {
+      clearInterval(this.state.interval);
 
       this.setState({
-        time: 0,
         isRunning: false
       });
     }
   };
 
   randomPos = () => {
+    //random x & y coordinates relative to square size
     const height = "400";
     const width = "600";
 
     let randHeight = Math.floor(Math.random() * (height - 48)) + "px";
     let randWidth = Math.floor(Math.random() * (width - 48)) + "px";
-
     return [randHeight, randWidth];
   };
 
   drawKitten = () => {
+    //new kitten-object with props: id, img, x & y coordinate
+    //fetch randomPos()-values
+    //new kitten-array with spread, add kitten-object
+    //call on hideKitten(kittenTemp.id) after 1s with setTimeout()
+
     let randPos = this.randomPos();
     let randHeight = randPos[0];
     let randWidth = randPos[1];
-
     const catIcon = <img src={CatIcon} alt="cat" />;
 
-    let tmpKitten = { id: Math.random(), randHeight, randWidth, catIcon };
+    let kittenObj = { id: Math.random(), catIcon, randHeight, randWidth };
 
-    let kittens = [...this.state.kittens, tmpKitten]; //new array, adding object to array
-
+    const kittens = [...this.state.kittens, kittenObj];
     this.setState({
       kittens
     });
-    //hide kitten after 1s
-    setTimeout(() => this.hideKitten(tmpKitten.id), 1000);
+    setTimeout(() => this.hideKitten(kittenObj.id), 1500);
+
+    console.log("kittenObj", kittenObj);
+  };
+
+  hideKitten = id => {
+    //pass in id from drawKitten()
+    //new kitten-array, with filter:  keep id !== parameter-id
+    const kittens = this.state.kittens.filter(k => k.id !== id);
+    this.setState({
+      kittens
+    });
+  };
+
+  kittenClick = id => {
+    //give points
+    //call hideKitten()
+    //pass in id from kittens.map()
+    this.hideKitten(id);
+    this.setState({
+      points: this.state.points + 1
+    });
   };
 
   drawHedgehog = () => {
@@ -90,22 +114,16 @@ class KittenGame extends Component {
 
     const hedgehogIcon = <img src={Hedgehog} alt="hedgehog" />;
 
-    let tmpHedgehog = { id: Math.random(), randHeight, randWidth, hedgehogIcon };
+    let hedgehogObj = { id: Math.random(), hedgehogIcon, randHeight, randWidth };
 
-    let hedgehogs = [...this.state.hedgehogs, tmpHedgehog]; //new array, adding object to array
+    let hedgehogs = [...this.state.hedgehogs, hedgehogObj]; //new array, adding object to array
 
     this.setState({
       hedgehogs
     });
-    setTimeout(() => this.hideHedgehog(tmpHedgehog.id), 1000);
+    setTimeout(() => this.hideHedgehog(hedgehogObj.id), 1500);
   };
 
-  hideKitten = id => {
-    const kittens = this.state.kittens.filter(k => k.id !== id);
-    this.setState({
-      kittens
-    });
-  };
   hideHedgehog = id => {
     const hedgehogs = this.state.hedgehogs.filter(h => h.id !== id);
     this.setState({
@@ -113,25 +131,16 @@ class KittenGame extends Component {
     });
   };
 
-  kittenClick = id => {
-    this.hideKitten(id);
-    this.setState({
-      points: this.state.points + 1
-    });
-  };
-
   hedgehogClick = id => {
     // alert("dead");
     clearInterval(this.state.interval);
     this.setState({
-      isRunning: false,
-      time: 0
+      isRunning: false
     });
   };
   render() {
-    const { time, points } = this.state;
+    const { time, points, kittens } = this.state;
 
-    // style={{ cursor: "pointer" }}
     return (
       <div className="row">
         <div className="col-12">
@@ -143,26 +152,26 @@ class KittenGame extends Component {
             <div className="row">
               <div className="col-12 col-md-10 col-xl-7">
                 <div className="game-square">
-                  {this.state.kittens.map(kitten =>
-                    <h2
+                  {kittens.map(kitten =>
+                    <span
                       key={kitten.id}
                       className="kitten"
                       style={{ top: kitten.randHeight, left: kitten.randWidth }}
                       onClick={() => this.kittenClick(kitten.id)}
                     >
                       {kitten.catIcon}
-                    </h2>
+                    </span>
                   )}
 
                   {this.state.hedgehogs.map(hedgehog =>
-                    <h2
+                    <span
                       key={hedgehog.id}
                       className="kitten"
                       style={{ top: hedgehog.randHeight, left: hedgehog.randWidth }}
                       onClick={() => this.hedgehogClick(hedgehog.id)}
                     >
                       {hedgehog.hedgehogIcon}
-                    </h2>
+                    </span>
                   )}
                 </div>
               </div>
@@ -170,7 +179,7 @@ class KittenGame extends Component {
               <div className="col-12 col-md-2 col-xl-5">
                 <div className="counter">
                   <h3>
-                    {" "}Time:
+                    Time:
                     <span>{Math.floor(time / 10)}</span>
                   </h3>
                 </div>
