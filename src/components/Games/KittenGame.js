@@ -31,17 +31,17 @@ class KittenGame extends Component {
   };
 
   tick = () => {
-    //call on drawKitten() randomly 5% of the time ?????????
+    //if Math.random() blir <  0.06 call on drawKitten()
+    //if Math.random() blir <  0.02 call on drawHedgehog()
     //increase time with 1
     //define finish time in ms
     //clearInterval() if time===finishTime
 
-    const finishTime = 150;
-    if (Math.random() < 0.06) this.drawKitten(); ///??????????
-    //if (0.04) this.drawKitten(); ///??????????
+    const finishTime = 300;
+    if (Math.random() < 0.06) this.drawKitten();
+    //if (Math.random() < 0.5) console.log("hej");
 
-    //draw hedgehog every 1% of the time
-    if (Math.random() < 0.01) this.drawHedgehog();
+    if (Math.random() < 0.02) this.drawHedgehog();
 
     this.setState({
       time: this.state.time + 1
@@ -120,7 +120,7 @@ class KittenGame extends Component {
     this.setState({
       hedgehogs
     });
-    setTimeout(() => this.hideHedgehog(hedgehogObj.id), 1500);
+    setTimeout(() => this.hideHedgehog(hedgehogObj.id), 1800);
   };
 
   hideHedgehog = id => {
