@@ -21,9 +21,10 @@ class KittenCollect extends Component {
   };
   handleStart = () => {
     //start the game, call on tick() in intervals of 100ms
-    let interval = setInterval(() => this.tick(), 100);
 
     if (!this.state.isRunning) {
+      let interval = setInterval(() => this.tick(), 100);
+
       this.setState({
         isRunning: true,
         time: 0,
