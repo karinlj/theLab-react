@@ -20,9 +20,9 @@
   },
   "Tables": {
     "heading": "Tables",
-    "text": "Nulla fringilla mi non mollis placerat. Aliquam non auctor libero, vel aliquet tortor. Integer ut suscipit tellus. Pellentesque eu mollis nunc.",
+    "text": "Below you'll see a table of animals from the savannah. The animal can be filtered by species, and also sorted by different attributes, such as name, shoesize and hairdo. \n\n You can also perform different operations on each row, where an animal can be liked, unliked and deleted.",
     "sidebarHeading": "Why learn: Tables?",
-    "sidebarText": "Nulla fringilla mi non mollis placerat. Aliquam non auctor libero, vel aliquet tortor. Integer ut suscipit tellus. Pellentesque eu mollis nunc."
+    "sidebarText": "Tables are common in SaaS application, but present a number of challenges when automating.\n\n It's often useful to make sure the elements are sorted in a certain way before selecting the elements."
   },
   "TestChecklist": {
     "heading": "Test Checklist",
@@ -92,8 +92,8 @@
   },
   "KittenCollect": {
     "heading": "Collecting kittens",
-    "text": "Nulla fringilla mi non mollis placerat. Aliquam non auctor libero, vel aliquet tortor. Integer ut suscipit tellus. Pellentesque eu mollis nunc.",
+    "text": "The kittens have all run a way, so it's your job to get them back home.\n\n Collect as many kittens as you can by clicking on them, and watch out for the hedgehogs.",
     "sidebarHeading": "Why learn: Collecting kittens?",
-    "sidebarText": "Nulla fringilla mi non mollis placerat. Aliquam non auctor libero, vel aliquet tortor. Integer ut suscipit tellus. Pellentesque eu mollis nunc."
+    "sidebarText": "Any web application is a little bit like a game. By automating game play we combine automating actions, conditional logic and handling waits.\n\n If you can automate this game, you are far along in handling any scenario that may arise in a SaaS application."
   }
 }
