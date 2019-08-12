@@ -73,14 +73,14 @@ class VisualBugs extends Component {
           <Sidebar componentName={this.constructor.name} />
 
           <VideoSidebar
-            src="https://www.youtube.com/embed/O4bvInDRZs4"
+            src="https://www.youtube.com/embed/Z4Cvpx8aPIE"
             height="230"
             width="100%"
             title="getting-started"
           />
 
           <VideoSidebar
-            src="https://www.youtube.com/embed/1c2fXv_fsUY"
+            src="https://www.youtube.com/embed/xB3RPQKUNRM"
             height="230"
             width="100%"
             title="getting-started"

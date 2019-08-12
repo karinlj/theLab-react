@@ -4,6 +4,7 @@ import Sidebar from "../Sidebar";
 import SubmitBtn from "../SubmitBtn";
 import HeaderText from "../HeaderText";
 import PrintForm from "./PrintForm";
+import VideoSidebar from "../Video/VideoSidebar";
 
 class FormValidation extends Component {
   //class based component
@@ -191,7 +192,39 @@ class FormValidation extends Component {
 
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
+          <VideoSidebar
+          src="https://www.youtube.com/embed/6L6CLCKSf1s"
+          height="230"
+          width="100%"
+          title="getting-started"
+          />
+          <VideoSidebar
+          src="https://www.youtube.com/embed/1blw4gEsr9M"
+          height="230"
+          width="100%"
+          title="getting-started"
+          />
+          <VideoSidebar
+          src="https://www.youtube.com/embed/xBMvng8KDx0"
+          height="230"
+          width="100%"
+          title="getting-started"
+          />
+          <VideoSidebar
+          src="https://www.youtube.com/embed/6fp2SNvSE-g"
+          height="230"
+          width="100%"
+          title="getting-started"
+          />
+          <VideoSidebar
+          src="https://www.youtube.com/embed/l3pFnkSVrMs"
+          height="230"
+          width="100%"
+          title="getting-started"
+          />
         </div>
+
+
       </div>
     );
   }
