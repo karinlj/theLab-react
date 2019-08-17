@@ -4,28 +4,43 @@ import Sidebar from '../Sidebar';
 import HeaderText from '../HeaderText';
 import VideoSidebar from '../Video/VideoSidebar';
 import { getAnimals } from './services/animalService';
-import { getSpecies } from './services/speciesService';
-import AnimalsTable from './AnimalsTable';
 import Elephant from '../../img/elephant-big.jpg';
+//import _ from 'lodash';
 
-import _ from 'lodash';
+class Animal extends Component {
+	state = {
+		animals: getAnimals(),
+		id: null, //null from start
+		animal: ''
+	};
+	componentDidMount() {
+		console.log(this.props);
+		//hämta id:t från url:en
+		let id = this.props.match.params.id;
+		console.log('my url-id', id);
 
-class SingleAnimal extends Component {
-	state = {};
+		const animal = this.state.animals.find((a) => {
+			return a._id === id;
+		});
+		console.log('my animal', animal);
 
-	//normally calling backend service, the ajax calls would be here
-	//we set them to [] in the state while the data is being fetched for no rumtime error
-	componentDidMount() {}
+		this.setState({
+			id: id,
+			animal: animal
+		});
+	}
 
 	render() {
-		const { animals } = this.state;
+		//let { animal } = this.state;
+		let animal = this.state.animal;
+		console.log('my animal in render', animal);
 
 		return (
 			<div className="row">
 				<div className="col-12">
 					<div className="table-section">
 						<header>
-							<HeaderText componentName={this.constructor.name} />
+							{/* <HeaderText componentName={this.constructor.name} /> */}
 						</header>
 
 						<div className="row">
@@ -35,16 +50,19 @@ class SingleAnimal extends Component {
 							<div className="col">
 								<ul className="singleanimal">
 									<li>
-										<span>Name: </span>Arthur
+										<span>Name: </span>
+										{animal.name}
 									</li>
 									<li>
-										<span>Species: </span>elephant
+										{/* <span>Species: </span> {animal.species.name} */}
 									</li>
 									<li>
-										<span>Shoesize: </span>xl
+										<span>Shoesize: </span>
+										{animal.shoesize}
 									</li>
 									<li>
-										<span>Hairdo: </span>bald
+										<span>Hairdo: </span>
+										{animal.hairdo}
 									</li>
 								</ul>
 							</div>
@@ -52,7 +70,7 @@ class SingleAnimal extends Component {
 
 						<div className="row">
 							<div className="col-12 col-md-6">
-								<Sidebar componentName={this.constructor.name} />
+								{/* <Sidebar componentName={this.constructor.name} /> */}
 							</div>
 							<div className="col-12 col-md-6">
 								<VideoSidebar
@@ -69,4 +87,4 @@ class SingleAnimal extends Component {
 		);
 	}
 }
-export default SingleAnimal;
+export default Animal;

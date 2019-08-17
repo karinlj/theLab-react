@@ -11,11 +11,11 @@ class AnimalsTable extends Component {
 		{ path: 'shoesize', label: 'Shoesize' },
 		{ path: 'hairdo', label: 'Hairdo' },
 		{ key: 'like' },
-		{ key: 'delete' },
+		{ key: 'delete' }
 	];
 
-	raiseSort = path => {
-		console.log('path', path);
+	raiseSort = (path) => {
+		//console.log('path', path);
 		//clone the state prop
 		const sortColumn = { ...this.props.sortColumn };
 		//if path is the same
@@ -31,7 +31,7 @@ class AnimalsTable extends Component {
 		this.props.onSort(sortColumn); //vad gör jag här??
 	};
 
-	renderSortIcon = column => {
+	renderSortIcon = (column) => {
 		const { sortColumn } = this.props;
 
 		//if this column is not sorted
@@ -48,7 +48,7 @@ class AnimalsTable extends Component {
 			<table id="animalTable" className="table">
 				<thead>
 					<tr>
-						{this.columns.map(column =>
+						{this.columns.map((column) => (
 							<th
 								key={column.path || column.key}
 								onClick={() => this.raiseSort(column.path)}
@@ -56,11 +56,12 @@ class AnimalsTable extends Component {
 								{column.label}
 								{this.renderSortIcon(column)}
 							</th>
-						)}
+						))}
 					</tr>
 				</thead>
 				<tbody>
-					{animals.map(animal =>
+					{animals.map((animal) => (
+						//id set here
 						<tr key={animal._id}>
 							<td>
 								{/*  <img src={Lion} alt="" /> */}
@@ -70,22 +71,13 @@ class AnimalsTable extends Component {
 								/>
 							</td>
 							<td>
-								{/* <a href="SingleAnimal"> */}
-								<NavLink to="/SingleAnimal">
-									{' '}{animal.name}{' '}
+								<NavLink to={'/animal/' + animal._id}>
+									{animal.name}
 								</NavLink>
-
-								{/* </a> */}
 							</td>
-							<td>
-								{animal.species.name}
-							</td>
-							<td>
-								{animal.shoesize}
-							</td>
-							<td>
-								{animal.hairdo}
-							</td>
+							<td>{animal.species.name}</td>
+							<td>{animal.shoesize}</td>
+							<td>{animal.hairdo}</td>
 							<td>
 								<Like
 									/* liked={true} */
@@ -102,7 +94,7 @@ class AnimalsTable extends Component {
 								</button>
 							</td>
 						</tr>
-					)}
+					))}
 				</tbody>
 			</table>
 		);

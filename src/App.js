@@ -24,17 +24,17 @@ import RoleBasedLogin from './components/Form/RoleBasedLogin';
 import RandomLogin from './components/Form/RandomLogin';
 import VisualBugs from './components/VisualBugs/VisualBugs';
 import Tables from './components/Table/Tables';
-import SingleAnimal from './components/Table/SingleAnimal';
+import Animal from './components/Table/Animal';
 import KittenCollect from './components/Games/KittenCollect';
 
 class App extends Component {
 	state = {
 		//SideDrawer closed
-		sideDrawerOpen: false,
+		sideDrawerOpen: false
 	};
 
 	handleToggle = () => {
-		this.setState(prevState => {
+		this.setState((prevState) => {
 			//passing func to setState
 			//if close it will open and viceversa
 			return { sideDrawerOpen: !prevState.sideDrawerOpen }; //set the opposite
@@ -70,7 +70,8 @@ class App extends Component {
 					<div className="content-section">
 						<div className="container">
 							<Switch>
-								{' '}{/* only want to match one at a time */}
+								{' '}
+								{/* only want to match one at a time */}
 								<Route exact path="/" component={Home} />
 								<Route path="/introduction" component={Introduction} />
 								<Route path="/overview" component={Overview} />
@@ -96,7 +97,8 @@ class App extends Component {
 								<Route path="/multiScramble" component={MultiScramble} />
 								<Route path="/visualBugs" component={VisualBugs} />
 								<Route path="/tables" component={Tables} />
-								<Route path="/singleAnimal" component={SingleAnimal} />
+								{/* <Route path="/singleAnimal" component={SingleAnimal} /> */}
+								<Route path="/animal/:id" component={Animal} />
 								<Route path="/kittenCollect" component={KittenCollect} />
 								{/*   <Route path="/:post_id" component={Post} /> */}
 							</Switch>

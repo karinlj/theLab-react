@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Items from './Items';
-import AddItem from './AddItem';
 import Sidebar from '../Sidebar';
 import './Lists.scss';
 import HeaderText from '../HeaderText';
@@ -10,19 +9,19 @@ class SortedList extends Component {
 	state = {
 		todos: [
 			{ id: 1, content: 'Buy some milk' },
-			{ id: 2, content: 'Cuddle with cats' },
+			{ id: 2, content: 'Cuddle with cats' }
 		],
-		newContent: '',
+		newContent: ''
 	};
 
-	handleChange = e => {
+	handleChange = (e) => {
 		//value= what user types in
 		this.setState({
-			newContent: e.target.value,
+			newContent: e.target.value
 		});
 	};
 
-	handleSubmit = e => {
+	handleSubmit = (e) => {
 		e.preventDefault();
 		const { newContent } = this.state;
 
@@ -31,29 +30,29 @@ class SortedList extends Component {
 			let tmpItem = { id: Math.random(), content: newContent };
 
 			//new array with spread op, passing in the old one, and adding one item
-			let todos = [...this.state.todos, tmpItem];
+			let todos = [ ...this.state.todos, tmpItem ];
 			this.setState({
 				todos,
-				newContent: '',
+				newContent: ''
 			});
 		}
 	};
 
-	handleDelete = id => {
+	handleDelete = (id) => {
 		//  console.log("delete todo", id);
 		//new array - keeping the all items that fulfill the condition
 
 		//	const todos = this.state.todos.filter(t => t.id !== id);
-		const todos = this.state.todos.filter(t => {
+		const todos = this.state.todos.filter((t) => {
 			return t.id !== id;
 		});
 		this.setState({
-			todos,
+			todos
 		});
 	};
 
 	render() {
-		const { todos, newContent } = this.state;
+		const { todos } = this.state;
 
 		return (
 			<div className="row justify-content-between">
