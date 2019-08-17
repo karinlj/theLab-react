@@ -22,11 +22,12 @@ const Home = () => {
                 There is also one or two videos on how to solve it using the Boozang tool.{" "}
               </p>
               <p>
-                <a href="https://boozang.com/">Boozang</a> also gives a free
-                <a href="https://www.udemy.com/code-less-test-automation-with-boozang/">
-                  {" "}Udemy course
-                </a>{" "}
-                that takes you through each task with solution.
+              If you want to see how these tasks can be solved using the Boozang tool you can launch it <a href="http://thelab.boozang.com/bz-staging.html?fbclid=IwAR0QFbdC4i9iguRNXQjXhYgnyNjS0_qnVwbw6Q3Od8-fo753MIhIS0ZN7DM#5bea26946c43587a5950f410/0.0.1/m5/t2/">here</a>. 
+</p>
+<p>
+You will be able to play around with the tool, but in order to save your tests to our Cloud server you'll need to sign-up for a <a target="_blank" href="https://ai.boozang.com/#security/signup">Free Trial</a>.
+             </p>
+              <p>There will also be a Udemy course shortly that will take you through each tak with a solution.
               </p>
             </div>
           </div>

@@ -110,7 +110,7 @@ class ConcatStrings extends Component {
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
                   <VideoSidebar
-          src="https://www.youtube.com/embed/v7fbQHC5xfs"
+          src="https://www.youtube.com/embed/jd9BEe-6vTg"
           height="230"
           width="100%"
           title="getting-started"

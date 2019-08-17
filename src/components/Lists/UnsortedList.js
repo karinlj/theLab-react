@@ -70,14 +70,29 @@ class UnsortedList extends SortedList {
           <Sidebar componentName={this.constructor.name} />
 
           <VideoSidebar
-            src="https://www.youtube.com/embed/uJZZucOToHk"
+            src="https://www.youtube.com/embed/Fh1HH-BVJkE"
             height="230"
             width="100%"
             title="getting-started"
           />
 
           <VideoSidebar
-            src="https://www.youtube.com/embed/pxibmAUP70s"
+            src="https://www.youtube.com/embed/3c4ZX7IESyM"
+            height="230"
+            width="100%"
+            title="getting-started"
+          />
+
+          <VideoSidebar
+            src="https://www.youtube.com/embed/nFzlyKzNHHg"
+            height="230"
+            width="100%"
+            title="getting-started"
+          />
+
+          
+          <VideoSidebar
+            src="https://www.youtube.com/embed/6ZztczG5VCQ"
             height="230"
             width="100%"
             title="getting-started"

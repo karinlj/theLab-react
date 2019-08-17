@@ -240,7 +240,7 @@ class Scramble extends Component {
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
              <VideoSidebar
-          src="https://www.youtube.com/embed/YrHIaw_QlE4"
+          src="https://www.youtube.com/embed/qDmnE3e6Npc"
           height="230"
           width="100%"
           title="getting-started"

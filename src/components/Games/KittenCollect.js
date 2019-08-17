@@ -183,11 +183,18 @@ class KittenCollect extends Component {
               </div>
               <div className="col-12 col-md-6">
                 <VideoSidebar
-                  src="https://www.youtube.com/embed/YcCw6cS7Uy0"
+                  src="https://www.youtube.com/embed/1g35EKDY5bo"
                   height="230"
                   width="100%"
                   title="getting-started"
                 />
+                <VideoSidebar
+                  src="https://www.youtube.com/embed/ScLjPwMlxe0"
+                  height="230"
+                  width="100%"
+                  title="getting-started"
+                />
+
               </div>
             </div>
           </div>

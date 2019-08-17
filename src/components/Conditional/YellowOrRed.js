@@ -83,7 +83,7 @@ class YellowOrRed extends Component {
         <div className="col-12 col-md-5">
           <Sidebar componentName={this.constructor.name} />
                  <VideoSidebar
-          src="https://www.youtube.com/embed/tww_NYEJMcQ"
+          src="https://www.youtube.com/embed/_yhTQ_WJc1Q"
           height="230"
           width="100%"
           title="getting-started"

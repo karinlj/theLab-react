@@ -3,6 +3,7 @@ import Sidebar from '../Sidebar';
 import MainBtn from '../MainBtn';
 import HeaderText from '../HeaderText';
 import './Timing.scss';
+import VideoSidebar from '../Video/VideoSidebar';
 
 class Speed extends Component {
 	//class based
@@ -125,12 +126,12 @@ class Speed extends Component {
 				</div>
 
 				<div className="col-12 col-md-5">
-					{/* 		<Sidebar componentName={this.constructor.name}>My Text</Sidebar> */}
-					<Sidebar
-						componentName={this.constructor.name}
-						/* 	heading="my heading"
-						text="my text" */
-						/* value="my other text" */
+					<Sidebar componentName={this.constructor.name} />
+					<VideoSidebar
+						src="https://www.youtube.com/embed/92CUwz7s4sM"
+						height="230"
+						width="100%"
+						title="getting-started"
 					/>
 				</div>
 			</div>

@@ -173,7 +173,7 @@ class MultiScramble extends Component {
           <Sidebar componentName={this.constructor.name} />
 
           <VideoSidebar
-            src="https://www.youtube.com/embed/9aM53sWHHFU"
+            src="https://www.youtube.com/embed/Wkterst3HPo"
             height="230"
             width="100%"
             title="getting-started"

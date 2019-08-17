@@ -63,25 +63,25 @@ class SortedList extends Component {
 							<HeaderText componentName={this.constructor.name} />
 						</header>
 						<Items items={todos} onDelete={this.handleDelete} />
-
-						<AddItem
-							inputContent={newContent}
-							onInputChange={this.handleChange}
-							onFormSubmit={this.handleSubmit}
-						/>
 					</div>
 				</div>
 
 				<div className="col-12 col-md-5">
 					<Sidebar componentName={this.constructor.name} />
 					<VideoSidebar
-						src="https://www.youtube.com/embed/fH7rkRBgNzE"
+						src="https://www.youtube.com/embed/9zIJX5v9vhE"
 						height="230"
 						width="100%"
 						title="getting-started"
 					/>
 					<VideoSidebar
-						src="https://www.youtube.com/embed/2xnX_9s2zWE"
+						src="https://www.youtube.com/embed/SgEpi29xTQ0"
+						height="230"
+						width="100%"
+						title="getting-started"
+					/>
+					<VideoSidebar
+						src="https://www.youtube.com/embed/QngusW1ODWA"
 						height="230"
 						width="100%"
 						title="getting-started"
