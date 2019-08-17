@@ -1,129 +1,141 @@
-import React, { Component } from "react";
-import Sidebar from "../Sidebar";
-import MainBtn from "../MainBtn";
-import HeaderText from "../HeaderText";
-import "./Timing.scss";
+import React, { Component } from 'react';
+import Sidebar from '../Sidebar';
+import MainBtn from '../MainBtn';
+import HeaderText from '../HeaderText';
+import './Timing.scss';
 
 class Speed extends Component {
-  //class based
+	//class based
 
-  state = {
-    isRunning: false,
-    stopClass: "button stop-btn",
-    message: "",
-    messageSmall: "",
-    messageClass: "message", //invisible
+	state = {
+		isRunning: false,
+		stopClass: 'button stop-btn',
+		message: '',
+		messageSmall: '',
+		messageClass: 'message', //invisible
 
-    count: 0,
-    startCount: 0,
-    interval: null
-  };
+		count: 0,
+		startCount: 0,
+		interval: null,
+	};
 
-  handleStart = () => {
-    if (!this.state.isRunning) {
-      let startCount = Math.floor(Math.random() * 10000) + 1000; //random nr 1-10s
-      // console.log('random' + startCount);
+	handleStart = () => {
+		if (!this.state.isRunning) {
+			let startCount = Math.floor(Math.random() * 10000) + 1000; //random nr 1-10s
+			// console.log('random' + startCount);
 
-      this.setState({
-        count: startCount, //start counting down at randomnr
-        stopClass: "button stop-btn",
-        message: "", //reset
-        messageSmall: "",
-        messageClass: "message", //invisible
-        isRunning: true
-      });
-      this.intervalUpdate();
-    }
-  };
+			this.setState({
+				count: startCount, //start counting down at randomnr
+				stopClass: 'button stop-btn',
+				message: '', //reset
+				messageSmall: '',
+				messageClass: 'message', //invisible
+				isRunning: true,
+			});
+			this.intervalUpdate();
+		}
+	};
 
-  intervalUpdate = () => {
-    let myInterval = setInterval(() => {
-      //this.myInterval
+	intervalUpdate = () => {
+		let myInterval = setInterval(() => {
+			//this.myInterval
 
-      // console.log("My count" + this.state.count);
-      this.setState({
-        count: this.state.count - 100, // count down every second
-        interval: myInterval
-      });
-      if (this.state.count < 0) {
-        this.setState({
-          stopClass: "button stop-btn show"
-        });
-      }
-    }, 100);
-  };
+			// console.log("My count" + this.state.count);
+			this.setState({
+				count: this.state.count - 100, // count down every second
+				interval: myInterval,
+			});
+			if (this.state.count < 0) {
+				this.setState({
+					stopClass: 'button stop-btn show',
+				});
+			}
+		}, 100);
+	};
 
-  handleStop = () => {
-    if (this.state.isRunning) {
-      // console.log('count ' + -this.state.count);
+	handleStop = () => {
+		if (this.state.isRunning) {
+			// console.log('count ' + -this.state.count);
 
-      clearInterval(this.state.interval);
+			clearInterval(this.state.interval);
 
-      this.setState({
-        isRunning: false
-      });
-    }
-    this.message();
-  };
+			this.setState({
+				isRunning: false,
+			});
+		}
+		this.message();
+	};
 
-  message = () => {
-    let countOutput = -this.state.count;
-    let messageNew;
-    let messageSmallNew;
+	message = () => {
+		let countOutput = -this.state.count;
+		let messageNew;
+		let messageSmallNew;
 
-    if (countOutput < 0) {
-      messageNew = "Fail!";
-      messageSmallNew = "No cheating... you clicked too early.";
-    } else {
-      messageNew = "Success!";
-      messageSmallNew = "You clicked " + countOutput + " ms too late...";
-    }
+		if (countOutput < 0) {
+			messageNew = 'Fail!';
+			messageSmallNew = 'No cheating... you clicked too early.';
+		} else {
+			messageNew = 'Success!';
+			messageSmallNew = 'You clicked ' + countOutput + ' ms too late...';
+		}
 
-    this.setState({
-      message: messageNew,
-      messageSmall: messageSmallNew,
-      messageClass: "message show"
-    });
-  };
+		this.setState({
+			message: messageNew,
+			messageSmall: messageSmallNew,
+			messageClass: 'message show',
+		});
+	};
 
-  render() {
-    return (
-      <div className="row justify-content-between">
-        <div className="col-12 col-md-6">
-          <div className="timing-section">
-            <header>
-              <HeaderText componentName={this.constructor.name} />
-            </header>
+	render() {
+		return (
+			<div className="row justify-content-between">
+				<div className="col-12 col-md-6">
+					<div className="timing-section">
+						<header>
+							<HeaderText componentName={this.constructor.name} />
+						</header>
 
-            <div className="btn-and-message higher">
-              <div>
-                <MainBtn classProp="button start-btn" clickProp={this.handleStart}>
-                  Start game
-                </MainBtn>
+						<div className="btn-and-message higher">
+							<div>
+								<MainBtn
+									classProp="button start-btn"
+									clickProp={this.handleStart}
+								>
+									Start game
+								</MainBtn>
 
-                <MainBtn classProp={this.state.stopClass} clickProp={this.handleStop}>
-                  End game
-                </MainBtn>
-              </div>
+								<MainBtn
+									classProp={this.state.stopClass}
+									clickProp={this.handleStop}
+								>
+									End game
+								</MainBtn>
+							</div>
 
-              <div className={this.state.messageClass}>
-                <h4>
-                  {this.state.message}
-                </h4>
-                <p>
-                  {this.state.messageSmall}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+							<div className={this.state.messageClass}>
+								<h4>
+									{this.state.message}
+								</h4>
+								<p>
+									{this.state.messageSmall}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        <div className="col-12 col-md-5">
-          <Sidebar componentName={this.constructor.name} />
-        </div>
-      </div>
-    );
-  }
+				<div className="col-12 col-md-5">
+					{/* 		<Sidebar componentName={this.constructor.name}>My Text</Sidebar> */}
+					<Sidebar
+						componentName={this.constructor.name}
+						/* 	heading="my heading"
+						text="my text" */
+						/* value="my other text" */
+					/>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Speed;

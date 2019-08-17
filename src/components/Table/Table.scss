@@ -1,146 +1,158 @@
 @import '../../variables.scss';
 
 .table-section {
-  .tableAnimals {
-    min-height: 300px;
-    @media all and (min-width: $sm-min) {
-      min-height: 350px;
-    }
-    @media all and (min-width: $md-min) {
-      min-height: 500px;
-    }
+	.tableAnimals {
+		min-height: 300px;
+		@media all and (min-width: $sm-min) {
+			min-height: 350px;
+		}
+		@media all and (min-width: $md-min) {
+			min-height: 500px;
+		}
 
-    p {
-      color: #fff;
-    }
-  }
-  .nav.nav-pills {
-    background: #fff;
-    margin: 3rem 0;
-    box-shadow: $themeBoxShadow;
-    border-radius: 0.25rem;
-    -webkit-border-radius: 0.25rem;
-    -moz-border-radius: 0.25rem;
-    -ms-border-radius: 0.25rem;
-    -o-border-radius: 0.25rem;
+		p {
+			color: #fff;
+		}
+	}
+	.nav.nav-pills {
+		background: #fff;
+		margin: 3rem 0;
+		box-shadow: $themeBoxShadow;
+		border-radius: 0.25rem;
+		-webkit-border-radius: 0.25rem;
+		-moz-border-radius: 0.25rem;
+		-ms-border-radius: 0.25rem;
+		-o-border-radius: 0.25rem;
 
-    .nav-item {
-      width: 20%;
+		.nav-item {
+			width: 20%;
 
-      .nav-link {
-        white-space: pre;
-        cursor: pointer;
-        border: 1px solid #e9ecef;
-        height: 100%;
-        @media all and (max-width: $sm-max) {
-          font-size: 0.85em;
-        }
-        @media all and (max-width: $xs-max) {
-          font-size: 0.8em;
-          padding: .5rem 0.5rem;
-        }
-        &:hover {
-          background: #e9ecef;
-        }
-        transition: 0.5s all;
-        -webkit-transition: 0.5s all;
-        -moz-transition: 0.5s all;
-        -ms-transition: 0.5s all;
-        -o-transition: 0.5s all;
-      }
+			.nav-link {
+				white-space: pre;
+				cursor: pointer;
+				border: 1px solid #e9ecef;
+				height: 100%;
+				@media all and (max-width: $sm-max) {
+					font-size: 0.85em;
+				}
+				@media all and (max-width: $xs-max) {
+					font-size: 0.8em;
+					padding: .5rem 0.5rem;
+				}
+				&:hover {
+					background: #e9ecef;
+				}
+				transition: 0.5s all;
+				-webkit-transition: 0.5s all;
+				-moz-transition: 0.5s all;
+				-ms-transition: 0.5s all;
+				-o-transition: 0.5s all;
+			}
 
-      .nav-link.active {
-        background: #1576b7;
-        background: $themecolorBlueDarkest;
+			.nav-link.active {
+				background: #1576b7;
+				background: $themecolorBlueDarkest;
 
-        border: 1px solid $themecolorBlueDarkest;
-        // border: 1px solid #007bff;
-        &:hover {
-          color: #fff;
-        }
-      }
-    }
-  }
+				border: 1px solid $themecolorBlueDarkest;
+				// border: 1px solid #007bff;
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
 
-  #animalTable {
-    tr {
-      border-bottom: 1px solid #ddd;
-    }
-    th {
-      color: #fff;
-      cursor: pointer;
-      //text-transform: uppercase;
-      border-top: none;
-      border-bottom: 1px solid #ddd;
-      font-size: 0.95em;
-      @media all and (max-width: $sm-max) {
-        font-size: 0.85em;
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
-      }
-      .fa {
-        margin-left: 0.3rem;
-        display: inline;
-      }
-    }
-    td {
-      color: #fff;
-      border-top: 1px solid #ddd;
-      font-size: 0.95em;
-      @media all and (max-width: $sm-max) {
-        font-size: 0.85em;
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
-      }
-      .fa.fa-heart {
-        @media all and (max-width: $xs-max) {
-          display: none;
-        }
-      }
-      .fa.fa-heart-o {
-        @media all and (max-width: $xs-max) {
-          display: none;
-        }
-      }
-      .btn {
-        @media all and (max-width: $xs-max) {
-          display: none;
-        }
-      }
-    }
+	#animalTable {
+		tr {
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			color: #fff;
+			cursor: pointer;
+			//text-transform: uppercase;
+			border-top: none;
+			border-bottom: 1px solid #ddd;
+			font-size: 0.95em;
+			@media all and (max-width: $sm-max) {
+				font-size: 0.85em;
+				padding-right: 0.5rem;
+				padding-left: 0.5rem;
+			}
+			.fa {
+				margin-left: 0.3rem;
+				display: inline;
+			}
+		}
+		td {
+			color: #fff;
+			border-top: 1px solid #ddd;
+			font-size: 0.95em;
+			@media all and (max-width: $sm-max) {
+				font-size: 0.85em;
+				padding-right: 0.5rem;
+				padding-left: 0.5rem;
+			}
+			.fa.fa-heart {
+				@media all and (max-width: $xs-max) {
+					display: none;
+				}
+			}
+			.fa.fa-heart-o {
+				@media all and (max-width: $xs-max) {
+					display: none;
+				}
+			}
+			.btn {
+				@media all and (max-width: $xs-max) {
+					display: none;
+				}
+			}
+		}
 
-    button {
-      font-size: 0.8em;
-    }
-    img {
-      display: block;
-      margin-right: 0;
-      max-width: 50px;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
-      @media all and (max-width: $sm-max) {
-        display: none;
-      }
-    }
+		button {
+			font-size: 0.8em;
+		}
+		img {
+			display: block;
+			margin-right: 0;
+			max-width: 50px;
+			border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-ms-border-radius: 50%;
+			-o-border-radius: 50%;
+			@media all and (max-width: $sm-max) {
+				display: none;
+			}
+		}
 
-    .pagination {
-      padding-bottom: 2rem;
-    }
-  }
+		.pagination {
+			padding-bottom: 2rem;
+		}
+	}
 
-  .page-link {
-    @media all and (max-width: $sm-max) {
-      font-size: 0.85em;
-    }
-  }
-  .page-item.active {
-    .page-link {
-      background: $themecolorBlueDarkest;
-      border-color: $themecolorBlueDarkest;
-      color: #fff !important;
-    }
-  }
+	.page-link {
+		@media all and (max-width: $sm-max) {
+			font-size: 0.85em;
+		}
+	}
+	.page-item.active {
+		.page-link {
+			background: $themecolorBlueDarkest;
+			border-color: $themecolorBlueDarkest;
+			color: #fff !important;
+		}
+	}
+	.singleanimal {
+		color: #fff;
+		padding-bottom: 5rem;
+		li {
+			padding: 0 0 1rem 0;
+			font-weight: bold;
+			span {
+				font-weight: normal;
+				padding-right: 0.7rem;
+			}
+		}
+	}
 }

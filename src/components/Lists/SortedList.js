@@ -1,87 +1,94 @@
-import React, { Component } from "react";
-import Items from "./Items";
-import AddItem from "./AddItem";
-import Sidebar from "../Sidebar";
-import "./Lists.scss";
-import HeaderText from "../HeaderText";
-import VideoSidebar from "../Video/VideoSidebar";
+import React, { Component } from 'react';
+import Items from './Items';
+import AddItem from './AddItem';
+import Sidebar from '../Sidebar';
+import './Lists.scss';
+import HeaderText from '../HeaderText';
+import VideoSidebar from '../Video/VideoSidebar';
 
 class SortedList extends Component {
-  state = {
-    todos: [{ id: 1, content: "Buy some milk" }, { id: 2, content: "Cuddle with cats" }],
-    newContent: ""
-  };
+	state = {
+		todos: [
+			{ id: 1, content: 'Buy some milk' },
+			{ id: 2, content: 'Cuddle with cats' },
+		],
+		newContent: '',
+	};
 
-  handleChange = e => {
-    //value= what user types in
-    this.setState({
-      newContent: e.target.value
-    });
-  };
+	handleChange = e => {
+		//value= what user types in
+		this.setState({
+			newContent: e.target.value,
+		});
+	};
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const { newContent } = this.state;
+	handleSubmit = e => {
+		e.preventDefault();
+		const { newContent } = this.state;
 
-    if (newContent) {
-      // console.log("state.newContent", newContent)
-      let tmpItem = { id: Math.random(), content: newContent };
+		if (newContent) {
+			// console.log("state.newContent", newContent)
+			let tmpItem = { id: Math.random(), content: newContent };
 
-      //new array with spread op, passing in the old one, and adding one item
-      let todos = [...this.state.todos, tmpItem];
-      this.setState({
-        todos,
-        newContent: ""
-      });
-    }
-  };
+			//new array with spread op, passing in the old one, and adding one item
+			let todos = [...this.state.todos, tmpItem];
+			this.setState({
+				todos,
+				newContent: '',
+			});
+		}
+	};
 
-  handleDelete = id => {
-    //  console.log("delete todo", id);
-    //new array - keeping the all items that fulfill the condition
-    const todos = this.state.todos.filter(t => t.id !== id);
-    this.setState({
-      todos
-    });
-  };
+	handleDelete = id => {
+		//  console.log("delete todo", id);
+		//new array - keeping the all items that fulfill the condition
 
-  render() {
-    const { todos, newContent } = this.state;
+		//	const todos = this.state.todos.filter(t => t.id !== id);
+		const todos = this.state.todos.filter(t => {
+			return t.id !== id;
+		});
+		this.setState({
+			todos,
+		});
+	};
 
-    return (
-      <div className="row justify-content-between">
-        <div className="col-12 col-md-6">
-          <div className="todo-section">
-            <header>
-              <HeaderText componentName={this.constructor.name} />
-            </header>
-            <Items items={todos} onDelete={this.handleDelete} />
+	render() {
+		const { todos, newContent } = this.state;
 
-            <AddItem
-              inputContent={newContent}
-              onInputChange={this.handleChange}
-              onFormSubmit={this.handleSubmit}
-            />
-          </div>
-        </div>
+		return (
+			<div className="row justify-content-between">
+				<div className="col-12 col-md-6">
+					<div className="todo-section">
+						<header>
+							<HeaderText componentName={this.constructor.name} />
+						</header>
+						<Items items={todos} onDelete={this.handleDelete} />
 
-        <div className="col-12 col-md-5">
-          <Sidebar componentName={this.constructor.name} />
-          <VideoSidebar
-            src="https://www.youtube.com/embed/fH7rkRBgNzE"
-            height="230"
-            width="100%"
-            title="getting-started"
-          />
-          <VideoSidebar
-            src="https://www.youtube.com/embed/2xnX_9s2zWE"
-            height="230"
-            width="100%"
-            title="getting-started"
-          />
-        </div>
-      </div>
-    );
-  }
+						<AddItem
+							inputContent={newContent}
+							onInputChange={this.handleChange}
+							onFormSubmit={this.handleSubmit}
+						/>
+					</div>
+				</div>
+
+				<div className="col-12 col-md-5">
+					<Sidebar componentName={this.constructor.name} />
+					<VideoSidebar
+						src="https://www.youtube.com/embed/fH7rkRBgNzE"
+						height="230"
+						width="100%"
+						title="getting-started"
+					/>
+					<VideoSidebar
+						src="https://www.youtube.com/embed/2xnX_9s2zWE"
+						height="230"
+						width="100%"
+						title="getting-started"
+					/>
+				</div>
+			</div>
+		);
+	}
 }
 export default SortedList;

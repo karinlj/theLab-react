@@ -4,11 +4,10 @@ const MainBtn = props => {
   //console.log(props);
 
   //destructuring: store the props in a variable
-  // const { cssClass, click, title } = props;
-  //only need to output them like {click}
 
+  const { classProp, idProp, clickProp } = props;
   return (
-    <button className={props.classProp} id={props.idProp} onClick={props.clickProp}>
+    <button className={classProp} id={idProp} onClick={clickProp}>
       {props.children}
     </button>
   );
