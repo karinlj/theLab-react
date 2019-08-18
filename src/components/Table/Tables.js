@@ -10,43 +10,43 @@ import Pagination from './common/Pagination';
 import { paginate } from './utilities/paginate';
 import ListGroup from './common/ListGroup';
 import _ from 'lodash';
+import AddAnimal from './AddAnimal';
 
 class Tables extends Component {
 	state = {
 		animals: [],
 		species: [],
-
 		pageSize: 4,
 		currentPage: 1,
-		sortColumn: { path: 'name', order: 'asc' },
+		sortColumn: { path: 'name', order: 'asc' }
 	};
 
 	//normally calling backend service, the ajax calls would be here
 	//we set them to [] in the state while the data is being fetched for no rumtime error
 	componentDidMount() {
 		//new array with spread and adding new object
-		const species = [{ _id: '', name: 'All species' }, ...getSpecies()];
+		const species = [ { _id: '', name: 'All species' }, ...getSpecies() ];
 		this.setState({
 			animals: getAnimals(),
 			species,
-			selectedSpeciesItem: species[0], //for first selecting(color:blue) All species
+			selectedSpeciesItem: species[0] //for first selecting(color:blue) All species
 		});
 	}
 
-	handleDelete = animal => {
+	handleDelete = (animal) => {
 		// console.log("animal", animal);
 		//new array that contains all the objects except the one we are deleting
 		//keeping the all items that fulfill the condition
 		// const animals = this.state.animals.filter(a => a._id !== animal._id);
-		const animals = this.state.animals.filter(a => {
+		const animals = this.state.animals.filter((a) => {
 			return a._id !== animal._id;
 		});
 		this.setState({
-			animals,
+			animals
 		});
 	};
 
-	handleLike = animal => {
+	handleLike = (animal) => {
 		//what animal is being liked
 		//clone the state
 		//finding the index of the movie we recieve as a parameter (indexOf)
@@ -54,7 +54,7 @@ class Tables extends Component {
 		//if true => false and viceversa
 
 		// console.log("toggle-like", animal);
-		const animals = [...this.state.animals];
+		const animals = [ ...this.state.animals ];
 		const index = animals.indexOf(animal);
 		// console.log(index);
 
@@ -65,24 +65,24 @@ class Tables extends Component {
 		this.setState({ animals });
 	};
 
-	handlePageChange = page => {
+	handlePageChange = (page) => {
 		//recieves the new page nr
 		//  console.log("page changed", page);
 		this.setState({ currentPage: page });
 	};
 
-	handleSpeciesSelect = speciesItem => {
+	handleSpeciesSelect = (speciesItem) => {
 		// console.log("species", species);
 		//putting selectedSpecies in the state and setting it to the current species
 		this.setState({
 			selectedSpeciesItem: speciesItem,
-			currentPage: 1, //for always begin at 1
+			currentPage: 1 //for always begin at 1
 		});
 	};
 
-	handleSort = sortColumn => {
+	handleSort = (sortColumn) => {
 		this.setState({
-			sortColumn,
+			sortColumn
 		});
 	};
 
@@ -93,7 +93,7 @@ class Tables extends Component {
 			currentPage,
 			species,
 			selectedSpeciesItem,
-			sortColumn,
+			sortColumn
 		} = this.state;
 
 		//1. filtering - if there is a selected species
@@ -101,7 +101,7 @@ class Tables extends Component {
 		//otherwise return all animals
 		const filteredAnimals =
 			selectedSpeciesItem && selectedSpeciesItem._id
-				? animals.filter(a => {
+				? animals.filter((a) => {
 						return a.species._id === selectedSpeciesItem._id;
 					})
 				: animals;
@@ -109,12 +109,14 @@ class Tables extends Component {
 		//2. sorting
 		const sortedAnimals = _.orderBy(
 			filteredAnimals,
-			[sortColumn.path],
-			[sortColumn.order]
+			[ sortColumn.path ],
+			[ sortColumn.order ]
 		);
 
 		//3. pagination
 		const animalsPaginated = paginate(sortedAnimals, currentPage, pageSize);
+
+		const { newName, newShoesize, newSpecies, newHairdo } = this.state;
 
 		let textmessage;
 		animals === 0
@@ -155,6 +157,20 @@ class Tables extends Component {
 										pageSize={pageSize}
 										onPageChange={this.handlePageChange}
 										currentPage={currentPage}
+									/>
+								</div>
+							</div>
+						</div>
+						<div className="row justify-content-between">
+							<div className="col-12">
+								<div className="tableNewAnimal">
+									<AddAnimal
+										inputName={newName}
+										inputSpecies={newSpecies}
+										inputShoesize={newShoesize}
+										inputHairdo={newHairdo}
+										onInputChange={this.handleChange}
+										onFormSubmit={this.handleSubmit}
 									/>
 								</div>
 							</div>

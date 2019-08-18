@@ -64,14 +64,16 @@ class AnimalsTable extends Component {
 						//id set here
 						<tr key={animal._id}>
 							<td>
-								{/*  <img src={Lion} alt="" /> */}
 								<img
 									src={require(`../../img/${animal.image}.jpg`)}
 									alt={animal.image}
 								/>
 							</td>
 							<td>
-								<NavLink to={'/animal/' + animal._id}>
+								<NavLink
+									className="single-animal-link"
+									to={'/animal/' + animal._id}
+								>
 									{animal.name}
 								</NavLink>
 							</td>

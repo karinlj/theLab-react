@@ -14,10 +14,10 @@ class Animal extends Component {
 		animal: ''
 	};
 	componentDidMount() {
-		console.log(this.props);
+		//console.log(this.props);
 		//hämta id:t från url:en
 		let id = this.props.match.params.id;
-		console.log('my url-id', id);
+		//console.log('my url-id', id);
 
 		const animal = this.state.animals.find((a) => {
 			return a._id === id;
@@ -33,38 +33,41 @@ class Animal extends Component {
 	render() {
 		//let { animal } = this.state;
 		let animal = this.state.animal;
-		console.log('my animal in render', animal);
+		//console.log('my animal in render', animal);
 
 		return (
 			<div className="row">
 				<div className="col-12">
-					<div className="table-section">
+					<div className="single-animal-section">
 						<header>
+							<h1>{animal.name}</h1>
 							{/* <HeaderText componentName={this.constructor.name} /> */}
 						</header>
-
 						<div className="row">
-							<div className="col-2">
-								<img src={Elephant} alt="" />
-							</div>
-							<div className="col">
-								<ul className="singleanimal">
-									<li>
-										<span>Name: </span>
-										{animal.name}
-									</li>
-									<li>
-										{/* <span>Species: </span> {animal.species.name} */}
-									</li>
-									<li>
-										<span>Shoesize: </span>
-										{animal.shoesize}
-									</li>
-									<li>
-										<span>Hairdo: </span>
-										{animal.hairdo}
-									</li>
-								</ul>
+							<div className="col-12">
+								<div className="single-animal">
+									<div className="row">
+										<div className="col-2">
+											<img src={Elephant} alt="" />
+										</div>
+										<div className="col">
+											<ul className="animal-data">
+												<li>
+													<span>Species: </span>
+													{/* {animal.species.name} */}
+												</li>
+												<li>
+													<span>Shoesize: </span>
+													{animal.shoesize}
+												</li>
+												<li>
+													<span>Hairdo: </span>
+													{animal.hairdo}
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 

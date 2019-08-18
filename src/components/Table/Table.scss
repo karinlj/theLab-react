@@ -2,13 +2,14 @@
 
 .table-section {
 	.tableAnimals {
-		min-height: 300px;
-		@media all and (min-width: $sm-min) {
-			min-height: 350px;
-		}
-		@media all and (min-width: $md-min) {
-			min-height: 500px;
-		}
+		padding-bottom: 3rem;
+		// min-height: 300px;
+		// @media all and (min-width: $sm-min) {
+		// 	min-height: 350px;
+		// }
+		// @media all and (min-width: $md-min) {
+		// 	min-height: 500px;
+		// }
 
 		p {
 			color: #fff;
@@ -28,6 +29,7 @@
 			width: 20%;
 
 			.nav-link {
+				margin-bottom: 0;
 				white-space: pre;
 				cursor: pointer;
 				border: 1px solid #e9ecef;
@@ -107,6 +109,9 @@
 					display: none;
 				}
 			}
+			.single-animal-link {
+				color: lightgreen;
+			}
 		}
 
 		button {
@@ -125,10 +130,6 @@
 				display: none;
 			}
 		}
-
-		.pagination {
-			padding-bottom: 2rem;
-		}
 	}
 
 	.page-link {
@@ -143,15 +144,29 @@
 			color: #fff !important;
 		}
 	}
-	.singleanimal {
-		color: #fff;
-		padding-bottom: 5rem;
-		li {
-			padding: 0 0 1rem 0;
-			font-weight: bold;
-			span {
-				font-weight: normal;
-				padding-right: 0.7rem;
+	.tableNewAnimal {
+		padding-bottom: 3rem;
+	}
+}
+
+.single-animal-section {
+	.single-animal {
+		border-radius: .25rem;
+		background-color: #fff;
+		line-height: 1.5rem;
+		padding: 20px 30px;
+		margin-bottom: 3rem;
+		border-bottom: 1px solid #e0e0e0;
+		color: #333;
+
+		.animal-data {
+			li {
+				padding: 0 0 0.5rem 0;
+				font-weight: bold;
+				span {
+					font-weight: normal;
+					padding-right: 0.7rem;
+				}
 			}
 		}
 	}
