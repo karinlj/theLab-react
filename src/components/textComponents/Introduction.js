@@ -38,6 +38,12 @@ const Introduction = () => {
           width="100%"
           title="Why do test automation"
         />
+        <VideoSidebar
+          src="https://www.youtube.com/embed/850MnrHoEYc"
+          height="230"
+          width="100%"
+          title="getting-started"
+        />
       </div>
     </div>
   );
