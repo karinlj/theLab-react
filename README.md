@@ -1,7 +1,7 @@
 # theLab Boozang
 
 ## Description
-A site in progress to learn test automation and the Boozang tool. 
+A site for learning  test automation and the Boozang tool. 
 
 ## Installation
 To install
