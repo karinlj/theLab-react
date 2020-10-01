@@ -36,10 +36,16 @@ You will be able to play around with the tool, but in order to save your tests t
 
       <div className="col-12 col-md-5">
         <VideoSidebar
-          src="https://www.youtube.com/embed/EPA-e1vENSs"
+          src="https://www.youtube.com/embed/x0TqzRIIsSM"
           height="230"
           width="100%"
-          title="getting-started"
+          title="Welcome to The Lab"
+        />
+        <VideoSidebar
+          src="https://www.youtube.com/embed/guQlg80v3V8"
+          height="230"
+          width="100%"
+          title="Welcome to The Lab"
         />
       </div>
     </div>
