@@ -1,7 +1,7 @@
 # theLab Boozang
 
 ## Description
-A frontend platform for learning  test automation and the Boozang tool. 
+A frontend platform for learning test automation and the Boozang tool. 
 
 ![Screenshot](/src/img/screenshot.jpg?raw=true "Screenshot")
 
@@ -16,7 +16,7 @@ To run
 
 ## To build
 ```npm run build```   
-Then use the dist folder.
+Then use the dist folder you get.
 
 ## Built With
 * React.js
