@@ -5,6 +5,8 @@ A frontend platform for learning test automation and the Boozang tool.
 
 ![Screenshot](/src/img/screenshot.jpg?raw=true "Screenshot")
 
+##### Url: http://thelab.boozang.com/
+
 ## Installation
 To install
 
