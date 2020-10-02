@@ -1,7 +1,9 @@
 # theLab Boozang
 
 ## Description
-A site for learning  test automation and the Boozang tool. 
+A platform for learning  test automation and the Boozang tool. 
+
+![Screenshot](/src/img/screenshot.jpg?raw=true "Screenshot")
 
 ## Installation
 To install
@@ -11,6 +13,10 @@ To install
 To run
 
 ```npm start```
+
+## To build
+```npm run build``` 
+Then use the dist folder
 
 ## Built With
 * React.js
