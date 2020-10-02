@@ -1,11 +1,13 @@
 # theLab Boozang
 
 ## Description
-A frontend platform for learning test automation and the Boozang tool. 
+A frontend platform for learning test automation and the Boozang tool.   
 
-![Screenshot](/src/img/screenshot.jpg?raw=true "Screenshot")
+Url: http://thelab.boozang.com/
 
-##### Url: http://thelab.boozang.com/
+![Screenshot](/src/img/screenshot.jpg?raw=true "Screenshot")  
+
+
 
 ## Installation
 To install
