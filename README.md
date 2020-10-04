@@ -8,7 +8,6 @@ Url: http://thelab.boozang.com/
 ![Screenshot](/src/img/screenshot.jpg?raw=true "Screenshot")  
 
 
-
 ## Installation
 To install
 
@@ -20,6 +19,7 @@ To run
 
 ## To build
 ```npm run build```   
+
 Then use the dist folder you get.
 
 ## Built With
@@ -35,6 +35,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments  
 * Mosh Hamedani:  https://codewithmosh.com/
-* The Net Ninja:  YouTube
+* The Net Ninja:  The Net Ninja - [The Net Ninja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
 
 
